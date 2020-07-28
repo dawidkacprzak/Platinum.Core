@@ -1,0 +1,73 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "C:\\Users\\dkacprzak\\Desktop\\Platinum\\dotNET\\Platinum.Tests.Integration\\Platinum.Tests.Integration.csproj",
+    "projectName": "Platinum.Tests.Integration",
+    "projectPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum\\dotNET\\Platinum.Tests.Integration\\Platinum.Tests.Integration.csproj",
+    "outputPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum\\dotNET\\Platinum.Tests.Integration\\obj\\",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "D:\\Microsoft\\Xamarin\\NuGet",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp3.1"
+    ],
+    "sources": {
+      "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+      "https://api.nuget.org/v3/index.json": {}
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "projectReferences": {
+          "C:\\Users\\dkacprzak\\Desktop\\Platinum\\dotNET\\Platinum.Core\\Platinum.Core.csproj": {
+            "projectPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum\\dotNET\\Platinum.Core\\Platinum.Core.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp3.1": {
+      "dependencies": {
+        "Microsoft.NET.Test.Sdk": {
+          "target": "Package",
+          "version": "[16.4.0, )"
+        },
+        "Moq": {
+          "target": "Package",
+          "version": "[4.14.5, )"
+        },
+        "NUnit3TestAdapter": {
+          "target": "Package",
+          "version": "[3.15.1, )"
+        },
+        "nunit": {
+          "target": "Package",
+          "version": "[3.12.0, )"
+        }
+      },
+      "imports": [
+        "net461",
+        "net462",
+        "net47",
+        "net471",
+        "net472",
+        "net48"
+      ],
+      "assetTargetFallback": true,
+      "warn": true,
+      "frameworkReferences": {
+        "Microsoft.NETCore.App": {
+          "privateAssets": "all"
+        }
+      },
+      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+    }
+  }
+}

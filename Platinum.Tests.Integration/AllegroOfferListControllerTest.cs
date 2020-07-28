@@ -1,0 +1,221 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using NUnit.Framework;
+using Platinum.Core.DatabaseIntegration;
+using Platinum.Core.Model;
+using Platinum.Core.OfferListController;
+using Platinum.Core.Types;
+using Platinum.Core.Types.Exceptions;
+
+namespace Platinum.Tests.Integration
+{
+    [TestFixture]
+    [Apartment(ApartmentState.STA)]
+    public class AllegroOfferListControllerTest
+    {
+        private IBaseOfferListController _controller;
+        private string mainCategory = "kategoria/yerba-mate-i-akcesoria-akcesoria-125774";
+        [TearDown]
+        public void TearDown()
+        {
+            _controller.Dispose();
+            Thread.Sleep(2000);
+        }
+
+        [SetUp]
+        public void SetController()
+        {
+            _controller = new AllegroOfferListController();
+        }
+
+        [Test]
+        public void FetchingTakesGoodAmountOfMaxPageIndex()
+        {
+            _controller.StartFetching(true,
+                new OfferCategory(OfferWebsite.Allegro,
+                    mainCategory));
+        
+            int maxPages = _controller.GetLastPageIndex();
+            Assert.NotZero(maxPages);
+            Assert.AreEqual(maxPages, _controller.GetLastPageIndex());
+        }
+
+
+        [Test]
+        public void OpenNextPageWithoutStartFetching()
+        {
+            using IBaseOfferListController controller = new AllegroOfferListController();
+            OfferListControllerException ex =
+                Assert.Throws<OfferListControllerException>(() => controller.OpenNextPage());
+            Assert.That(ex, Is.Not.Null);
+            controller.Dispose();
+        }
+
+        [Test]
+        public void OpenNextPageWithStartFetching()
+        {
+            _controller.StartFetching(true,
+                new OfferCategory(OfferWebsite.Allegro,
+                    mainCategory));
+            int page = _controller.GetCurrentPageIndex();
+            Assert.True(_controller.OpenNextPage());
+            Assert.True(_controller.GetCurrentPageIndex() == page + 1);
+        }
+
+        [Test]
+        public void GetAllOffersSuccess()
+        {
+            _controller.StartFetching(true,
+                new OfferCategory(OfferWebsite.Allegro,
+                    mainCategory));
+            List<string> offers = _controller.GetAllOfferLinks().ToList();
+            Assert.True(offers.Any());
+            Assert.True(offers.Count(x => !x.Contains("http")) == 0);
+        }
+
+        [Test]
+        public void FetchFailAllegroLink()
+        {
+            using IBaseOfferListController ctr = new AllegroOfferListController();
+            OfferListControllerException ex = Assert.Throws<OfferListControllerException>(
+                () => ctr.StartFetching(false, new OfferCategory(OfferWebsite.Allegro, "/testfaillink")));
+
+            Assert.That(ex, Is.Not.Null);
+            ctr.Dispose();
+            _controller.Dispose();
+        }
+
+        [Test]
+        public void IndexPageFailAllegroLink()
+        {
+            using IBaseOfferListController ctr = new AllegroOfferListController();
+
+            OfferListControllerException e =
+                Assert.Throws<OfferListControllerException>(
+                    () => ctr.StartFetching(false, new OfferCategory(OfferWebsite.Allegro, "/testfaillink")));
+            OfferListControllerException ex =
+                Assert.Throws<OfferListControllerException>(() => ctr.GetCurrentPageIndex());
+            Assert.That(ex, Is.Not.Null);
+            ctr.Dispose();
+            _controller.Dispose();
+        }
+
+        [Test]
+        public void IndexPageFailAllegroLinkNoCategoryWithPagination()
+        {
+            using IBaseOfferListController ctr = new AllegroOfferListController();
+            Assert.Throws<OfferListControllerException>(
+                () => ctr.StartFetching(false,
+                    new OfferCategory(OfferWebsite.Allegro, "uzytkownik/KOLEKCJONER-PL--/oceny")));
+            OfferListControllerException ex =
+                Assert.Throws<OfferListControllerException>(() => ctr.GetCurrentPageIndex());
+            Assert.That(ex, Is.Not.Null);
+            ctr.Dispose();
+            _controller.Dispose();
+        }
+
+        [Test]
+        public void IndexPageFailAllegroLinkNoCategoryWithPaginationLastIndex()
+        {
+            using IBaseOfferListController ctr = new AllegroOfferListController();
+            Assert.Throws<OfferListControllerException>(
+                () => ctr.StartFetching(false,
+                    new OfferCategory(OfferWebsite.Allegro, "uzytkownik/KOLEKCJONER-PL--/oceny")));
+            OfferListControllerException ex =
+                Assert.Throws<OfferListControllerException>(() => ctr.GetLastPageIndex());
+            Assert.That(ex, Is.Not.Null);
+            ctr.Dispose();
+            _controller.Dispose();
+        }
+
+        [Test]
+        public void CheckLastPageIndexIsGreater()
+        {
+            _controller.StartFetching(true,
+                new OfferCategory(OfferWebsite.Allegro,
+                    mainCategory));
+            int lastPage = _controller.GetLastPageIndex();
+            int currentPage = _controller.GetCurrentPageIndex();
+            Assert.True(lastPage >= currentPage);
+        }
+
+        [Test]
+        public void CurrentPageIndexSuccess()
+        {
+            _controller.StartFetching(true,
+                new OfferCategory(OfferWebsite.Allegro,
+                    mainCategory));
+            int page = _controller.GetCurrentPageIndex();
+            Assert.True(_controller.OpenNextPage());
+            Assert.IsTrue(_controller.GetCurrentPageIndex() - 1 == page);
+        }
+
+        [Test]
+        public void IterateToLastPageAndTryToGoNext()
+        {
+            _controller.StartFetching(true,
+                new OfferCategory(OfferWebsite.Allegro,
+                    mainCategory));
+            int lastPage = _controller.GetLastPageIndex();
+            int page = -1;
+            while (_controller.OpenNextPage())
+            {
+                page = _controller.GetCurrentPageIndex();
+            }
+
+            Assert.AreEqual(page, lastPage);
+        }
+
+        [Test]
+        public void OpenAllPagesInCategory()
+        {
+            _controller.StartFetching(true,
+                new OfferCategory(OfferWebsite.Allegro,
+                    mainCategory));
+            bool open = _controller.OpenNextPage();
+            while (open)
+            {
+                open = _controller.OpenNextPage();
+            }
+        }
+
+        [Test]
+        public void FetchAllPages()
+        {
+            using IBaseOfferListController ctr = new AllegroOfferListController();
+            ctr.StartFetching(false,
+                new OfferCategory(OfferWebsite.Allegro,
+                    "kategoria/lokale-i-obiekty-uzytkowe-na-sprzedaz-lubuskie-113940"));
+        }
+
+        [Test]
+        public void UpdateOfferDatabaseWithEmptyListDoNotThrow()
+        {
+            _controller.StartFetching(true,
+                new OfferCategory(OfferWebsite.Allegro,
+                    mainCategory));
+            List<string> testList = new List<string>()
+            {
+                Guid.NewGuid().ToString()
+            };
+
+            _controller.UpdateDatabaseWithOffers(testList);
+        }
+
+        [Test]
+        public void UpdateOfferDatabaseWithInvalidString()
+        {
+            _controller.StartFetching(true,
+                new OfferCategory(OfferWebsite.Allegro,
+                    mainCategory));
+            List<string> testList = new List<string>()
+            {
+                "{',''][[[]{{}",
+            };
+            DalException ex = Assert.Throws<DalException>(() => _controller.UpdateDatabaseWithOffers(testList));
+            Assert.That(ex, Is.Not.Null);
+        }
+    }
+}
