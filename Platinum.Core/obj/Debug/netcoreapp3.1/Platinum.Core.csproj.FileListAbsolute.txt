@@ -25,3 +25,12 @@ C:\Users\Rekurencja\Desktop\Platinum\dotNET\Platinum.Core\obj\Debug\netcoreapp3.
 C:\Users\Rekurencja\Desktop\Platinum\dotNET\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.AssemblyInfo.cs
 C:\Users\Rekurencja\Desktop\Platinum\dotNET\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.dll
 C:\Users\Rekurencja\Desktop\Platinum\dotNET\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.pdb
+C:\Users\Rekurencja\Desktop\1\Platinum\dotNET\Platinum.Core\bin\Debug\netcoreapp3.1\Platinum.Core.deps.json
+C:\Users\Rekurencja\Desktop\1\Platinum\dotNET\Platinum.Core\bin\Debug\netcoreapp3.1\Platinum.Core.dll
+C:\Users\Rekurencja\Desktop\1\Platinum\dotNET\Platinum.Core\bin\Debug\netcoreapp3.1\Platinum.Core.pdb
+C:\Users\Rekurencja\Desktop\1\Platinum\dotNET\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.csprojAssemblyReference.cache
+C:\Users\Rekurencja\Desktop\1\Platinum\dotNET\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.csproj.CoreCompileInputs.cache
+C:\Users\Rekurencja\Desktop\1\Platinum\dotNET\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.AssemblyInfoInputs.cache
+C:\Users\Rekurencja\Desktop\1\Platinum\dotNET\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.AssemblyInfo.cs
+C:\Users\Rekurencja\Desktop\1\Platinum\dotNET\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.dll
+C:\Users\Rekurencja\Desktop\1\Platinum\dotNET\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.pdb

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Common;
 using System.Threading;
 using NUnit.Framework;
 using Platinum.Core.DatabaseIntegration;
@@ -187,6 +188,52 @@ namespace Platinum.Tests.Integration
             DalException ex = Assert.Throws<DalException>(() => db.ExecuteNonQuery("Drop database masterr"));
             Assert.That(ex, Is.Not.Null);
             Assert.That(ex.Message, Contains.Substring("cannot drop databases"));
+        }
+        
+        [Test]
+        public void ExecuteReaderTestDropQueryFail()
+        {
+            using Dal db = new Dal();
+            db.OpenConnection();
+            DalException ex = Assert.Throws<DalException>(() => db.ExecuteReader("Drop database masterr"));
+            Assert.That(ex, Is.Not.Null);
+            Assert.That(ex.Message, Contains.Substring("cannot drop databases"));
+        }
+        
+        [Test]
+        public void ExecuteReaderDoesNotThrow()
+        {
+            using Dal db = new Dal(true);
+            db.OpenConnection(); 
+            Assert.DoesNotThrow(() => db.ExecuteReader("SELECT TOP 1 * FROM websiteCategories"));
+        }
+        
+        [Test]
+        public void ExecuteReaderContainRows()
+        {
+            using Dal db = new Dal(true);
+            db.OpenConnection();
+            using DbDataReader reader = db.ExecuteReader("SELECT TOP 1 * FROM websiteCategories");
+            Assert.IsTrue(reader.HasRows);
+        }
+        
+        [Test]
+        public void ExecuteReaderDoesNotContainRowsAndDoNotThrowException()
+        {
+            using Dal db = new Dal(true);
+            db.OpenConnection();
+            using DbDataReader reader = db.ExecuteReader("SELECT TOP 1 * FROM websiteCategories WHERE Id = -9");
+            Assert.IsTrue(!reader.HasRows);
+        }
+        
+        [Test]
+        public void ExecuteReaderExceptionBadQuery()
+        {
+            using Dal db = new Dal(true);
+            db.OpenConnection();
+            
+            DalException ex = Assert.Throws<DalException>(()=> db.ExecuteReader("SELECTMISSPELL TOP 1 * FROM websiteCategories WHERE Id = -9"));
+            Assert.That(ex, Is.Not.Null);
         }
     }
 }

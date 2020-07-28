@@ -204,7 +204,7 @@ namespace Platinum.Core.OfferListController
 
         public void Dispose()
         {
-            CloseBrowser();
+            ClosePage(pageId);
         }
 
         private bool ValidatePaginationContainer(HtmlNodeCollection collection)

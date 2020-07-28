@@ -3177,27 +3177,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dkacprzak\\.nuget\\packages\\": {},
-    "D:\\Microsoft\\Xamarin\\NuGet": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dkacprzak\\Desktop\\Platinum\\dotNET\\Platinum.Core\\Platinum.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Rekurencja\\Desktop\\1\\Platinum\\dotNET\\Platinum.Core\\Platinum.Core.csproj",
       "projectName": "Platinum.Core",
-      "projectPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum\\dotNET\\Platinum.Core\\Platinum.Core.csproj",
-      "packagesPath": "C:\\Users\\dkacprzak\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum\\dotNET\\Platinum.Core\\obj\\",
+      "projectPath": "C:\\Users\\Rekurencja\\Desktop\\1\\Platinum\\dotNET\\Platinum.Core\\Platinum.Core.csproj",
+      "packagesPath": "C:\\Users\\Rekurencja\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rekurencja\\Desktop\\1\\Platinum\\dotNET\\Platinum.Core\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "D:\\Microsoft\\Xamarin\\NuGet",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\dkacprzak\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Rekurencja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -3252,7 +3245,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

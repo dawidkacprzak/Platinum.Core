@@ -12,11 +12,10 @@ using Platinum.Core.Types.Exceptions;
 namespace Platinum.Tests.Integration
 {
     [TestFixture]
-    [Apartment(ApartmentState.STA)]
     public class AllegroOfferListControllerTest
     {
         private IBaseOfferListController _controller;
-        private string mainCategory = "kategoria/yerba-mate-i-akcesoria-akcesoria-125774";
+        private int mainCategory = 1;
         [TearDown]
         public void TearDown()
         {
@@ -80,7 +79,7 @@ namespace Platinum.Tests.Integration
         {
             using IBaseOfferListController ctr = new AllegroOfferListController();
             OfferListControllerException ex = Assert.Throws<OfferListControllerException>(
-                () => ctr.StartFetching(false, new OfferCategory(OfferWebsite.Allegro, "/testfaillink")));
+                () => ctr.StartFetching(false, new OfferCategory(OfferWebsite.Allegro, "testfaillink")));
 
             Assert.That(ex, Is.Not.Null);
             ctr.Dispose();
@@ -187,7 +186,7 @@ namespace Platinum.Tests.Integration
             using IBaseOfferListController ctr = new AllegroOfferListController();
             ctr.StartFetching(false,
                 new OfferCategory(OfferWebsite.Allegro,
-                    "kategoria/lokale-i-obiekty-uzytkowe-na-sprzedaz-lubuskie-113940"));
+                    1));
         }
 
         [Test]

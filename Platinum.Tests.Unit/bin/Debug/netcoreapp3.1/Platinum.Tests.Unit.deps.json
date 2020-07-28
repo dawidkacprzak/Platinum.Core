@@ -986,6 +986,7 @@
       "Platinum.Core/1.0.0": {
         "dependencies": {
           "HtmlAgilityPack": "1.11.24",
+          "Newtonsoft.Json": "9.0.1",
           "RestSharp": "106.11.4",
           "System.Data.SqlClient": "4.8.1"
         },

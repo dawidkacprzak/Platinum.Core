@@ -1,27 +1,58 @@
 ﻿#nullable enable
 using System;
+using System.Data.Common;
 using System.Text.RegularExpressions;
+using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.Types;
+using Platinum.Core.Types.Exceptions;
 
 namespace Platinum.Core.Model
 {
     public class OfferCategory
     {
-        public OfferCategory BaseOfferCategory { get; }
         public string CategoryUrl { get; protected set; }
-
+        public string CategoryName { get; protected set; }
         public OfferWebsite OfferWebsite { get; protected set; }
 
-        public OfferCategory(OfferWebsite offerWebsite, string categoryUrl)
+        public OfferCategory(OfferWebsite offerWebsite, int categoryId)
         {
-            this.CategoryUrl = categoryUrl;
+            using (Dal db = new Dal(true))
+            {
+                using (DbDataReader reader =
+                    db.ExecuteReader($"SELECT TOP 1 * FROM websiteCategories WHERE id = {categoryId}"))
+                {
+                    if (!reader.HasRows)
+                    {
+                        throw new DalException("Category cannot be found");
+                    }
+                    else
+                    {
+                        reader.Read();
+
+                        this.CategoryUrl = reader.GetString(reader.GetOrdinal("routeUrl"));
+                        this.CategoryName = reader.GetString(reader.GetOrdinal("name"));
+                    }
+                }
+            }
+
             this.OfferWebsite = offerWebsite;
         }
 
-        public OfferCategory(OfferWebsite offerWebsite, OfferCategory baseOfferCategory, string categoryUrl)
+        /// <summary>
+        /// Just for test purposes
+        /// </summary>
+        [Obsolete]
+        public OfferCategory(OfferWebsite offerWebsite, string categoryName)
         {
-            this.BaseOfferCategory = baseOfferCategory;
-            this.CategoryUrl = categoryUrl;
+#if RELEASE
+            throw new Exception("Cannot invoke test methods on prod. env.");
+#endif
+            using (Dal db = new Dal(true))
+            {
+                this.CategoryUrl = categoryName;
+                this.CategoryName = categoryName;
+            }
+
             this.OfferWebsite = offerWebsite;
         }
 
@@ -33,11 +64,6 @@ namespace Platinum.Core.Model
             }
 
             OfferCategory convertedCategory = (OfferCategory) obj;
-            
-            if (BaseOfferCategory != null && !BaseOfferCategory.OfferWebsite.Equals(convertedCategory.OfferWebsite))
-            {
-                return false;
-            }
 
             return convertedCategory.OfferWebsite.Equals(OfferWebsite) &&
                    convertedCategory.CategoryUrl.Equals(CategoryUrl);
