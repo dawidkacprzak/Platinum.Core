@@ -16,21 +16,39 @@ namespace Platinum.Core.OfferListController
         private const string baseUrl = "https://allegro.pl";
         private string pageId;
         private OfferCategory _initiedOfferCategory;
-
-        public void StartFetching(bool fetchJustFirstPage, OfferCategory category)
+        private Dictionary<string, string> urlArguments;
+        private string urlArgs = "";
+        
+        public void StartFetching(bool fetchJustFirstPage, OfferCategory category, List<WebsiteCategoriesFilterSearch> urlArguments = null)
         {
             _initiedOfferCategory = category;
-            InitBrowser();
             pageId = CreatePage();
+            if (urlArguments != null && urlArguments.Count > 0)
+            {
+                int index = 0;
+                foreach (var arg in urlArguments)
+                {
+                    if (index == 0)
+                    {
+                        urlArgs += "?" + arg.Argument + "=" + arg.Value;
+                        index++;
+                    }
+                    else
+                    {
+                        urlArgs += "&" + arg.Argument + "=" + arg.Value;
+                    }
+                }
+            }
+            
             if (fetchJustFirstPage)
             {
-                Open(pageId,baseUrl + "/" + category.CategoryUrl);
+                Open(pageId,baseUrl + "/" + category.CategoryUrl+urlArgs);
                 IEnumerable<string> offerLinks = GetAllOfferLinks();
                 UpdateDatabaseWithOffers(offerLinks);
             }
             else
             {
-                Open(pageId,baseUrl + "/" + category.CategoryUrl);
+                Open(pageId,baseUrl + "/" + category.CategoryUrl + urlArgs);
                 IEnumerable<string> offerLinks = GetAllOfferLinks();
                 UpdateDatabaseWithOffers(offerLinks);
 
@@ -48,13 +66,20 @@ namespace Platinum.Core.OfferListController
             {
                 int currentPage = GetCurrentPageIndex();
                 int lastPage = GetLastPageIndex();
-                System.Diagnostics.Debug.WriteLine(currentPage);
                 if (currentPage == lastPage)
                 {
                     return false;
                 }
 
-                Open(pageId,baseUrl + "/" + _initiedOfferCategory.CategoryUrl + "?p=" + (currentPage + 1));
+                if (urlArgs.Length > 1)
+                {
+                    Open(pageId,baseUrl + "/" + _initiedOfferCategory.CategoryUrl + urlArgs+"&p=" + (currentPage + 1));
+                }
+                else
+                {
+                    Open(pageId,baseUrl + "/" + _initiedOfferCategory.CategoryUrl + "?p=" + (currentPage + 1));
+                }
+                
                 return true;
             }
             catch (Exception ex)
@@ -116,6 +141,7 @@ namespace Platinum.Core.OfferListController
                         ,HashBytes('MD5','{offer}')
                         , 0
                         , getdate()
+                        , {_initiedOfferCategory.CategoryId}
                         )");
                     }
                     catch (DalException ex)

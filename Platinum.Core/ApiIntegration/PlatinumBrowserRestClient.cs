@@ -13,7 +13,7 @@ namespace Platinum.Core.ApiIntegration
 
         public PlatinumBrowserRestClient()
         {
-            ApiUrl = "http://platinumbrowser.westeurope.cloudapp.azure.com:3001";
+            ApiUrl = "http://213.32.122.228:3001";
         }
 
         public PlatinumBrowserRestClient(string apiUrl)

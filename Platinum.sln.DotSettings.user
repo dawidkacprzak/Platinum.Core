@@ -3,8 +3,14 @@
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=953bf526_002Dad2c_002D4193_002Dba23_002D9a323a31f6e8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FetchFailAllegroLink" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;Project Location="C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration" Presentation="&amp;lt;Platinum.Tests.Integration&amp;gt;" /&gt;&#xD;
+    &lt;Project Location="C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit" Presentation="&amp;lt;Platinum.Tests.Unit&amp;gt;" /&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c5ccef24_002Dc39f_002D4e79_002D93d8_002D03ecd1dbac95/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAllOffersSuccess" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::CD1197D9-D436-4BC4-852E-2C99489C3625::.NETCoreApp,Version=v3.1::Platinum.Tests.Integration.AllegroOfferListControllerTest.FetchFailAllegroLink&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::CD1197D9-D436-4BC4-852E-2C99489C3625::.NETCoreApp,Version=v3.1::Platinum.Tests.Integration.AllegroOfferListControllerTest.GetAllOffersSuccess&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	

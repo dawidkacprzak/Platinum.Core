@@ -1,11 +1,15 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Rekurencja\\Desktop\\1\\Platinum\\dotNET\\Platinum.Core\\Platinum.Core.csproj",
+    "projectUniqueName": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj",
     "projectName": "Platinum.Core",
-    "projectPath": "C:\\Users\\Rekurencja\\Desktop\\1\\Platinum\\dotNET\\Platinum.Core\\Platinum.Core.csproj",
-    "outputPath": "C:\\Users\\Rekurencja\\Desktop\\1\\Platinum\\dotNET\\Platinum.Core\\obj\\",
+    "projectPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj",
+    "outputPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Core\\obj\\",
     "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "D:\\Microsoft\\Xamarin\\NuGet",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ],
     "originalTargetFrameworks": [
       "netcoreapp3.1"
     ],
@@ -59,7 +63,7 @@
           "privateAssets": "all"
         }
       },
-      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
     }
   }
 }

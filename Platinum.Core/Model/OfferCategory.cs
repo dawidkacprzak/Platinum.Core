@@ -13,6 +13,7 @@ namespace Platinum.Core.Model
         public string CategoryUrl { get; protected set; }
         public string CategoryName { get; protected set; }
         public OfferWebsite OfferWebsite { get; protected set; }
+        public int CategoryId { get; protected set; }
 
         public OfferCategory(OfferWebsite offerWebsite, int categoryId)
         {
@@ -31,6 +32,7 @@ namespace Platinum.Core.Model
 
                         this.CategoryUrl = reader.GetString(reader.GetOrdinal("routeUrl"));
                         this.CategoryName = reader.GetString(reader.GetOrdinal("name"));
+                        this.CategoryId = reader.GetInt32(reader.GetOrdinal("Id"));
                     }
                 }
             }
