@@ -18,10 +18,14 @@ namespace Platinum.Core.OfferListController
         private OfferCategory _initiedOfferCategory;
         private Dictionary<string, string> urlArguments;
         private string urlArgs = "";
-        
-        public void StartFetching(bool fetchJustFirstPage, OfferCategory category, List<WebsiteCategoriesFilterSearch> urlArguments = null)
+
+        public void StartFetching(bool fetchJustFirstPage, OfferCategory category,
+            List<WebsiteCategoriesFilterSearch> urlArguments = null)
         {
             _initiedOfferCategory = category;
+            if(urlArguments != null && urlArguments.Any(x=>x.WebsiteCategoryId != category.CategoryId))
+                throw new OfferListControllerException("Url argument do not fit to page",this);
+            
             pageId = CreatePage();
             if (urlArguments != null && urlArguments.Count > 0)
             {
@@ -39,16 +43,21 @@ namespace Platinum.Core.OfferListController
                     }
                 }
             }
-            
+
+            RunFetching(fetchJustFirstPage);
+        }
+
+        private void RunFetching(bool fetchJustFirstPage)
+        {
             if (fetchJustFirstPage)
             {
-                Open(pageId,baseUrl + "/" + category.CategoryUrl+urlArgs);
+                Open(pageId, baseUrl + "/" + _initiedOfferCategory.CategoryUrl + urlArgs);
                 IEnumerable<string> offerLinks = GetAllOfferLinks();
                 UpdateDatabaseWithOffers(offerLinks);
             }
             else
             {
-                Open(pageId,baseUrl + "/" + category.CategoryUrl + urlArgs);
+                Open(pageId, baseUrl + "/" + _initiedOfferCategory.CategoryUrl + urlArgs);
                 IEnumerable<string> offerLinks = GetAllOfferLinks();
                 UpdateDatabaseWithOffers(offerLinks);
 
@@ -73,13 +82,14 @@ namespace Platinum.Core.OfferListController
 
                 if (urlArgs.Length > 1)
                 {
-                    Open(pageId,baseUrl + "/" + _initiedOfferCategory.CategoryUrl + urlArgs+"&p=" + (currentPage + 1));
+                    Open(pageId,
+                        baseUrl + "/" + _initiedOfferCategory.CategoryUrl + urlArgs + "&p=" + (currentPage + 1));
                 }
                 else
                 {
-                    Open(pageId,baseUrl + "/" + _initiedOfferCategory.CategoryUrl + "?p=" + (currentPage + 1));
+                    Open(pageId, baseUrl + "/" + _initiedOfferCategory.CategoryUrl + "?p=" + (currentPage + 1));
                 }
-                
+
                 return true;
             }
             catch (Exception ex)
@@ -93,8 +103,7 @@ namespace Platinum.Core.OfferListController
             string pageSource = CurrentSiteSource(pageId);
             HtmlDocument document = new HtmlDocument();
             document.LoadHtml(pageSource);
-
-            var offerContainer = document.DocumentNode.SelectNodes("//*[@id=\"opbox-listing--base\"]");
+            var offerContainer = document.DocumentNode.SelectNodes("//div[@id=\"opbox-listing--base\"]");
             if (offerContainer == null || !offerContainer.Any())
             {
                 throw new OfferListControllerException("Allegro layout has been changed", this);
@@ -104,19 +113,13 @@ namespace Platinum.Core.OfferListController
                 HtmlNodeCollection offerLinks = offerContainer.First().SelectNodes("//a");
 
                 List<HtmlNode> offerLinksNode = offerLinks.Where(x => x.HasAttributes).ToList();
-                offerLinksNode = offerLinksNode
-                    .Where(x => x.Attributes.Any(c => c.Name.ToLower().Trim().Equals("href"))).ToList();
 
                 foreach (var offerLink in offerLinksNode)
                 {
-                    HtmlAttribute link = offerLink.Attributes
-                        .FirstOrDefault(x =>
-                            x.Name.ToLower().Trim().Equals("href") && x.Value.Contains("/oferta/") &&
-                            x.Value.Contains("http"));
-                    if (link != null)
-                    {
-                        yield return link.Value;
-                    }
+                    if (offerLink.Attributes["href"] != null &&
+                        offerLink.Attributes["href"].Value.Contains("/oferta/") &&
+                        offerLink.Attributes["href"].Value.Contains("http"))
+                        yield return offerLink.Attributes["href"].Value;
                 }
             }
         }
@@ -130,28 +133,32 @@ namespace Platinum.Core.OfferListController
             using (Dal db = new Dal(false))
 #endif
             {
+                string query = "INSERT INTO [dbo].offersBuffor VALUES ";
+                int index = 0;
+                int offerCount = offers.Count();
                 foreach (string offer in offers)
                 {
-                    try
+                    if (!offer.Contains("\'"))
                     {
-                        db.ExecuteNonQuery($@"INSERT INTO [dbo].offers VALUES 
+                        query += $@"
                         (
-                        {(int) OfferWebsite.Allegro}
-                        ,'{offer}'
-                        ,HashBytes('MD5','{offer}')
-                        , 0
-                        , getdate()
-                        , {_initiedOfferCategory.CategoryId}
-                        )");
+                            {(int) OfferWebsite.Allegro}
+                            ,'{offer}'
+                            ,HashBytes('MD5','{offer}')
+                            , 0
+                            , getdate()
+                            , {_initiedOfferCategory.CategoryId}
+                        )";
                     }
-                    catch (DalException ex)
+
+                    index++;
+                    if (index < offerCount)
                     {
-                        if (!ex.Message.Contains("Cannot insert duplicate key"))
-                        {
-                            throw;
-                        }
+                        query += ",";
                     }
                 }
+
+                db.ExecuteNonQuery(query);
             }
         }
 

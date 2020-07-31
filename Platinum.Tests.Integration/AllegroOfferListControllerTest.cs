@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using Moq;
 using NUnit.Framework;
 using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.Model;
@@ -188,7 +189,62 @@ namespace Platinum.Tests.Integration
                 new OfferCategory(OfferWebsite.Allegro,
                     1));
         }
+        
+        [Test]
+        public void FetchAllPagesWithFilter()
+        {
+            using IBaseOfferListController ctr = new AllegroOfferListController();
+            ctr.StartFetching(false,
+                new OfferCategory(OfferWebsite.Allegro,
+                    1),new List<WebsiteCategoriesFilterSearch>()
+                {
+                    new WebsiteCategoriesFilterSearch()
+                    {
+                        Argument = "offerTypeBuyNow",
+                        Value = "1",
+                        Id = 1,
+                        SearchNumber = 1,
+                        WebsiteCategoryId = (int)OfferWebsite.Allegro
+                    }, new WebsiteCategoriesFilterSearch()
+                    {
+                        Argument = "price_to",
+                        Value = "500",
+                        SearchNumber = 1,
+                        Id = 2,
+                        WebsiteCategoryId = (int) OfferWebsite.Allegro
+                    }
+                });
+        }
 
+        [Test]
+        public void FetchAllPagesWithWrongFilter()
+        {
+            using IBaseOfferListController ctr = new AllegroOfferListController();
+            OfferListControllerException ex =Assert.Throws<OfferListControllerException>(() => ctr.StartFetching(false,
+                new OfferCategory(OfferWebsite.Allegro,
+                    1), new List<WebsiteCategoriesFilterSearch>()
+                {
+                    new WebsiteCategoriesFilterSearch()
+                    {
+                        Argument = "offerTypeBuyNow",
+                        Value = "1",
+                        Id = 1,
+                        SearchNumber = 1,
+                        WebsiteCategoryId = (int) OfferWebsite.Allegro
+                    },
+                    new WebsiteCategoriesFilterSearch()
+                    {
+                        Argument = "price_to",
+                        Value = "500",
+                        SearchNumber = 1,
+                        Id = 2,
+                        WebsiteCategoryId = (int) OfferWebsite.NoInfo
+                    }
+                }));
+            Assert.IsNotNull(ex);
+        }
+
+        
         [Test]
         public void UpdateOfferDatabaseWithEmptyListDoNotThrow()
         {
@@ -204,6 +260,12 @@ namespace Platinum.Tests.Integration
         }
 
         [Test]
+        public void TestOpenNextPageAsTrueDoNotThrow()
+        {
+             Mock<IBaseOfferListController> offer = new Mock<IBaseOfferListController>();
+        }
+
+        [Test]
         public void UpdateOfferDatabaseWithInvalidString()
         {
             _controller.StartFetching(true,
@@ -216,5 +278,6 @@ namespace Platinum.Tests.Integration
             DalException ex = Assert.Throws<DalException>(() => _controller.UpdateDatabaseWithOffers(testList));
             Assert.That(ex, Is.Not.Null);
         }
+        
     }
 }

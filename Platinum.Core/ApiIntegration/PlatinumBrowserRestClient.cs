@@ -14,6 +14,7 @@ namespace Platinum.Core.ApiIntegration
         public PlatinumBrowserRestClient()
         {
             ApiUrl = "http://213.32.122.228:3001";
+            InitBrowser();
         }
 
         public PlatinumBrowserRestClient(string apiUrl)

@@ -43,3 +43,12 @@ C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\P
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.csproj.CoreCompileInputs.cache
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.pdb
+C:\Users\Operator\Desktop\Platinum.Core\Platinum.Core\bin\Debug\netcoreapp3.1\Platinum.Core.deps.json
+C:\Users\Operator\Desktop\Platinum.Core\Platinum.Core\bin\Debug\netcoreapp3.1\Platinum.Core.dll
+C:\Users\Operator\Desktop\Platinum.Core\Platinum.Core\bin\Debug\netcoreapp3.1\Platinum.Core.pdb
+C:\Users\Operator\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.csprojAssemblyReference.cache
+C:\Users\Operator\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.csproj.CoreCompileInputs.cache
+C:\Users\Operator\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.AssemblyInfoInputs.cache
+C:\Users\Operator\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.AssemblyInfo.cs
+C:\Users\Operator\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.dll
+C:\Users\Operator\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.pdb

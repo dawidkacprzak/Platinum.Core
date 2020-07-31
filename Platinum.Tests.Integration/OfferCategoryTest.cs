@@ -12,7 +12,7 @@ namespace Platinum.Tests.Integration
         {
             OfferCategory category = new OfferCategory(website, 1);
             Assert.AreEqual(category.OfferWebsite, website);
-            Assert.AreEqual(category.CategoryUrl, "kategoria/kuchnia-potrawy-kuchnia-weganska-261336");
+            Assert.AreEqual(category.CategoryUrl, "kategoria/gadzety-cukierki-260532");
         }
 
         [TestCase(OfferWebsite.Allegro, 1)]
@@ -96,7 +96,7 @@ namespace Platinum.Tests.Integration
         {
             OfferCategory category1 = new OfferCategory(OfferWebsite.Allegro, 1);
 
-            Assert.AreEqual(category1.CategoryName, "Kuchnia wegańska - Książki kucharskie");
+            Assert.AreEqual(category1.CategoryName, "Cukierki reklamowe");
         }
         
                 
