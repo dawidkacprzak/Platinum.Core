@@ -127,7 +127,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void ConnectionToProdDatabase()
         {
-            using Dal db = new Dal(false);
+            using Dal db = new Dal();
             db.OpenConnection();
         }
 

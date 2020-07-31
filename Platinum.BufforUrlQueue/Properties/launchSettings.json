@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "Platinum.BufforUrlQueue": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

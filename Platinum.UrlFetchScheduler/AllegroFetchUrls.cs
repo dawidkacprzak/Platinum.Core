@@ -1,13 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using NLog;
-using Platinum.Core.ApiIntegration;
 using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.Model;
 using Platinum.Core.OfferListController;
@@ -51,7 +48,7 @@ namespace Platinum.UrlFetchScheduler
                             db.ExecuteReader(
                                 $"SELECT * from websiteCategoriesFilterSearch where WebsiteCategoryId = {categoryId}"))
                         {
-                            while (rd.Read())
+                            while (await rd.ReadAsync(stoppingToken))
                             {
                                 arguments.Add(new WebsiteCategoriesFilterSearch()
                                 {

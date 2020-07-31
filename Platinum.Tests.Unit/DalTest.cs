@@ -9,9 +9,9 @@ namespace Platinum.Tests.Unit
         [TestCase("xxx", "f561aaf6ef0bf14d4208bb46a4ccb3ad")]
         [TestCase("", "d41d8cd98f00b204e9800998ecf8427e")]
         [TestCase("https://offer.test.xyz", "813fb2bbc24e7c74d4004814924312ba")]
-        public void CreateMD5Success(string input,string output)
+        public void CreateMd5Success(string input,string output)
         {
-            Assert.AreEqual(output, Dal.CreateMD5(input).ToLower());
+            Assert.AreEqual(output, Dal.CreateMd5(input).ToLower());
         }
     }
 }

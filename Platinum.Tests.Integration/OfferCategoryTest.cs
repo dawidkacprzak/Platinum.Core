@@ -75,16 +75,13 @@ namespace Platinum.Tests.Integration
         public void CheckObjectConversionEqualityPassFail()
         {
             OfferCategory convertedCategory = new OfferCategory(OfferWebsite.Allegro,1);
-            object objCategory = null;
-            
-            Assert.AreNotEqual(convertedCategory,objCategory);
+
+            Assert.AreNotEqual(convertedCategory,null);
         }
 
         [Test]
         public void CheckObjectEqualityBaseOfferWebsitePass()
         {
-            OfferCategory offerCategoryBase1 = new OfferCategory(OfferWebsite.Allegro, 1);
-
             OfferCategory offerCategory1 = new OfferCategory(OfferWebsite.Allegro,1);
             OfferCategory offerCategory2 = new OfferCategory(OfferWebsite.NoInfo, 1);
             
@@ -103,7 +100,10 @@ namespace Platinum.Tests.Integration
         [Test]
         public void CheckNotFoundCategoryException()
         {
-            DalException ex = Assert.Throws<DalException>(()=>new OfferCategory(OfferWebsite.Allegro, -1));
+            DalException ex = Assert.Throws<DalException>(()=>
+            {
+                OfferCategory offerCategory = new OfferCategory(OfferWebsite.Allegro, -1);
+            });
             Assert.That(ex, Is.Not.Null);
         }
     }

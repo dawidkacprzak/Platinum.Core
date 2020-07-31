@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using Moq;
 using NUnit.Framework;
-using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.Model;
 using Platinum.Core.OfferListController;
 using Platinum.Core.Types;
@@ -15,62 +13,62 @@ namespace Platinum.Tests.Integration
     [TestFixture]
     public class AllegroOfferListControllerTest
     {
-        private IBaseOfferListController _controller;
+        private IBaseOfferListController controller;
         private int mainCategory = 1;
         [TearDown]
         public void TearDown()
         {
-            _controller.Dispose();
+            controller.Dispose();
             Thread.Sleep(2000);
         }
 
         [SetUp]
         public void SetController()
         {
-            _controller = new AllegroOfferListController();
+            controller = new AllegroOfferListController();
         }
 
         [Test]
         public void FetchingTakesGoodAmountOfMaxPageIndex()
         {
-            _controller.StartFetching(true,
+            controller.StartFetching(true,
                 new OfferCategory(OfferWebsite.Allegro,
                     mainCategory));
         
-            int maxPages = _controller.GetLastPageIndex();
+            int maxPages = controller.GetLastPageIndex();
             Assert.NotZero(maxPages);
-            Assert.AreEqual(maxPages, _controller.GetLastPageIndex());
+            Assert.AreEqual(maxPages, controller.GetLastPageIndex());
         }
 
 
         [Test]
         public void OpenNextPageWithoutStartFetching()
         {
-            using IBaseOfferListController controller = new AllegroOfferListController();
+            using IBaseOfferListController allegroOfferListController = new AllegroOfferListController();
             OfferListControllerException ex =
-                Assert.Throws<OfferListControllerException>(() => controller.OpenNextPage());
+                Assert.Throws<OfferListControllerException>(() => allegroOfferListController.OpenNextPage());
             Assert.That(ex, Is.Not.Null);
-            controller.Dispose();
+            allegroOfferListController.Dispose();
         }
 
         [Test]
         public void OpenNextPageWithStartFetching()
         {
-            _controller.StartFetching(true,
+            controller.StartFetching(true,
                 new OfferCategory(OfferWebsite.Allegro,
                     mainCategory));
-            int page = _controller.GetCurrentPageIndex();
-            Assert.True(_controller.OpenNextPage());
-            Assert.True(_controller.GetCurrentPageIndex() == page + 1);
+            int page = controller.GetCurrentPageIndex();
+            Assert.True(controller.OpenNextPage());
+            Assert.True(controller.GetCurrentPageIndex() == page + 1);
         }
 
         [Test]
         public void GetAllOffersSuccess()
         {
-            _controller.StartFetching(true,
+            controller.StartFetching(true,
                 new OfferCategory(OfferWebsite.Allegro,
                     mainCategory));
-            List<string> offers = _controller.GetAllOfferLinks().ToList();
+            List<string> offers = controller.GetAllOfferLinks().ToList();
             Assert.True(offers.Any());
             Assert.True(offers.Count(x => !x.Contains("http")) == 0);
         }
@@ -84,7 +82,7 @@ namespace Platinum.Tests.Integration
 
             Assert.That(ex, Is.Not.Null);
             ctr.Dispose();
-            _controller.Dispose();
+            controller.Dispose();
         }
 
         [Test]
@@ -97,9 +95,10 @@ namespace Platinum.Tests.Integration
                     () => ctr.StartFetching(false, new OfferCategory(OfferWebsite.Allegro, "/testfaillink")));
             OfferListControllerException ex =
                 Assert.Throws<OfferListControllerException>(() => ctr.GetCurrentPageIndex());
+            Assert.That(e, Is.Not.Null);
             Assert.That(ex, Is.Not.Null);
             ctr.Dispose();
-            _controller.Dispose();
+            controller.Dispose();
         }
 
         [Test]
@@ -113,7 +112,7 @@ namespace Platinum.Tests.Integration
                 Assert.Throws<OfferListControllerException>(() => ctr.GetCurrentPageIndex());
             Assert.That(ex, Is.Not.Null);
             ctr.Dispose();
-            _controller.Dispose();
+            controller.Dispose();
         }
 
         [Test]
@@ -127,42 +126,42 @@ namespace Platinum.Tests.Integration
                 Assert.Throws<OfferListControllerException>(() => ctr.GetLastPageIndex());
             Assert.That(ex, Is.Not.Null);
             ctr.Dispose();
-            _controller.Dispose();
+            controller.Dispose();
         }
 
         [Test]
         public void CheckLastPageIndexIsGreater()
         {
-            _controller.StartFetching(true,
+            controller.StartFetching(true,
                 new OfferCategory(OfferWebsite.Allegro,
                     mainCategory));
-            int lastPage = _controller.GetLastPageIndex();
-            int currentPage = _controller.GetCurrentPageIndex();
+            int lastPage = controller.GetLastPageIndex();
+            int currentPage = controller.GetCurrentPageIndex();
             Assert.True(lastPage >= currentPage);
         }
 
         [Test]
         public void CurrentPageIndexSuccess()
         {
-            _controller.StartFetching(true,
+            controller.StartFetching(true,
                 new OfferCategory(OfferWebsite.Allegro,
                     mainCategory));
-            int page = _controller.GetCurrentPageIndex();
-            Assert.True(_controller.OpenNextPage());
-            Assert.IsTrue(_controller.GetCurrentPageIndex() - 1 == page);
+            int page = controller.GetCurrentPageIndex();
+            Assert.True(controller.OpenNextPage());
+            Assert.IsTrue(controller.GetCurrentPageIndex() - 1 == page);
         }
 
         [Test]
         public void IterateToLastPageAndTryToGoNext()
         {
-            _controller.StartFetching(true,
+            controller.StartFetching(true,
                 new OfferCategory(OfferWebsite.Allegro,
                     mainCategory));
-            int lastPage = _controller.GetLastPageIndex();
+            int lastPage = controller.GetLastPageIndex();
             int page = -1;
-            while (_controller.OpenNextPage())
+            while (controller.OpenNextPage())
             {
-                page = _controller.GetCurrentPageIndex();
+                page = controller.GetCurrentPageIndex();
             }
 
             Assert.AreEqual(page, lastPage);
@@ -171,13 +170,13 @@ namespace Platinum.Tests.Integration
         [Test]
         public void OpenAllPagesInCategory()
         {
-            _controller.StartFetching(true,
+            controller.StartFetching(true,
                 new OfferCategory(OfferWebsite.Allegro,
                     mainCategory));
-            bool open = _controller.OpenNextPage();
+            bool open = controller.OpenNextPage();
             while (open)
             {
-                open = _controller.OpenNextPage();
+                open = controller.OpenNextPage();
             }
         }
 
@@ -248,7 +247,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void UpdateOfferDatabaseWithEmptyListDoNotThrow()
         {
-            _controller.StartFetching(true,
+            controller.StartFetching(true,
                 new OfferCategory(OfferWebsite.Allegro,
                     mainCategory));
             List<string> testList = new List<string>()
@@ -256,26 +255,20 @@ namespace Platinum.Tests.Integration
                 Guid.NewGuid().ToString()
             };
 
-            _controller.UpdateDatabaseWithOffers(testList);
-        }
-
-        [Test]
-        public void TestOpenNextPageAsTrueDoNotThrow()
-        {
-             Mock<IBaseOfferListController> offer = new Mock<IBaseOfferListController>();
+            controller.UpdateDatabaseWithOffers(testList);
         }
 
         [Test]
         public void UpdateOfferDatabaseWithInvalidString()
         {
-            _controller.StartFetching(true,
+            controller.StartFetching(true,
                 new OfferCategory(OfferWebsite.Allegro,
                     mainCategory));
             List<string> testList = new List<string>()
             {
                 "{',''][[[]{{}",
             };
-            DalException ex = Assert.Throws<DalException>(() => _controller.UpdateDatabaseWithOffers(testList));
+            DalException ex = Assert.Throws<DalException>(() => controller.UpdateDatabaseWithOffers(testList));
             Assert.That(ex, Is.Not.Null);
         }
         

@@ -1,7 +1,4 @@
-﻿using System.Net.Mime;
-using System.Text;
-using System.Text.Json.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Platinum.Core.Types;
 using RestSharp;
 

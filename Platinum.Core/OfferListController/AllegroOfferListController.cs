@@ -15,14 +15,13 @@ namespace Platinum.Core.OfferListController
     {
         private const string baseUrl = "https://allegro.pl";
         private string pageId;
-        private OfferCategory _initiedOfferCategory;
-        private Dictionary<string, string> urlArguments;
+        private OfferCategory initiedOfferCategory;
         private string urlArgs = "";
-
+        
         public void StartFetching(bool fetchJustFirstPage, OfferCategory category,
             List<WebsiteCategoriesFilterSearch> urlArguments = null)
         {
-            _initiedOfferCategory = category;
+            initiedOfferCategory = category;
             if(urlArguments != null && urlArguments.Any(x=>x.WebsiteCategoryId != category.CategoryId))
                 throw new OfferListControllerException("Url argument do not fit to page",this);
             
@@ -51,13 +50,13 @@ namespace Platinum.Core.OfferListController
         {
             if (fetchJustFirstPage)
             {
-                Open(pageId, baseUrl + "/" + _initiedOfferCategory.CategoryUrl + urlArgs);
+                Open(pageId, baseUrl + "/" + initiedOfferCategory.CategoryUrl + urlArgs);
                 IEnumerable<string> offerLinks = GetAllOfferLinks();
                 UpdateDatabaseWithOffers(offerLinks);
             }
             else
             {
-                Open(pageId, baseUrl + "/" + _initiedOfferCategory.CategoryUrl + urlArgs);
+                Open(pageId, baseUrl + "/" + initiedOfferCategory.CategoryUrl + urlArgs);
                 IEnumerable<string> offerLinks = GetAllOfferLinks();
                 UpdateDatabaseWithOffers(offerLinks);
 
@@ -83,16 +82,16 @@ namespace Platinum.Core.OfferListController
                 if (urlArgs.Length > 1)
                 {
                     Open(pageId,
-                        baseUrl + "/" + _initiedOfferCategory.CategoryUrl + urlArgs + "&p=" + (currentPage + 1));
+                        baseUrl + "/" + initiedOfferCategory.CategoryUrl + urlArgs + "&p=" + (currentPage + 1));
                 }
                 else
                 {
-                    Open(pageId, baseUrl + "/" + _initiedOfferCategory.CategoryUrl + "?p=" + (currentPage + 1));
+                    Open(pageId, baseUrl + "/" + initiedOfferCategory.CategoryUrl + "?p=" + (currentPage + 1));
                 }
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new OfferListControllerException("Cannot open next page, check browser is initied", this);
             }
@@ -133,10 +132,11 @@ namespace Platinum.Core.OfferListController
             using (Dal db = new Dal(false))
 #endif
             {
-                string query = "INSERT INTO [dbo].offersBuffor VALUES ";
+                string query = $@"INSERT INTO [dbo].offersBuffor VALUES ";
                 int index = 0;
-                int offerCount = offers.Count();
-                foreach (string offer in offers)
+                List<string> enumerable = offers.ToList();
+                int offerCount = enumerable.Count();
+                foreach (string offer in enumerable)
                 {
                     if (!offer.Contains("\'"))
                     {
@@ -145,9 +145,8 @@ namespace Platinum.Core.OfferListController
                             {(int) OfferWebsite.Allegro}
                             ,'{offer}'
                             ,HashBytes('MD5','{offer}')
-                            , 0
                             , getdate()
-                            , {_initiedOfferCategory.CategoryId}
+                            , {initiedOfferCategory.CategoryId}
                         )";
                     }
 

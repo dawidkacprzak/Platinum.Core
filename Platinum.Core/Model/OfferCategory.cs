@@ -1,7 +1,5 @@
-﻿#nullable enable
-using System;
+﻿using System;
 using System.Data.Common;
-using System.Text.RegularExpressions;
 using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.Types;
 using Platinum.Core.Types.Exceptions;
@@ -10,10 +8,10 @@ namespace Platinum.Core.Model
 {
     public class OfferCategory
     {
-        public string CategoryUrl { get; protected set; }
-        public string CategoryName { get; protected set; }
-        public OfferWebsite OfferWebsite { get; protected set; }
-        public int CategoryId { get; protected set; }
+        public string CategoryUrl { get; }
+        public string CategoryName { get; }
+        public OfferWebsite OfferWebsite { get; }
+        public int CategoryId { get; }
 
         public OfferCategory(OfferWebsite offerWebsite, int categoryId)
         {
@@ -43,22 +41,18 @@ namespace Platinum.Core.Model
         /// <summary>
         /// Just for test purposes
         /// </summary>
-        [Obsolete]
         public OfferCategory(OfferWebsite offerWebsite, string categoryName)
         {
 #if RELEASE
             throw new Exception("Cannot invoke test methods on prod. env.");
 #endif
-            using (Dal db = new Dal(true))
-            {
-                this.CategoryUrl = categoryName;
-                this.CategoryName = categoryName;
-            }
 
+            this.CategoryUrl = categoryName;
+            this.CategoryName = categoryName;
             this.OfferWebsite = offerWebsite;
         }
 
-        public override bool Equals(object? obj)
+        public override bool Equals(object obj)
         {
             if (obj == null || obj.GetType() != typeof(OfferCategory))
             {
@@ -69,6 +63,17 @@ namespace Platinum.Core.Model
 
             return convertedCategory.OfferWebsite.Equals(OfferWebsite) &&
                    convertedCategory.CategoryUrl.Equals(CategoryUrl);
+        }
+
+        protected bool Equals(OfferCategory other)
+        {
+            return CategoryUrl == other.CategoryUrl && CategoryName == other.CategoryName &&
+                   OfferWebsite == other.OfferWebsite && CategoryId == other.CategoryId;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(CategoryUrl, CategoryName, (int) OfferWebsite, CategoryId);
         }
     }
 }

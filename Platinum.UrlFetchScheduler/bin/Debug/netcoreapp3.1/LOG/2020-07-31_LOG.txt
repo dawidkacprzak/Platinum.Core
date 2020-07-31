@@ -118,3 +118,4 @@
 2020-07-31 11:06:06.5382 / Platinum.UrlFetchScheduler.AllegroFetchUrls / Started fetching category #3 with 4 arguments and search number: 2
 2020-07-31 11:06:07.0411 / Platinum.UrlFetchScheduler.AllegroFetchUrls / Started fetching category #3 with 4 arguments and search number: 3
 2020-07-31 11:06:07.5776 / Platinum.UrlFetchScheduler.AllegroFetchUrls / Started fetching category #3 with 4 arguments and search number: 4
+2020-07-31 15:52:58.5784 / Platinum.UrlFetchScheduler.AllegroFetchUrls / Started allegro url fetching
