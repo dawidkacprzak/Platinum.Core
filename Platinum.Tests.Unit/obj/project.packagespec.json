@@ -1,27 +1,23 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Operator\\Desktop\\Platinum.Core\\Platinum.Tests.Unit\\Platinum.Tests.Unit.csproj",
+    "projectUniqueName": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Tests.Unit\\Platinum.Tests.Unit.csproj",
     "projectName": "Platinum.Tests.Unit",
-    "projectPath": "C:\\Users\\Operator\\Desktop\\Platinum.Core\\Platinum.Tests.Unit\\Platinum.Tests.Unit.csproj",
-    "outputPath": "C:\\Users\\Operator\\Desktop\\Platinum.Core\\Platinum.Tests.Unit\\obj\\",
+    "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Tests.Unit\\Platinum.Tests.Unit.csproj",
+    "outputPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Tests.Unit\\obj\\",
     "projectStyle": "PackageReference",
-    "fallbackFolders": [
-      "C:\\Microsoft\\Xamarin\\NuGet"
-    ],
     "originalTargetFrameworks": [
       "netcoreapp3.1"
     ],
     "sources": {
       "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-      "http://localhost:5000/v3/index.json": {},
       "https://api.nuget.org/v3/index.json": {}
     },
     "frameworks": {
       "netcoreapp3.1": {
         "projectReferences": {
-          "C:\\Users\\Operator\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj": {
-            "projectPath": "C:\\Users\\Operator\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj"
+          "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj": {
+            "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj"
           }
         }
       }
@@ -67,7 +63,7 @@
           "privateAssets": "all"
         }
       },
-      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
     }
   }
 }

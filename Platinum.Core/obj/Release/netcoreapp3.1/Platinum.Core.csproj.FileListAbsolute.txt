@@ -1,0 +1,9 @@
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\bin\Release\netcoreapp3.1\Platinum.Core.deps.json
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\bin\Release\netcoreapp3.1\Platinum.Core.dll
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\bin\Release\netcoreapp3.1\Platinum.Core.pdb
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\obj\Release\netcoreapp3.1\Platinum.Core.csprojAssemblyReference.cache
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\obj\Release\netcoreapp3.1\Platinum.Core.csproj.CoreCompileInputs.cache
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\obj\Release\netcoreapp3.1\Platinum.Core.AssemblyInfoInputs.cache
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\obj\Release\netcoreapp3.1\Platinum.Core.AssemblyInfo.cs
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\obj\Release\netcoreapp3.1\Platinum.Core.dll
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\obj\Release\netcoreapp3.1\Platinum.Core.pdb

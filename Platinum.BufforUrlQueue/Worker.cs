@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NLog;
 using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.Model;
 
@@ -14,40 +16,107 @@ namespace Platinum.BufforUrlQueue
 {
     public class Worker : BackgroundService
     {
-        private readonly ILogger<Worker> _logger;
-
-        public Worker(ILogger<Worker> logger)
-        {
-            _logger = logger;
-        }
+        Logger _logger = LogManager.GetCurrentClassLogger();
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                List<Offer> cachedOffers = GetOldest10Offers().ToList();
-                ProceedAndPopFromBuffor(new Offer(1,1,null,new byte[]{1,2,4,3,4},DateTime.Now, 1));
-                await Task.Delay(1000, stoppingToken);
+                using (Dal db = new Dal())
+                {
+
+                    try
+                    {
+                        List<Offer> cachedOffers = GetOldest50Offers().ToList();
+                        db.BeginTransaction();
+                        _logger.Info($"Fetched {cachedOffers.Count} offers");
+                        foreach (var offer in cachedOffers)
+                        {
+                            ProceedAndPopFromBuffor(db,offer);
+                        }
+                        db.CommitTransaction();
+                        await Task.Delay(500, stoppingToken);
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.Info(ex.Message + "\n" + ex.StackTrace);
+                        db.RollbackTransaction();
+                    }
+                }
             }
         }
 
-        public void ProceedAndPopFromBuffor(Offer offer)
+        public void ProceedAndPopFromBuffor(Dal db, Offer offer)
         {
-            using (Dal db = new Dal())
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter()
             {
-     
-                    db.ExecuteReader($"SELECT COUNT(*) FROM offers where UriHash = '{offer.UriHash}'");
+                ParameterName = "hash",
+                SqlDbType = SqlDbType.VarBinary,
+                Value = offer.UriHash
+            });
 
- 
+            int count = (int) db.ExecuteScalar($"SELECT COUNT(*) as Count FROM offers where UriHash = @hash",
+                parameters);
 
+            _logger.Info($"Append to proceed {offer.Uri}");
+
+            if (count == 0)
+            {
+                _logger.Info($"Offer inserted");
+                PopOfferFromBuffer(db, offer);
+                InsertOffer(db, offer);
+            }
+            else
+            {
+                _logger.Info($"Offer skipped");
+                PopOfferFromBuffer(db, offer);
             }
         }
 
-        public IEnumerable<Offer> GetOldest10Offers()
+
+        public void PopOfferFromBuffer(Dal db, Offer offer)
+        {
+            db.ExecuteNonQuery($"DELETE FROM offersBuffor WHERE UriHash = @hash;", new List<SqlParameter>()
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "hash",
+                    SqlDbType = SqlDbType.VarBinary,
+                    Value = offer.UriHash
+                }
+            });
+        }
+
+        public void InsertOffer(Dal db, Offer offer)
+        {
+            db.ExecuteNonQuery($@"INSERT INTO offers VALUES (
+            @websiteId,
+            @uri,
+            @uriHash,
+            @createdDate,
+            @websiteCategory,
+            0
+            );", new List<SqlParameter>()
+            {
+                new SqlParameter()
+                    {ParameterName = "websiteId", SqlDbType = SqlDbType.Int, Value = offer.WebsiteId},
+                new SqlParameter()
+                    {ParameterName = "uri", SqlDbType = SqlDbType.Text, Value = offer.Uri},
+                new SqlParameter()
+                    {ParameterName = "uriHash", SqlDbType = SqlDbType.VarBinary, Value = offer.UriHash},
+                new SqlParameter()
+                    {ParameterName = "createdDate", SqlDbType = SqlDbType.DateTime, Value = offer.CreatedDate},
+                new SqlParameter()
+                    {ParameterName = "websiteCategory", SqlDbType = SqlDbType.Int, Value = offer.WebsiteCategoryId}
+            });
+        }
+
+        public IEnumerable<Offer> GetOldest50Offers()
         {
             using (Dal db = new Dal())
             {
-                using (DbDataReader reader = db.ExecuteReader("SELECT top 10 * FROM offersBuffor"))
+                using (DbDataReader reader = db.ExecuteReader("SELECT top 50 * FROM offersBuffor"))
                 {
                     while (reader.Read())
                     {
@@ -62,6 +131,6 @@ namespace Platinum.BufforUrlQueue
                     }
                 }
             }
-        } 
+        }
     }
 }
