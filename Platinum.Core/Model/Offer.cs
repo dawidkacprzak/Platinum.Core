@@ -20,5 +20,6 @@ namespace Platinum.Core.Model
             CreatedDate = createdDate;
             WebsiteCategoryId = websiteCategoryId;
         }
+        
     }
 }

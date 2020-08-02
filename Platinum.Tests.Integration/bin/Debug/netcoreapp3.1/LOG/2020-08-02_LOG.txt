@@ -1,0 +1,7 @@
+2020-08-02 17:58:26.9055 / Append to proceed https://allegro.pl/ofertatestowa
+2020-08-02 17:58:26.9360 / Offer inserted
+2020-08-02 17:59:37.6528 / Append to proceed https://allegro.pl/ofertatestowa
+2020-08-02 17:59:51.3203 / Append to proceed https://allegro.pl/ofertatestowa
+2020-08-02 18:18:01.0685 / Append to proceed https://allegro.pl/ofertatestowa
+2020-08-02 18:18:01.0895 / Offer inserted
+2020-08-02 19:54:43.3536 / Append to proceed https://allegro.pl/ofertatestowa

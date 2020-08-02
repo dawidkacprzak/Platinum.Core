@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+U3+MFXsf74i10xwFsTbzBlGp5tkrjGtVip70vp7a+VNTWY83tqGEURtxzKdJJRzJMFSMwTkEJA6oWnUcLDouA==",
+  "dgSpecHash": "n1AydShi+5j92H8KjmnrKB5o+Zqh8jP/MDY6gojTxum0P71lNkQBjQwkeBWSXDBXoE8LxDJx6MLEHgFUrFQQ1g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Tests.Unit\\Platinum.Tests.Unit.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,12 @@
     "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.codecoverage\\16.4.0\\microsoft.codecoverage.16.4.0.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.dotnet.internalabstractions\\1.0.0\\microsoft.dotnet.internalabstractions.1.0.0.nupkg.sha512",
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.5\\microsoft.extensions.configuration.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.5\\microsoft.extensions.dependencyinjection.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.5\\microsoft.extensions.fileproviders.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\3.1.5\\microsoft.extensions.hosting.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.5\\microsoft.extensions.logging.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.5\\microsoft.extensions.primitives.3.1.5.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.net.test.sdk\\16.4.0\\microsoft.net.test.sdk.16.4.0.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

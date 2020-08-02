@@ -17,6 +17,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Platinum.Core\Platinum.Core.csproj" />
+      <ProjectReference Include="..\Platinum.Service.BufforUrlQueue\Platinum.Service.BufforUrlQueue.csproj" />
     </ItemGroup>
 
 </Project>

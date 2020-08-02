@@ -6,9 +6,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Tests.Unit", "Plat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Tests.Integration", "Platinum.Tests.Integration\Platinum.Tests.Integration.csproj", "{CD1197D9-D436-4BC4-852E-2C99489C3625}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.UrlFetchScheduler", "Platinum.UrlFetchScheduler\Platinum.UrlFetchScheduler.csproj", "{15229D4B-AA35-4183-A858-DC8CC06A4566}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Service.UrlFetchTaskCreator", "Platinum.Service.UrlFetchTaskCreator\Platinum.Service.UrlFetchTaskCreator.csproj", "{15229D4B-AA35-4183-A858-DC8CC06A4566}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.BufforUrlQueue", "Platinum.BufforUrlQueue\Platinum.BufforUrlQueue.csproj", "{0C5BF4C4-BFAD-41EA-B636-6E28FA077F21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Service.BufforUrlQueue", "Platinum.Service.BufforUrlQueue\Platinum.Service.BufforUrlQueue.csproj", "{0C5BF4C4-BFAD-41EA-B636-6E28FA077F21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

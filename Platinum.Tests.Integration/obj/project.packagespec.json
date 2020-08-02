@@ -18,6 +18,9 @@
         "projectReferences": {
           "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj": {
             "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj"
+          },
+          "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Service.BufforUrlQueue\\Platinum.Service.BufforUrlQueue.csproj": {
+            "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Service.BufforUrlQueue\\Platinum.Service.BufforUrlQueue.csproj"
           }
         }
       }

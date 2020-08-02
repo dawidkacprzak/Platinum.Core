@@ -1,11 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "9ndTGCqOvSQcz0tnoIxkp2gVwATkerwmTqOYcEgTJzkU4Spkxpi1SLZ/VxIYgnLcCIgyJBadF7RXx13M5srjhg==",
+  "dgSpecHash": "a7vy+kllzLkNl9raf6CbUu/td4z7lSNkESgI4TrZy6pYAyvQMsKBLZZg3O4G1hoPC/8cFC7bwW9NiV1bflfcow==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rekurencja\\.nuget\\packages\\htmlagilitypack\\1.11.24\\htmlagilitypack.1.11.24.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.5\\microsoft.extensions.configuration.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.5\\microsoft.extensions.dependencyinjection.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.5\\microsoft.extensions.fileproviders.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\3.1.5\\microsoft.extensions.hosting.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.5\\microsoft.extensions.logging.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.5\\microsoft.extensions.primitives.3.1.5.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
