@@ -13,22 +13,19 @@ namespace Platinum.Service.UrlFetchTaskCreator
 {
     public class Program
     {
+        [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
         public static void Main(string[] args)
         {
-            PlatinumBrowserRestClient client = new PlatinumBrowserRestClient();
-            client.InitBrowser();
-            
-            Thread.Sleep(3000);
             CreateHostBuilder(args).Build().Run();
         }
-
+        
+        [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureLogging(loggingBuilder =>
                 {
                     loggingBuilder.ClearProviders();
-                    loggingBuilder.SetMinimumLevel(LogLevel.Trace);
-                    loggingBuilder.AddNLog();
+                    loggingBuilder.SetMinimumLevel(LogLevel.Information);
                 })
                 .ConfigureServices((hostContext, services) => { services.AddHostedService<AllegroFetchUrls>(); });
     }

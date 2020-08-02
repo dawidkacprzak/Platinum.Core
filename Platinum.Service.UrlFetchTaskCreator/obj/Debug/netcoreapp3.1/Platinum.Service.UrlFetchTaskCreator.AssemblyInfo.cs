@@ -10,6 +10,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("dotnet-Platinum.UrlFetchScheduler-264920A6-07BB-40AA-A21B-AD595505CEBA")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Platinum.Service.UrlFetchTaskCreator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

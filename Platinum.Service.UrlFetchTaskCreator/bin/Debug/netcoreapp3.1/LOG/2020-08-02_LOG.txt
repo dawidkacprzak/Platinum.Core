@@ -1,15 +1,7 @@
-2020-08-02 17:56:21.3419 / Platinum.UrlFetchScheduler.AllegroFetchUrls / Started allegro url fetching
-2020-08-02 17:56:21.6391 / Platinum.UrlFetchScheduler.AllegroFetchUrls / Found 6 category count
-2020-08-02 17:56:21.6874 / Microsoft.Hosting.Lifetime / Application started. Press Ctrl+C to shut down.
-2020-08-02 17:56:21.6874 / Microsoft.Hosting.Lifetime / Hosting environment: Development
-2020-08-02 17:56:21.6874 / Microsoft.Hosting.Lifetime / Content root path: C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.UrlFetchScheduler
-2020-08-02 17:56:22.4426 / Platinum.UrlFetchScheduler.AllegroFetchUrls / Started fetching category #3 with 4 arguments and search number: 1
-2020-08-02 17:56:22.9336 / Platinum.UrlFetchScheduler.AllegroFetchUrls / Started fetching category #3 with 4 arguments and search number: 2
-2020-08-02 17:56:23.4457 / Platinum.UrlFetchScheduler.AllegroFetchUrls / Started fetching category #3 with 4 arguments and search number: 3
-2020-08-02 17:56:23.9367 / Platinum.UrlFetchScheduler.AllegroFetchUrls / Started fetching category #3 with 4 arguments and search number: 4
-2020-08-02 17:56:32.0519 / Platinum.UrlFetchScheduler.AllegroFetchUrls / Finished fetching category #3 with 4 arguments and search number: 1
-2020-08-02 18:08:35.8951 / Platinum.UrlFetchScheduler.AllegroFetchUrls / Started allegro url fetching
-2020-08-02 18:08:36.2102 / Platinum.UrlFetchScheduler.AllegroFetchUrls / Found 6 category count
-2020-08-02 18:08:36.2554 / Microsoft.Hosting.Lifetime / Application started. Press Ctrl+C to shut down.
-2020-08-02 18:08:36.2589 / Microsoft.Hosting.Lifetime / Hosting environment: Development
-2020-08-02 18:08:36.2589 / Microsoft.Hosting.Lifetime / Content root path: C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.UrlFetchScheduler
+2020-08-02 21:01:48.3263 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Started service
+2020-08-02 21:01:48.7719 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Current task count: 570
+2020-08-02 21:01:48.8111 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Found 6 category count
+2020-08-02 21:16:16.6268 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Task finished
+2020-08-02 21:31:16.6083 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Started service
+2020-08-02 21:31:16.8091 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Current task count: 4570
+2020-08-02 21:31:16.8383 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Found 6 category count

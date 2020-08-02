@@ -1637,10 +1637,10 @@
           }
         }
       },
-      "System.ServiceProcess.ServiceController/4.7.0": {
+      "System.ServiceProcess.ServiceController/5.0.0-preview.7.20364.11": {
         "type": "package",
         "dependencies": {
-          "System.Diagnostics.EventLog": "4.7.0"
+          "System.Diagnostics.EventLog": "5.0.0-preview.7.20364.11"
         },
         "compile": {
           "ref/netstandard2.0/System.ServiceProcess.ServiceController.dll": {}
@@ -1912,6 +1912,26 @@
         },
         "runtime": {
           "bin/placeholder/Platinum.Service.BufforUrlQueue.dll": {}
+        }
+      },
+      "Platinum.Service.UrlFetchTaskCreator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "5.0.0-preview.7.20364.11",
+          "Microsoft.Extensions.Configuration.FileExtensions": "5.0.0-preview.7.20364.11",
+          "Microsoft.Extensions.DependencyInjection": "5.0.0-preview.7.20364.11",
+          "Microsoft.Extensions.Hosting": "5.0.0-preview.7.20364.11",
+          "NLog.Extensions.Logging": "1.6.4",
+          "Platinum.Core": "1.0.0",
+          "Platinum.Service.BufforUrlQueue": "1.0.0",
+          "System.ServiceProcess.ServiceController": "5.0.0-preview.7.20364.11"
+        },
+        "compile": {
+          "bin/placeholder/Platinum.Service.UrlFetchTaskCreator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Platinum.Service.UrlFetchTaskCreator.dll": {}
         }
       }
     }
@@ -3715,12 +3735,11 @@
       ]
     },
     "System.ComponentModel.Primitives/4.3.0": {
-      "sha512": "j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
+      "sha512": "KMVuoQ+8bMQ/Z59M3s64num5AD74X5YSqVc7ibwGkPTfmmkl2W8VuSxLRJtpw4KzQrSKUgR0BLbF0adPfcTSGQ==",
       "type": "package",
       "path": "system.componentmodel.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5710,13 +5729,14 @@
         "version.txt"
       ]
     },
-    "System.ServiceProcess.ServiceController/4.7.0": {
-      "sha512": "FuYfwENKZqWxGtYU5Vay2ai2dPWLKzRgI+WZkjceN3jaTK9ZVYnV1GRMTtN3Qodm9RT0gOiN8WoHGNXzTaZ+fw==",
+    "System.ServiceProcess.ServiceController/5.0.0-preview.7.20364.11": {
+      "sha512": "ts+0J17QnuIkT0BmExyaHkRlyMlyhBhOsugDi1WrDUBpRRdFfBIvyjZ83Yhr7ICqMVmq8T3D57Y2bYeYesToQQ==",
       "type": "package",
-      "path": "system.serviceprocess.servicecontroller/4.7.0",
+      "path": "system.serviceprocess.servicecontroller/5.0.0-preview.7.20364.11",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net461/System.ServiceProcess.ServiceController.dll",
@@ -5725,9 +5745,7 @@
         "lib/netstandard2.0/System.ServiceProcess.ServiceController.dll",
         "lib/netstandard2.0/System.ServiceProcess.ServiceController.xml",
         "ref/net461/System.ServiceProcess.ServiceController.dll",
-        "ref/net461/System.ServiceProcess.ServiceController.xml",
         "ref/net472/System.ServiceProcess.ServiceController.dll",
-        "ref/net472/System.ServiceProcess.ServiceController.xml",
         "ref/netstandard1.4/System.ServiceProcess.ServiceController.dll",
         "ref/netstandard1.4/System.ServiceProcess.ServiceController.xml",
         "ref/netstandard1.4/de/System.ServiceProcess.ServiceController.xml",
@@ -5740,13 +5758,12 @@
         "ref/netstandard1.4/zh-hans/System.ServiceProcess.ServiceController.xml",
         "ref/netstandard1.4/zh-hant/System.ServiceProcess.ServiceController.xml",
         "ref/netstandard2.0/System.ServiceProcess.ServiceController.dll",
-        "ref/netstandard2.0/System.ServiceProcess.ServiceController.xml",
         "runtimes/win/lib/net461/System.ServiceProcess.ServiceController.dll",
         "runtimes/win/lib/net461/System.ServiceProcess.ServiceController.xml",
         "runtimes/win/lib/netstandard1.5/System.ServiceProcess.ServiceController.dll",
         "runtimes/win/lib/netstandard2.0/System.ServiceProcess.ServiceController.dll",
         "runtimes/win/lib/netstandard2.0/System.ServiceProcess.ServiceController.xml",
-        "system.serviceprocess.servicecontroller.4.7.0.nupkg.sha512",
+        "system.serviceprocess.servicecontroller.5.0.0-preview.7.20364.11.nupkg.sha512",
         "system.serviceprocess.servicecontroller.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -6542,6 +6559,11 @@
       "type": "project",
       "path": "../Platinum.Service.BufforUrlQueue/Platinum.Service.BufforUrlQueue.csproj",
       "msbuildProject": "../Platinum.Service.BufforUrlQueue/Platinum.Service.BufforUrlQueue.csproj"
+    },
+    "Platinum.Service.UrlFetchTaskCreator/1.0.0": {
+      "type": "project",
+      "path": "../Platinum.Service.UrlFetchTaskCreator/Platinum.Service.UrlFetchTaskCreator.csproj",
+      "msbuildProject": "../Platinum.Service.UrlFetchTaskCreator/Platinum.Service.UrlFetchTaskCreator.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6551,40 +6573,46 @@
       "NUnit3TestAdapter >= 3.15.1",
       "Platinum.Core >= 1.0.0",
       "Platinum.Service.BufforUrlQueue >= 1.0.0",
+      "Platinum.Service.UrlFetchTaskCreator >= 1.0.0",
       "nunit >= 3.12.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rekurencja\\.nuget\\packages\\": {}
+    "/Users/dawidkacprzak/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Tests.Integration\\Platinum.Tests.Integration.csproj",
+      "projectUniqueName": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Tests.Integration/Platinum.Tests.Integration.csproj",
       "projectName": "Platinum.Tests.Integration",
-      "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Tests.Integration\\Platinum.Tests.Integration.csproj",
-      "packagesPath": "C:\\Users\\Rekurencja\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Tests.Integration\\obj\\",
+      "projectPath": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Tests.Integration/Platinum.Tests.Integration.csproj",
+      "packagesPath": "/Users/dawidkacprzak/.nuget/packages/",
+      "outputPath": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Tests.Integration/obj/",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Rekurencja\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/dawidkacprzak/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj": {
-              "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj"
+            "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Core/Platinum.Core.csproj": {
+              "projectPath": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Core/Platinum.Core.csproj"
             },
-            "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Service.BufforUrlQueue\\Platinum.Service.BufforUrlQueue.csproj": {
-              "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Service.BufforUrlQueue\\Platinum.Service.BufforUrlQueue.csproj"
+            "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Service.BufforUrlQueue/Platinum.Service.BufforUrlQueue.csproj": {
+              "projectPath": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Service.BufforUrlQueue/Platinum.Service.BufforUrlQueue.csproj"
+            },
+            "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Service.UrlFetchTaskCreator/Platinum.Service.UrlFetchTaskCreator.csproj": {
+              "projectPath": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Service.UrlFetchTaskCreator/Platinum.Service.UrlFetchTaskCreator.csproj"
             }
           }
         }
@@ -6630,7 +6658,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
       }
     }
   }
