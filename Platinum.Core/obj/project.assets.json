@@ -1363,6 +1363,7 @@
       "path": "system.diagnostics.tools/4.0.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2956,6 +2957,7 @@
       "path": "system.text.regularexpressions/4.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3177,6 +3179,7 @@
       "path": "system.threading.tasks.extensions/4.0.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
@@ -3193,6 +3196,7 @@
       "path": "system.xml.readerwriter/4.0.11",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3262,6 +3266,7 @@
       "path": "system.xml.xdocument/4.0.11",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3336,28 +3341,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/dawidkacprzak/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Core/Platinum.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj",
       "projectName": "Platinum.Core",
-      "projectPath": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Core/Platinum.Core.csproj",
-      "packagesPath": "/Users/dawidkacprzak/.nuget/packages/",
-      "outputPath": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Core/obj/",
+      "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj",
+      "packagesPath": "C:\\Users\\Rekurencja\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/Users/dawidkacprzak/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Rekurencja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3410,7 +3413,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -11,6 +11,12 @@ C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Release\netcor
 C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Release\netcoreapp3.1\HtmlAgilityPack.dll
 C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Release\netcoreapp3.1\Microsoft.DotNet.InternalAbstractions.dll
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Release\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Release\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Release\netcoreapp3.1\Microsoft.TestPlatform.CoreUtilities.dll
 C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Release\netcoreapp3.1\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Release\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll

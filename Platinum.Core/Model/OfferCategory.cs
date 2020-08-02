@@ -6,6 +6,7 @@ using Platinum.Core.Types.Exceptions;
 
 namespace Platinum.Core.Model
 {
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
     public class OfferCategory
     {
         public string CategoryUrl { get; }

@@ -13,16 +13,6 @@ namespace Platinum.Tests.Integration
     public class UrlFetchTaskCreatorTest
     {
         [Test]
-        public void AllegroStartFor5Sec()
-        {
-            AllegroFetchUrls fetchUrl = new AllegroFetchUrls();
-            Thread task = new Thread(()=>fetchUrl.StartAsync(new CancellationToken()));
-            task.Start();
-            Thread.Sleep(5000);
-            task.Abort();
-        }
-
-        [Test]
         public void AllegroGetCategoryFiltersIsNotEmpty()
         {
             AllegroFetchUrls afu = new AllegroFetchUrls();

@@ -17,6 +17,8 @@ namespace Platinum.Service.UrlFetchTaskCreator
     {
         Logger _logger = LogManager.GetCurrentClassLogger();
 
+        
+        [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)

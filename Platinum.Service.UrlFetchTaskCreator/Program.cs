@@ -1,14 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using NLog.Extensions.Logging;
-using Platinum.Core.ApiIntegration;
-
 namespace Platinum.Service.UrlFetchTaskCreator
 {
     public class Program
@@ -22,6 +14,7 @@ namespace Platinum.Service.UrlFetchTaskCreator
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .UseWindowsService()
                 .ConfigureLogging(loggingBuilder =>
                 {
                     loggingBuilder.ClearProviders();

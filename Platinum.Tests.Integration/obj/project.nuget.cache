@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "e2wysYGkFVrPkZOk1ZdUW24Yelcfw/f6TyxBFGlVB8DZoUJMif2i+E+nPrJtvYvCDtvE5+/iYJyfJKU3GBxt2A==",
+  "dgSpecHash": "GxDZOvE/g6IyyNeHaHGotj3OYZHWiuHCt8+7XRtt/zAeBbcqouBcTTAq1rcE37AnetY/apByOTniAYQE88s74g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Tests.Integration\\Platinum.Tests.Integration.csproj",
   "expectedPackageFiles": [
@@ -98,7 +98,7 @@
     "C:\\Users\\Rekurencja\\.nuget\\packages\\system.runtime.serialization.primitives\\4.1.1\\system.runtime.serialization.primitives.4.1.1.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\system.security.accesscontrol\\5.0.0-preview.7.20364.11\\system.security.accesscontrol.5.0.0-preview.7.20364.11.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\system.security.principal.windows\\5.0.0-preview.7.20364.11\\system.security.principal.windows.5.0.0-preview.7.20364.11.nupkg.sha512",
-    "C:\\Users\\Rekurencja\\.nuget\\packages\\system.serviceprocess.servicecontroller\\4.7.0\\system.serviceprocess.servicecontroller.4.7.0.nupkg.sha512",
+    "C:\\Users\\Rekurencja\\.nuget\\packages\\system.serviceprocess.servicecontroller\\5.0.0-preview.7.20364.11\\system.serviceprocess.servicecontroller.5.0.0-preview.7.20364.11.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\system.text.encoding.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\Rekurencja\\.nuget\\packages\\system.text.encodings.web\\5.0.0-preview.7.20364.11\\system.text.encodings.web.5.0.0-preview.7.20364.11.nupkg.sha512",

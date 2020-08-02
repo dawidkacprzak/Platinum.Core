@@ -1,28 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Tests.Unit/Platinum.Tests.Unit.csproj": {}
+    "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Tests.Unit\\Platinum.Tests.Unit.csproj": {}
   },
   "projects": {
-    "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Core/Platinum.Core.csproj": {
+    "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Core/Platinum.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj",
         "projectName": "Platinum.Core",
-        "projectPath": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Core/Platinum.Core.csproj",
-        "packagesPath": "/Users/dawidkacprzak/.nuget/packages/",
-        "outputPath": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Core/obj/",
+        "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj",
+        "packagesPath": "C:\\Users\\Rekurencja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/dawidkacprzak/.config/NuGet/NuGet.Config"
+          "C:\\Users\\Rekurencja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -75,36 +74,35 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Tests.Unit/Platinum.Tests.Unit.csproj": {
+    "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Tests.Unit\\Platinum.Tests.Unit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Tests.Unit/Platinum.Tests.Unit.csproj",
+        "projectUniqueName": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Tests.Unit\\Platinum.Tests.Unit.csproj",
         "projectName": "Platinum.Tests.Unit",
-        "projectPath": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Tests.Unit/Platinum.Tests.Unit.csproj",
-        "packagesPath": "/Users/dawidkacprzak/.nuget/packages/",
-        "outputPath": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Tests.Unit/obj/",
+        "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Tests.Unit\\Platinum.Tests.Unit.csproj",
+        "packagesPath": "C:\\Users\\Rekurencja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Tests.Unit\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/dawidkacprzak/.config/NuGet/NuGet.Config"
+          "C:\\Users\\Rekurencja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Core/Platinum.Core.csproj": {
-                "projectPath": "/Users/dawidkacprzak/Desktop/Platinum.Core/Platinum.Core/Platinum.Core.csproj"
+              "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj": {
+                "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj"
               }
             }
           }
@@ -150,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

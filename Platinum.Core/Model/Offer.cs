@@ -2,6 +2,7 @@
 
 namespace Platinum.Core.Model
 {
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
     public class Offer
     {
         public int Id { get; set; }

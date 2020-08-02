@@ -1,7 +1,28 @@
-2020-08-02 21:01:48.3263 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Started service
-2020-08-02 21:01:48.7719 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Current task count: 570
-2020-08-02 21:01:48.8111 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Found 6 category count
-2020-08-02 21:16:16.6268 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Task finished
-2020-08-02 21:31:16.6083 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Started service
-2020-08-02 21:31:16.8091 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Current task count: 4570
-2020-08-02 21:31:16.8383 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Found 6 category count
+2020-08-02 23:51:49.9544 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Started service
+2020-08-02 23:51:50.3217 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Current task count: 6347
+2020-08-02 23:51:50.3567 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Found 6 category count
+2020-08-02 23:52:09.4168 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Started service
+2020-08-02 23:52:09.7315 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Current task count: 6347
+2020-08-02 23:52:09.7648 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Found 6 category count
+2020-08-02 23:55:27.8735 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Started service
+2020-08-02 23:55:28.1687 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Current task count: 4
+2020-08-02 23:55:28.2015 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Found 6 category count
+2020-08-02 23:55:47.4335 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Started service
+2020-08-02 23:55:47.7329 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Current task count: 4
+2020-08-02 23:55:47.7689 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Found 6 category count
+2020-08-02 23:56:23.9536 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Platinum.Core.Types.Exceptions.DalException: Column name or number of supplied values does not match table definition.
+   at Platinum.Core.DatabaseIntegration.Dal.ExecuteNonQuery(String query, List`1 parameters) in C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\DatabaseIntegration\Dal.cs:line 130
+   at Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls.AddFilteredTaskOnQueue(Int32 categoryId, Dictionary`2 arguments) in C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Service.UrlFetchTaskCreator\AllegroFetchUrls.cs:line 142
+   at Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls.ExecuteAsync(CancellationToken stoppingToken) in C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Service.UrlFetchTaskCreator\AllegroFetchUrls.cs:line 56
+2020-08-02 23:57:16.4695 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Started service
+2020-08-02 23:57:16.7700 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Current task count: 5
+2020-08-02 23:57:16.8104 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Found 6 category count
+2020-08-02 23:57:21.0981 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Started service
+2020-08-02 23:57:21.3826 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Current task count: 26
+2020-08-02 23:57:21.4154 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Found 6 category count
+2020-08-02 23:58:37.9844 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Started service
+2020-08-02 23:58:38.3182 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Current task count: 4006
+2020-08-02 23:58:38.3535 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Found 6 category count
+2020-08-02 23:58:44.9713 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Started service
+2020-08-02 23:58:45.2691 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Current task count: 4026
+2020-08-02 23:58:45.2997 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Found 6 category count

@@ -28,7 +28,7 @@ namespace Platinum.Tests.Integration
             using (Dal db = new Dal())
             {
                 Assert.DoesNotThrow(() => worker.ProceedAndPopFromBuffor(db, new Offer(
-                    0, 0, "https://allegro.pl/ofertatestowa", new byte[] {0, 0, 0, 0, 0}, DateTime.Now, 0)
+                    0, 0, "https://allegro.pl/ofertatestowa", Encoding.UTF8.GetBytes(Guid.NewGuid().ToString()), DateTime.Now, 0)
                 ));
             }
         }
@@ -43,7 +43,7 @@ namespace Platinum.Tests.Integration
                 Assert.IsNotNull(oldest50Offer);
             }
 
-            ;
+            
 
             Assert.IsNotNull(offers);
         }

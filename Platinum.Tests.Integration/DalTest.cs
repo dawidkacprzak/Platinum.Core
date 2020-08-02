@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Threading;
 using NUnit.Framework;
 using Platinum.Core.DatabaseIntegration;
@@ -234,6 +237,66 @@ namespace Platinum.Tests.Integration
             
             DalException ex = Assert.Throws<DalException>(()=> db.ExecuteReader("SELECTMISSPELL TOP 1 * FROM websiteCategories WHERE Id = -9"));
             Assert.That(ex, Is.Not.Null);
+        }
+        
+        [Test]
+        public void ExecuteReaderWithParameters()
+        {
+            List<SqlParameter> queryParameters = new List<SqlParameter>();
+            SqlParameter parameter = new SqlParameter();
+            parameter.ParameterName = "id";
+            parameter.SqlDbType = SqlDbType.Int;
+            parameter.Value = 1;
+            queryParameters.Add(parameter);
+            
+            using Dal db = new Dal();
+            db.OpenConnection();
+            
+            Assert.DoesNotThrow(() => db.ExecuteReader("select * from offers where id = @id",queryParameters));
+        }
+
+        [Test]
+        public void ExecuteScalarNoParamsNotThrow()
+        {
+            using (Dal db = new Dal())
+            {
+                db.ExecuteScalar("SELECT COUNT(*) From offers");
+            }
+        }
+        
+        [Test]
+        public void ExecuteScalarNoParamsThrowSecurityError()
+        {
+            using (Dal db = new Dal())
+            {
+                DalException ex = Assert.Throws<DalException>(()=>db.ExecuteScalar("DROP DATABASE TEST"));
+                Assert.IsTrue(ex.Message.Contains("Security"));
+            }
+        }
+        
+        [Test]
+        public void ExecuteScalarParamsNotThrow()
+        {
+            List<SqlParameter> queryParameters = new List<SqlParameter>();
+            SqlParameter parameter = new SqlParameter();
+            parameter.ParameterName = "id";
+            parameter.SqlDbType = SqlDbType.Int;
+            parameter.Value = 1;
+            queryParameters.Add(parameter);
+            using (Dal db = new Dal())
+            {
+                db.ExecuteScalar("SELECT COUNT(*) FROM offers where Id = @id", queryParameters);
+            }
+        }
+                
+        [Test]
+        public void ExecuteScalarNoParamsThrowBadQuery()
+        {
+            using (Dal db = new Dal())
+            {
+                DalException ex = Assert.Throws<DalException>(()=>db.ExecuteScalar("Select bad query"));
+                Assert.IsTrue(ex.Message.Contains("Invalid"));
+            }
         }
     }
 }

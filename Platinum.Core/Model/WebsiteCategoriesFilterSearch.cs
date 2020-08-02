@@ -1,5 +1,7 @@
 ﻿namespace Platinum.Core.Model
 {
+    
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
     public class WebsiteCategoriesFilterSearch
     {
         public int Id { get; set; }
