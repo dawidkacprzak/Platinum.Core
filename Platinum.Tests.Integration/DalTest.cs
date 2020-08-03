@@ -155,7 +155,7 @@ namespace Platinum.Tests.Integration
         public void ExecuteNonQueryConnectionNotOpenedByCtorSuccess()
         {
             using Dal db = new Dal();
-            db.ExecuteNonQuery("Select top 1 * from offers");
+            db.ExecuteNonQuery("Select top 1 * from offers WITH (NOLOCK) ");
         }
 
         [Test]
@@ -163,14 +163,14 @@ namespace Platinum.Tests.Integration
         {
             using Dal db = new Dal();
             db.OpenConnection();
-            db.ExecuteNonQuery("Select top 1 * from offers");
+            db.ExecuteNonQuery("Select top 1 * from offers WITH (NOLOCK)");
         }
 
         [Test]
         public void ExecuteFailNonQueryConnectionNotOpenedByCtorSuccess()
         {
             using Dal db = new Dal();
-            DalException ex = Assert.Throws<DalException>(() => db.ExecuteNonQuery("Select toperr 1 * from offers"));
+            DalException ex = Assert.Throws<DalException>(() => db.ExecuteNonQuery("Select toperr 1 * from offers WITH (NOLOCK)"));
             Assert.That(ex, Is.Not.Null);
         }
 
@@ -179,7 +179,7 @@ namespace Platinum.Tests.Integration
         {
             using Dal db = new Dal();
             db.OpenConnection();
-            DalException ex = Assert.Throws<DalException>(() => db.ExecuteNonQuery("Select toperr 1 * from offers"));
+            DalException ex = Assert.Throws<DalException>(() => db.ExecuteNonQuery("Select toperr 1 * from offers WITH (NOLOCK) "));
             Assert.That(ex, Is.Not.Null);
         }
         
@@ -208,7 +208,7 @@ namespace Platinum.Tests.Integration
         {
             using Dal db = new Dal(true);
             db.OpenConnection(); 
-            Assert.DoesNotThrow(() => db.ExecuteReader("SELECT TOP 1 * FROM websiteCategories"));
+            Assert.DoesNotThrow(() => db.ExecuteReader("SELECT TOP 1 * FROM websiteCategories WITH (NOLOCK)"));
         }
         
         [Test]
@@ -216,7 +216,7 @@ namespace Platinum.Tests.Integration
         {
             using Dal db = new Dal(true);
             db.OpenConnection();
-            using DbDataReader reader = db.ExecuteReader("SELECT TOP 1 * FROM websiteCategories");
+            using DbDataReader reader = db.ExecuteReader("SELECT TOP 1 * FROM websiteCategories WITH (NOLOCK)");
             Assert.IsTrue(reader.HasRows);
         }
         
@@ -225,7 +225,7 @@ namespace Platinum.Tests.Integration
         {
             using Dal db = new Dal(true);
             db.OpenConnection();
-            using DbDataReader reader = db.ExecuteReader("SELECT TOP 1 * FROM websiteCategories WHERE Id = -9");
+            using DbDataReader reader = db.ExecuteReader("SELECT TOP 1 * FROM websiteCategories WITH (NOLOCK) WHERE Id = -9");
             Assert.IsTrue(!reader.HasRows);
         }
         
@@ -252,7 +252,7 @@ namespace Platinum.Tests.Integration
             using Dal db = new Dal();
             db.OpenConnection();
             
-            Assert.DoesNotThrow(() => db.ExecuteReader("select * from offers where id = @id",queryParameters));
+            Assert.DoesNotThrow(() => db.ExecuteReader("select * from offers WITH (NOLOCK) where id = @id",queryParameters));
         }
 
         [Test]
@@ -260,7 +260,7 @@ namespace Platinum.Tests.Integration
         {
             using (Dal db = new Dal())
             {
-                db.ExecuteScalar("SELECT COUNT(*) From offers");
+                db.ExecuteScalar("SELECT COUNT(*) From offers WITH (NOLOCK) ");
             }
         }
         
@@ -285,7 +285,7 @@ namespace Platinum.Tests.Integration
             queryParameters.Add(parameter);
             using (Dal db = new Dal())
             {
-                db.ExecuteScalar("SELECT COUNT(*) FROM offers where Id = @id", queryParameters);
+                db.ExecuteScalar("SELECT COUNT(*) FROM offers WITH (NOLOCK) where Id = @id", queryParameters);
             }
         }
                 

@@ -17,6 +17,7 @@ namespace Platinum.Core.ApiIntegration
         public PlatinumBrowserRestClient(string apiUrl)
         {
             this.ApiUrl = apiUrl;
+            InitBrowser();
         }
         public void InitBrowser()
         {

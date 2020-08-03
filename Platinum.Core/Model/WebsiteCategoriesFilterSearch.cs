@@ -9,5 +9,6 @@
         public string Argument { get; set; }
         public string Value { get; set; }
         public int SearchNumber { get; set; }
+        public int TaskId { get; set; }
     }
 }

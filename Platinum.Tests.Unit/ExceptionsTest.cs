@@ -29,5 +29,31 @@ namespace Platinum.Tests.Unit
             DalException ex = new DalException("Example message");
             Assert.IsInstanceOf<Exception>(ex);
         }
+        
+        [Test]
+        public void CheckTaskInvokerExceptionTypeInner()
+        {
+            TaskInvokerException ex = new TaskInvokerException("Example message", new Exception());
+            Assert.IsInstanceOf<Exception>(ex);
+            Assert.IsInstanceOf<TaskInvokerException>(ex);
+            Assert.AreEqual(ex.Message, "Example message");
+            Assert.IsInstanceOf<Exception>(ex.InnerException);
+        }
+        
+        [Test]
+        public void CheckTaskInvokerExceptionTypeMessage()
+        {
+            TaskInvokerException ex = new TaskInvokerException("Example message");
+            Assert.IsInstanceOf<Exception>(ex);
+            Assert.IsInstanceOf<TaskInvokerException>(ex);
+            Assert.AreEqual(ex.Message, "Example message");
+        }
+        
+        [Test]
+        public void CheckTaskInvokerExceptionType()
+        {
+            TaskInvokerException ex = new TaskInvokerException();
+            Assert.IsInstanceOf<TaskInvokerException>(ex);
+        }
     }
 }

@@ -64,8 +64,7 @@ namespace Platinum.Service.UrlFetchTaskCreator
                 }
                 else
                 {
-                    _logger.Info("Task canceled by token");
-                    return;
+                    _logger.Info("Task canceled");
                 }
 
                 _logger.Info("Task finished");
@@ -80,7 +79,7 @@ namespace Platinum.Service.UrlFetchTaskCreator
             {
                 using (DbDataReader rd =
                     db.ExecuteReader(
-                        $"SELECT * from websiteCategoriesFilterSearch where WebsiteCategoryId = {categoryId}")
+                        $"SELECT * from websiteCategoriesFilterSearch WITH (NOLOCK) where WebsiteCategoryId = {categoryId}")
                 )
                 {
                     while (rd.Read())
@@ -104,7 +103,7 @@ namespace Platinum.Service.UrlFetchTaskCreator
             {
                 using (DbDataReader reader =
                     db.ExecuteReader(
-                        $"SELECT Id from websiteCategories where websiteId = {(int) OfferWebsite.Allegro}"))
+                        $"SELECT Id from websiteCategories WITH (NOLOCK) where websiteId = {(int) OfferWebsite.Allegro}"))
                 {
                     while (reader.Read())
                     {

@@ -1,0 +1,2 @@
+2020-08-03 09:13:56.0086 / Platinum.Service.BufforUrlQueue.Worker / Append to proceed https://allegro.pl/ofertatestowa
+2020-08-03 09:13:56.0263 / Platinum.Service.BufforUrlQueue.Worker / Offer inserted

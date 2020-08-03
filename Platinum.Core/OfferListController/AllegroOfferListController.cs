@@ -17,14 +17,23 @@ namespace Platinum.Core.OfferListController
         private string pageId;
         private OfferCategory initiedOfferCategory;
         private string urlArgs = "";
-        
+
+        public AllegroOfferListController() : base()
+        {
+        }
+
+        [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
+        public AllegroOfferListController(string host) : base(host)
+        {
+        }
+
         public void StartFetching(bool fetchJustFirstPage, OfferCategory category,
             List<WebsiteCategoriesFilterSearch> urlArguments = null)
         {
             initiedOfferCategory = category;
-            if(urlArguments != null && urlArguments.Any(x=>x.WebsiteCategoryId != category.CategoryId))
-                throw new OfferListControllerException("Url argument do not fit to page",this);
-            
+            if (urlArguments != null && urlArguments.Any(x => x.WebsiteCategoryId != category.CategoryId))
+                throw new OfferListControllerException("Url argument do not fit to page", this);
+
             pageId = CreatePage();
             if (urlArguments != null && urlArguments.Count > 0)
             {
@@ -136,6 +145,7 @@ namespace Platinum.Core.OfferListController
                 int index = 0;
                 List<string> enumerable = offers.ToList();
                 int offerCount = enumerable.Count();
+                if (offerCount == 0) return;
                 foreach (string offer in enumerable)
                 {
                     if (!offer.Contains("\'"))

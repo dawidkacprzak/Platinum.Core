@@ -19,7 +19,7 @@ namespace Platinum.Core.Model
             using (Dal db = new Dal(true))
             {
                 using (DbDataReader reader =
-                    db.ExecuteReader($"SELECT TOP 1 * FROM websiteCategories WHERE id = {categoryId}"))
+                    db.ExecuteReader($"SELECT TOP 1 * FROM websiteCategories WITH (NOLOCK) WHERE id = {categoryId}"))
                 {
                     if (!reader.HasRows)
                     {

@@ -7,3 +7,12 @@ C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\
 C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.AssemblyInfo.cs
 C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.dll
 C:\Users\Rekurencja\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.pdb
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\bin\Debug\netcoreapp3.1\Platinum.Core.deps.json
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\bin\Debug\netcoreapp3.1\Platinum.Core.dll
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\bin\Debug\netcoreapp3.1\Platinum.Core.pdb
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.csprojAssemblyReference.cache
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.AssemblyInfoInputs.cache
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.AssemblyInfo.cs
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.csproj.CoreCompileInputs.cache
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.dll
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\obj\Debug\netcoreapp3.1\Platinum.Core.pdb

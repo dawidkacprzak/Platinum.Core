@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UserSecretsId>dotnet-Platinum.Service.UrlTaskInvoker-299B73ED-9D3D-418B-B2B5-E00E7240BF12</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0-preview.7.20364.11" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="5.0.0-preview.7.20365.4" />
+        <PackageReference Include="NLog" Version="4.7.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="nlog.config">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Platinum.Core\Platinum.Core.csproj" />
+    </ItemGroup>
+</Project>

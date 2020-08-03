@@ -17,8 +17,7 @@ namespace Platinum.Service.BufforUrlQueue
     public class Worker : BackgroundService
     {
         Logger _logger = LogManager.GetCurrentClassLogger();
-
-
+        
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -58,7 +57,7 @@ namespace Platinum.Service.BufforUrlQueue
                 Value = offer.UriHash
             });
 
-            int count = (int) db.ExecuteScalar($"SELECT COUNT(*) as Count FROM offers where UriHash = @hash",
+            int count = (int) db.ExecuteScalar($"SELECT COUNT(*) as Count FROM offers WITH (NOLOCK) where UriHash = @hash",
                 parameters);
 
             _logger.Info($"Append to proceed {offer.Uri}");

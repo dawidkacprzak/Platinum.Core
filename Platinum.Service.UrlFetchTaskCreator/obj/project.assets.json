@@ -4483,20 +4483,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rekurencja\\.nuget\\packages\\": {}
+    "C:\\Users\\dkacprzak\\.nuget\\packages\\": {},
+    "D:\\Microsoft\\Xamarin\\NuGet": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Service.UrlFetchTaskCreator\\Platinum.Service.UrlFetchTaskCreator.csproj",
+      "projectUniqueName": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Service.UrlFetchTaskCreator\\Platinum.Service.UrlFetchTaskCreator.csproj",
       "projectName": "Platinum.Service.UrlFetchTaskCreator",
-      "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Service.UrlFetchTaskCreator\\Platinum.Service.UrlFetchTaskCreator.csproj",
-      "packagesPath": "C:\\Users\\Rekurencja\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Service.UrlFetchTaskCreator\\obj\\",
+      "projectPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Service.UrlFetchTaskCreator\\Platinum.Service.UrlFetchTaskCreator.csproj",
+      "packagesPath": "C:\\Users\\dkacprzak\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Service.UrlFetchTaskCreator\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Microsoft\\Xamarin\\NuGet",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Rekurencja\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\dkacprzak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -4508,11 +4515,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj": {
-              "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj"
+            "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj": {
+              "projectPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj"
             },
-            "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Service.BufforUrlQueue\\Platinum.Service.BufforUrlQueue.csproj": {
-              "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Service.BufforUrlQueue\\Platinum.Service.BufforUrlQueue.csproj"
+            "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Service.BufforUrlQueue\\Platinum.Service.BufforUrlQueue.csproj": {
+              "projectPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Service.BufforUrlQueue\\Platinum.Service.BufforUrlQueue.csproj"
             }
           }
         }
@@ -4570,7 +4577,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
