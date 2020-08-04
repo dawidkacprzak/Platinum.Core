@@ -1,15 +1,11 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Service.OfferDetailsFetcher\\Platinum.Service.OfferDetailsFetcher.csproj",
+    "projectUniqueName": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Service.OfferDetailsFetcher\\Platinum.Service.OfferDetailsFetcher.csproj",
     "projectName": "Platinum.Service.OfferDetailsFetcher",
-    "projectPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Service.OfferDetailsFetcher\\Platinum.Service.OfferDetailsFetcher.csproj",
-    "outputPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Service.OfferDetailsFetcher\\obj\\",
+    "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Service.OfferDetailsFetcher\\Platinum.Service.OfferDetailsFetcher.csproj",
+    "outputPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Service.OfferDetailsFetcher\\obj\\",
     "projectStyle": "PackageReference",
-    "fallbackFolders": [
-      "D:\\Microsoft\\Xamarin\\NuGet",
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-    ],
     "originalTargetFrameworks": [
       "netcoreapp3.1"
     ],
@@ -20,8 +16,8 @@
     "frameworks": {
       "netcoreapp3.1": {
         "projectReferences": {
-          "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj": {
-            "projectPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj"
+          "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj": {
+            "projectPath": "C:\\Users\\Rekurencja\\Desktop\\Platinum.Core\\Platinum.Core\\Platinum.Core.csproj"
           }
         }
       }
@@ -37,11 +33,7 @@
       "dependencies": {
         "Microsoft.Extensions.Hosting": {
           "target": "Package",
-          "version": "[5.0.0-preview.7.20364.11, )"
-        },
-        "Microsoft.Extensions.Hosting.WindowsServices": {
-          "target": "Package",
-          "version": "[5.0.0-preview.7.20365.4, )"
+          "version": "[3.1.3, )"
         },
         "NEST": {
           "target": "Package",
@@ -63,7 +55,7 @@
           "privateAssets": "all"
         }
       },
-      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
     }
   }
 }

@@ -9,24 +9,28 @@ namespace Platinum.Service.OfferDetailsFetcher
     {
         private ElasticClient _client;
         
-        public void Run(ElasticClient client)
+        public void Run()
         {
-            this._client = client;
-            ELOffer offer = new ELOffer()
-            {
-                attributes = new List<KeyValuePair<string, string>>()
-                {
-                    new KeyValuePair<string, string>("test", "test"),
-                    new KeyValuePair<string, string>("t", "342")
-                },
-                price = 15.5f,
-                quanity = 4f,
-                uri = "https://test.pl",
-                createdDate = DateTime.Now,
-                offerId = 1
-            };
 
-            var x = _client.Index(offer, p => p.Index("offer"));
+
         }
     }
 }
+
+
+/* this._client = client;
+ ELOffer offer = new ELOffer()
+ {
+     attributes = new List<KeyValuePair<string, string>>()
+     {
+         new KeyValuePair<string, string>("test", "test"),
+         new KeyValuePair<string, string>("t", "342")
+     },
+     price = 15.5f,
+     quanity = 4f,
+     uri = "https://test.pl",
+     createdDate = DateTime.Now,
+     offerId = 1
+                 var x = _client.Index(offer, p => p.Index("offer"));
+
+ };*/
