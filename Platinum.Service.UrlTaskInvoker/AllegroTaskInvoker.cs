@@ -58,7 +58,7 @@ namespace Platinum.Service.UrlTaskIvoker
                 _logger.Info("Created " + tasks.Length + " tasks");
                 Task.WaitAll(tasks);
 
-                await Task.Delay(5000);
+                await Task.Delay(50000);
             }
             catch (Exception ex)
             {
@@ -163,7 +163,6 @@ namespace Platinum.Service.UrlTaskIvoker
             {
                 int taskId;
                 int categoryId;
-                KeyValuePair<int, int> categoryIdWithTaskId;
                 List<WebsiteCategoriesFilterSearch> taskFilters = new List<WebsiteCategoriesFilterSearch>();
                 using (Dal db = new Dal())
                 {
@@ -217,7 +216,7 @@ namespace Platinum.Service.UrlTaskIvoker
                     activeTasksId.Add(taskId.ToString());
                 }
 
-                categoryIdWithTaskId = new KeyValuePair<int, int>(categoryId, taskId);
+                KeyValuePair<int, int> categoryIdWithTaskId = new KeyValuePair<int, int>(categoryId, taskId);
                 return new KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>>(
                     categoryIdWithTaskId, taskFilters);
             }

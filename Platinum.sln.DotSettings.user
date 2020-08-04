@@ -22,6 +22,11 @@
     &lt;Project Location="C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit" Presentation="&amp;lt;Platinum.Tests.Unit&amp;gt;" /&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a0021f9d_002D8af5_002D48bf_002D8d05_002D2e4d5f16e580/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ResetNotExistBrowser" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::CD1197D9-D436-4BC4-852E-2C99489C3625::.NETCoreApp,Version=v3.1::Platinum.Tests.Integration.UrlTaskInvokerTest.ResetNotExistBrowser&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	
 	
 	

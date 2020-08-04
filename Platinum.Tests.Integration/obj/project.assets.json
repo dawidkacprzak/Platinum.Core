@@ -316,12 +316,12 @@
           "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.Hosting.WindowsServices/3.1.6": {
+      "Microsoft.Extensions.Hosting.WindowsServices/5.0.0-preview.7.20365.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Hosting": "3.1.6",
-          "Microsoft.Extensions.Logging.EventLog": "3.1.6",
-          "System.ServiceProcess.ServiceController": "4.7.0"
+          "Microsoft.Extensions.Hosting": "5.0.0-preview.7.20364.11",
+          "Microsoft.Extensions.Logging.EventLog": "5.0.0-preview.7.20364.11",
+          "System.ServiceProcess.ServiceController": "5.0.0-preview.7.20364.11"
         },
         "compile": {
           "lib/netstandard2.1/Microsoft.Extensions.Hosting.WindowsServices.dll": {}
@@ -845,7 +845,7 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
-      "NLog/4.7.2": {
+      "NLog/4.7.3": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/NLog.dll": {}
@@ -1934,6 +1934,22 @@
         "runtime": {
           "bin/placeholder/Platinum.Service.UrlFetchTaskCreator.dll": {}
         }
+      },
+      "Platinum.Service.UrlTaskInvoker/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.Extensions.Hosting": "5.0.0-preview.7.20364.11",
+          "Microsoft.Extensions.Hosting.WindowsServices": "5.0.0-preview.7.20365.4",
+          "NLog": "4.7.3",
+          "Platinum.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Platinum.Service.UrlTaskInvoker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Platinum.Service.UrlTaskInvoker.dll": {}
+        }
       }
     }
   },
@@ -2431,10 +2447,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.Extensions.Hosting.WindowsServices/3.1.6": {
-      "sha512": "mCZGM193qQyZEON1sURBBKGpKA575Bywyh4k9A7HEtmttLD0Eowgw7rimaD5R2PoCZWkhvxkt1sqyr0tzrPotA==",
+    "Microsoft.Extensions.Hosting.WindowsServices/5.0.0-preview.7.20365.4": {
+      "sha512": "IVG4A7sU1B5lZ3LGzv4PrFeuyMaYEiUUB+ln3JWHcP+AZT0eNLnPHooNgc7m3yCPhQS+01jTfajXV3uwKcNVmg==",
       "type": "package",
-      "path": "microsoft.extensions.hosting.windowsservices/3.1.6",
+      "path": "microsoft.extensions.hosting.windowsservices/5.0.0-preview.7.20365.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2443,7 +2459,7 @@
         "lib/netstandard2.0/Microsoft.Extensions.Hosting.WindowsServices.xml",
         "lib/netstandard2.1/Microsoft.Extensions.Hosting.WindowsServices.dll",
         "lib/netstandard2.1/Microsoft.Extensions.Hosting.WindowsServices.xml",
-        "microsoft.extensions.hosting.windowsservices.3.1.6.nupkg.sha512",
+        "microsoft.extensions.hosting.windowsservices.5.0.0-preview.7.20365.4.nupkg.sha512",
         "microsoft.extensions.hosting.windowsservices.nuspec"
       ]
     },
@@ -3183,10 +3199,10 @@
         "tools/install.ps1"
       ]
     },
-    "NLog/4.7.2": {
-      "sha512": "tfZNTOYr0TwvJNrXsJsVdZPSgIpYN1rXHnAZAadeaIbz+v18agNCCxgZXnXQqNKNizkogJ68zYTNKavyQFWwrg==",
+    "NLog/4.7.3": {
+      "sha512": "3pAikzwpKWki/ARyxp5tIKsSMgioyuDHuopPWorHBDUBt1vodh4zOOh5G7A3W09M3lC7TgiopjZZ18KePgIpMA==",
       "type": "package",
-      "path": "nlog/4.7.2",
+      "path": "nlog/4.7.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3212,7 +3228,7 @@
         "lib/wp8/NLog.xml",
         "lib/xamarinios10/NLog.dll",
         "lib/xamarinios10/NLog.xml",
-        "nlog.4.7.2.nupkg.sha512",
+        "nlog.4.7.3.nupkg.sha512",
         "nlog.nuspec"
       ]
     },
@@ -6569,6 +6585,11 @@
       "type": "project",
       "path": "../Platinum.Service.UrlFetchTaskCreator/Platinum.Service.UrlFetchTaskCreator.csproj",
       "msbuildProject": "../Platinum.Service.UrlFetchTaskCreator/Platinum.Service.UrlFetchTaskCreator.csproj"
+    },
+    "Platinum.Service.UrlTaskInvoker/1.0.0": {
+      "type": "project",
+      "path": "../Platinum.Service.UrlTaskInvoker/Platinum.Service.UrlTaskInvoker.csproj",
+      "msbuildProject": "../Platinum.Service.UrlTaskInvoker/Platinum.Service.UrlTaskInvoker.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6579,6 +6600,7 @@
       "Platinum.Core >= 1.0.0",
       "Platinum.Service.BufforUrlQueue >= 1.0.0",
       "Platinum.Service.UrlFetchTaskCreator >= 1.0.0",
+      "Platinum.Service.UrlTaskInvoker >= 1.0.0",
       "nunit >= 3.12.0"
     ]
   },
@@ -6623,6 +6645,9 @@
             },
             "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Service.UrlFetchTaskCreator\\Platinum.Service.UrlFetchTaskCreator.csproj": {
               "projectPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Service.UrlFetchTaskCreator\\Platinum.Service.UrlFetchTaskCreator.csproj"
+            },
+            "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Service.UrlTaskInvoker\\Platinum.Service.UrlTaskInvoker.csproj": {
+              "projectPath": "C:\\Users\\dkacprzak\\Desktop\\Platinum.Core\\Platinum.Service.UrlTaskInvoker\\Platinum.Service.UrlTaskInvoker.csproj"
             }
           }
         }

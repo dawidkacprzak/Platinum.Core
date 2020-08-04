@@ -322,3 +322,6 @@ C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\obj\Release\
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\obj\Release\netcoreapp3.1\Platinum.Tests.Integration.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\obj\Release\netcoreapp3.1\Platinum.Tests.Integration.pdb
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\obj\Release\netcoreapp3.1\Platinum.Tests.Integration.genruntimeconfig.cache
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\bin\Release\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.exe
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\bin\Release\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.dll
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\bin\Release\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.pdb
