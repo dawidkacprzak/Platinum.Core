@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "Platinum.Service.OfferDetailsFetcher": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
