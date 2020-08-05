@@ -1,0 +1,170 @@
+2020-08-05 14:07:30.0058 / Platinum.Service.UrlTaskInvoker.Worker / Service iteration started
+2020-08-05 14:07:30.3639 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://213.32.122.228:3001
+2020-08-05 14:07:30.3639 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3001
+2020-08-05 14:07:30.3639 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3002
+2020-08-05 14:07:30.3639 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://213.32.122.228:3002
+2020-08-05 14:07:30.3639 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3003
+2020-08-05 14:07:30.3639 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3004
+2020-08-05 14:07:30.3639 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3005
+2020-08-05 14:07:30.3639 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3006
+2020-08-05 14:07:30.3639 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3007
+2020-08-05 14:07:30.3639 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3008
+2020-08-05 14:07:30.3639 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3009
+2020-08-05 14:07:30.3639 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3010
+2020-08-05 14:07:31.1004 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://213.32.122.228:3001
+2020-08-05 14:07:31.7346 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3001
+2020-08-05 14:07:32.3328 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3002
+2020-08-05 14:07:32.8899 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://213.32.122.228:3002
+2020-08-05 14:07:33.4477 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3003
+2020-08-05 14:07:33.9779 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3004
+2020-08-05 14:07:34.5045 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3005
+2020-08-05 14:07:35.0825 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3006
+2020-08-05 14:07:35.6347 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3007
+2020-08-05 14:07:36.1442 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3008
+2020-08-05 14:07:36.8242 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3009
+2020-08-05 14:07:37.3226 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3010
+2020-08-05 14:07:37.3226 / Platinum.Service.UrlTaskInvoker.Worker / Created 12 tasks
+2020-08-05 14:07:37.4775 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4046
+2020-08-05 14:07:37.5872 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4052
+2020-08-05 14:07:37.6517 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4053
+2020-08-05 14:07:37.7594 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4060
+2020-08-05 14:07:37.8299 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4089
+2020-08-05 14:07:37.9177 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4090
+2020-08-05 14:07:38.0057 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4091
+2020-08-05 14:07:38.1000 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4092
+2020-08-05 14:07:38.1833 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4093
+2020-08-05 14:07:38.2733 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4094
+2020-08-05 14:07:38.3770 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4095
+2020-08-05 14:07:38.4706 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4096
+2020-08-05 14:08:08.1518 / Platinum.Service.UrlTaskInvoker.Worker / Platinum.Core.Types.Exceptions.RequestException: Exception of type 'Platinum.Core.Types.Exceptions.RequestException' was thrown.
+   at Platinum.Core.ApiIntegration.RestClient.Get(IRestRequest request) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\RestClient.cs:line 18
+   at Platinum.Core.ApiIntegration.PlatinumBrowserRestClient.Open(String pageId, String url) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\PlatinumBrowserRestClient.cs:line 36
+   at Platinum.Core.OfferListController.AllegroOfferListController.RunFetching(Boolean fetchJustFirstPage) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 70
+   at Platinum.Core.OfferListController.AllegroOfferListController.StartFetching(Boolean fetchJustFirstPage, OfferCategory category, List`1 urlArguments) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 57
+   at Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker.<>c__DisplayClass7_0.<InvokeTask>b__0() in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\AllegroTaskInvoker.cs:line 92
+2020-08-05 14:08:08.8950 / Platinum.Service.UrlTaskInvoker.Worker / Platinum.Core.Types.Exceptions.RequestException: Exception of type 'Platinum.Core.Types.Exceptions.RequestException' was thrown.
+   at Platinum.Core.ApiIntegration.RestClient.Get(IRestRequest request) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\RestClient.cs:line 15
+   at Platinum.Core.ApiIntegration.PlatinumBrowserRestClient.Open(String pageId, String url) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\PlatinumBrowserRestClient.cs:line 36
+   at Platinum.Core.OfferListController.AllegroOfferListController.RunFetching(Boolean fetchJustFirstPage) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 70
+   at Platinum.Core.OfferListController.AllegroOfferListController.StartFetching(Boolean fetchJustFirstPage, OfferCategory category, List`1 urlArguments) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 57
+   at Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker.<>c__DisplayClass7_0.<InvokeTask>b__0() in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\AllegroTaskInvoker.cs:line 92
+2020-08-05 14:08:08.9470 / Platinum.Service.UrlTaskInvoker.Worker / Platinum.Core.Types.Exceptions.RequestException: Exception of type 'Platinum.Core.Types.Exceptions.RequestException' was thrown.
+   at Platinum.Core.ApiIntegration.RestClient.Get(IRestRequest request) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\RestClient.cs:line 15
+   at Platinum.Core.ApiIntegration.PlatinumBrowserRestClient.Open(String pageId, String url) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\PlatinumBrowserRestClient.cs:line 36
+   at Platinum.Core.OfferListController.AllegroOfferListController.RunFetching(Boolean fetchJustFirstPage) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 70
+   at Platinum.Core.OfferListController.AllegroOfferListController.StartFetching(Boolean fetchJustFirstPage, OfferCategory category, List`1 urlArguments) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 57
+   at Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker.<>c__DisplayClass7_0.<InvokeTask>b__0() in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\AllegroTaskInvoker.cs:line 92
+2020-08-05 14:08:09.0768 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4097
+2020-08-05 14:08:09.2669 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4098
+2020-08-05 14:08:09.3322 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4099
+2020-08-05 14:09:29.8307 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Service iteration started
+2020-08-05 14:09:30.1914 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Fetched browser: http://213.32.122.228:3001
+2020-08-05 14:09:30.1914 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3001
+2020-08-05 14:09:30.1914 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3002
+2020-08-05 14:09:30.1914 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Fetched browser: http://213.32.122.228:3002
+2020-08-05 14:09:30.1914 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3003
+2020-08-05 14:09:30.1914 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3004
+2020-08-05 14:09:30.1914 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3005
+2020-08-05 14:09:30.2066 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3006
+2020-08-05 14:09:30.2066 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3007
+2020-08-05 14:09:30.2066 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3008
+2020-08-05 14:09:30.2066 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3009
+2020-08-05 14:09:30.2066 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3010
+2020-08-05 14:09:30.9601 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Active browser: http://213.32.122.228:3001
+2020-08-05 14:09:31.5560 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3001
+2020-08-05 14:09:32.1217 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3002
+2020-08-05 14:09:32.8891 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Active browser: http://213.32.122.228:3002
+2020-08-05 14:09:33.3906 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3003
+2020-08-05 14:09:33.9013 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3004
+2020-08-05 14:09:34.4783 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3005
+2020-08-05 14:09:35.0342 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3006
+2020-08-05 14:09:35.5927 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3007
+2020-08-05 14:09:36.1610 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3008
+2020-08-05 14:09:36.6917 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3009
+2020-08-05 14:09:37.2390 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3010
+2020-08-05 14:09:37.2390 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Created 12 tasks
+2020-08-05 14:09:37.4108 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4046
+2020-08-05 14:09:37.4985 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4052
+2020-08-05 14:09:37.5787 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4053
+2020-08-05 14:09:37.7233 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4060
+2020-08-05 14:09:37.7864 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4089
+2020-08-05 14:09:37.8897 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4090
+2020-08-05 14:09:37.9576 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4091
+2020-08-05 14:09:38.0544 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4092
+2020-08-05 14:09:38.1441 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4093
+2020-08-05 14:09:38.2414 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4094
+2020-08-05 14:09:38.3212 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4095
+2020-08-05 14:09:38.4079 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4096
+2020-08-05 14:10:18.5894 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Platinum.Core.Types.Exceptions.RequestException: Exception of type 'Platinum.Core.Types.Exceptions.RequestException' was thrown.
+   at Platinum.Core.ApiIntegration.RestClient.Get(IRestRequest request) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\RestClient.cs:line 18
+   at Platinum.Core.ApiIntegration.PlatinumBrowserRestClient.Open(String pageId, String url) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\PlatinumBrowserRestClient.cs:line 35
+   at Platinum.Core.OfferListController.AllegroOfferListController.RunFetching(Boolean fetchJustFirstPage) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 70
+   at Platinum.Core.OfferListController.AllegroOfferListController.StartFetching(Boolean fetchJustFirstPage, OfferCategory category, List`1 urlArguments) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 57
+   at Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker.<>c__DisplayClass7_0.<InvokeTask>b__0() in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\AllegroTaskInvoker.cs:line 92
+2020-08-05 14:10:18.6265 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Platinum.Core.Types.Exceptions.RequestException: Exception of type 'Platinum.Core.Types.Exceptions.RequestException' was thrown.
+   at Platinum.Core.ApiIntegration.RestClient.Get(IRestRequest request) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\RestClient.cs:line 18
+   at Platinum.Core.ApiIntegration.PlatinumBrowserRestClient.Open(String pageId, String url) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\PlatinumBrowserRestClient.cs:line 35
+   at Platinum.Core.OfferListController.AllegroOfferListController.RunFetching(Boolean fetchJustFirstPage) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 70
+   at Platinum.Core.OfferListController.AllegroOfferListController.StartFetching(Boolean fetchJustFirstPage, OfferCategory category, List`1 urlArguments) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 57
+   at Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker.<>c__DisplayClass7_0.<InvokeTask>b__0() in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\AllegroTaskInvoker.cs:line 92
+2020-08-05 14:10:18.6265 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Platinum.Core.Types.Exceptions.RequestException: Exception of type 'Platinum.Core.Types.Exceptions.RequestException' was thrown.
+   at Platinum.Core.ApiIntegration.RestClient.Get(IRestRequest request) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\RestClient.cs:line 18
+   at Platinum.Core.ApiIntegration.PlatinumBrowserRestClient.Open(String pageId, String url) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\PlatinumBrowserRestClient.cs:line 35
+   at Platinum.Core.OfferListController.AllegroOfferListController.RunFetching(Boolean fetchJustFirstPage) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 70
+   at Platinum.Core.OfferListController.AllegroOfferListController.StartFetching(Boolean fetchJustFirstPage, OfferCategory category, List`1 urlArguments) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 57
+   at Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker.<>c__DisplayClass7_0.<InvokeTask>b__0() in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\AllegroTaskInvoker.cs:line 92
+2020-08-05 14:10:18.6040 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Platinum.Core.Types.Exceptions.RequestException: Exception of type 'Platinum.Core.Types.Exceptions.RequestException' was thrown.
+   at Platinum.Core.ApiIntegration.RestClient.Get(IRestRequest request) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\RestClient.cs:line 18
+   at Platinum.Core.ApiIntegration.PlatinumBrowserRestClient.Open(String pageId, String url) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\PlatinumBrowserRestClient.cs:line 35
+   at Platinum.Core.OfferListController.AllegroOfferListController.RunFetching(Boolean fetchJustFirstPage) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 70
+   at Platinum.Core.OfferListController.AllegroOfferListController.StartFetching(Boolean fetchJustFirstPage, OfferCategory category, List`1 urlArguments) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 57
+   at Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker.<>c__DisplayClass7_0.<InvokeTask>b__0() in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\AllegroTaskInvoker.cs:line 92
+2020-08-05 14:10:18.6270 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Platinum.Core.Types.Exceptions.RequestException: Exception of type 'Platinum.Core.Types.Exceptions.RequestException' was thrown.
+   at Platinum.Core.ApiIntegration.RestClient.Get(IRestRequest request) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\RestClient.cs:line 18
+   at Platinum.Core.ApiIntegration.PlatinumBrowserRestClient.Open(String pageId, String url) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\ApiIntegration\PlatinumBrowserRestClient.cs:line 35
+   at Platinum.Core.OfferListController.AllegroOfferListController.RunFetching(Boolean fetchJustFirstPage) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 70
+   at Platinum.Core.OfferListController.AllegroOfferListController.StartFetching(Boolean fetchJustFirstPage, OfferCategory category, List`1 urlArguments) in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Core\OfferListController\AllegroOfferListController.cs:line 57
+   at Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker.<>c__DisplayClass7_0.<InvokeTask>b__0() in C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\AllegroTaskInvoker.cs:line 92
+2020-08-05 14:10:23.1034 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4097
+2020-08-05 14:10:23.7003 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4098
+2020-08-05 14:10:24.1484 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4099
+2020-08-05 14:10:24.2390 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4100
+2020-08-05 14:10:24.3275 / Platinum.Service.UrlTaskIvoker.AllegroTaskInvoker / Started task #4101
+2020-08-05 14:14:02.1606 / Platinum.Service.UrlTaskInvoker.Worker / Service iteration started
+2020-08-05 14:14:02.5287 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://213.32.122.228:3001
+2020-08-05 14:14:02.5287 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3001
+2020-08-05 14:14:02.5328 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3002
+2020-08-05 14:14:02.5328 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://213.32.122.228:3002
+2020-08-05 14:14:02.5328 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3003
+2020-08-05 14:14:02.5328 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3004
+2020-08-05 14:14:02.5328 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3005
+2020-08-05 14:14:02.5328 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3006
+2020-08-05 14:14:02.5328 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3007
+2020-08-05 14:14:02.5328 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3008
+2020-08-05 14:14:02.5328 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3009
+2020-08-05 14:14:02.5328 / Platinum.Service.UrlTaskInvoker.Worker / Fetched browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3010
+2020-08-05 14:14:03.2136 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://213.32.122.228:3001
+2020-08-05 14:14:03.8215 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3001
+2020-08-05 14:14:04.3953 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3002
+2020-08-05 14:14:04.9350 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://213.32.122.228:3002
+2020-08-05 14:14:05.6140 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3003
+2020-08-05 14:14:06.1493 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3004
+2020-08-05 14:14:06.7117 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3005
+2020-08-05 14:14:07.2895 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3006
+2020-08-05 14:14:07.8255 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3007
+2020-08-05 14:14:08.3579 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3008
+2020-08-05 14:14:08.9039 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3009
+2020-08-05 14:14:09.4777 / Platinum.Service.UrlTaskInvoker.Worker / Active browser: http://platinumbrowser05.westeurope.cloudapp.azure.com:3010
+2020-08-05 14:14:09.4777 / Platinum.Service.UrlTaskInvoker.Worker / Created 12 tasks
+2020-08-05 14:14:09.6490 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4046
+2020-08-05 14:14:09.7103 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4052
+2020-08-05 14:14:09.8209 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4053
+2020-08-05 14:14:09.9262 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4060
+2020-08-05 14:14:10.0144 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4089
+2020-08-05 14:14:10.0985 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4090
+2020-08-05 14:14:10.1957 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4091
+2020-08-05 14:14:10.2859 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4092
+2020-08-05 14:14:10.3838 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4093
+2020-08-05 14:14:10.4717 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4094
+2020-08-05 14:14:10.5593 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4095
+2020-08-05 14:14:10.6515 / Platinum.Service.UrlTaskInvoker.Worker / Started task #4096

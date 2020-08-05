@@ -70,3 +70,5 @@ C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\obj\Deb
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\obj\Debug\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\obj\Debug\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.pdb
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\obj\Debug\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.genruntimeconfig.cache
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Debug\netcoreapp3.1\Elasticsearch.Net.dll
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Debug\netcoreapp3.1\Nest.dll

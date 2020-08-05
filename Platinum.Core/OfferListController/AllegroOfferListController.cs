@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using HtmlAgilityPack;
 using Platinum.Core.ApiIntegration;
 using Platinum.Core.DatabaseIntegration;
+using Platinum.Core.ElasticIntegration;
 using Platinum.Core.Model;
 using Platinum.Core.Types;
 using Platinum.Core.Types.Exceptions;
@@ -17,7 +19,6 @@ namespace Platinum.Core.OfferListController
         private string pageId;
         private OfferCategory initiedOfferCategory;
         private string urlArgs = "";
-
         public AllegroOfferListController() : base()
         {
         }
@@ -144,9 +145,19 @@ namespace Platinum.Core.OfferListController
                 string query = $@"INSERT INTO [dbo].offersBuffor VALUES ";
                 int index = 0;
                 List<string> enumerable = offers.ToList();
-                int offerCount = enumerable.Count();
+                List<string> uniqueOffers = new List<string>();
+                for (int i = 0; i < enumerable.Count; i++)
+                {
+                    bool offerBuffored = BufforController.Instance.OfferExistsInBuffor(enumerable.ElementAt(i));
+                    if (!offerBuffored)
+                    {
+                        BufforController.Instance.InsertOffer(enumerable.ElementAt(i));
+                        uniqueOffers.Add(enumerable.ElementAt(i));
+                    }
+                }
+                int offerCount = uniqueOffers.Count();
                 if (offerCount == 0) return;
-                foreach (string offer in enumerable)
+                foreach (string offer in uniqueOffers)
                 {
                     if (!offer.Contains("\'"))
                     {

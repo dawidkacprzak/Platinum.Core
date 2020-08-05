@@ -14,6 +14,7 @@
           "Platinum.Core": "1.0.0",
           "Platinum.Service.BufforUrlQueue": "1.0.0",
           "Platinum.Service.UrlFetchTaskCreator": "1.0.0",
+          "Platinum.Service.UrlTaskInvoker": "1.0.0",
           "NUnit": "3.12.0"
         },
         "runtime": {
@@ -37,6 +38,19 @@
           "lib/netstandard1.5/Castle.Core.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.4.0.0"
+          }
+        }
+      },
+      "Elasticsearch.Net/7.8.2": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.6.0",
+          "System.Buffers": "4.5.0",
+          "System.Diagnostics.DiagnosticSource": "5.0.0-preview.7.20364.11"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Elasticsearch.Net.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.8.2.0"
           }
         }
       },
@@ -64,26 +78,7 @@
           }
         }
       },
-      "Microsoft.CSharp/4.0.1": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Threading": "4.3.0"
-        }
-      },
+      "Microsoft.CSharp/4.6.0": {},
       "Microsoft.DotNet.InternalAbstractions/1.0.0": {
         "dependencies": {
           "System.AppContext": "4.1.0",
@@ -300,7 +295,7 @@
           }
         }
       },
-      "Microsoft.Extensions.Hosting.WindowsServices/3.1.6": {
+      "Microsoft.Extensions.Hosting.WindowsServices/5.0.0-preview.7.20365.4": {
         "dependencies": {
           "Microsoft.Extensions.Hosting": "5.0.0-preview.7.20364.11",
           "Microsoft.Extensions.Logging.EventLog": "5.0.0-preview.7.20364.11",
@@ -308,8 +303,8 @@
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.Extensions.Hosting.WindowsServices.dll": {
-            "assemblyVersion": "3.1.6.0",
-            "fileVersion": "3.100.620.31605"
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.36504"
           }
         }
       },
@@ -751,6 +746,17 @@
           }
         }
       },
+      "NEST/7.8.2": {
+        "dependencies": {
+          "Elasticsearch.Net": "7.8.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Nest.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.8.2.0"
+          }
+        }
+      },
       "NETStandard.Library/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0-preview.7.20364.11"
@@ -758,7 +764,7 @@
       },
       "Newtonsoft.Json/9.0.1": {
         "dependencies": {
-          "Microsoft.CSharp": "4.0.1",
+          "Microsoft.CSharp": "4.6.0",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Dynamic.Runtime": "4.3.0",
@@ -788,18 +794,18 @@
           }
         }
       },
-      "NLog/4.7.2": {
+      "NLog/4.7.3": {
         "runtime": {
           "lib/netstandard2.0/NLog.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.7.2.11786"
+            "fileVersion": "4.7.3.11982"
           }
         }
       },
       "NLog.Extensions.Logging/1.6.4": {
         "dependencies": {
           "Microsoft.Extensions.Logging": "5.0.0-preview.7.20364.11",
-          "NLog": "4.7.2"
+          "NLog": "4.7.3"
         },
         "runtime": {
           "lib/netcoreapp3.0/NLog.Extensions.Logging.dll": {
@@ -893,6 +899,7 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "System.Buffers/4.5.0": {},
       "System.Collections/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0-preview.7.20364.11",
@@ -1498,6 +1505,7 @@
         "dependencies": {
           "HtmlAgilityPack": "1.11.24",
           "Microsoft.Extensions.Hosting.Abstractions": "5.0.0-preview.7.20364.11",
+          "NEST": "7.8.2",
           "Newtonsoft.Json": "9.0.1",
           "RestSharp": "106.11.4",
           "System.Data.SqlClient": "4.8.1"
@@ -1509,7 +1517,7 @@
       "Platinum.Service.BufforUrlQueue/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Hosting": "5.0.0-preview.7.20364.11",
-          "Microsoft.Extensions.Hosting.WindowsServices": "3.1.6",
+          "Microsoft.Extensions.Hosting.WindowsServices": "5.0.0-preview.7.20365.4",
           "NLog.Extensions.Logging": "1.6.4",
           "Platinum.Core": "1.0.0"
         },
@@ -1523,7 +1531,7 @@
           "Microsoft.Extensions.Configuration.FileExtensions": "5.0.0-preview.7.20364.11",
           "Microsoft.Extensions.DependencyInjection": "5.0.0-preview.7.20364.11",
           "Microsoft.Extensions.Hosting": "5.0.0-preview.7.20364.11",
-          "Microsoft.Extensions.Hosting.WindowsServices": "3.1.6",
+          "Microsoft.Extensions.Hosting.WindowsServices": "5.0.0-preview.7.20365.4",
           "NLog.Extensions.Logging": "1.6.4",
           "Platinum.Core": "1.0.0",
           "Platinum.Service.BufforUrlQueue": "1.0.0",
@@ -1531,6 +1539,17 @@
         },
         "runtime": {
           "Platinum.Service.UrlFetchTaskCreator.dll": {}
+        }
+      },
+      "Platinum.Service.UrlTaskInvoker/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Hosting": "5.0.0-preview.7.20364.11",
+          "Microsoft.Extensions.Hosting.WindowsServices": "5.0.0-preview.7.20365.4",
+          "NLog": "4.7.3",
+          "Platinum.Core": "1.0.0"
+        },
+        "runtime": {
+          "Platinum.Service.UrlTaskInvoker.dll": {}
         }
       }
     }
@@ -1547,6 +1566,13 @@
       "sha512": "sha512-b5rRL5zeaau1y/5hIbI+6mGw3cwun16YjkHZnV9RRT5UyUIFsgLmNXJ0YnIN9p8Hw7K7AbG1q1UclQVU3DinAQ==",
       "path": "castle.core/4.4.0",
       "hashPath": "castle.core.4.4.0.nupkg.sha512"
+    },
+    "Elasticsearch.Net/7.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lHWaOmTxzVoCMzD1HhGwW6qqh7R8NBNNNomfAVg7VUCeiLwIBdxjkTEm4SVDkZBeKAAIB5Ip+MkSmdEoQP3PjA==",
+      "path": "elasticsearch.net/7.8.2",
+      "hashPath": "elasticsearch.net.7.8.2.nupkg.sha512"
     },
     "HtmlAgilityPack/1.11.24": {
       "type": "package",
@@ -1569,12 +1595,12 @@
       "path": "microsoft.codecoverage/16.4.0",
       "hashPath": "microsoft.codecoverage.16.4.0.nupkg.sha512"
     },
-    "Microsoft.CSharp/4.0.1": {
+    "Microsoft.CSharp/4.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-17h8b5mXa87XYKrrVqdgZ38JefSUqLChUQpXgSnpzsM0nDOhE40FTeNWOJ/YmySGV6tG6T8+hjz6vxbknHJr6A==",
-      "path": "microsoft.csharp/4.0.1",
-      "hashPath": "microsoft.csharp.4.0.1.nupkg.sha512"
+      "sha512": "sha512-kxn3M2rnAGy5N5DgcIwcE8QTePWU/XiYcQVzn9HqTls2NKluVzVSmVWRjK7OUPWbljCXuZxHyhEz9kPRIQeXow==",
+      "path": "microsoft.csharp/4.6.0",
+      "hashPath": "microsoft.csharp.4.6.0.nupkg.sha512"
     },
     "Microsoft.DotNet.InternalAbstractions/1.0.0": {
       "type": "package",
@@ -1688,12 +1714,12 @@
       "path": "microsoft.extensions.hosting.abstractions/5.0.0-preview.7.20364.11",
       "hashPath": "microsoft.extensions.hosting.abstractions.5.0.0-preview.7.20364.11.nupkg.sha512"
     },
-    "Microsoft.Extensions.Hosting.WindowsServices/3.1.6": {
+    "Microsoft.Extensions.Hosting.WindowsServices/5.0.0-preview.7.20365.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mCZGM193qQyZEON1sURBBKGpKA575Bywyh4k9A7HEtmttLD0Eowgw7rimaD5R2PoCZWkhvxkt1sqyr0tzrPotA==",
-      "path": "microsoft.extensions.hosting.windowsservices/3.1.6",
-      "hashPath": "microsoft.extensions.hosting.windowsservices.3.1.6.nupkg.sha512"
+      "sha512": "sha512-IVG4A7sU1B5lZ3LGzv4PrFeuyMaYEiUUB+ln3JWHcP+AZT0eNLnPHooNgc7m3yCPhQS+01jTfajXV3uwKcNVmg==",
+      "path": "microsoft.extensions.hosting.windowsservices/5.0.0-preview.7.20365.4",
+      "hashPath": "microsoft.extensions.hosting.windowsservices.5.0.0-preview.7.20365.4.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/5.0.0-preview.7.20364.11": {
       "type": "package",
@@ -1821,6 +1847,13 @@
       "path": "moq/4.14.5",
       "hashPath": "moq.4.14.5.nupkg.sha512"
     },
+    "NEST/7.8.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hbZUrhq49RWRldma6MpO9IWzkOkxIBBG3asv2B6k83s1IKOA5Hpo3/923NUtgP71pRUtanYpFghwdWZR9euNMA==",
+      "path": "nest/7.8.2",
+      "hashPath": "nest.7.8.2.nupkg.sha512"
+    },
     "NETStandard.Library/2.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1835,12 +1868,12 @@
       "path": "newtonsoft.json/9.0.1",
       "hashPath": "newtonsoft.json.9.0.1.nupkg.sha512"
     },
-    "NLog/4.7.2": {
+    "NLog/4.7.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tfZNTOYr0TwvJNrXsJsVdZPSgIpYN1rXHnAZAadeaIbz+v18agNCCxgZXnXQqNKNizkogJ68zYTNKavyQFWwrg==",
-      "path": "nlog/4.7.2",
-      "hashPath": "nlog.4.7.2.nupkg.sha512"
+      "sha512": "sha512-3pAikzwpKWki/ARyxp5tIKsSMgioyuDHuopPWorHBDUBt1vodh4zOOh5G7A3W09M3lC7TgiopjZZ18KePgIpMA==",
+      "path": "nlog/4.7.3",
+      "hashPath": "nlog.4.7.3.nupkg.sha512"
     },
     "NLog.Extensions.Logging/1.6.4": {
       "type": "package",
@@ -1918,6 +1951,13 @@
       "sha512": "sha512-3QjO4jNV7PdKkmQAVp9atA+usVnKRwI3Kx1nMwJ93T0LcQfx7pKAYk0nKz5wn1oP5iqlhZuy6RXOFdhr7rDwow==",
       "path": "system.appcontext/4.1.0",
       "hashPath": "system.appcontext.4.1.0.nupkg.sha512"
+    },
+    "System.Buffers/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
+      "path": "system.buffers/4.5.0",
+      "hashPath": "system.buffers.4.5.0.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",
@@ -2322,6 +2362,11 @@
       "sha512": ""
     },
     "Platinum.Service.UrlFetchTaskCreator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Platinum.Service.UrlTaskInvoker/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -322,3 +322,8 @@ C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\obj\Debug\ne
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\obj\Debug\netcoreapp3.1\Platinum.Tests.Integration.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\obj\Debug\netcoreapp3.1\Platinum.Tests.Integration.pdb
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\obj\Debug\netcoreapp3.1\Platinum.Tests.Integration.genruntimeconfig.cache
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\bin\Debug\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.exe
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\bin\Debug\netcoreapp3.1\Elasticsearch.Net.dll
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\bin\Debug\netcoreapp3.1\Nest.dll
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\bin\Debug\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.dll
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration\bin\Debug\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.pdb

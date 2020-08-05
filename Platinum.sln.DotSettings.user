@@ -1,30 +1,13 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0ba62496_002De05f_002D487c_002D965f_002D882995498f1d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateHostBuilderDoNotThrow" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	
+	
+	
+	
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c81f4765_002D524f_002D4879_002Db8e5_002D2f8ad7238d1a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CheckOfferExist" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::CD1197D9-D436-4BC4-852E-2C99489C3625::.NETCoreApp,Version=v3.1::Platinum.Tests.Integration.BufforUrlQueueTest.CreateHostBuilderDoNotThrow&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8231db77_002D23bd_002D46bb_002Db613_002D95208c105efe/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="DalTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Solution /&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8c091231_002Dbdf2_002D42b4_002Da746_002Dfe7d90c95ae6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CurrentPageIndexSuccess" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Or&gt;&#xD;
-    &lt;And&gt;&#xD;
-      &lt;Project Location="C:\Users\Operator\Desktop\Platinum.Core\Platinum.Tests.Integration" Presentation="&amp;lt;Platinum.Tests.Integration&amp;gt;" /&gt;&#xD;
-      &lt;Namespace&gt;Platinum.Tests.Integration&lt;/Namespace&gt;&#xD;
-    &lt;/And&gt;&#xD;
-    &lt;Project Location="C:\Users\Operator\Desktop\Platinum.Core\Platinum.Tests.Unit" Presentation="&amp;lt;Platinum.Tests.Unit&amp;gt;" /&gt;&#xD;
-  &lt;/Or&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=953bf526_002Dad2c_002D4193_002Dba23_002D9a323a31f6e8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FetchFailAllegroLink" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Or&gt;&#xD;
-    &lt;Project Location="C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Integration" Presentation="&amp;lt;Platinum.Tests.Integration&amp;gt;" /&gt;&#xD;
-    &lt;Project Location="C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit" Presentation="&amp;lt;Platinum.Tests.Unit&amp;gt;" /&gt;&#xD;
-  &lt;/Or&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a0021f9d_002D8af5_002D48bf_002D8d05_002D2e4d5f16e580/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ResetNotExistBrowser" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::CD1197D9-D436-4BC4-852E-2C99489C3625::.NETCoreApp,Version=v3.1::Platinum.Tests.Integration.UrlTaskInvokerTest.ResetNotExistBrowser&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::CD1197D9-D436-4BC4-852E-2C99489C3625::.NETCoreApp,Version=v3.1::Platinum.Tests.Integration.BufforControllerTest.CheckOfferExist&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::CD1197D9-D436-4BC4-852E-2C99489C3625::.NETCoreApp,Version=v3.1::Platinum.Tests.Integration.BufforControllerTest.InsertOffer&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	

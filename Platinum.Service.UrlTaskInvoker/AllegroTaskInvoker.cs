@@ -20,7 +20,7 @@ namespace Platinum.Service.UrlTaskIvoker
         private List<string> activeBrowsers;
         private List<string> activeTasksId;
 
-        private const int TASKS_PER_RUN = 10;
+        private const int TASKS_PER_RUN = 30;
         private int FinishedTasks = 0;
 
         private static object getTaskLock = new object();
@@ -59,8 +59,8 @@ namespace Platinum.Service.UrlTaskIvoker
 
                 _logger.Info("Created " + tasks.Length + " tasks");
                 Task.WaitAll(tasks);
-                _logger.Info("Finished all tasks. Waiting 50s for next iteration");
-                await Task.Delay(50000);
+                _logger.Info("Finished all tasks. Waiting 5s for next iteration");
+                await Task.Delay(5000);
                 _logger.Info("Next iteration...");
             }
             catch (Exception ex)
