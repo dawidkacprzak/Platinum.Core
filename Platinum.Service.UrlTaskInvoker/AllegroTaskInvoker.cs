@@ -29,6 +29,8 @@ namespace Platinum.Service.UrlTaskIvoker
         {
             try
             {
+                _logger.Info("Service iteration started");
+
                 activeTasksId = new List<string>();
                 List<string> browsers = GetBrowsers().ToList();
                 activeBrowsers = new List<string>();
@@ -57,8 +59,9 @@ namespace Platinum.Service.UrlTaskIvoker
 
                 _logger.Info("Created " + tasks.Length + " tasks");
                 Task.WaitAll(tasks);
-
+                _logger.Info("Finished all tasks. Waiting 50s for next iteration");
                 await Task.Delay(50000);
+                _logger.Info("Next iteration...");
             }
             catch (Exception ex)
             {
@@ -96,6 +99,7 @@ namespace Platinum.Service.UrlTaskIvoker
                         }
                     }
                 }
+                _logger.Info("Finished task for host: "+ host);
             });
         }
 

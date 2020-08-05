@@ -83,7 +83,7 @@ namespace Platinum.Core.OfferListController
             {
                 int currentPage = GetCurrentPageIndex();
                 int lastPage = GetLastPageIndex();
-                if (currentPage == lastPage)
+                if (currentPage >= lastPage)
                 {
                     return false;
                 }
