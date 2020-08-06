@@ -1,9 +1,0 @@
-2020-08-02 23:06:53.7499 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Started service
-2020-08-02 23:06:53.8018 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Current task count: 6322
-2020-08-02 23:06:53.8509 / Platinum.Service.UrlFetchTaskCreator.AllegroFetchUrls / Found 6 category count
-2020-08-02 23:08:10.3187 / Platinum.Service.BufforUrlQueue.Worker / Append to proceed https://allegro.pl/ofertatestowa
-2020-08-02 23:08:49.0139 / Platinum.Service.BufforUrlQueue.Worker / Append to proceed https://allegro.pl/ofertatestowa
-2020-08-02 23:09:15.5854 / Platinum.Service.BufforUrlQueue.Worker / Append to proceed https://allegro.pl/ofertatestowa
-2020-08-02 23:09:15.6113 / Platinum.Service.BufforUrlQueue.Worker / Offer inserted
-2020-08-02 23:31:52.1758 / Platinum.Service.BufforUrlQueue.Worker / Append to proceed https://allegro.pl/ofertatestowa
-2020-08-02 23:31:52.1995 / Platinum.Service.BufforUrlQueue.Worker / Offer inserted
