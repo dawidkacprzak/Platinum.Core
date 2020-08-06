@@ -70,8 +70,7 @@ namespace Platinum.Tests.Integration
         {
             IPlatinumBrowserRestClient client = new PlatinumBrowserRestClient();
             client.DeInit();
-            RequestException ex = Assert.Throws<RequestException>(() => client.ResetBrowser());
-            Assert.That(ex,Is.Not.Null);
+            Assert.DoesNotThrow(() => client.ResetBrowser());
         }
 
         [Test]

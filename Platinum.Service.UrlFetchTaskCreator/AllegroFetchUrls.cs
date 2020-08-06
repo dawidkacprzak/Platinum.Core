@@ -159,9 +159,9 @@ namespace Platinum.Service.UrlFetchTaskCreator
         public bool VerifyTaskCanBeStarted()
         {
             int taskCount = GetTaskCount();
-            if (taskCount > 50000)
+            if (taskCount > 10000)
             {
-                _logger.Info("Service loop skipped - task count > 50000");
+                _logger.Info("Service loop skipped - task count > 10000");
                 return false;
             }
 
@@ -173,7 +173,7 @@ namespace Platinum.Service.UrlFetchTaskCreator
         {
             using (Dal db = new Dal())
             {
-                return (int) db.ExecuteScalar("SELECT COUNT(*) FROM allegroUrlFetchTask;");
+                return (int) db.ExecuteScalar("SELECT COUNT(*) FROM allegroUrlFetchTask with(nolock);");
             }
         }
     }

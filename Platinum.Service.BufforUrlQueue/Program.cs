@@ -30,6 +30,7 @@ namespace Platinum.Service.BufforUrlQueue
                 );
         }
         
+        [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
         public static IServiceCollection ConfigureServices(HostBuilderContext hostContext, IServiceCollection services)
         {
             return services.AddHostedService<Worker>();

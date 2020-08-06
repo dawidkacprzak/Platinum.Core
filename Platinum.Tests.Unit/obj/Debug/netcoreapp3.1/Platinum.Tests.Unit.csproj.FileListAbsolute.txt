@@ -122,6 +122,7 @@ C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreap
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\Platinum.Tests.Unit.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\Platinum.Tests.Unit.pdb
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\Elasticsearch.Net.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\HtmlAgilityPack.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\Microsoft.DotNet.InternalAbstractions.dll
@@ -140,6 +141,7 @@ C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreap
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.Common.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\testhost.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\Moq.dll
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\Nest.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Tests.Unit\bin\Debug\netcoreapp3.1\nunit.framework.dll

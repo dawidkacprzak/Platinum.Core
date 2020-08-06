@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog;
 using Platinum.Core.Types;
-using Platinum.Service.UrlTaskIvoker;
+using Platinum.Service.UrlTaskInvoker;
 
 namespace Platinum.Service.UrlTaskInvoker
 {

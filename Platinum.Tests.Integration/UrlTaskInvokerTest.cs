@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using Platinum.Core.Types.Exceptions;
-using Platinum.Service.UrlTaskIvoker;
+using Platinum.Service.UrlTaskInvoker;
 
 namespace Platinum.Tests.Integration
 {
@@ -11,8 +11,8 @@ namespace Platinum.Tests.Integration
         public void ResetNotExistBrowser()
         {
             AllegroTaskInvoker invoker = new AllegroTaskInvoker();
-            RequestException ex = Assert.Throws<RequestException>(() => invoker.ResetBrowser("http://notExistBrowser.pl3"));
-            Assert.That(ex.Message,Contains.Substring("Cannot reset browser"));
+            TaskInvokerException ex = Assert.Throws<TaskInvokerException>(() => invoker.ResetBrowser("http://notExistBrowser.pl3"));
+            Assert.That(ex.Message,Contains.Substring("Cannot"));
         }
     }
 }

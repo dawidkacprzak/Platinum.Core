@@ -12,7 +12,7 @@ namespace Platinum.Core.ApiIntegration
             IRestResponse response = client.Get(request);
             if (!response.IsSuccessful)
             {
-                throw new RequestException(response.ErrorMessage,response);
+                throw new RequestException(response.ErrorMessage + " Uri: " + client.BaseUrl?.AbsoluteUri ,response);
             }
 
             return response;

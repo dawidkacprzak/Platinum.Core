@@ -11,7 +11,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void CheckOfferExist()
         {
-            bool exist = BufforController.Instance.OfferExistsInBuffor("https://allegro.pl/oferta/1x-opona-25x10-12-maxxis-all-trak-c9209-38j-9564014457");
+            bool exist = BufforController.Instance.OfferExistsInBuffor("https://allegro.pl/oferta/opony-18x8-8-journey-p340-9545976287");
             Assert.IsTrue(exist);
         }
 

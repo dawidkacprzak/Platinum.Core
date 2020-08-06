@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Moq;
@@ -9,11 +10,12 @@ using NUnit.Framework;
 using Platinum.Service.BufforUrlQueue;
 using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.Model;
+using Platinum.Core.Types;
 
 namespace Platinum.Tests.Integration
 {
     [TestFixture]
-    public class BufforUrlQueueTest
+    public class BufforUrlQueueTest 
     {
         [Test]
         public void ConfigureServicesDoNotThrow()
@@ -22,44 +24,50 @@ namespace Platinum.Tests.Integration
         }
 
         [Test]
-        public void WorkerDoNotThrow()
+        public void CheckBufforIsRunnable()
         {
-            Worker worker = new Worker();
             using (Dal db = new Dal())
             {
-                Assert.DoesNotThrow(() => worker.ProceedAndPopFromBuffor(db, new Offer(
-                    0, 0, "https://allegro.pl/ofertatestowa", Encoding.UTF8.GetBytes(Guid.NewGuid().ToString()), DateTime.Now, 0)
-                ));
+                Mock<IBufforUrlQueueTask> task = new Mock<IBufforUrlQueueTask>();
+                task.Setup(x => x.Run(It.IsAny<IDal>())).Verifiable();
+                Worker worker = new Worker(db, task.Object);
+
+                Assert.DoesNotThrow(() => worker.Run(db,task.Object));
             }
         }
 
         [Test]
-        public void GetLastOffersNotEmpty()
+        public void AllegroBufforUrlQueueRunnable()
         {
-            Worker worker = new Worker();
-            IEnumerable<Offer> offers = worker.GetOldest50Offers();
-            foreach (Offer oldest50Offer in offers)
+            using (IDal db = new Dal())
             {
-                Assert.IsNotNull(oldest50Offer);
+                IBufforUrlQueueTask task = new AllegroBufforUrlQueue();
+                task.Run(db);
             }
-
+        }
+        
+        [Test]
+        public void AllegroBufforUrlTransactionErrorRollbackIsInvoked()
+        {
+            Mock<IDal> db  = new Mock<IDal>();
+            db.Setup(x => x.BeginTransaction()).Throws<Exception>();
+            db.Setup(x => x.RollbackTransaction()).Verifiable();
             
-
-            Assert.IsNotNull(offers);
+            IBufforUrlQueueTask task = new AllegroBufforUrlQueue();
+            task.Run(db.Object);
+            
+            db.Verify(x=>x.RollbackTransaction(),Times.Once);
         }
-
+        
         [Test]
-        public void InsertOfferTest()
+        public void AllegroBufforSelectAndMoveOffersFromBufforToOffersThrowsBackExceptionAfterExecuteNonQueryFail()
         {
-            Worker worker = new Worker();
-            using (Dal db = new Dal())
-            {
-                db.BeginTransaction();
-                worker.InsertOffer(db, new Offer(
-                    0, 0, Guid.NewGuid().ToString(), Encoding.ASCII.GetBytes(Guid.NewGuid().ToString()), DateTime.Now, 0)
-                );
-                db.RollbackTransaction();
-            }
+            Mock<IDal> db  = new Mock<IDal>();
+            db.Setup(x => x.ExecuteNonQuery(It.IsAny<string>())).Throws(new Exception("Execute non query fail"));
+            
+            IBufforUrlQueueTask task = new AllegroBufforUrlQueue();
+            Exception ex = Assert.Throws<Exception>(()=>task.SelectAndMoveOffersFromBufforToOffers(db.Object));
+            Assert.That(ex.Message,Is.EqualTo("Execute non query fail"));
         }
     }
 }

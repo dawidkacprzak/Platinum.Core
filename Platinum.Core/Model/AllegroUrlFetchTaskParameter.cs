@@ -1,5 +1,7 @@
 ﻿namespace Platinum.Core.Model
 {
+    
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
     public class AllegroUrlFetchTaskParameter
     {
         public int Id { get; set; }

@@ -1,0 +1,1775 @@
+2020-08-06 09:40:52.7057 / Fetched 500 offers
+2020-08-06 09:40:52.7784 / Append to proceed https://allegro.pl/oferta/1x-dunlop-sp-winter-sport-3d-215-60r16-99h-xl-9559917201
+2020-08-06 09:40:52.7868 / Offer inserted
+2020-08-06 09:40:53.0490 / Append to proceed https://allegro.pl/oferta/1x-dunlop-sp-winter-sport-3d-215-60r16-99h-xl-9559917201
+2020-08-06 09:40:53.3046 / Append to proceed https://allegro.pl/oferta/1x-dunlop-econodrive-215-75r16-116-114r-9559903970
+2020-08-06 09:40:53.3046 / Offer inserted
+2020-08-06 09:40:53.5654 / Append to proceed https://allegro.pl/oferta/1x-dunlop-econodrive-215-75r16-116-114r-9559903970
+2020-08-06 09:40:53.7798 / Append to proceed https://allegro.pl/oferta/2x-nexen-185-65-r15-winguard-snow-g-3-wh21-88h-8480564709
+2020-08-06 09:40:53.7798 / Offer inserted
+2020-08-06 09:40:54.0381 / Append to proceed https://allegro.pl/oferta/2x-nexen-185-65-r15-winguard-snow-g-3-wh21-88h-8480564709
+2020-08-06 09:40:54.2754 / Append to proceed https://allegro.pl/oferta/2x-uniroyal-z185-65-r15-ms-plus-77-88t-8477010931
+2020-08-06 09:40:54.2754 / Offer inserted
+2020-08-06 09:40:54.5346 / Append to proceed https://allegro.pl/oferta/2x-uniroyal-z185-65-r15-ms-plus-77-88t-8477010931
+2020-08-06 09:40:54.7579 / Append to proceed https://allegro.pl/oferta/1x-opona-110-70zr17-pirelli-diablo-rosso-ii-f-54w-8710479080
+2020-08-06 09:40:54.7579 / Offer inserted
+2020-08-06 09:40:55.0188 / Append to proceed https://allegro.pl/oferta/1x-opona-110-70zr17-pirelli-diablo-rosso-ii-f-54w-8710479080
+2020-08-06 09:40:55.2362 / Append to proceed https://allegro.pl/oferta/2x-opony-letnie-windforce-catchpower-235-35r19-91w-9421766735
+2020-08-06 09:40:55.2376 / Offer inserted
+2020-08-06 09:40:55.4931 / Append to proceed https://allegro.pl/oferta/2x-opony-letnie-windforce-catchpower-235-35r19-91w-9421766735
+2020-08-06 09:40:55.7130 / Append to proceed https://allegro.pl/oferta/2-hankook-kinergy-4s2-h750-195-50r15-82v-2019-9257663111
+2020-08-06 09:40:55.7130 / Offer inserted
+2020-08-06 09:40:55.9706 / Append to proceed https://allegro.pl/oferta/2-hankook-kinergy-4s2-h750-195-50r15-82v-2019-9257663111
+2020-08-06 09:40:56.1931 / Append to proceed https://allegro.pl/oferta/1-windforce-catchfors-mt-245-75r16-120-116q-9197012849
+2020-08-06 09:40:56.1987 / Offer inserted
+2020-08-06 09:40:56.4747 / Append to proceed https://allegro.pl/oferta/1-windforce-catchfors-mt-245-75r16-120-116q-9197012849
+2020-08-06 09:40:56.6959 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-falken-l175-70-r14-sincera-sn110-8-9251237809
+2020-08-06 09:40:56.6959 / Offer inserted
+2020-08-06 09:40:56.9520 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-falken-l175-70-r14-sincera-sn110-8-9251237809
+2020-08-06 09:40:57.1653 / Append to proceed https://allegro.pl/oferta/nowe-opony-zimowe-195-65r15-91t-wr-d4-nokian-2szt-7564299204
+2020-08-06 09:40:57.1653 / Offer inserted
+2020-08-06 09:40:57.4384 / Append to proceed https://allegro.pl/oferta/nowe-opony-zimowe-195-65r15-91t-wr-d4-nokian-2szt-7564299204
+2020-08-06 09:40:57.6602 / Append to proceed https://allegro.pl/oferta/2x-riken-ultra-high-performance-205-50r17-93-w-8482529613
+2020-08-06 09:40:57.6602 / Offer inserted
+2020-08-06 09:40:57.9137 / Append to proceed https://allegro.pl/oferta/2x-riken-ultra-high-performance-205-50r17-93-w-8482529613
+2020-08-06 09:40:58.1291 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-205-65r16-yokohama-wy01-t-c-9564291613
+2020-08-06 09:40:58.1291 / Offer inserted
+2020-08-06 09:40:58.3819 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-205-65r16-yokohama-wy01-t-c-9564291613
+2020-08-06 09:40:58.6082 / Append to proceed https://allegro.pl/oferta/2xnowe-opony-kleber-185-60r15t-88t-xl-krisalp-hp3-9564279077
+2020-08-06 09:40:58.6082 / Offer inserted
+2020-08-06 09:40:58.8610 / Append to proceed https://allegro.pl/oferta/2xnowe-opony-kleber-185-60r15t-88t-xl-krisalp-hp3-9564279077
+2020-08-06 09:40:59.0799 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-225-65r17-hankook-ra33-102h-8527712886
+2020-08-06 09:40:59.0799 / Offer inserted
+2020-08-06 09:40:59.3393 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-225-65r17-hankook-ra33-102h-8527712886
+2020-08-06 09:40:59.5716 / Append to proceed https://allegro.pl/oferta/2x-imperial-175-65-15-175-65r15-r15-caloroczne-9531139174
+2020-08-06 09:40:59.5716 / Offer inserted
+2020-08-06 09:40:59.8310 / Append to proceed https://allegro.pl/oferta/2x-imperial-175-65-15-175-65r15-r15-caloroczne-9531139174
+2020-08-06 09:41:00.0538 / Append to proceed https://allegro.pl/oferta/2x-matador-195-50r15-82h-mp92-sibir-snow-8502630494
+2020-08-06 09:41:00.0538 / Offer inserted
+2020-08-06 09:41:00.3127 / Append to proceed https://allegro.pl/oferta/2x-matador-195-50r15-82h-mp92-sibir-snow-8502630494
+2020-08-06 09:41:00.5420 / Append to proceed https://allegro.pl/oferta/2x-opony-rolnicze-6-00-16-wzmacniane-6-16-600-16-9276222302
+2020-08-06 09:41:00.5420 / Offer inserted
+2020-08-06 09:41:00.8028 / Append to proceed https://allegro.pl/oferta/2x-opony-rolnicze-6-00-16-wzmacniane-6-16-600-16-9276222302
+2020-08-06 09:41:01.0216 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-kumho-l185-60-r15-ecowing-es31-84h-9245549719
+2020-08-06 09:41:01.0216 / Offer inserted
+2020-08-06 09:41:01.2899 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-kumho-l185-60-r15-ecowing-es31-84h-9245549719
+2020-08-06 09:41:01.5096 / Append to proceed https://allegro.pl/oferta/maxxis-allseason-ap2-225-50r16-96v-9435995339
+2020-08-06 09:41:01.5096 / Offer inserted
+2020-08-06 09:41:01.7698 / Append to proceed https://allegro.pl/oferta/maxxis-allseason-ap2-225-50r16-96v-9435995339
+2020-08-06 09:41:01.9959 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-205-50r17-hankook-k115-93w-xl-fr-8527961509
+2020-08-06 09:41:01.9959 / Offer inserted
+2020-08-06 09:41:02.2476 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-205-50r17-hankook-k115-93w-xl-fr-8527961509
+2020-08-06 09:41:02.4687 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-225-45r17-hankook-w452-94v-xl-fr-8527959061
+2020-08-06 09:41:02.4720 / Offer inserted
+2020-08-06 09:41:02.7437 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-225-45r17-hankook-w452-94v-xl-fr-8527959061
+2020-08-06 09:41:02.9674 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-205-45r17-hankook-w320-88v-xl-fr-8527901342
+2020-08-06 09:41:02.9674 / Offer inserted
+2020-08-06 09:41:03.2282 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-205-45r17-hankook-w320-88v-xl-fr-8527901342
+2020-08-06 09:41:03.4478 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-205-50r17-hankook-k115-93w-xl-fr-8527880258
+2020-08-06 09:41:03.4478 / Offer inserted
+2020-08-06 09:41:03.7214 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-205-50r17-hankook-k115-93w-xl-fr-8527880258
+2020-08-06 09:41:03.9441 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-215-45r16-hankook-w320-90h-xl-fr-8527701584
+2020-08-06 09:41:03.9441 / Offer inserted
+2020-08-06 09:41:04.2029 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-215-45r16-hankook-w320-90h-xl-fr-8527701584
+2020-08-06 09:41:04.6949 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-185-60r16-pirelli-cinturato-winter-8527594066
+2020-08-06 09:41:04.6965 / Offer inserted
+2020-08-06 09:41:04.9556 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-185-60r16-pirelli-cinturato-winter-8527594066
+2020-08-06 09:41:05.1747 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-175-70r13-hankook-w442-82t-8527558695
+2020-08-06 09:41:05.1769 / Offer inserted
+2020-08-06 09:41:05.4423 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-175-70r13-hankook-w442-82t-8527558695
+2020-08-06 09:41:05.6657 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-195-65r16-pirelli-carrier-104r-c-8527425514
+2020-08-06 09:41:05.6657 / Offer inserted
+2020-08-06 09:41:05.9533 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-195-65r16-pirelli-carrier-104r-c-8527425514
+2020-08-06 09:41:06.1680 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-215-60r16-hankook-k125-99v-xl-8527228715
+2020-08-06 09:41:06.1680 / Offer inserted
+2020-08-06 09:41:06.4309 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-215-60r16-hankook-k125-99v-xl-8527228715
+2020-08-06 09:41:06.6566 / Append to proceed https://allegro.pl/oferta/2x-opony-nokian-wr-d4-175-65r14-82t-zimowe-2018r-8574372696
+2020-08-06 09:41:06.6566 / Offer inserted
+2020-08-06 09:41:06.9209 / Append to proceed https://allegro.pl/oferta/2x-opony-nokian-wr-d4-175-65r14-82t-zimowe-2018r-8574372696
+2020-08-06 09:41:07.1409 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-225-45r17-novex-snow-speed-3-94v-8574000352
+2020-08-06 09:41:07.1409 / Offer inserted
+2020-08-06 09:41:07.4099 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-225-45r17-novex-snow-speed-3-94v-8574000352
+2020-08-06 09:41:07.6354 / Append to proceed https://allegro.pl/oferta/1x-opona-caloroczna-195-65r15-hifly-all-turi-221-8569010502
+2020-08-06 09:41:07.6354 / Offer inserted
+2020-08-06 09:41:07.8926 / Append to proceed https://allegro.pl/oferta/1x-opona-caloroczna-195-65r15-hifly-all-turi-221-8569010502
+2020-08-06 09:41:08.1250 / Append to proceed https://allegro.pl/oferta/2x-opony-caloroczne-185-65-r14-goodride-sw602-86h-8564298051
+2020-08-06 09:41:08.1250 / Offer inserted
+2020-08-06 09:41:08.3851 / Append to proceed https://allegro.pl/oferta/2x-opony-caloroczne-185-65-r14-goodride-sw602-86h-8564298051
+2020-08-06 09:41:08.6059 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-185-65r14-vredestein-snowtrac5-86t-8562942960
+2020-08-06 09:41:08.6059 / Offer inserted
+2020-08-06 09:41:08.9094 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-185-65r14-vredestein-snowtrac5-86t-8562942960
+2020-08-06 09:41:12.4138 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-155-65-r14-landsail-winter-lander-8558073304
+2020-08-06 09:41:12.4138 / Offer inserted
+2020-08-06 09:41:12.6702 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-155-65-r14-landsail-winter-lander-8558073304
+2020-08-06 09:41:12.9130 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-215-65-r16-star-performer-spts-as-8527291230
+2020-08-06 09:41:12.9130 / Offer inserted
+2020-08-06 09:41:13.1758 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-215-65-r16-star-performer-spts-as-8527291230
+2020-08-06 09:41:13.4144 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-195-60r15-michelin-alpin-a4-88t-8526987307
+2020-08-06 09:41:13.4204 / Offer inserted
+2020-08-06 09:41:13.6799 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-195-60r15-michelin-alpin-a4-88t-8526987307
+2020-08-06 09:41:13.9071 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-225-50-r17-toyo-s954-snowprox-98v-8522805142
+2020-08-06 09:41:13.9071 / Offer inserted
+2020-08-06 09:41:14.1635 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-225-50-r17-toyo-s954-snowprox-98v-8522805142
+2020-08-06 09:41:14.3997 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-195-60-r15-viking-wintech-88t-8522800158
+2020-08-06 09:41:14.3997 / Offer inserted
+2020-08-06 09:41:14.6612 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-195-60-r15-viking-wintech-88t-8522800158
+2020-08-06 09:41:14.8796 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-255-55-r18-goodride-sw658-109h-xl-8522791498
+2020-08-06 09:41:14.8812 / Offer inserted
+2020-08-06 09:41:15.1322 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-255-55-r18-goodride-sw658-109h-xl-8522791498
+2020-08-06 09:41:15.3574 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-195-55-r15-viking-wintech-85h-8522791137
+2020-08-06 09:41:15.3574 / Offer inserted
+2020-08-06 09:41:15.6289 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-195-55-r15-viking-wintech-85h-8522791137
+2020-08-06 09:41:15.8452 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-225-45-r17-firestone-winterhawk-3-8522743326
+2020-08-06 09:41:15.8452 / Offer inserted
+2020-08-06 09:41:16.1023 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-225-45-r17-firestone-winterhawk-3-8522743326
+2020-08-06 09:41:16.3226 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-185-55-r14-continental-8522742348
+2020-08-06 09:41:16.3226 / Offer inserted
+2020-08-06 09:41:16.6034 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-185-55-r14-continental-8522742348
+2020-08-06 09:41:16.8233 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-175-65-r14-uniroyal-snow-max-2-t-c-8522730813
+2020-08-06 09:41:16.8233 / Offer inserted
+2020-08-06 09:41:17.0818 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-175-65-r14-uniroyal-snow-max-2-t-c-8522730813
+2020-08-06 09:41:17.2997 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-185-60-r14-gislaved-eurofrost-6-8522688332
+2020-08-06 09:41:17.3026 / Offer inserted
+2020-08-06 09:41:17.5782 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-185-60-r14-gislaved-eurofrost-6-8522688332
+2020-08-06 09:41:17.7978 / Append to proceed https://allegro.pl/oferta/2x-205-60r16-92h-hifly-win-turi-212-9565997594
+2020-08-06 09:41:17.8001 / Offer inserted
+2020-08-06 09:41:18.0576 / Append to proceed https://allegro.pl/oferta/2x-205-60r16-92h-hifly-win-turi-212-9565997594
+2020-08-06 09:41:18.2812 / Append to proceed https://allegro.pl/oferta/2x-225-55r16-99w-aplus-a607-xl-9565996831
+2020-08-06 09:41:18.2812 / Offer inserted
+2020-08-06 09:41:18.5414 / Append to proceed https://allegro.pl/oferta/2x-225-55r16-99w-aplus-a607-xl-9565996831
+2020-08-06 09:41:18.7656 / Append to proceed https://allegro.pl/oferta/2x-195-65r15-95h-petlas-snowmaster-w651-xl-9565990814
+2020-08-06 09:41:18.7718 / Offer inserted
+2020-08-06 09:41:19.0554 / Append to proceed https://allegro.pl/oferta/2x-195-65r15-95h-petlas-snowmaster-w651-xl-9565990814
+2020-08-06 09:41:19.2739 / Append to proceed https://allegro.pl/oferta/2x-cooper-cs7-165-65r15-81-t-9565982111
+2020-08-06 09:41:19.2739 / Offer inserted
+2020-08-06 09:41:19.5377 / Append to proceed https://allegro.pl/oferta/2x-cooper-cs7-165-65r15-81-t-9565982111
+2020-08-06 09:41:19.7734 / Append to proceed https://allegro.pl/oferta/2x-205-45r16-87h-hifly-win-turi-212-xl-9565958671
+2020-08-06 09:41:19.7734 / Offer inserted
+2020-08-06 09:41:20.0296 / Append to proceed https://allegro.pl/oferta/2x-205-45r16-87h-hifly-win-turi-212-xl-9565958671
+2020-08-06 09:41:20.2473 / Append to proceed https://allegro.pl/oferta/2x-215-65r15-96h-hifly-hf201-9565945769
+2020-08-06 09:41:20.2473 / Offer inserted
+2020-08-06 09:41:20.5051 / Append to proceed https://allegro.pl/oferta/2x-215-65r15-96h-hifly-hf201-9565945769
+2020-08-06 09:41:20.7431 / Append to proceed https://allegro.pl/oferta/2x-215-60r16-95v-hifly-hf201-9565945684
+2020-08-06 09:41:20.7431 / Offer inserted
+2020-08-06 09:41:21.0021 / Append to proceed https://allegro.pl/oferta/2x-215-60r16-95v-hifly-hf201-9565945684
+2020-08-06 09:41:21.2292 / Append to proceed https://allegro.pl/oferta/2x-225-55r16-99v-hifly-hf805-xl-9565912364
+2020-08-06 09:41:21.2354 / Offer inserted
+2020-08-06 09:41:21.4911 / Append to proceed https://allegro.pl/oferta/2x-225-55r16-99v-hifly-hf805-xl-9565912364
+2020-08-06 09:41:21.7180 / Append to proceed https://allegro.pl/oferta/1x-continental-premiumcontact-6-225-45r17-94y-xl-f-9565905643
+2020-08-06 09:41:21.7180 / Offer inserted
+2020-08-06 09:41:21.9816 / Append to proceed https://allegro.pl/oferta/1x-continental-premiumcontact-6-225-45r17-94y-xl-f-9565905643
+2020-08-06 09:41:22.2026 / Append to proceed https://allegro.pl/oferta/bridgestone-120-90-17-e-max-f-64h-tt-19-9565166987
+2020-08-06 09:41:22.2026 / Offer inserted
+2020-08-06 09:41:22.4727 / Append to proceed https://allegro.pl/oferta/bridgestone-120-90-17-e-max-f-64h-tt-19-9565166987
+2020-08-06 09:41:22.6939 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-235-70r16-hankook-dynapro-at2-rf11-9176217122
+2020-08-06 09:41:22.6939 / Offer inserted
+2020-08-06 09:41:22.9573 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-235-70r16-hankook-dynapro-at2-rf11-9176217122
+2020-08-06 09:41:23.1734 / Append to proceed https://allegro.pl/oferta/2x-opony-185-55r15-ceat-winterdrive-86h-xl-2019-8570417167
+2020-08-06 09:41:23.1734 / Offer inserted
+2020-08-06 09:41:23.4364 / Append to proceed https://allegro.pl/oferta/2x-opony-185-55r15-ceat-winterdrive-86h-xl-2019-8570417167
+2020-08-06 09:41:23.6590 / Append to proceed https://allegro.pl/oferta/255-55r18-gt-radial-champiro-hpy-109v-xl-zr-9125089198
+2020-08-06 09:41:23.6590 / Offer inserted
+2020-08-06 09:41:23.9416 / Append to proceed https://allegro.pl/oferta/255-55r18-gt-radial-champiro-hpy-109v-xl-zr-9125089198
+2020-08-06 09:41:24.1837 / Append to proceed https://allegro.pl/oferta/2x-good-year-l185-60-r14-effigrip-compact-82t-8897014729
+2020-08-06 09:41:24.1837 / Offer inserted
+2020-08-06 09:41:24.4464 / Append to proceed https://allegro.pl/oferta/2x-good-year-l185-60-r14-effigrip-compact-82t-8897014729
+2020-08-06 09:41:24.6691 / Append to proceed https://allegro.pl/oferta/2x-opony-sailun-ice-blazer-alpine-175-55r15-77t-9557685659
+2020-08-06 09:41:24.6691 / Offer inserted
+2020-08-06 09:41:24.9384 / Append to proceed https://allegro.pl/oferta/2x-opony-sailun-ice-blazer-alpine-175-55r15-77t-9557685659
+2020-08-06 09:41:25.1614 / Append to proceed https://allegro.pl/oferta/2x-opony-ice-blazer-alpine-185-55r16-87h-xl-9557568900
+2020-08-06 09:41:25.1614 / Offer inserted
+2020-08-06 09:41:25.4230 / Append to proceed https://allegro.pl/oferta/2x-opony-ice-blazer-alpine-185-55r16-87h-xl-9557568900
+2020-08-06 09:41:25.6392 / Append to proceed https://allegro.pl/oferta/1x-225-50r17-bfgoodrich-advantage-98v-nowe-lato-8998169168
+2020-08-06 09:41:25.6392 / Offer inserted
+2020-08-06 09:41:25.8924 / Append to proceed https://allegro.pl/oferta/1x-225-50r17-bfgoodrich-advantage-98v-nowe-lato-8998169168
+2020-08-06 09:41:26.1256 / Append to proceed https://allegro.pl/oferta/hankook-l235-55-r17-dynapro-hp2-ra33-99v-9323195363
+2020-08-06 09:41:26.1256 / Offer inserted
+2020-08-06 09:41:26.3798 / Append to proceed https://allegro.pl/oferta/hankook-l235-55-r17-dynapro-hp2-ra33-99v-9323195363
+2020-08-06 09:41:26.6001 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-235-65r17-goodyear-8896228620
+2020-08-06 09:41:26.6001 / Offer inserted
+2020-08-06 09:41:26.8571 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-235-65r17-goodyear-8896228620
+2020-08-06 09:41:27.0897 / Append to proceed https://allegro.pl/oferta/opona-uniroyal-w225-40-r18-all-season-expe-2-92v-x-9166070804
+2020-08-06 09:41:27.0961 / Offer inserted
+2020-08-06 09:41:27.3577 / Append to proceed https://allegro.pl/oferta/opona-uniroyal-w225-40-r18-all-season-expe-2-92v-x-9166070804
+2020-08-06 09:41:27.5827 / Append to proceed https://allegro.pl/oferta/215-50r17-toyo-snowprox-s954-95v-nowe-zima-7516491095
+2020-08-06 09:41:27.5827 / Offer inserted
+2020-08-06 09:41:27.8409 / Append to proceed https://allegro.pl/oferta/215-50r17-toyo-snowprox-s954-95v-nowe-zima-7516491095
+2020-08-06 09:41:28.0615 / Append to proceed https://allegro.pl/oferta/uniroyal-rainsport-5-215-55r17-94v-fr-9104902181
+2020-08-06 09:41:28.0615 / Offer inserted
+2020-08-06 09:41:28.3138 / Append to proceed https://allegro.pl/oferta/uniroyal-rainsport-5-215-55r17-94v-fr-9104902181
+2020-08-06 09:41:28.5355 / Append to proceed https://allegro.pl/oferta/2-windforce-catchfors-uhp-225-45r19-96w-9523764212
+2020-08-06 09:41:28.5372 / Offer inserted
+2020-08-06 09:41:28.7911 / Append to proceed https://allegro.pl/oferta/2-windforce-catchfors-uhp-225-45r19-96w-9523764212
+2020-08-06 09:41:29.0135 / Append to proceed https://allegro.pl/oferta/1x-pirelli-cinturato-winter-205-50r17-93t-xl-9563363575
+2020-08-06 09:41:29.0206 / Offer inserted
+2020-08-06 09:41:29.3074 / Append to proceed https://allegro.pl/oferta/1x-pirelli-cinturato-winter-205-50r17-93t-xl-9563363575
+2020-08-06 09:41:29.5309 / Append to proceed https://allegro.pl/oferta/1x-hankook-winter-i-cept-evo2-suv-235-70r16-109h-x-9563250782
+2020-08-06 09:41:29.5309 / Offer inserted
+2020-08-06 09:41:29.7942 / Append to proceed https://allegro.pl/oferta/1x-hankook-winter-i-cept-evo2-suv-235-70r16-109h-x-9563250782
+2020-08-06 09:41:30.0097 / Append to proceed https://allegro.pl/oferta/1x-goodyear-eagle-f1-asymmetric-suv-255-55r18-109v-9563234447
+2020-08-06 09:41:30.0097 / Offer inserted
+2020-08-06 09:41:30.2810 / Append to proceed https://allegro.pl/oferta/1x-goodyear-eagle-f1-asymmetric-suv-255-55r18-109v-9563234447
+2020-08-06 09:41:30.5012 / Append to proceed https://allegro.pl/oferta/1-goodyear-efficientgrip-suv-215-65r16-98v-2019-9563726393
+2020-08-06 09:41:30.5077 / Offer inserted
+2020-08-06 09:41:30.7618 / Append to proceed https://allegro.pl/oferta/1-goodyear-efficientgrip-suv-215-65r16-98v-2019-9563726393
+2020-08-06 09:41:30.9799 / Append to proceed https://allegro.pl/oferta/2-arivo-winmaster-arw-6-195-65r16c-104-102r-2019-9563723421
+2020-08-06 09:41:30.9799 / Offer inserted
+2020-08-06 09:41:31.2521 / Append to proceed https://allegro.pl/oferta/2-arivo-winmaster-arw-6-195-65r16c-104-102r-2019-9563723421
+2020-08-06 09:41:31.4719 / Append to proceed https://allegro.pl/oferta/1-matador-mp92-sibir-snow-235-55r17-103v-2019-9563670619
+2020-08-06 09:41:31.4781 / Offer inserted
+2020-08-06 09:41:31.7311 / Append to proceed https://allegro.pl/oferta/1-matador-mp92-sibir-snow-235-55r17-103v-2019-9563670619
+2020-08-06 09:41:31.9492 / Append to proceed https://allegro.pl/oferta/1-opona-michelin-anakee-wild-120-70r19-60r-8970877055
+2020-08-06 09:41:31.9492 / Offer inserted
+2020-08-06 09:41:32.2138 / Append to proceed https://allegro.pl/oferta/1-opona-michelin-anakee-wild-120-70r19-60r-8970877055
+2020-08-06 09:41:32.4458 / Append to proceed https://allegro.pl/oferta/2x-nexen-185-65r15-88h-winguard-snow-g-3-wh21-8441526891
+2020-08-06 09:41:32.4458 / Offer inserted
+2020-08-06 09:41:32.7133 / Append to proceed https://allegro.pl/oferta/2x-nexen-185-65r15-88h-winguard-snow-g-3-wh21-8441526891
+2020-08-06 09:41:32.9411 / Append to proceed https://allegro.pl/oferta/2-fulda-multicontrol-195-50r15-82h-2020-9564238555
+2020-08-06 09:41:32.9411 / Offer inserted
+2020-08-06 09:41:33.2003 / Append to proceed https://allegro.pl/oferta/2-fulda-multicontrol-195-50r15-82h-2020-9564238555
+2020-08-06 09:41:33.4365 / Append to proceed https://allegro.pl/oferta/1-bridgestone-blizzak-lm25-1-195-60r16-89h-2019-9564194094
+2020-08-06 09:41:33.4365 / Offer inserted
+2020-08-06 09:41:33.6949 / Append to proceed https://allegro.pl/oferta/1-bridgestone-blizzak-lm25-1-195-60r16-89h-2019-9564194094
+2020-08-06 09:41:33.9179 / Append to proceed https://allegro.pl/oferta/2-firestone-multihawk-2-mulh2-165-65r13-77t-2019-9564176020
+2020-08-06 09:41:33.9179 / Offer inserted
+2020-08-06 09:41:34.1745 / Append to proceed https://allegro.pl/oferta/2-firestone-multihawk-2-mulh2-165-65r13-77t-2019-9564176020
+2020-08-06 09:41:34.4202 / Append to proceed https://allegro.pl/oferta/1-firestone-rhawk-215-55r16-97y-2019-9564173266
+2020-08-06 09:41:34.4202 / Offer inserted
+2020-08-06 09:41:34.6786 / Append to proceed https://allegro.pl/oferta/1-firestone-rhawk-215-55r16-97y-2019-9564173266
+2020-08-06 09:41:34.9070 / Append to proceed https://allegro.pl/oferta/1-goodyear-vector-4seasons-205-65r15-94h-2019-9564165999
+2020-08-06 09:41:34.9070 / Offer inserted
+2020-08-06 09:41:35.1605 / Append to proceed https://allegro.pl/oferta/1-goodyear-vector-4seasons-205-65r15-94h-2019-9564165999
+2020-08-06 09:41:35.3943 / Append to proceed https://allegro.pl/oferta/2-uniroyal-ms-plus-77-185-60r15-84t-2020-9564160522
+2020-08-06 09:41:35.3943 / Offer inserted
+2020-08-06 09:41:35.6603 / Append to proceed https://allegro.pl/oferta/2-uniroyal-ms-plus-77-185-60r15-84t-2020-9564160522
+2020-08-06 09:41:35.8881 / Append to proceed https://allegro.pl/oferta/2-vredestein-sportrac-5-205-55r16-91h-2020-9564157933
+2020-08-06 09:41:35.8881 / Offer inserted
+2020-08-06 09:41:36.1452 / Append to proceed https://allegro.pl/oferta/2-vredestein-sportrac-5-205-55r16-91h-2020-9564157933
+2020-08-06 09:41:36.3635 / Append to proceed https://allegro.pl/oferta/1-barum-quartaris-5-235-55r17-103v-2020-9564134552
+2020-08-06 09:41:36.3651 / Offer inserted
+2020-08-06 09:41:36.6413 / Append to proceed https://allegro.pl/oferta/1-barum-quartaris-5-235-55r17-103v-2020-9564134552
+2020-08-06 09:41:36.8583 / Append to proceed https://allegro.pl/oferta/1-firestone-sz90-225-50r16-92w-2019-9564129445
+2020-08-06 09:41:36.8583 / Offer inserted
+2020-08-06 09:41:37.1183 / Append to proceed https://allegro.pl/oferta/1-firestone-sz90-225-50r16-92w-2019-9564129445
+2020-08-06 09:41:37.3393 / Append to proceed https://allegro.pl/oferta/1-goodyear-ug-8-performance-205-60r16-92h-2019-9564128682
+2020-08-06 09:41:37.3393 / Offer inserted
+2020-08-06 09:41:37.6023 / Append to proceed https://allegro.pl/oferta/1-goodyear-ug-8-performance-205-60r16-92h-2019-9564128682
+2020-08-06 09:41:37.8194 / Append to proceed https://allegro.pl/oferta/1-pirelli-p-zero-pz4-225-40r18-92y-2019-9564127871
+2020-08-06 09:41:37.8194 / Offer inserted
+2020-08-06 09:41:38.0718 / Append to proceed https://allegro.pl/oferta/1-pirelli-p-zero-pz4-225-40r18-92y-2019-9564127871
+2020-08-06 09:41:38.2875 / Append to proceed https://allegro.pl/oferta/1x-yokohama-advan-fleva-v701-235-35r19-91w-xl-9563922672
+2020-08-06 09:41:38.2875 / Offer inserted
+2020-08-06 09:41:38.5445 / Append to proceed https://allegro.pl/oferta/1x-yokohama-advan-fleva-v701-235-35r19-91w-xl-9563922672
+2020-08-06 09:41:38.7901 / Append to proceed https://allegro.pl/oferta/1x-pirelli-winter-sottozero-3-205-65r16-95h-9563849088
+2020-08-06 09:41:38.7901 / Offer inserted
+2020-08-06 09:41:39.0447 / Append to proceed https://allegro.pl/oferta/1x-pirelli-winter-sottozero-3-205-65r16-95h-9563849088
+2020-08-06 09:41:39.2612 / Append to proceed https://allegro.pl/oferta/1x-pirelli-sottozero-serie-iii-225-55r16-95h-fr-9563846619
+2020-08-06 09:41:39.2632 / Offer inserted
+2020-08-06 09:41:39.5350 / Append to proceed https://allegro.pl/oferta/1x-pirelli-sottozero-serie-iii-225-55r16-95h-fr-9563846619
+2020-08-06 09:41:39.7618 / Append to proceed https://allegro.pl/oferta/1x-pirelli-sottozero-serie-iii-225-55r16-99h-xl-9563845971
+2020-08-06 09:41:39.7618 / Offer inserted
+2020-08-06 09:41:40.0138 / Append to proceed https://allegro.pl/oferta/1x-pirelli-sottozero-serie-iii-225-55r16-99h-xl-9563845971
+2020-08-06 09:41:40.2349 / Append to proceed https://allegro.pl/oferta/1-uniroyal-ms-plus-77-225-50r17-98v-2018-9543184425
+2020-08-06 09:41:40.2349 / Offer inserted
+2020-08-06 09:41:40.4891 / Append to proceed https://allegro.pl/oferta/1-uniroyal-ms-plus-77-225-50r17-98v-2018-9543184425
+2020-08-06 09:41:40.7060 / Append to proceed https://allegro.pl/oferta/1-bridgestone-turanza-t005-195-45r16-84v-2019-9564132993
+2020-08-06 09:41:40.7060 / Offer inserted
+2020-08-06 09:41:40.9612 / Append to proceed https://allegro.pl/oferta/1-bridgestone-turanza-t005-195-45r16-84v-2019-9564132993
+2020-08-06 09:41:41.1778 / Append to proceed https://allegro.pl/oferta/1-bridgestone-lm005dg-205-55r16-94v-2019-9564122918
+2020-08-06 09:41:41.1778 / Offer inserted
+2020-08-06 09:41:41.4454 / Append to proceed https://allegro.pl/oferta/1-bridgestone-lm005dg-205-55r16-94v-2019-9564122918
+2020-08-06 09:41:41.6647 / Append to proceed https://allegro.pl/oferta/1x-pirelli-scorpion-verde-235-55r19-105v-xl-9563839597
+2020-08-06 09:41:41.6647 / Offer inserted
+2020-08-06 09:41:41.9448 / Append to proceed https://allegro.pl/oferta/1x-pirelli-scorpion-verde-235-55r19-105v-xl-9563839597
+2020-08-06 09:41:42.1664 / Append to proceed https://allegro.pl/oferta/150-80-16-k673f-kenda-opona-nowa-szosowa-71h-tl-8699952673
+2020-08-06 09:41:42.1711 / Offer inserted
+2020-08-06 09:41:42.4279 / Append to proceed https://allegro.pl/oferta/150-80-16-k673f-kenda-opona-nowa-szosowa-71h-tl-8699952673
+2020-08-06 09:41:42.6429 / Append to proceed https://allegro.pl/oferta/hankook-vantra-lt-ra18-235-65r16c-115-113r-2018-8698684500
+2020-08-06 09:41:42.6429 / Offer inserted
+2020-08-06 09:41:42.9116 / Append to proceed https://allegro.pl/oferta/hankook-vantra-lt-ra18-235-65r16c-115-113r-2018-8698684500
+2020-08-06 09:41:43.1315 / Append to proceed https://allegro.pl/oferta/1x-barum-bravuris-5hm-225-55r18-98v-fr-9562789621
+2020-08-06 09:41:43.1315 / Offer inserted
+2020-08-06 09:41:43.4015 / Append to proceed https://allegro.pl/oferta/1x-barum-bravuris-5hm-225-55r18-98v-fr-9562789621
+2020-08-06 09:41:43.6261 / Append to proceed https://allegro.pl/oferta/2x-nexen-185-60r15-88t-xl-winguard-snow-g-3-wh21-8396255134
+2020-08-06 09:41:43.6261 / Offer inserted
+2020-08-06 09:41:43.8835 / Append to proceed https://allegro.pl/oferta/2x-nexen-185-60r15-88t-xl-winguard-snow-g-3-wh21-8396255134
+2020-08-06 09:41:44.1091 / Append to proceed https://allegro.pl/oferta/2x-nexen-175-65r15-84t-winguard-snow-g-3-wh21-8396252483
+2020-08-06 09:41:44.1091 / Offer inserted
+2020-08-06 09:41:44.3671 / Append to proceed https://allegro.pl/oferta/2x-nexen-175-65r15-84t-winguard-snow-g-3-wh21-8396252483
+2020-08-06 09:41:44.6222 / Append to proceed https://allegro.pl/oferta/1x-cooper-225-50r17-98v-xl-wm-sa2-xl-8394904089
+2020-08-06 09:41:44.6222 / Offer inserted
+2020-08-06 09:41:44.8847 / Append to proceed https://allegro.pl/oferta/1x-cooper-225-50r17-98v-xl-wm-sa2-xl-8394904089
+2020-08-06 09:41:45.1172 / Append to proceed https://allegro.pl/oferta/bridgestone-exedra-max-f-90-90-21-54-h-9561619707
+2020-08-06 09:41:45.1172 / Offer inserted
+2020-08-06 09:41:45.3700 / Append to proceed https://allegro.pl/oferta/bridgestone-exedra-max-f-90-90-21-54-h-9561619707
+2020-08-06 09:41:45.5922 / Append to proceed https://allegro.pl/oferta/dunlop-sport-blueresponse-185-55-r15-82-v-9561558934
+2020-08-06 09:41:45.5922 / Offer inserted
+2020-08-06 09:41:45.8593 / Append to proceed https://allegro.pl/oferta/dunlop-sport-blueresponse-185-55-r15-82-v-9561558934
+2020-08-06 09:41:46.0906 / Append to proceed https://allegro.pl/oferta/do-quada-maxxis-big-horn-m917-26x9r12-26x9-00-12-9562091390
+2020-08-06 09:41:46.0906 / Offer inserted
+2020-08-06 09:41:46.3491 / Append to proceed https://allegro.pl/oferta/do-quada-maxxis-big-horn-m917-26x9r12-26x9-00-12-9562091390
+2020-08-06 09:41:46.5712 / Append to proceed https://allegro.pl/oferta/2-nowe-opony-zimowe-goodride-sw618-205-70r15-96t-9561886148
+2020-08-06 09:41:46.5712 / Offer inserted
+2020-08-06 09:41:46.8298 / Append to proceed https://allegro.pl/oferta/2-nowe-opony-zimowe-goodride-sw618-205-70r15-96t-9561886148
+2020-08-06 09:41:47.0550 / Append to proceed https://allegro.pl/oferta/1x-vredestein-195-65r16-104-102t-comtrac-2-winter-9561371378
+2020-08-06 09:41:47.0550 / Offer inserted
+2020-08-06 09:41:47.3265 / Append to proceed https://allegro.pl/oferta/1x-vredestein-195-65r16-104-102t-comtrac-2-winter-9561371378
+2020-08-06 09:41:47.5474 / Append to proceed https://allegro.pl/oferta/1x-continental-205-60r16-92h-wintercontact-ts-850-9561352899
+2020-08-06 09:41:47.5474 / Offer inserted
+2020-08-06 09:41:47.8045 / Append to proceed https://allegro.pl/oferta/1x-continental-205-60r16-92h-wintercontact-ts-850-9561352899
+2020-08-06 09:41:48.0232 / Append to proceed https://allegro.pl/oferta/2szt-215-60r16-sw608-xl-99h-goodride-9561307052
+2020-08-06 09:41:48.0232 / Offer inserted
+2020-08-06 09:41:48.2980 / Append to proceed https://allegro.pl/oferta/2szt-215-60r16-sw608-xl-99h-goodride-9561307052
+2020-08-06 09:41:48.5212 / Append to proceed https://allegro.pl/oferta/1x-uniroyal-215-70r15-109-107r-snow-max-3-c-zimowe-9561217355
+2020-08-06 09:41:48.5212 / Offer inserted
+2020-08-06 09:41:48.7778 / Append to proceed https://allegro.pl/oferta/1x-uniroyal-215-70r15-109-107r-snow-max-3-c-zimowe-9561217355
+2020-08-06 09:41:48.9940 / Append to proceed https://allegro.pl/oferta/2x-opony-caloroczne-185-65r15-apollo-alnac-4g-88t-9561183440
+2020-08-06 09:41:48.9940 / Offer inserted
+2020-08-06 09:41:49.2621 / Append to proceed https://allegro.pl/oferta/2x-opony-caloroczne-185-65r15-apollo-alnac-4g-88t-9561183440
+2020-08-06 09:41:49.4833 / Append to proceed https://allegro.pl/oferta/1x-vredestein-195-60r16-99-97t-snowtrac-5-c-zimowe-9561174885
+2020-08-06 09:41:49.4851 / Offer inserted
+2020-08-06 09:41:49.7516 / Append to proceed https://allegro.pl/oferta/1x-vredestein-195-60r16-99-97t-snowtrac-5-c-zimowe-9561174885
+2020-08-06 09:41:49.9794 / Append to proceed https://allegro.pl/oferta/2-radar-dimax-classic-185-80r14-90h-9560581842
+2020-08-06 09:41:49.9794 / Offer inserted
+2020-08-06 09:41:50.2416 / Append to proceed https://allegro.pl/oferta/2-radar-dimax-classic-185-80r14-90h-9560581842
+2020-08-06 09:41:50.4725 / Append to proceed https://allegro.pl/oferta/1-radar-dimax-winter-sport-225-40r18-92v-9560579915
+2020-08-06 09:41:50.4725 / Offer inserted
+2020-08-06 09:41:50.7444 / Append to proceed https://allegro.pl/oferta/1-radar-dimax-winter-sport-225-40r18-92v-9560579915
+2020-08-06 09:41:50.9684 / Append to proceed https://allegro.pl/oferta/1-matador-mp82-conquerra-2-265-70r16-112h-2019-9560577069
+2020-08-06 09:41:50.9701 / Offer inserted
+2020-08-06 09:41:51.2273 / Append to proceed https://allegro.pl/oferta/1-matador-mp82-conquerra-2-265-70r16-112h-2019-9560577069
+2020-08-06 09:41:51.4650 / Append to proceed https://allegro.pl/oferta/1-uniroyal-rain-expert-3-215-60r17-96h-2019-9560573972
+2020-08-06 09:41:51.4716 / Offer inserted
+2020-08-06 09:41:51.7334 / Append to proceed https://allegro.pl/oferta/1-uniroyal-rain-expert-3-215-60r17-96h-2019-9560573972
+2020-08-06 09:41:51.9599 / Append to proceed https://allegro.pl/oferta/1-barum-polaris-5-235-55r18-104h-2019-9560572147
+2020-08-06 09:41:51.9599 / Offer inserted
+2020-08-06 09:41:52.2206 / Append to proceed https://allegro.pl/oferta/1-barum-polaris-5-235-55r18-104h-2019-9560572147
+2020-08-06 09:41:52.4515 / Append to proceed https://allegro.pl/oferta/1-kleber-dynaxer-hp3-215-50r17-95w-2018-9560567716
+2020-08-06 09:41:52.4515 / Offer inserted
+2020-08-06 09:41:52.7248 / Append to proceed https://allegro.pl/oferta/1-kleber-dynaxer-hp3-215-50r17-95w-2018-9560567716
+2020-08-06 09:41:52.9455 / Append to proceed https://allegro.pl/oferta/2-uniroyal-rain-expert-3-185-65r14-86t-2019-9560481924
+2020-08-06 09:41:52.9455 / Offer inserted
+2020-08-06 09:41:53.2009 / Append to proceed https://allegro.pl/oferta/2-uniroyal-rain-expert-3-185-65r14-86t-2019-9560481924
+2020-08-06 09:41:53.4199 / Append to proceed https://allegro.pl/oferta/2x-185-65r15-88t-allseasonexpert-2-uniroyal-9456463476
+2020-08-06 09:41:53.4199 / Offer inserted
+2020-08-06 09:41:53.6789 / Append to proceed https://allegro.pl/oferta/2x-185-65r15-88t-allseasonexpert-2-uniroyal-9456463476
+2020-08-06 09:41:53.8960 / Append to proceed https://allegro.pl/oferta/2-general-altimax-winter-3-205-55r16-91h-2018-9343016972
+2020-08-06 09:41:53.8986 / Offer inserted
+2020-08-06 09:41:54.1566 / Append to proceed https://allegro.pl/oferta/2-general-altimax-winter-3-205-55r16-91h-2018-9343016972
+2020-08-06 09:41:54.3771 / Append to proceed https://allegro.pl/oferta/bridgestone-z225-45-r17-lm001-91h-17-8275643275
+2020-08-06 09:41:54.3771 / Offer inserted
+2020-08-06 09:41:54.6461 / Append to proceed https://allegro.pl/oferta/bridgestone-z225-45-r17-lm001-91h-17-8275643275
+2020-08-06 09:41:54.8730 / Append to proceed https://allegro.pl/oferta/opona-110-80b19-k60-scout-59t-m-s-przod-04-2020-8940533709
+2020-08-06 09:41:54.8730 / Offer inserted
+2020-08-06 09:41:55.1412 / Append to proceed https://allegro.pl/oferta/opona-110-80b19-k60-scout-59t-m-s-przod-04-2020-8940533709
+2020-08-06 09:41:55.3608 / Append to proceed https://allegro.pl/oferta/24x10r11-opony-do-quada-duro-9563336825
+2020-08-06 09:41:55.3608 / Offer inserted
+2020-08-06 09:41:55.6292 / Append to proceed https://allegro.pl/oferta/24x10r11-opony-do-quada-duro-9563336825
+2020-08-06 09:41:55.8520 / Append to proceed https://allegro.pl/oferta/24x10r11-opony-do-quada-duro-9563336440
+2020-08-06 09:41:55.8576 / Offer inserted
+2020-08-06 09:41:56.1222 / Append to proceed https://allegro.pl/oferta/24x10r11-opony-do-quada-duro-9563336440
+2020-08-06 09:41:56.3466 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-205-55r16-debica-frigo-2-91t-9563692077
+2020-08-06 09:41:56.3466 / Offer inserted
+2020-08-06 09:41:56.6076 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-205-55r16-debica-frigo-2-91t-9563692077
+2020-08-06 09:41:56.8284 / Append to proceed https://allegro.pl/oferta/1-saetta-van-225-75r16c-118-116r-2019-9563471460
+2020-08-06 09:41:56.8284 / Offer inserted
+2020-08-06 09:41:57.0898 / Append to proceed https://allegro.pl/oferta/1-saetta-van-225-75r16c-118-116r-2019-9563471460
+2020-08-06 09:41:57.3158 / Append to proceed https://allegro.pl/oferta/2-nexen-n-blue-hd-plus-175-65r15-84t-2019-9563449208
+2020-08-06 09:41:57.3158 / Offer inserted
+2020-08-06 09:41:57.5723 / Append to proceed https://allegro.pl/oferta/2-nexen-n-blue-hd-plus-175-65r15-84t-2019-9563449208
+2020-08-06 09:41:57.8090 / Append to proceed https://allegro.pl/oferta/1-kleber-krisalp-hp3-suv-215-60r17-96h-2020-9563435769
+2020-08-06 09:41:57.8090 / Offer inserted
+2020-08-06 09:41:58.0730 / Append to proceed https://allegro.pl/oferta/1-kleber-krisalp-hp3-suv-215-60r17-96h-2020-9563435769
+2020-08-06 09:41:58.2984 / Append to proceed https://allegro.pl/oferta/1-bridgestone-er300a-205-55r16-91w-2019-9563429012
+2020-08-06 09:41:58.2984 / Offer inserted
+2020-08-06 09:41:58.5577 / Append to proceed https://allegro.pl/oferta/1-bridgestone-er300a-205-55r16-91w-2019-9563429012
+2020-08-06 09:41:58.7936 / Append to proceed https://allegro.pl/oferta/1-dunlop-sp-sport-bluresponse-185-55r15-82v-2019-9563428235
+2020-08-06 09:41:58.7936 / Offer inserted
+2020-08-06 09:41:59.0527 / Append to proceed https://allegro.pl/oferta/1-dunlop-sp-sport-bluresponse-185-55r15-82v-2019-9563428235
+2020-08-06 09:41:59.2750 / Append to proceed https://allegro.pl/oferta/1-dunlop-sp-sport-300-175-60r15-81h-2019-9563425467
+2020-08-06 09:41:59.2750 / Offer inserted
+2020-08-06 09:41:59.5466 / Append to proceed https://allegro.pl/oferta/1-dunlop-sp-sport-300-175-60r15-81h-2019-9563425467
+2020-08-06 09:41:59.7902 / Append to proceed https://allegro.pl/oferta/24x10r11-opony-do-quada-duro-9563280819
+2020-08-06 09:41:59.7902 / Offer inserted
+2020-08-06 09:42:00.0451 / Append to proceed https://allegro.pl/oferta/24x10r11-opony-do-quada-duro-9563280819
+2020-08-06 09:42:00.2919 / Append to proceed https://allegro.pl/oferta/opona-120-70zr19-me888-marathon-ultra-60w-42-2017-9416272401
+2020-08-06 09:42:00.2919 / Offer inserted
+2020-08-06 09:42:00.5429 / Append to proceed https://allegro.pl/oferta/opona-120-70zr19-me888-marathon-ultra-60w-42-2017-9416272401
+2020-08-06 09:42:00.7626 / Append to proceed https://allegro.pl/oferta/opona-zimowa-michelin-205-55r16-alpin-6-91h-9564050965
+2020-08-06 09:42:00.7626 / Offer inserted
+2020-08-06 09:42:01.0183 / Append to proceed https://allegro.pl/oferta/opona-zimowa-michelin-205-55r16-alpin-6-91h-9564050965
+2020-08-06 09:42:01.2399 / Append to proceed https://allegro.pl/oferta/opona-zimowa-nokian-195-75r16-wr-c3-107-105s-c-9564050271
+2020-08-06 09:42:01.2417 / Offer inserted
+2020-08-06 09:42:01.4968 / Append to proceed https://allegro.pl/oferta/opona-zimowa-nokian-195-75r16-wr-c3-107-105s-c-9564050271
+2020-08-06 09:42:01.7222 / Append to proceed https://allegro.pl/oferta/opona-letnia-fulda-225-55r16-ecocontrol-hp2-99y-xl-9564025890
+2020-08-06 09:42:01.7222 / Offer inserted
+2020-08-06 09:42:01.9914 / Append to proceed https://allegro.pl/oferta/opona-letnia-fulda-225-55r16-ecocontrol-hp2-99y-xl-9564025890
+2020-08-06 09:42:02.2150 / Append to proceed https://allegro.pl/oferta/2x-nexen-175-65r15-84t-winguard-snow-g-3-wh21-8453889770
+2020-08-06 09:42:02.2150 / Offer inserted
+2020-08-06 09:42:02.4703 / Append to proceed https://allegro.pl/oferta/2x-nexen-175-65r15-84t-winguard-snow-g-3-wh21-8453889770
+2020-08-06 09:42:02.6972 / Append to proceed https://allegro.pl/oferta/2x-barum-185-60r15-84t-polaris-5-8453637733
+2020-08-06 09:42:02.6972 / Offer inserted
+2020-08-06 09:42:02.9608 / Append to proceed https://allegro.pl/oferta/2x-barum-185-60r15-84t-polaris-5-8453637733
+2020-08-06 09:42:03.1816 / Append to proceed https://allegro.pl/oferta/235-55r18-opony-caloroczne-radar-4x4-suv-9561843511
+2020-08-06 09:42:03.1816 / Offer inserted
+2020-08-06 09:42:03.4388 / Append to proceed https://allegro.pl/oferta/235-55r18-opony-caloroczne-radar-4x4-suv-9561843511
+2020-08-06 09:42:03.6613 / Append to proceed https://allegro.pl/oferta/235-55r18-opony-caloroczne-radar-4x4-suv-9561825177
+2020-08-06 09:42:03.6613 / Offer inserted
+2020-08-06 09:42:03.9228 / Append to proceed https://allegro.pl/oferta/235-55r18-opony-caloroczne-radar-4x4-suv-9561825177
+2020-08-06 09:42:04.1514 / Append to proceed https://allegro.pl/oferta/opona-radar-255-45r20-dimax-alpine-105v-xl-e-3pms-9561273836
+2020-08-06 09:42:04.1514 / Offer inserted
+2020-08-06 09:42:04.4102 / Append to proceed https://allegro.pl/oferta/opona-radar-255-45r20-dimax-alpine-105v-xl-e-3pms-9561273836
+2020-08-06 09:42:04.6267 / Append to proceed https://allegro.pl/oferta/opona-radar-205-50rf17-dimax-4season-93w-xl-tl-e-9561271823
+2020-08-06 09:42:04.6267 / Offer inserted
+2020-08-06 09:42:04.8991 / Append to proceed https://allegro.pl/oferta/opona-radar-205-50rf17-dimax-4season-93w-xl-tl-e-9561271823
+2020-08-06 09:42:05.1364 / Append to proceed https://allegro.pl/oferta/2xhankook-winter-i-cept-rs2-w452-175-80r14-88t-202-9561121274
+2020-08-06 09:42:05.1364 / Offer inserted
+2020-08-06 09:42:05.3953 / Append to proceed https://allegro.pl/oferta/2xhankook-winter-i-cept-rs2-w452-175-80r14-88t-202-9561121274
+2020-08-06 09:42:05.6152 / Append to proceed https://allegro.pl/oferta/1xbridgestone-turanza-t005-195-45r16-84v-2019-9561083159
+2020-08-06 09:42:05.6152 / Offer inserted
+2020-08-06 09:42:07.6515 / Append to proceed https://allegro.pl/oferta/1xbridgestone-turanza-t005-195-45r16-84v-2019-9561083159
+2020-08-06 09:42:08.7839 / Append to proceed https://allegro.pl/oferta/1xdunlop-sp-sport-bluresponse-205-60r15-91v-2019-9561081837
+2020-08-06 09:42:08.7839 / Offer inserted
+2020-08-06 09:42:10.2966 / Append to proceed https://allegro.pl/oferta/1xdunlop-sp-sport-bluresponse-205-60r15-91v-2019-9561081837
+2020-08-06 09:42:10.5197 / Append to proceed https://allegro.pl/oferta/1xdunlop-sp-sport-bluresponse-195-55r15-85v-2019-9561081311
+2020-08-06 09:42:10.5197 / Offer inserted
+2020-08-06 09:42:10.7799 / Append to proceed https://allegro.pl/oferta/1xdunlop-sp-sport-bluresponse-195-55r15-85v-2019-9561081311
+2020-08-06 09:42:10.9998 / Append to proceed https://allegro.pl/oferta/1-bridgestone-dueler-h-p-sport-d-sport-205-60r16-9-9564120967
+2020-08-06 09:42:11.0024 / Offer inserted
+2020-08-06 09:42:11.2549 / Append to proceed https://allegro.pl/oferta/1-bridgestone-dueler-h-p-sport-d-sport-205-60r16-9-9564120967
+2020-08-06 09:42:11.4888 / Append to proceed https://allegro.pl/oferta/1-firestone-sz90-205-45r17-88v-2019-9564120232
+2020-08-06 09:42:11.4888 / Offer inserted
+2020-08-06 09:42:11.7533 / Append to proceed https://allegro.pl/oferta/1-firestone-sz90-205-45r17-88v-2019-9564120232
+2020-08-06 09:42:11.9744 / Append to proceed https://allegro.pl/oferta/2x-195-55-15-h-matador-mp92-sibir-snow-9564089097
+2020-08-06 09:42:11.9744 / Offer inserted
+2020-08-06 09:42:12.2378 / Append to proceed https://allegro.pl/oferta/2x-195-55-15-h-matador-mp92-sibir-snow-9564089097
+2020-08-06 09:42:12.4691 / Append to proceed https://allegro.pl/oferta/2x-195-65-15-t-xl-matador-mp92-sibir-snow-9564088210
+2020-08-06 09:42:12.4691 / Offer inserted
+2020-08-06 09:42:12.7274 / Append to proceed https://allegro.pl/oferta/2x-195-65-15-t-xl-matador-mp92-sibir-snow-9564088210
+2020-08-06 09:42:12.9535 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-185-65r14-kleber-krisalp-hp2-86t-9564008834
+2020-08-06 09:42:12.9535 / Offer inserted
+2020-08-06 09:42:13.2071 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-185-65r14-kleber-krisalp-hp2-86t-9564008834
+2020-08-06 09:42:13.4268 / Append to proceed https://allegro.pl/oferta/2x-opony-caloroczne-195-65r15-nexen-nblue-4s-91t-9563997224
+2020-08-06 09:42:13.4268 / Offer inserted
+2020-08-06 09:42:13.6928 / Append to proceed https://allegro.pl/oferta/2x-opony-caloroczne-195-65r15-nexen-nblue-4s-91t-9563997224
+2020-08-06 09:42:13.9130 / Append to proceed https://allegro.pl/oferta/1x-yokohama-bluearth-winter-v905-215-60r17-96h-9563921658
+2020-08-06 09:42:13.9130 / Offer inserted
+2020-08-06 09:42:14.1714 / Append to proceed https://allegro.pl/oferta/1x-yokohama-bluearth-winter-v905-215-60r17-96h-9563921658
+2020-08-06 09:42:14.3918 / Append to proceed https://allegro.pl/oferta/1x-pirelli-sottozero-serie-ii-225-65r17-102h-9563860315
+2020-08-06 09:42:14.3936 / Offer inserted
+2020-08-06 09:42:14.6662 / Append to proceed https://allegro.pl/oferta/1x-pirelli-sottozero-serie-ii-225-65r17-102h-9563860315
+2020-08-06 09:42:14.8897 / Append to proceed https://allegro.pl/oferta/1x-pirelli-p7-cinturato-225-45r17-91y-rof-9563842459
+2020-08-06 09:42:14.8897 / Offer inserted
+2020-08-06 09:42:15.1623 / Append to proceed https://allegro.pl/oferta/1x-pirelli-p7-cinturato-225-45r17-91y-rof-9563842459
+2020-08-06 09:42:15.3846 / Append to proceed https://allegro.pl/oferta/radar-245-70r16-renegade-at-5-111h-suv-tl-xl-ee72-8966440155
+2020-08-06 09:42:15.3846 / Offer inserted
+2020-08-06 09:42:15.6602 / Append to proceed https://allegro.pl/oferta/radar-245-70r16-renegade-at-5-111h-suv-tl-xl-ee72-8966440155
+2020-08-06 09:42:15.8841 / Append to proceed https://allegro.pl/oferta/2x-opony-letnie-215-65r16-fortune-fsr301-102h-xl-9189897382
+2020-08-06 09:42:15.8841 / Offer inserted
+2020-08-06 09:42:16.1425 / Append to proceed https://allegro.pl/oferta/2x-opony-letnie-215-65r16-fortune-fsr301-102h-xl-9189897382
+2020-08-06 09:42:16.3680 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-145-80r13-kormoran-snowpro-75q-9558336379
+2020-08-06 09:42:16.3680 / Offer inserted
+2020-08-06 09:42:17.8038 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-145-80r13-kormoran-snowpro-75q-9558336379
+2020-08-06 09:42:19.1635 / Append to proceed https://allegro.pl/oferta/2x-matador-mp54-sibir-snow-175-70r14-88-t-9562848360
+2020-08-06 09:42:19.1635 / Offer inserted
+2020-08-06 09:42:20.2360 / Append to proceed https://allegro.pl/oferta/2x-matador-mp54-sibir-snow-175-70r14-88-t-9562848360
+2020-08-06 09:42:21.2262 / Append to proceed https://allegro.pl/oferta/1x-sava-225-60r17-103v-xl-eskimo-suv-2-xl-3pmsf-8394829810
+2020-08-06 09:42:21.2262 / Offer inserted
+2020-08-06 09:42:23.0888 / Append to proceed https://allegro.pl/oferta/1x-sava-225-60r17-103v-xl-eskimo-suv-2-xl-3pmsf-8394829810
+2020-08-06 09:42:23.3177 / Append to proceed https://allegro.pl/oferta/1x-barum-215-60r17-100v-xl-polaris-5-xl-fr-8394109272
+2020-08-06 09:42:23.3177 / Offer inserted
+2020-08-06 09:42:23.5741 / Append to proceed https://allegro.pl/oferta/1x-barum-215-60r17-100v-xl-polaris-5-xl-fr-8394109272
+2020-08-06 09:42:23.7998 / Append to proceed https://allegro.pl/oferta/dunlop-sport-blueresponse-195-55-r15-85-v-9561558897
+2020-08-06 09:42:23.7998 / Offer inserted
+2020-08-06 09:42:24.0712 / Append to proceed https://allegro.pl/oferta/dunlop-sport-blueresponse-195-55-r15-85-v-9561558897
+2020-08-06 09:42:24.2953 / Append to proceed https://allegro.pl/oferta/dunlop-sp-sport-bluresponse-205-60-r15-91-v-9561535917
+2020-08-06 09:42:24.2953 / Offer inserted
+2020-08-06 09:42:24.5490 / Append to proceed https://allegro.pl/oferta/dunlop-sp-sport-bluresponse-205-60-r15-91-v-9561535917
+2020-08-06 09:42:24.7641 / Append to proceed https://allegro.pl/oferta/dunlop-econodrive-195-75-r16-107-r-9561533176
+2020-08-06 09:42:24.7641 / Offer inserted
+2020-08-06 09:42:25.0177 / Append to proceed https://allegro.pl/oferta/dunlop-econodrive-195-75-r16-107-r-9561533176
+2020-08-06 09:42:25.2543 / Append to proceed https://allegro.pl/oferta/2x-205-65-15-t-diplomat-diplomat-winter-st-5-lat-9560974538
+2020-08-06 09:42:25.2608 / Offer inserted
+2020-08-06 09:42:25.5186 / Append to proceed https://allegro.pl/oferta/2x-205-65-15-t-diplomat-diplomat-winter-st-5-lat-9560974538
+2020-08-06 09:42:25.7385 / Append to proceed https://allegro.pl/oferta/do-quada-maxxis-big-horn-m917-26x9r12-26x9-00-12-9562091526
+2020-08-06 09:42:25.7385 / Offer inserted
+2020-08-06 09:42:25.9946 / Append to proceed https://allegro.pl/oferta/do-quada-maxxis-big-horn-m917-26x9r12-26x9-00-12-9562091526
+2020-08-06 09:42:26.2330 / Append to proceed https://allegro.pl/oferta/1x-hankook-205-60r16-100-98t-winter-rw06-c-zimowe-9561347714
+2020-08-06 09:42:26.2330 / Offer inserted
+2020-08-06 09:42:26.4849 / Append to proceed https://allegro.pl/oferta/1x-hankook-205-60r16-100-98t-winter-rw06-c-zimowe-9561347714
+2020-08-06 09:42:26.7066 / Append to proceed https://allegro.pl/oferta/2x-semperit-175-70r14-84t-master-grip-2-zimowe-9561203988
+2020-08-06 09:42:26.7066 / Offer inserted
+2020-08-06 09:42:26.9635 / Append to proceed https://allegro.pl/oferta/2x-semperit-175-70r14-84t-master-grip-2-zimowe-9561203988
+2020-08-06 09:42:27.2001 / Append to proceed https://allegro.pl/oferta/1x-opona-caloroczna-215-80r15-yokohama-a-t-g015-9560924356
+2020-08-06 09:42:27.2020 / Offer inserted
+2020-08-06 09:42:27.4526 / Append to proceed https://allegro.pl/oferta/1x-opona-caloroczna-215-80r15-yokohama-a-t-g015-9560924356
+2020-08-06 09:42:27.6704 / Append to proceed https://allegro.pl/oferta/1x-opona-235-55r17-gt-radial-champiro-pro-hp-9560915151
+2020-08-06 09:42:27.6721 / Offer inserted
+2020-08-06 09:42:27.9361 / Append to proceed https://allegro.pl/oferta/1x-opona-235-55r17-gt-radial-champiro-pro-hp-9560915151
+2020-08-06 09:42:28.1610 / Append to proceed https://allegro.pl/oferta/1-firestone-vanh2wi-205-65r16c-107t-2019-9560579612
+2020-08-06 09:42:28.1610 / Offer inserted
+2020-08-06 09:42:28.4162 / Append to proceed https://allegro.pl/oferta/1-firestone-vanh2wi-205-65r16c-107t-2019-9560579612
+2020-08-06 09:42:28.6339 / Append to proceed https://allegro.pl/oferta/1-matador-mp82-conquerra-2-255-65r17-110h-2020-9560575809
+2020-08-06 09:42:28.6339 / Offer inserted
+2020-08-06 09:42:28.8875 / Append to proceed https://allegro.pl/oferta/1-matador-mp82-conquerra-2-255-65r17-110h-2020-9560575809
+2020-08-06 09:42:29.1025 / Append to proceed https://allegro.pl/oferta/1-hankook-ventus-prime3-k125-225-55r17-101w-2019-9560575007
+2020-08-06 09:42:29.1092 / Offer inserted
+2020-08-06 09:42:29.3813 / Append to proceed https://allegro.pl/oferta/1-hankook-ventus-prime3-k125-225-55r17-101w-2019-9560575007
+2020-08-06 09:42:29.5988 / Append to proceed https://allegro.pl/oferta/1-kleber-dynaxer-hp3-225-55r16-99w-2019-9560573077
+2020-08-06 09:42:29.5988 / Offer inserted
+2020-08-06 09:42:29.8491 / Append to proceed https://allegro.pl/oferta/1-kleber-dynaxer-hp3-225-55r16-99w-2019-9560573077
+2020-08-06 09:42:30.0650 / Append to proceed https://allegro.pl/oferta/1-michelin-primacy-4-225-45r17-91y-2020-9560486136
+2020-08-06 09:42:30.0650 / Offer inserted
+2020-08-06 09:42:30.3482 / Append to proceed https://allegro.pl/oferta/1-michelin-primacy-4-225-45r17-91y-2020-9560486136
+2020-08-06 09:42:30.5727 / Append to proceed https://allegro.pl/oferta/2-tristar-snowpower-2-235-40r18-95v-2019-9560478051
+2020-08-06 09:42:30.5727 / Offer inserted
+2020-08-06 09:42:31.4953 / Append to proceed https://allegro.pl/oferta/2-tristar-snowpower-2-235-40r18-95v-2019-9560478051
+2020-08-06 09:42:32.2141 / Append to proceed https://allegro.pl/oferta/maxxis-25x10-12-m918-bighorn-50n-9116516703
+2020-08-06 09:42:32.2141 / Offer inserted
+2020-08-06 09:42:32.9056 / Append to proceed https://allegro.pl/oferta/maxxis-25x10-12-m918-bighorn-50n-9116516703
+2020-08-06 09:42:33.4269 / Append to proceed https://allegro.pl/oferta/1-gislaved-eurofrost-6-225-65r17-106h-2019-9257907683
+2020-08-06 09:42:33.4336 / Offer inserted
+2020-08-06 09:42:33.7835 / Append to proceed https://allegro.pl/oferta/1-gislaved-eurofrost-6-225-65r17-106h-2019-9257907683
+2020-08-06 09:42:34.9116 / Append to proceed https://allegro.pl/oferta/26x10r14-opony-do-quada-duro-9563336925
+2020-08-06 09:42:34.9116 / Offer inserted
+2020-08-06 09:42:35.1665 / Append to proceed https://allegro.pl/oferta/26x10r14-opony-do-quada-duro-9563336925
+2020-08-06 09:42:35.4018 / Append to proceed https://allegro.pl/oferta/26x10r14-opony-do-quada-duro-9563336499
+2020-08-06 09:42:35.4018 / Offer inserted
+2020-08-06 09:42:35.6679 / Append to proceed https://allegro.pl/oferta/26x10r14-opony-do-quada-duro-9563336499
+2020-08-06 09:42:35.8895 / Append to proceed https://allegro.pl/oferta/2-fulda-kristall-montero-3-175-70r13-82t-2019-9563474684
+2020-08-06 09:42:35.8895 / Offer inserted
+2020-08-06 09:42:36.1413 / Append to proceed https://allegro.pl/oferta/2-fulda-kristall-montero-3-175-70r13-82t-2019-9563474684
+2020-08-06 09:42:36.3585 / Append to proceed https://allegro.pl/oferta/1-uniroyal-rain-sport-3-205-55r17-95v-2019-9563472561
+2020-08-06 09:42:36.3585 / Offer inserted
+2020-08-06 09:42:36.6201 / Append to proceed https://allegro.pl/oferta/1-uniroyal-rain-sport-3-205-55r17-95v-2019-9563472561
+2020-08-06 09:42:36.8378 / Append to proceed https://allegro.pl/oferta/2-nexen-n-blue-hd-plus-185-55r15-82h-2020-9563465047
+2020-08-06 09:42:36.8378 / Offer inserted
+2020-08-06 09:42:38.1253 / Append to proceed https://allegro.pl/oferta/2-nexen-n-blue-hd-plus-185-55r15-82h-2020-9563465047
+2020-08-06 09:42:38.3480 / Append to proceed https://allegro.pl/oferta/1-goodyear-efficientgrip-performance-195-55r16-87h-9563449720
+2020-08-06 09:42:38.3480 / Offer inserted
+2020-08-06 09:42:40.6877 / Append to proceed https://allegro.pl/oferta/1-goodyear-efficientgrip-performance-195-55r16-87h-9563449720
+2020-08-06 09:42:40.9184 / Append to proceed https://allegro.pl/oferta/2-nexen-n-blue-hd-plus-185-60r15-84h-2019-9563449295
+2020-08-06 09:42:40.9184 / Offer inserted
+2020-08-06 09:42:42.2557 / Append to proceed https://allegro.pl/oferta/2-nexen-n-blue-hd-plus-185-60r15-84h-2019-9563449295
+2020-08-06 09:42:42.4758 / Append to proceed https://allegro.pl/oferta/1-firestone-destination-hp-235-70r16-106h-2019-9563429397
+2020-08-06 09:42:42.4758 / Offer inserted
+2020-08-06 09:42:43.6969 / Append to proceed https://allegro.pl/oferta/1-firestone-destination-hp-235-70r16-106h-2019-9563429397
+2020-08-06 09:42:43.9231 / Append to proceed https://allegro.pl/oferta/1-dunlop-sp-sport-bluresponse-205-65r15-94h-2019-9563425530
+2020-08-06 09:42:43.9293 / Offer inserted
+2020-08-06 09:42:45.2813 / Append to proceed https://allegro.pl/oferta/1-dunlop-sp-sport-bluresponse-205-65r15-94h-2019-9563425530
+2020-08-06 09:42:45.5011 / Append to proceed https://allegro.pl/oferta/1-hankook-winter-i-cept-evo2-w320-225-50r17-94h-20-9563424708
+2020-08-06 09:42:45.5011 / Offer inserted
+2020-08-06 09:42:45.7644 / Append to proceed https://allegro.pl/oferta/1-hankook-winter-i-cept-evo2-w320-225-50r17-94h-20-9563424708
+2020-08-06 09:42:45.9960 / Append to proceed https://allegro.pl/oferta/26x10r14-opony-do-quada-duro-9563256336
+2020-08-06 09:42:45.9960 / Offer inserted
+2020-08-06 09:42:46.2782 / Append to proceed https://allegro.pl/oferta/26x10r14-opony-do-quada-duro-9563256336
+2020-08-06 09:42:46.5033 / Append to proceed https://allegro.pl/oferta/metzeler-me880-marathon-130-60r18-2018r-9558697917
+2020-08-06 09:42:46.5100 / Offer inserted
+2020-08-06 09:42:46.7653 / Append to proceed https://allegro.pl/oferta/metzeler-me880-marathon-130-60r18-2018r-9558697917
+2020-08-06 09:42:46.9854 / Append to proceed https://allegro.pl/oferta/bridgestone-120-90-17-e-max-f-64h-tt-19-9564072311
+2020-08-06 09:42:46.9854 / Offer inserted
+2020-08-06 09:42:47.2720 / Append to proceed https://allegro.pl/oferta/bridgestone-120-90-17-e-max-f-64h-tt-19-9564072311
+2020-08-06 09:42:47.4982 / Append to proceed https://allegro.pl/oferta/opona-letnia-hankook-215-60r17-dynapro-hp2-ra33-96-9564066653
+2020-08-06 09:42:47.4999 / Offer inserted
+2020-08-06 09:42:47.7540 / Append to proceed https://allegro.pl/oferta/opona-letnia-hankook-215-60r17-dynapro-hp2-ra33-96-9564066653
+2020-08-06 09:42:47.9746 / Append to proceed https://allegro.pl/oferta/2x-opony-riken-road-performance-205-60r16-96v-8966773940
+2020-08-06 09:42:47.9746 / Offer inserted
+2020-08-06 09:42:48.2375 / Append to proceed https://allegro.pl/oferta/2x-opony-riken-road-performance-205-60r16-96v-8966773940
+2020-08-06 09:42:48.4610 / Append to proceed https://allegro.pl/oferta/2x-opony-radar-rpx800-195-40r17-81w-letnie-8938005626
+2020-08-06 09:42:48.4610 / Offer inserted
+2020-08-06 09:42:48.7260 / Append to proceed https://allegro.pl/oferta/2x-opony-radar-rpx800-195-40r17-81w-letnie-8938005626
+2020-08-06 09:42:48.9523 / Append to proceed https://allegro.pl/oferta/bridgestone-lm005dg-205-55-r16-xl-94-v-9561434560
+2020-08-06 09:42:48.9523 / Offer inserted
+2020-08-06 09:42:49.2102 / Append to proceed https://allegro.pl/oferta/bridgestone-lm005dg-205-55-r16-xl-94-v-9561434560
+2020-08-06 09:42:49.4301 / Append to proceed https://allegro.pl/oferta/goodyear-vector-4seasons-g2-205-60-r15-95-h-9561366496
+2020-08-06 09:42:49.4301 / Offer inserted
+2020-08-06 09:42:49.6888 / Append to proceed https://allegro.pl/oferta/goodyear-vector-4seasons-g2-205-60-r15-95-h-9561366496
+2020-08-06 09:42:49.9112 / Append to proceed https://allegro.pl/oferta/1xgoodyear-wrangler-at-sa-205-80r16-110s-2019-9561122349
+2020-08-06 09:42:49.9167 / Offer inserted
+2020-08-06 09:42:50.1725 / Append to proceed https://allegro.pl/oferta/1xgoodyear-wrangler-at-sa-205-80r16-110s-2019-9561122349
+2020-08-06 09:42:50.4092 / Append to proceed https://allegro.pl/oferta/opona-duro-di2025-power-grip-26x10r14-64n-4pr-e-9561114260
+2020-08-06 09:42:50.4092 / Offer inserted
+2020-08-06 09:42:50.6803 / Append to proceed https://allegro.pl/oferta/opona-duro-di2025-power-grip-26x10r14-64n-4pr-e-9561114260
+2020-08-06 09:42:50.9022 / Append to proceed https://allegro.pl/oferta/1xdunlop-sp-sport-bluresponse-205-65r15-94v-2019-9561081917
+2020-08-06 09:42:50.9022 / Offer inserted
+2020-08-06 09:42:51.1590 / Append to proceed https://allegro.pl/oferta/1xdunlop-sp-sport-bluresponse-205-65r15-94v-2019-9561081917
+2020-08-06 09:42:51.3953 / Append to proceed https://allegro.pl/oferta/1xbridgestone-lm001-205-55r16-91h-2019-9561076547
+2020-08-06 09:42:51.3953 / Offer inserted
+2020-08-06 09:42:51.6557 / Append to proceed https://allegro.pl/oferta/1xbridgestone-lm001-205-55r16-91h-2019-9561076547
+2020-08-06 09:42:51.8832 / Append to proceed https://allegro.pl/oferta/1xbridgestone-dueler-h-p-sport-d-sport-205-60r16-9-9561073839
+2020-08-06 09:42:51.8832 / Offer inserted
+2020-08-06 09:42:52.1396 / Append to proceed https://allegro.pl/oferta/1xbridgestone-dueler-h-p-sport-d-sport-205-60r16-9-9561073839
+2020-08-06 09:42:52.3637 / Append to proceed https://allegro.pl/oferta/1xfirestone-sz90-205-45r17-88v-2019-9561073090
+2020-08-06 09:42:52.3637 / Offer inserted
+2020-08-06 09:42:52.6186 / Append to proceed https://allegro.pl/oferta/1xfirestone-sz90-205-45r17-88v-2019-9561073090
+2020-08-06 09:42:52.8399 / Append to proceed https://allegro.pl/oferta/1xhankook-ventus-prime3-k125-225-55r17-101w-2019-9560817353
+2020-08-06 09:42:52.8399 / Offer inserted
+2020-08-06 09:42:53.0951 / Append to proceed https://allegro.pl/oferta/1xhankook-ventus-prime3-k125-225-55r17-101w-2019-9560817353
+2020-08-06 09:42:53.3301 / Append to proceed https://allegro.pl/oferta/1xkleber-dynaxer-hp3-225-55r16-99w-2019-9560815365
+2020-08-06 09:42:53.3301 / Offer inserted
+2020-08-06 09:42:53.6120 / Append to proceed https://allegro.pl/oferta/1xkleber-dynaxer-hp3-225-55r16-99w-2019-9560815365
+2020-08-06 09:42:53.8395 / Append to proceed https://allegro.pl/oferta/1-barum-brillantis-2-265-70r16-112h-2017-9560420968
+2020-08-06 09:42:53.8395 / Offer inserted
+2020-08-06 09:42:54.0973 / Append to proceed https://allegro.pl/oferta/1-barum-brillantis-2-265-70r16-112h-2017-9560420968
+2020-08-06 09:42:54.3181 / Append to proceed https://allegro.pl/oferta/continental-tkc70-twinduro-r-120-90-17-64-t-9466228116
+2020-08-06 09:42:54.3181 / Offer inserted
+2020-08-06 09:42:54.5937 / Append to proceed https://allegro.pl/oferta/continental-tkc70-twinduro-r-120-90-17-64-t-9466228116
+2020-08-06 09:42:54.8138 / Append to proceed https://allegro.pl/oferta/maxxis-classic-m-6011-150-90-15-74-h-9561615639
+2020-08-06 09:42:54.8138 / Offer inserted
+2020-08-06 09:42:55.0804 / Append to proceed https://allegro.pl/oferta/maxxis-classic-m-6011-150-90-15-74-h-9561615639
+2020-08-06 09:42:55.3023 / Append to proceed https://allegro.pl/oferta/bridgestone-battlax-a41-f-90-90-21-54-v-9459279384
+2020-08-06 09:42:55.3023 / Offer inserted
+2020-08-06 09:42:55.5600 / Append to proceed https://allegro.pl/oferta/bridgestone-battlax-a41-f-90-90-21-54-v-9459279384
+2020-08-06 09:43:04.7109 / Fetched 1 offers
+2020-08-06 09:43:04.8089 / Append to proceed https://allegro.pl/oferta/dunlop-sport-blueresponse-185-55-r15-82-v-9561558934
+2020-08-06 09:43:04.8089 / Offer inserted
+2020-08-06 09:43:05.6765 / Fetched 1 offers
+2020-08-06 09:43:05.7156 / Append to proceed https://allegro.pl/oferta/do-quada-maxxis-big-horn-m917-26x9r12-26x9-00-12-9562091390
+2020-08-06 09:43:05.7156 / Offer inserted
+2020-08-06 09:43:06.5751 / Fetched 1 offers
+2020-08-06 09:43:06.6134 / Append to proceed https://allegro.pl/oferta/2-nowe-opony-zimowe-goodride-sw618-205-70r15-96t-9561886148
+2020-08-06 09:43:06.6134 / Offer inserted
+2020-08-06 09:43:07.4576 / Fetched 1 offers
+2020-08-06 09:43:07.4960 / Append to proceed https://allegro.pl/oferta/1x-vredestein-195-65r16-104-102t-comtrac-2-winter-9561371378
+2020-08-06 09:43:07.4977 / Offer inserted
+2020-08-06 09:43:08.3432 / Fetched 1 offers
+2020-08-06 09:43:08.3851 / Append to proceed https://allegro.pl/oferta/1x-continental-205-60r16-92h-wintercontact-ts-850-9561352899
+2020-08-06 09:43:08.3851 / Offer inserted
+2020-08-06 09:43:09.2300 / Fetched 1 offers
+2020-08-06 09:43:09.2685 / Append to proceed https://allegro.pl/oferta/2szt-215-60r16-sw608-xl-99h-goodride-9561307052
+2020-08-06 09:43:09.2685 / Offer inserted
+2020-08-06 09:43:10.1109 / Fetched 1 offers
+2020-08-06 09:43:10.1494 / Append to proceed https://allegro.pl/oferta/1x-uniroyal-215-70r15-109-107r-snow-max-3-c-zimowe-9561217355
+2020-08-06 09:43:10.1494 / Offer inserted
+2020-08-06 09:43:11.0135 / Fetched 1 offers
+2020-08-06 09:43:11.0521 / Append to proceed https://allegro.pl/oferta/2x-opony-caloroczne-185-65r15-apollo-alnac-4g-88t-9561183440
+2020-08-06 09:43:11.0521 / Offer inserted
+2020-08-06 09:43:11.8883 / Fetched 1 offers
+2020-08-06 09:43:11.9320 / Append to proceed https://allegro.pl/oferta/1x-vredestein-195-60r16-99-97t-snowtrac-5-c-zimowe-9561174885
+2020-08-06 09:43:11.9320 / Offer inserted
+2020-08-06 09:43:12.7877 / Fetched 1 offers
+2020-08-06 09:43:12.8265 / Append to proceed https://allegro.pl/oferta/2-radar-dimax-classic-185-80r14-90h-9560581842
+2020-08-06 09:43:12.8265 / Offer inserted
+2020-08-06 09:43:13.6739 / Fetched 1 offers
+2020-08-06 09:43:13.7179 / Append to proceed https://allegro.pl/oferta/1-radar-dimax-winter-sport-225-40r18-92v-9560579915
+2020-08-06 09:43:13.7245 / Offer inserted
+2020-08-06 09:43:14.5624 / Fetched 1 offers
+2020-08-06 09:43:14.6011 / Append to proceed https://allegro.pl/oferta/1-matador-mp82-conquerra-2-265-70r16-112h-2019-9560577069
+2020-08-06 09:43:14.6075 / Offer inserted
+2020-08-06 09:43:15.4490 / Fetched 1 offers
+2020-08-06 09:43:15.4930 / Append to proceed https://allegro.pl/oferta/1-uniroyal-rain-expert-3-215-60r17-96h-2019-9560573972
+2020-08-06 09:43:15.4930 / Offer inserted
+2020-08-06 09:43:16.3549 / Fetched 1 offers
+2020-08-06 09:43:16.3978 / Append to proceed https://allegro.pl/oferta/1-barum-polaris-5-235-55r18-104h-2019-9560572147
+2020-08-06 09:43:16.3978 / Offer inserted
+2020-08-06 09:43:17.2544 / Fetched 1 offers
+2020-08-06 09:43:17.2937 / Append to proceed https://allegro.pl/oferta/1-kleber-dynaxer-hp3-215-50r17-95w-2018-9560567716
+2020-08-06 09:43:17.3006 / Offer inserted
+2020-08-06 09:43:18.1354 / Fetched 1 offers
+2020-08-06 09:43:18.1791 / Append to proceed https://allegro.pl/oferta/2-uniroyal-rain-expert-3-185-65r14-86t-2019-9560481924
+2020-08-06 09:43:18.1856 / Offer inserted
+2020-08-06 09:43:19.0226 / Fetched 1 offers
+2020-08-06 09:43:19.0618 / Append to proceed https://allegro.pl/oferta/2x-185-65r15-88t-allseasonexpert-2-uniroyal-9456463476
+2020-08-06 09:43:19.0683 / Offer inserted
+2020-08-06 09:43:19.8939 / Fetched 1 offers
+2020-08-06 09:43:19.9385 / Append to proceed https://allegro.pl/oferta/2-general-altimax-winter-3-205-55r16-91h-2018-9343016972
+2020-08-06 09:43:19.9385 / Offer inserted
+2020-08-06 09:43:20.8005 / Fetched 1 offers
+2020-08-06 09:43:20.8399 / Append to proceed https://allegro.pl/oferta/bridgestone-z225-45-r17-lm001-91h-17-8275643275
+2020-08-06 09:43:20.8430 / Offer inserted
+2020-08-06 09:43:21.6767 / Fetched 1 offers
+2020-08-06 09:43:21.7202 / Append to proceed https://allegro.pl/oferta/opona-110-80b19-k60-scout-59t-m-s-przod-04-2020-8940533709
+2020-08-06 09:43:21.7202 / Offer inserted
+2020-08-06 09:43:22.5848 / Fetched 1 offers
+2020-08-06 09:43:22.6235 / Append to proceed https://allegro.pl/oferta/24x10r11-opony-do-quada-duro-9563336825
+2020-08-06 09:43:22.6267 / Offer inserted
+2020-08-06 09:43:23.4719 / Fetched 1 offers
+2020-08-06 09:43:23.5132 / Append to proceed https://allegro.pl/oferta/24x10r11-opony-do-quada-duro-9563336440
+2020-08-06 09:43:23.5194 / Offer inserted
+2020-08-06 09:43:24.3532 / Fetched 1 offers
+2020-08-06 09:43:24.3970 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-205-55r16-debica-frigo-2-91t-9563692077
+2020-08-06 09:43:24.4039 / Offer inserted
+2020-08-06 09:43:25.2413 / Fetched 1 offers
+2020-08-06 09:43:25.2850 / Append to proceed https://allegro.pl/oferta/1-saetta-van-225-75r16c-118-116r-2019-9563471460
+2020-08-06 09:43:25.2850 / Offer inserted
+2020-08-06 09:43:26.1344 / Fetched 1 offers
+2020-08-06 09:43:26.1781 / Append to proceed https://allegro.pl/oferta/2-nexen-n-blue-hd-plus-175-65r15-84t-2019-9563449208
+2020-08-06 09:43:26.1781 / Offer inserted
+2020-08-06 09:43:27.0370 / Fetched 1 offers
+2020-08-06 09:43:27.0805 / Append to proceed https://allegro.pl/oferta/1-kleber-krisalp-hp3-suv-215-60r17-96h-2020-9563435769
+2020-08-06 09:43:27.0805 / Offer inserted
+2020-08-06 09:43:27.9402 / Fetched 1 offers
+2020-08-06 09:43:27.9786 / Append to proceed https://allegro.pl/oferta/1-bridgestone-er300a-205-55r16-91w-2019-9563429012
+2020-08-06 09:43:27.9850 / Offer inserted
+2020-08-06 09:43:28.8401 / Fetched 1 offers
+2020-08-06 09:43:28.8838 / Append to proceed https://allegro.pl/oferta/1-dunlop-sp-sport-bluresponse-185-55r15-82v-2019-9563428235
+2020-08-06 09:43:28.8838 / Offer inserted
+2020-08-06 09:43:29.7281 / Fetched 1 offers
+2020-08-06 09:43:29.7724 / Append to proceed https://allegro.pl/oferta/1-dunlop-sp-sport-300-175-60r15-81h-2019-9563425467
+2020-08-06 09:43:29.7724 / Offer inserted
+2020-08-06 09:43:30.6191 / Fetched 1 offers
+2020-08-06 09:43:30.6591 / Append to proceed https://allegro.pl/oferta/24x10r11-opony-do-quada-duro-9563280819
+2020-08-06 09:43:30.6658 / Offer inserted
+2020-08-06 09:43:31.5084 / Fetched 1 offers
+2020-08-06 09:43:31.5521 / Append to proceed https://allegro.pl/oferta/opona-120-70zr19-me888-marathon-ultra-60w-42-2017-9416272401
+2020-08-06 09:43:31.5521 / Offer inserted
+2020-08-06 09:43:32.3901 / Fetched 1 offers
+2020-08-06 09:43:32.4343 / Append to proceed https://allegro.pl/oferta/opona-zimowa-michelin-205-55r16-alpin-6-91h-9564050965
+2020-08-06 09:43:32.4343 / Offer inserted
+2020-08-06 09:43:33.2759 / Fetched 1 offers
+2020-08-06 09:43:33.3196 / Append to proceed https://allegro.pl/oferta/opona-zimowa-nokian-195-75r16-wr-c3-107-105s-c-9564050271
+2020-08-06 09:43:33.3196 / Offer inserted
+2020-08-06 09:43:34.1792 / Fetched 1 offers
+2020-08-06 09:43:34.2229 / Append to proceed https://allegro.pl/oferta/opona-letnia-fulda-225-55r16-ecocontrol-hp2-99y-xl-9564025890
+2020-08-06 09:43:34.2229 / Offer inserted
+2020-08-06 09:43:35.0720 / Fetched 1 offers
+2020-08-06 09:43:35.1156 / Append to proceed https://allegro.pl/oferta/2x-nexen-175-65r15-84t-winguard-snow-g-3-wh21-8453889770
+2020-08-06 09:43:35.1156 / Offer inserted
+2020-08-06 09:43:35.9581 / Fetched 1 offers
+2020-08-06 09:43:35.9963 / Append to proceed https://allegro.pl/oferta/2x-barum-185-60r15-84t-polaris-5-8453637733
+2020-08-06 09:43:35.9963 / Offer inserted
+2020-08-06 09:43:36.8401 / Fetched 1 offers
+2020-08-06 09:43:36.8810 / Append to proceed https://allegro.pl/oferta/235-55r18-opony-caloroczne-radar-4x4-suv-9561843511
+2020-08-06 09:43:36.8810 / Offer inserted
+2020-08-06 09:43:37.7160 / Fetched 1 offers
+2020-08-06 09:43:37.7563 / Append to proceed https://allegro.pl/oferta/235-55r18-opony-caloroczne-radar-4x4-suv-9561825177
+2020-08-06 09:43:37.7563 / Offer inserted
+2020-08-06 09:43:38.5975 / Fetched 1 offers
+2020-08-06 09:43:38.6388 / Append to proceed https://allegro.pl/oferta/opona-radar-255-45r20-dimax-alpine-105v-xl-e-3pms-9561273836
+2020-08-06 09:43:38.6452 / Offer inserted
+2020-08-06 09:43:39.5034 / Fetched 1 offers
+2020-08-06 09:43:39.5424 / Append to proceed https://allegro.pl/oferta/opona-radar-205-50rf17-dimax-4season-93w-xl-tl-e-9561271823
+2020-08-06 09:43:39.5424 / Offer inserted
+2020-08-06 09:43:40.3864 / Fetched 1 offers
+2020-08-06 09:43:40.4248 / Append to proceed https://allegro.pl/oferta/2xhankook-winter-i-cept-rs2-w452-175-80r14-88t-202-9561121274
+2020-08-06 09:43:40.4248 / Offer inserted
+2020-08-06 09:43:41.2645 / Fetched 1 offers
+2020-08-06 09:43:41.3081 / Append to proceed https://allegro.pl/oferta/1xbridgestone-turanza-t005-195-45r16-84v-2019-9561083159
+2020-08-06 09:43:41.3081 / Offer inserted
+2020-08-06 09:43:42.1832 / Fetched 1 offers
+2020-08-06 09:43:42.2268 / Append to proceed https://allegro.pl/oferta/1xdunlop-sp-sport-bluresponse-205-60r15-91v-2019-9561081837
+2020-08-06 09:43:42.2268 / Offer inserted
+2020-08-06 09:43:43.0707 / Fetched 1 offers
+2020-08-06 09:43:43.1119 / Append to proceed https://allegro.pl/oferta/1xdunlop-sp-sport-bluresponse-195-55r15-85v-2019-9561081311
+2020-08-06 09:43:43.1167 / Offer inserted
+2020-08-06 09:43:43.9573 / Fetched 1 offers
+2020-08-06 09:43:43.9974 / Append to proceed https://allegro.pl/oferta/1-bridgestone-dueler-h-p-sport-d-sport-205-60r16-9-9564120967
+2020-08-06 09:43:43.9991 / Offer inserted
+2020-08-06 09:43:44.8370 / Fetched 1 offers
+2020-08-06 09:43:44.8753 / Append to proceed https://allegro.pl/oferta/1-firestone-sz90-205-45r17-88v-2019-9564120232
+2020-08-06 09:43:44.8753 / Offer inserted
+2020-08-06 09:43:45.7189 / Fetched 1 offers
+2020-08-06 09:43:45.7577 / Append to proceed https://allegro.pl/oferta/2x-195-55-15-h-matador-mp92-sibir-snow-9564089097
+2020-08-06 09:43:45.7577 / Offer inserted
+2020-08-06 09:43:46.6096 / Fetched 1 offers
+2020-08-06 09:43:46.6497 / Append to proceed https://allegro.pl/oferta/2x-195-65-15-t-xl-matador-mp92-sibir-snow-9564088210
+2020-08-06 09:43:46.6497 / Offer inserted
+2020-08-06 09:43:47.4979 / Fetched 1 offers
+2020-08-06 09:43:47.5412 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-185-65r14-kleber-krisalp-hp2-86t-9564008834
+2020-08-06 09:43:47.5412 / Offer inserted
+2020-08-06 09:43:48.3741 / Fetched 1 offers
+2020-08-06 09:43:48.4232 / Append to proceed https://allegro.pl/oferta/2x-opony-caloroczne-195-65r15-nexen-nblue-4s-91t-9563997224
+2020-08-06 09:43:48.4232 / Offer inserted
+2020-08-06 09:43:49.2742 / Fetched 1 offers
+2020-08-06 09:43:49.3177 / Append to proceed https://allegro.pl/oferta/1x-yokohama-bluearth-winter-v905-215-60r17-96h-9563921658
+2020-08-06 09:43:49.3177 / Offer inserted
+2020-08-06 09:43:50.1520 / Fetched 1 offers
+2020-08-06 09:43:50.1920 / Append to proceed https://allegro.pl/oferta/1x-pirelli-sottozero-serie-ii-225-65r17-102h-9563860315
+2020-08-06 09:43:50.1920 / Offer inserted
+2020-08-06 09:43:51.0390 / Fetched 1 offers
+2020-08-06 09:43:51.0776 / Append to proceed https://allegro.pl/oferta/1x-pirelli-p7-cinturato-225-45r17-91y-rof-9563842459
+2020-08-06 09:43:51.0846 / Offer inserted
+2020-08-06 09:43:51.9297 / Fetched 1 offers
+2020-08-06 09:43:51.9680 / Append to proceed https://allegro.pl/oferta/radar-245-70r16-renegade-at-5-111h-suv-tl-xl-ee72-8966440155
+2020-08-06 09:43:51.9680 / Offer inserted
+2020-08-06 09:43:52.8027 / Fetched 1 offers
+2020-08-06 09:43:52.8411 / Append to proceed https://allegro.pl/oferta/2x-opony-letnie-215-65r16-fortune-fsr301-102h-xl-9189897382
+2020-08-06 09:43:52.8411 / Offer inserted
+2020-08-06 09:43:53.6713 / Fetched 1 offers
+2020-08-06 09:43:53.7098 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-145-80r13-kormoran-snowpro-75q-9558336379
+2020-08-06 09:43:53.7098 / Offer inserted
+2020-08-06 09:43:59.0870 / Fetched 10 offers
+2020-08-06 09:43:59.1718 / Append to proceed https://allegro.pl/oferta/2x-matador-mp54-sibir-snow-175-70r14-88-t-9562848360
+2020-08-06 09:43:59.1718 / Offer inserted
+2020-08-06 09:43:59.4294 / Append to proceed https://allegro.pl/oferta/2x-matador-mp54-sibir-snow-175-70r14-88-t-9562848360
+2020-08-06 09:43:59.6505 / Append to proceed https://allegro.pl/oferta/1x-sava-225-60r17-103v-xl-eskimo-suv-2-xl-3pmsf-8394829810
+2020-08-06 09:43:59.6505 / Offer inserted
+2020-08-06 09:43:59.9244 / Append to proceed https://allegro.pl/oferta/1x-sava-225-60r17-103v-xl-eskimo-suv-2-xl-3pmsf-8394829810
+2020-08-06 09:44:00.1540 / Append to proceed https://allegro.pl/oferta/1x-barum-215-60r17-100v-xl-polaris-5-xl-fr-8394109272
+2020-08-06 09:44:00.1540 / Offer inserted
+2020-08-06 09:44:00.4092 / Append to proceed https://allegro.pl/oferta/1x-barum-215-60r17-100v-xl-polaris-5-xl-fr-8394109272
+2020-08-06 09:44:00.6251 / Append to proceed https://allegro.pl/oferta/dunlop-sport-blueresponse-195-55-r15-85-v-9561558897
+2020-08-06 09:44:00.6251 / Offer inserted
+2020-08-06 09:44:00.9029 / Append to proceed https://allegro.pl/oferta/dunlop-sport-blueresponse-195-55-r15-85-v-9561558897
+2020-08-06 09:44:01.1241 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-175-65-r14-uniroyal-snow-max-2-t-c-8522730813
+2020-08-06 09:44:01.1241 / Offer inserted
+2020-08-06 09:44:01.3844 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-175-65-r14-uniroyal-snow-max-2-t-c-8522730813
+2020-08-06 09:44:02.1863 / Fetched 10 offers
+2020-08-06 09:44:02.2249 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-185-60-r14-gislaved-eurofrost-6-8522688332
+2020-08-06 09:44:02.2266 / Offer inserted
+2020-08-06 09:44:02.4874 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-185-60-r14-gislaved-eurofrost-6-8522688332
+2020-08-06 09:44:02.7056 / Append to proceed https://allegro.pl/oferta/2x-205-60r16-92h-hifly-win-turi-212-9565997594
+2020-08-06 09:44:02.7126 / Offer inserted
+2020-08-06 09:44:02.9890 / Append to proceed https://allegro.pl/oferta/2x-205-60r16-92h-hifly-win-turi-212-9565997594
+2020-08-06 09:44:03.2217 / Append to proceed https://allegro.pl/oferta/2x-225-55r16-99w-aplus-a607-xl-9565996831
+2020-08-06 09:44:03.2217 / Offer inserted
+2020-08-06 09:44:03.4891 / Append to proceed https://allegro.pl/oferta/2x-225-55r16-99w-aplus-a607-xl-9565996831
+2020-08-06 09:44:03.7085 / Append to proceed https://allegro.pl/oferta/2x-195-65r15-95h-petlas-snowmaster-w651-xl-9565990814
+2020-08-06 09:44:03.7164 / Offer inserted
+2020-08-06 09:44:03.9879 / Append to proceed https://allegro.pl/oferta/2x-195-65r15-95h-petlas-snowmaster-w651-xl-9565990814
+2020-08-06 09:44:04.2279 / Append to proceed https://allegro.pl/oferta/2x-cooper-cs7-165-65r15-81-t-9565982111
+2020-08-06 09:44:04.2347 / Offer inserted
+2020-08-06 09:44:04.4972 / Append to proceed https://allegro.pl/oferta/2x-cooper-cs7-165-65r15-81-t-9565982111
+2020-08-06 09:44:05.3081 / Fetched 10 offers
+2020-08-06 09:44:05.3482 / Append to proceed https://allegro.pl/oferta/2x-205-45r16-87h-hifly-win-turi-212-xl-9565958671
+2020-08-06 09:44:05.3482 / Offer inserted
+2020-08-06 09:44:05.6103 / Append to proceed https://allegro.pl/oferta/2x-205-45r16-87h-hifly-win-turi-212-xl-9565958671
+2020-08-06 09:44:05.8265 / Append to proceed https://allegro.pl/oferta/2x-215-65r15-96h-hifly-hf201-9565945769
+2020-08-06 09:44:05.8265 / Offer inserted
+2020-08-06 09:44:06.0984 / Append to proceed https://allegro.pl/oferta/2x-215-65r15-96h-hifly-hf201-9565945769
+2020-08-06 09:44:06.3271 / Append to proceed https://allegro.pl/oferta/2x-215-60r16-95v-hifly-hf201-9565945684
+2020-08-06 09:44:06.3271 / Offer inserted
+2020-08-06 09:44:06.5831 / Append to proceed https://allegro.pl/oferta/2x-215-60r16-95v-hifly-hf201-9565945684
+2020-08-06 09:44:06.8021 / Append to proceed https://allegro.pl/oferta/2x-225-55r16-99v-hifly-hf805-xl-9565912364
+2020-08-06 09:44:06.8086 / Offer inserted
+2020-08-06 09:44:07.0694 / Append to proceed https://allegro.pl/oferta/2x-225-55r16-99v-hifly-hf805-xl-9565912364
+2020-08-06 09:44:07.2999 / Append to proceed https://allegro.pl/oferta/1x-continental-premiumcontact-6-225-45r17-94y-xl-f-9565905643
+2020-08-06 09:44:07.2999 / Offer inserted
+2020-08-06 09:44:07.5826 / Append to proceed https://allegro.pl/oferta/1x-continental-premiumcontact-6-225-45r17-94y-xl-f-9565905643
+2020-08-06 09:44:08.3869 / Fetched 10 offers
+2020-08-06 09:44:08.4299 / Append to proceed https://allegro.pl/oferta/bridgestone-120-90-17-e-max-f-64h-tt-19-9565166987
+2020-08-06 09:44:08.4299 / Offer inserted
+2020-08-06 09:44:08.6892 / Append to proceed https://allegro.pl/oferta/bridgestone-120-90-17-e-max-f-64h-tt-19-9565166987
+2020-08-06 09:44:08.9087 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-235-70r16-hankook-dynapro-at2-rf11-9176217122
+2020-08-06 09:44:08.9087 / Offer inserted
+2020-08-06 09:44:09.1671 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-235-70r16-hankook-dynapro-at2-rf11-9176217122
+2020-08-06 09:44:09.3943 / Append to proceed https://allegro.pl/oferta/2x-opony-185-55r15-ceat-winterdrive-86h-xl-2019-8570417167
+2020-08-06 09:44:09.3943 / Offer inserted
+2020-08-06 09:44:09.6530 / Append to proceed https://allegro.pl/oferta/2x-opony-185-55r15-ceat-winterdrive-86h-xl-2019-8570417167
+2020-08-06 09:44:09.8697 / Append to proceed https://allegro.pl/oferta/255-55r18-gt-radial-champiro-hpy-109v-xl-zr-9125089198
+2020-08-06 09:44:09.8762 / Offer inserted
+2020-08-06 09:44:10.1380 / Append to proceed https://allegro.pl/oferta/255-55r18-gt-radial-champiro-hpy-109v-xl-zr-9125089198
+2020-08-06 09:44:10.3760 / Append to proceed https://allegro.pl/oferta/2x-good-year-l185-60-r14-effigrip-compact-82t-8897014729
+2020-08-06 09:44:10.3760 / Offer inserted
+2020-08-06 09:44:10.6391 / Append to proceed https://allegro.pl/oferta/2x-good-year-l185-60-r14-effigrip-compact-82t-8897014729
+2020-08-06 09:44:11.4508 / Fetched 10 offers
+2020-08-06 09:44:11.4890 / Append to proceed https://allegro.pl/oferta/2x-opony-sailun-ice-blazer-alpine-175-55r15-77t-9557685659
+2020-08-06 09:44:11.4890 / Offer inserted
+2020-08-06 09:44:11.7447 / Append to proceed https://allegro.pl/oferta/2x-opony-sailun-ice-blazer-alpine-175-55r15-77t-9557685659
+2020-08-06 09:44:11.9690 / Append to proceed https://allegro.pl/oferta/2x-opony-ice-blazer-alpine-185-55r16-87h-xl-9557568900
+2020-08-06 09:44:11.9690 / Offer inserted
+2020-08-06 09:44:12.2235 / Append to proceed https://allegro.pl/oferta/2x-opony-ice-blazer-alpine-185-55r16-87h-xl-9557568900
+2020-08-06 09:44:12.4569 / Append to proceed https://allegro.pl/oferta/1x-225-50r17-bfgoodrich-advantage-98v-nowe-lato-8998169168
+2020-08-06 09:44:12.4569 / Offer inserted
+2020-08-06 09:44:12.7106 / Append to proceed https://allegro.pl/oferta/1x-225-50r17-bfgoodrich-advantage-98v-nowe-lato-8998169168
+2020-08-06 09:44:12.9276 / Append to proceed https://allegro.pl/oferta/hankook-l235-55-r17-dynapro-hp2-ra33-99v-9323195363
+2020-08-06 09:44:12.9276 / Offer inserted
+2020-08-06 09:44:13.1852 / Append to proceed https://allegro.pl/oferta/hankook-l235-55-r17-dynapro-hp2-ra33-99v-9323195363
+2020-08-06 09:44:13.4109 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-235-65r17-goodyear-8896228620
+2020-08-06 09:44:13.4109 / Offer inserted
+2020-08-06 09:44:13.6726 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-235-65r17-goodyear-8896228620
+2020-08-06 09:44:14.4782 / Fetched 10 offers
+2020-08-06 09:44:14.5165 / Append to proceed https://allegro.pl/oferta/opona-uniroyal-w225-40-r18-all-season-expe-2-92v-x-9166070804
+2020-08-06 09:44:14.5165 / Offer inserted
+2020-08-06 09:44:14.7679 / Append to proceed https://allegro.pl/oferta/opona-uniroyal-w225-40-r18-all-season-expe-2-92v-x-9166070804
+2020-08-06 09:44:14.9922 / Append to proceed https://allegro.pl/oferta/215-50r17-toyo-snowprox-s954-95v-nowe-zima-7516491095
+2020-08-06 09:44:14.9922 / Offer inserted
+2020-08-06 09:44:15.2479 / Append to proceed https://allegro.pl/oferta/215-50r17-toyo-snowprox-s954-95v-nowe-zima-7516491095
+2020-08-06 09:44:15.4637 / Append to proceed https://allegro.pl/oferta/uniroyal-rainsport-5-215-55r17-94v-fr-9104902181
+2020-08-06 09:44:15.4710 / Offer inserted
+2020-08-06 09:44:15.7312 / Append to proceed https://allegro.pl/oferta/uniroyal-rainsport-5-215-55r17-94v-fr-9104902181
+2020-08-06 09:44:15.9511 / Append to proceed https://allegro.pl/oferta/2-windforce-catchfors-uhp-225-45r19-96w-9523764212
+2020-08-06 09:44:15.9577 / Offer inserted
+2020-08-06 09:44:16.2245 / Append to proceed https://allegro.pl/oferta/2-windforce-catchfors-uhp-225-45r19-96w-9523764212
+2020-08-06 09:44:16.4462 / Append to proceed https://allegro.pl/oferta/1x-pirelli-cinturato-winter-205-50r17-93t-xl-9563363575
+2020-08-06 09:44:16.4462 / Offer inserted
+2020-08-06 09:44:16.7216 / Append to proceed https://allegro.pl/oferta/1x-pirelli-cinturato-winter-205-50r17-93t-xl-9563363575
+2020-08-06 09:44:17.5324 / Fetched 10 offers
+2020-08-06 09:44:17.5706 / Append to proceed https://allegro.pl/oferta/1x-hankook-winter-i-cept-evo2-suv-235-70r16-109h-x-9563250782
+2020-08-06 09:44:17.5706 / Offer inserted
+2020-08-06 09:44:17.8259 / Append to proceed https://allegro.pl/oferta/1x-hankook-winter-i-cept-evo2-suv-235-70r16-109h-x-9563250782
+2020-08-06 09:44:18.0514 / Append to proceed https://allegro.pl/oferta/1x-goodyear-eagle-f1-asymmetric-suv-255-55r18-109v-9563234447
+2020-08-06 09:44:18.0514 / Offer inserted
+2020-08-06 09:44:18.3108 / Append to proceed https://allegro.pl/oferta/1x-goodyear-eagle-f1-asymmetric-suv-255-55r18-109v-9563234447
+2020-08-06 09:44:18.5336 / Append to proceed https://allegro.pl/oferta/1-goodyear-efficientgrip-suv-215-65r16-98v-2019-9563726393
+2020-08-06 09:44:18.5336 / Offer inserted
+2020-08-06 09:44:18.8001 / Append to proceed https://allegro.pl/oferta/1-goodyear-efficientgrip-suv-215-65r16-98v-2019-9563726393
+2020-08-06 09:44:19.0237 / Append to proceed https://allegro.pl/oferta/2-arivo-winmaster-arw-6-195-65r16c-104-102r-2019-9563723421
+2020-08-06 09:44:19.0237 / Offer inserted
+2020-08-06 09:44:19.2789 / Append to proceed https://allegro.pl/oferta/2-arivo-winmaster-arw-6-195-65r16c-104-102r-2019-9563723421
+2020-08-06 09:44:19.5025 / Append to proceed https://allegro.pl/oferta/1-matador-mp92-sibir-snow-235-55r17-103v-2019-9563670619
+2020-08-06 09:44:19.5025 / Offer inserted
+2020-08-06 09:44:19.7686 / Append to proceed https://allegro.pl/oferta/1-matador-mp92-sibir-snow-235-55r17-103v-2019-9563670619
+2020-08-06 09:44:20.5734 / Fetched 10 offers
+2020-08-06 09:44:20.6118 / Append to proceed https://allegro.pl/oferta/1-opona-michelin-anakee-wild-120-70r19-60r-8970877055
+2020-08-06 09:44:20.6118 / Offer inserted
+2020-08-06 09:44:20.8864 / Append to proceed https://allegro.pl/oferta/1-opona-michelin-anakee-wild-120-70r19-60r-8970877055
+2020-08-06 09:44:21.1124 / Append to proceed https://allegro.pl/oferta/2x-nexen-185-65r15-88h-winguard-snow-g-3-wh21-8441526891
+2020-08-06 09:44:21.1124 / Offer inserted
+2020-08-06 09:44:21.3782 / Append to proceed https://allegro.pl/oferta/2x-nexen-185-65r15-88h-winguard-snow-g-3-wh21-8441526891
+2020-08-06 09:44:21.5990 / Append to proceed https://allegro.pl/oferta/2-fulda-multicontrol-195-50r15-82h-2020-9564238555
+2020-08-06 09:44:21.5990 / Offer inserted
+2020-08-06 09:44:21.8591 / Append to proceed https://allegro.pl/oferta/2-fulda-multicontrol-195-50r15-82h-2020-9564238555
+2020-08-06 09:44:22.0785 / Append to proceed https://allegro.pl/oferta/1-bridgestone-blizzak-lm25-1-195-60r16-89h-2019-9564194094
+2020-08-06 09:44:22.0785 / Offer inserted
+2020-08-06 09:44:22.3401 / Append to proceed https://allegro.pl/oferta/1-bridgestone-blizzak-lm25-1-195-60r16-89h-2019-9564194094
+2020-08-06 09:44:22.5690 / Append to proceed https://allegro.pl/oferta/2-firestone-multihawk-2-mulh2-165-65r13-77t-2019-9564176020
+2020-08-06 09:44:22.5690 / Offer inserted
+2020-08-06 09:44:22.8219 / Append to proceed https://allegro.pl/oferta/2-firestone-multihawk-2-mulh2-165-65r13-77t-2019-9564176020
+2020-08-06 09:44:23.6341 / Fetched 10 offers
+2020-08-06 09:44:23.6728 / Append to proceed https://allegro.pl/oferta/1-firestone-rhawk-215-55r16-97y-2019-9564173266
+2020-08-06 09:44:23.6747 / Offer inserted
+2020-08-06 09:44:23.9272 / Append to proceed https://allegro.pl/oferta/1-firestone-rhawk-215-55r16-97y-2019-9564173266
+2020-08-06 09:44:24.1531 / Append to proceed https://allegro.pl/oferta/1-goodyear-vector-4seasons-205-65r15-94h-2019-9564165999
+2020-08-06 09:44:24.1531 / Offer inserted
+2020-08-06 09:44:24.4091 / Append to proceed https://allegro.pl/oferta/1-goodyear-vector-4seasons-205-65r15-94h-2019-9564165999
+2020-08-06 09:44:24.6271 / Append to proceed https://allegro.pl/oferta/2-uniroyal-ms-plus-77-185-60r15-84t-2020-9564160522
+2020-08-06 09:44:24.6271 / Offer inserted
+2020-08-06 09:44:24.8853 / Append to proceed https://allegro.pl/oferta/2-uniroyal-ms-plus-77-185-60r15-84t-2020-9564160522
+2020-08-06 09:44:25.1265 / Append to proceed https://allegro.pl/oferta/2-vredestein-sportrac-5-205-55r16-91h-2020-9564157933
+2020-08-06 09:44:25.1265 / Offer inserted
+2020-08-06 09:44:25.3847 / Append to proceed https://allegro.pl/oferta/2-vredestein-sportrac-5-205-55r16-91h-2020-9564157933
+2020-08-06 09:44:25.6033 / Append to proceed https://allegro.pl/oferta/1-barum-quartaris-5-235-55r17-103v-2020-9564134552
+2020-08-06 09:44:25.6033 / Offer inserted
+2020-08-06 09:44:25.8574 / Append to proceed https://allegro.pl/oferta/1-barum-quartaris-5-235-55r17-103v-2020-9564134552
+2020-08-06 09:44:26.6589 / Fetched 10 offers
+2020-08-06 09:44:26.6982 / Append to proceed https://allegro.pl/oferta/1-firestone-sz90-225-50r16-92w-2019-9564129445
+2020-08-06 09:44:26.6982 / Offer inserted
+2020-08-06 09:44:26.9545 / Append to proceed https://allegro.pl/oferta/1-firestone-sz90-225-50r16-92w-2019-9564129445
+2020-08-06 09:44:27.1764 / Append to proceed https://allegro.pl/oferta/1-goodyear-ug-8-performance-205-60r16-92h-2019-9564128682
+2020-08-06 09:44:27.1764 / Offer inserted
+2020-08-06 09:44:27.4332 / Append to proceed https://allegro.pl/oferta/1-goodyear-ug-8-performance-205-60r16-92h-2019-9564128682
+2020-08-06 09:44:27.6505 / Append to proceed https://allegro.pl/oferta/1-pirelli-p-zero-pz4-225-40r18-92y-2019-9564127871
+2020-08-06 09:44:27.6505 / Offer inserted
+2020-08-06 09:44:27.9058 / Append to proceed https://allegro.pl/oferta/1-pirelli-p-zero-pz4-225-40r18-92y-2019-9564127871
+2020-08-06 09:44:28.1327 / Append to proceed https://allegro.pl/oferta/1x-yokohama-advan-fleva-v701-235-35r19-91w-xl-9563922672
+2020-08-06 09:44:28.1385 / Offer inserted
+2020-08-06 09:44:28.3938 / Append to proceed https://allegro.pl/oferta/1x-yokohama-advan-fleva-v701-235-35r19-91w-xl-9563922672
+2020-08-06 09:44:28.6197 / Append to proceed https://allegro.pl/oferta/1x-pirelli-winter-sottozero-3-205-65r16-95h-9563849088
+2020-08-06 09:44:28.6197 / Offer inserted
+2020-08-06 09:44:28.8777 / Append to proceed https://allegro.pl/oferta/1x-pirelli-winter-sottozero-3-205-65r16-95h-9563849088
+2020-08-06 09:44:29.6735 / Fetched 10 offers
+2020-08-06 09:44:29.7119 / Append to proceed https://allegro.pl/oferta/1x-pirelli-sottozero-serie-iii-225-55r16-95h-fr-9563846619
+2020-08-06 09:44:29.7119 / Offer inserted
+2020-08-06 09:44:29.9661 / Append to proceed https://allegro.pl/oferta/1x-pirelli-sottozero-serie-iii-225-55r16-95h-fr-9563846619
+2020-08-06 09:44:30.1839 / Append to proceed https://allegro.pl/oferta/1x-pirelli-sottozero-serie-iii-225-55r16-99h-xl-9563845971
+2020-08-06 09:44:30.1839 / Offer inserted
+2020-08-06 09:44:30.4543 / Append to proceed https://allegro.pl/oferta/1x-pirelli-sottozero-serie-iii-225-55r16-99h-xl-9563845971
+2020-08-06 09:44:30.6697 / Append to proceed https://allegro.pl/oferta/1-uniroyal-ms-plus-77-225-50r17-98v-2018-9543184425
+2020-08-06 09:44:30.6697 / Offer inserted
+2020-08-06 09:44:30.9270 / Append to proceed https://allegro.pl/oferta/1-uniroyal-ms-plus-77-225-50r17-98v-2018-9543184425
+2020-08-06 09:44:31.1471 / Append to proceed https://allegro.pl/oferta/1-bridgestone-turanza-t005-195-45r16-84v-2019-9564132993
+2020-08-06 09:44:31.1471 / Offer inserted
+2020-08-06 09:44:31.4324 / Append to proceed https://allegro.pl/oferta/1-bridgestone-turanza-t005-195-45r16-84v-2019-9564132993
+2020-08-06 09:44:31.6491 / Append to proceed https://allegro.pl/oferta/1-bridgestone-lm005dg-205-55r16-94v-2019-9564122918
+2020-08-06 09:44:31.6491 / Offer inserted
+2020-08-06 09:44:31.9135 / Append to proceed https://allegro.pl/oferta/1-bridgestone-lm005dg-205-55r16-94v-2019-9564122918
+2020-08-06 09:44:32.7209 / Fetched 10 offers
+2020-08-06 09:44:32.7643 / Append to proceed https://allegro.pl/oferta/1x-pirelli-scorpion-verde-235-55r19-105v-xl-9563839597
+2020-08-06 09:44:32.7643 / Offer inserted
+2020-08-06 09:44:33.0303 / Append to proceed https://allegro.pl/oferta/1x-pirelli-scorpion-verde-235-55r19-105v-xl-9563839597
+2020-08-06 09:44:33.2645 / Append to proceed https://allegro.pl/oferta/150-80-16-k673f-kenda-opona-nowa-szosowa-71h-tl-8699952673
+2020-08-06 09:44:33.2645 / Offer inserted
+2020-08-06 09:44:33.5416 / Append to proceed https://allegro.pl/oferta/150-80-16-k673f-kenda-opona-nowa-szosowa-71h-tl-8699952673
+2020-08-06 09:44:33.7680 / Append to proceed https://allegro.pl/oferta/hankook-vantra-lt-ra18-235-65r16c-115-113r-2018-8698684500
+2020-08-06 09:44:33.7680 / Offer inserted
+2020-08-06 09:44:34.0290 / Append to proceed https://allegro.pl/oferta/hankook-vantra-lt-ra18-235-65r16c-115-113r-2018-8698684500
+2020-08-06 09:44:34.2630 / Append to proceed https://allegro.pl/oferta/1x-barum-bravuris-5hm-225-55r18-98v-fr-9562789621
+2020-08-06 09:44:34.2694 / Offer inserted
+2020-08-06 09:44:34.5346 / Append to proceed https://allegro.pl/oferta/1x-barum-bravuris-5hm-225-55r18-98v-fr-9562789621
+2020-08-06 09:44:34.7583 / Append to proceed https://allegro.pl/oferta/2x-nexen-185-60r15-88t-xl-winguard-snow-g-3-wh21-8396255134
+2020-08-06 09:44:34.7653 / Offer inserted
+2020-08-06 09:44:35.0324 / Append to proceed https://allegro.pl/oferta/2x-nexen-185-60r15-88t-xl-winguard-snow-g-3-wh21-8396255134
+2020-08-06 09:44:35.8376 / Fetched 10 offers
+2020-08-06 09:44:35.8761 / Append to proceed https://allegro.pl/oferta/2x-nexen-175-65r15-84t-winguard-snow-g-3-wh21-8396252483
+2020-08-06 09:44:35.8761 / Offer inserted
+2020-08-06 09:44:36.1467 / Append to proceed https://allegro.pl/oferta/2x-nexen-175-65r15-84t-winguard-snow-g-3-wh21-8396252483
+2020-08-06 09:44:36.3839 / Append to proceed https://allegro.pl/oferta/1x-cooper-225-50r17-98v-xl-wm-sa2-xl-8394904089
+2020-08-06 09:44:36.3839 / Offer inserted
+2020-08-06 09:44:36.6550 / Append to proceed https://allegro.pl/oferta/1x-cooper-225-50r17-98v-xl-wm-sa2-xl-8394904089
+2020-08-06 09:44:36.8868 / Append to proceed https://allegro.pl/oferta/bridgestone-exedra-max-f-90-90-21-54-h-9561619707
+2020-08-06 09:44:36.8868 / Offer inserted
+2020-08-06 09:44:37.1500 / Append to proceed https://allegro.pl/oferta/bridgestone-exedra-max-f-90-90-21-54-h-9561619707
+2020-08-06 09:44:37.3977 / Append to proceed https://allegro.pl/oferta/dunlop-sp-sport-bluresponse-205-60-r15-91-v-9561535917
+2020-08-06 09:44:37.3977 / Offer inserted
+2020-08-06 09:44:37.6553 / Append to proceed https://allegro.pl/oferta/dunlop-sp-sport-bluresponse-205-60-r15-91-v-9561535917
+2020-08-06 09:44:37.8874 / Append to proceed https://allegro.pl/oferta/dunlop-econodrive-195-75-r16-107-r-9561533176
+2020-08-06 09:44:37.8874 / Offer inserted
+2020-08-06 09:44:38.1612 / Append to proceed https://allegro.pl/oferta/dunlop-econodrive-195-75-r16-107-r-9561533176
+2020-08-06 09:44:38.9639 / Fetched 10 offers
+2020-08-06 09:44:39.0080 / Append to proceed https://allegro.pl/oferta/2x-205-65-15-t-diplomat-diplomat-winter-st-5-lat-9560974538
+2020-08-06 09:44:39.0080 / Offer inserted
+2020-08-06 09:44:39.2777 / Append to proceed https://allegro.pl/oferta/2x-205-65-15-t-diplomat-diplomat-winter-st-5-lat-9560974538
+2020-08-06 09:44:39.4981 / Append to proceed https://allegro.pl/oferta/do-quada-maxxis-big-horn-m917-26x9r12-26x9-00-12-9562091526
+2020-08-06 09:44:39.5048 / Offer inserted
+2020-08-06 09:44:39.7699 / Append to proceed https://allegro.pl/oferta/do-quada-maxxis-big-horn-m917-26x9r12-26x9-00-12-9562091526
+2020-08-06 09:44:39.9986 / Append to proceed https://allegro.pl/oferta/1x-hankook-205-60r16-100-98t-winter-rw06-c-zimowe-9561347714
+2020-08-06 09:44:39.9986 / Offer inserted
+2020-08-06 09:44:40.2683 / Append to proceed https://allegro.pl/oferta/1x-hankook-205-60r16-100-98t-winter-rw06-c-zimowe-9561347714
+2020-08-06 09:44:40.4913 / Append to proceed https://allegro.pl/oferta/2x-semperit-175-70r14-84t-master-grip-2-zimowe-9561203988
+2020-08-06 09:44:40.4913 / Offer inserted
+2020-08-06 09:44:40.7554 / Append to proceed https://allegro.pl/oferta/2x-semperit-175-70r14-84t-master-grip-2-zimowe-9561203988
+2020-08-06 09:44:40.9892 / Append to proceed https://allegro.pl/oferta/1x-opona-caloroczna-215-80r15-yokohama-a-t-g015-9560924356
+2020-08-06 09:44:40.9892 / Offer inserted
+2020-08-06 09:44:41.2529 / Append to proceed https://allegro.pl/oferta/1x-opona-caloroczna-215-80r15-yokohama-a-t-g015-9560924356
+2020-08-06 09:44:42.0561 / Fetched 10 offers
+2020-08-06 09:44:42.0947 / Append to proceed https://allegro.pl/oferta/1x-opona-235-55r17-gt-radial-champiro-pro-hp-9560915151
+2020-08-06 09:44:42.0947 / Offer inserted
+2020-08-06 09:44:42.3497 / Append to proceed https://allegro.pl/oferta/1x-opona-235-55r17-gt-radial-champiro-pro-hp-9560915151
+2020-08-06 09:44:42.5940 / Append to proceed https://allegro.pl/oferta/1-firestone-vanh2wi-205-65r16c-107t-2019-9560579612
+2020-08-06 09:44:42.5940 / Offer inserted
+2020-08-06 09:44:42.8461 / Append to proceed https://allegro.pl/oferta/1-firestone-vanh2wi-205-65r16c-107t-2019-9560579612
+2020-08-06 09:44:43.0826 / Append to proceed https://allegro.pl/oferta/1-matador-mp82-conquerra-2-255-65r17-110h-2020-9560575809
+2020-08-06 09:44:43.0826 / Offer inserted
+2020-08-06 09:44:43.3449 / Append to proceed https://allegro.pl/oferta/1-matador-mp82-conquerra-2-255-65r17-110h-2020-9560575809
+2020-08-06 09:44:43.5664 / Append to proceed https://allegro.pl/oferta/1-hankook-ventus-prime3-k125-225-55r17-101w-2019-9560575007
+2020-08-06 09:44:43.5664 / Offer inserted
+2020-08-06 09:44:43.8197 / Append to proceed https://allegro.pl/oferta/1-hankook-ventus-prime3-k125-225-55r17-101w-2019-9560575007
+2020-08-06 09:44:44.0482 / Append to proceed https://allegro.pl/oferta/1-kleber-dynaxer-hp3-225-55r16-99w-2019-9560573077
+2020-08-06 09:44:44.0482 / Offer inserted
+2020-08-06 09:44:44.3132 / Append to proceed https://allegro.pl/oferta/1-kleber-dynaxer-hp3-225-55r16-99w-2019-9560573077
+2020-08-06 09:44:45.1389 / Fetched 10 offers
+2020-08-06 09:44:45.1778 / Append to proceed https://allegro.pl/oferta/1-michelin-primacy-4-225-45r17-91y-2020-9560486136
+2020-08-06 09:44:45.1778 / Offer inserted
+2020-08-06 09:44:45.4475 / Append to proceed https://allegro.pl/oferta/1-michelin-primacy-4-225-45r17-91y-2020-9560486136
+2020-08-06 09:44:45.6631 / Append to proceed https://allegro.pl/oferta/2-tristar-snowpower-2-235-40r18-95v-2019-9560478051
+2020-08-06 09:44:45.6631 / Offer inserted
+2020-08-06 09:44:45.9172 / Append to proceed https://allegro.pl/oferta/2-tristar-snowpower-2-235-40r18-95v-2019-9560478051
+2020-08-06 09:44:46.1561 / Append to proceed https://allegro.pl/oferta/maxxis-25x10-12-m918-bighorn-50n-9116516703
+2020-08-06 09:44:46.1561 / Offer inserted
+2020-08-06 09:44:46.4170 / Append to proceed https://allegro.pl/oferta/maxxis-25x10-12-m918-bighorn-50n-9116516703
+2020-08-06 09:44:46.6325 / Append to proceed https://allegro.pl/oferta/1-gislaved-eurofrost-6-225-65r17-106h-2019-9257907683
+2020-08-06 09:44:46.6325 / Offer inserted
+2020-08-06 09:44:46.8914 / Append to proceed https://allegro.pl/oferta/1-gislaved-eurofrost-6-225-65r17-106h-2019-9257907683
+2020-08-06 09:44:47.1148 / Append to proceed https://allegro.pl/oferta/26x10r14-opony-do-quada-duro-9563336925
+2020-08-06 09:44:47.1148 / Offer inserted
+2020-08-06 09:44:47.3800 / Append to proceed https://allegro.pl/oferta/26x10r14-opony-do-quada-duro-9563336925
+2020-08-06 09:44:48.2005 / Fetched 10 offers
+2020-08-06 09:44:48.2390 / Append to proceed https://allegro.pl/oferta/26x10r14-opony-do-quada-duro-9563336499
+2020-08-06 09:44:48.2390 / Offer inserted
+2020-08-06 09:44:48.5039 / Append to proceed https://allegro.pl/oferta/26x10r14-opony-do-quada-duro-9563336499
+2020-08-06 09:44:48.7322 / Append to proceed https://allegro.pl/oferta/2-fulda-kristall-montero-3-175-70r13-82t-2019-9563474684
+2020-08-06 09:44:48.7322 / Offer inserted
+2020-08-06 09:44:48.9958 / Append to proceed https://allegro.pl/oferta/2-fulda-kristall-montero-3-175-70r13-82t-2019-9563474684
+2020-08-06 09:44:49.2230 / Append to proceed https://allegro.pl/oferta/1-uniroyal-rain-sport-3-205-55r17-95v-2019-9563472561
+2020-08-06 09:44:49.2296 / Offer inserted
+2020-08-06 09:44:49.4972 / Append to proceed https://allegro.pl/oferta/1-uniroyal-rain-sport-3-205-55r17-95v-2019-9563472561
+2020-08-06 09:44:49.7207 / Append to proceed https://allegro.pl/oferta/2-nexen-n-blue-hd-plus-185-55r15-82h-2020-9563465047
+2020-08-06 09:44:49.7207 / Offer inserted
+2020-08-06 09:44:49.9854 / Append to proceed https://allegro.pl/oferta/2-nexen-n-blue-hd-plus-185-55r15-82h-2020-9563465047
+2020-08-06 09:44:50.2172 / Append to proceed https://allegro.pl/oferta/1-goodyear-efficientgrip-performance-195-55r16-87h-9563449720
+2020-08-06 09:44:50.2172 / Offer inserted
+2020-08-06 09:44:50.5023 / Append to proceed https://allegro.pl/oferta/1-goodyear-efficientgrip-performance-195-55r16-87h-9563449720
+2020-08-06 09:44:51.3096 / Fetched 10 offers
+2020-08-06 09:44:51.3532 / Append to proceed https://allegro.pl/oferta/2-nexen-n-blue-hd-plus-185-60r15-84h-2019-9563449295
+2020-08-06 09:44:51.3532 / Offer inserted
+2020-08-06 09:44:51.6282 / Append to proceed https://allegro.pl/oferta/2-nexen-n-blue-hd-plus-185-60r15-84h-2019-9563449295
+2020-08-06 09:44:51.8588 / Append to proceed https://allegro.pl/oferta/1-firestone-destination-hp-235-70r16-106h-2019-9563429397
+2020-08-06 09:44:51.8588 / Offer inserted
+2020-08-06 09:44:52.1174 / Append to proceed https://allegro.pl/oferta/1-firestone-destination-hp-235-70r16-106h-2019-9563429397
+2020-08-06 09:44:52.3468 / Append to proceed https://allegro.pl/oferta/1-dunlop-sp-sport-bluresponse-205-65r15-94h-2019-9563425530
+2020-08-06 09:44:52.3468 / Offer inserted
+2020-08-06 09:44:52.6172 / Append to proceed https://allegro.pl/oferta/1-dunlop-sp-sport-bluresponse-205-65r15-94h-2019-9563425530
+2020-08-06 09:44:52.8453 / Append to proceed https://allegro.pl/oferta/1-hankook-winter-i-cept-evo2-w320-225-50r17-94h-20-9563424708
+2020-08-06 09:44:52.8453 / Offer inserted
+2020-08-06 09:44:53.1084 / Append to proceed https://allegro.pl/oferta/1-hankook-winter-i-cept-evo2-w320-225-50r17-94h-20-9563424708
+2020-08-06 09:44:53.3488 / Append to proceed https://allegro.pl/oferta/26x10r14-opony-do-quada-duro-9563256336
+2020-08-06 09:44:53.3488 / Offer inserted
+2020-08-06 09:44:53.6274 / Append to proceed https://allegro.pl/oferta/26x10r14-opony-do-quada-duro-9563256336
+2020-08-06 09:44:54.4364 / Fetched 10 offers
+2020-08-06 09:44:54.4799 / Append to proceed https://allegro.pl/oferta/metzeler-me880-marathon-130-60r18-2018r-9558697917
+2020-08-06 09:44:54.4799 / Offer inserted
+2020-08-06 09:44:54.7509 / Append to proceed https://allegro.pl/oferta/metzeler-me880-marathon-130-60r18-2018r-9558697917
+2020-08-06 09:44:54.9839 / Append to proceed https://allegro.pl/oferta/bridgestone-120-90-17-e-max-f-64h-tt-19-9564072311
+2020-08-06 09:44:54.9839 / Offer inserted
+2020-08-06 09:44:55.2537 / Append to proceed https://allegro.pl/oferta/bridgestone-120-90-17-e-max-f-64h-tt-19-9564072311
+2020-08-06 09:44:55.4770 / Append to proceed https://allegro.pl/oferta/opona-letnia-hankook-215-60r17-dynapro-hp2-ra33-96-9564066653
+2020-08-06 09:44:55.4770 / Offer inserted
+2020-08-06 09:44:55.7481 / Append to proceed https://allegro.pl/oferta/opona-letnia-hankook-215-60r17-dynapro-hp2-ra33-96-9564066653
+2020-08-06 09:44:55.9769 / Append to proceed https://allegro.pl/oferta/2x-opony-riken-road-performance-205-60r16-96v-8966773940
+2020-08-06 09:44:55.9769 / Offer inserted
+2020-08-06 09:44:56.2461 / Append to proceed https://allegro.pl/oferta/2x-opony-riken-road-performance-205-60r16-96v-8966773940
+2020-08-06 09:44:56.4776 / Append to proceed https://allegro.pl/oferta/2x-opony-radar-rpx800-195-40r17-81w-letnie-8938005626
+2020-08-06 09:44:56.4776 / Offer inserted
+2020-08-06 09:44:56.7711 / Append to proceed https://allegro.pl/oferta/2x-opony-radar-rpx800-195-40r17-81w-letnie-8938005626
+2020-08-06 09:44:57.5778 / Fetched 10 offers
+2020-08-06 09:44:57.6161 / Append to proceed https://allegro.pl/oferta/bridgestone-lm005dg-205-55-r16-xl-94-v-9561434560
+2020-08-06 09:44:57.6161 / Offer inserted
+2020-08-06 09:44:57.8997 / Append to proceed https://allegro.pl/oferta/bridgestone-lm005dg-205-55-r16-xl-94-v-9561434560
+2020-08-06 09:44:58.1265 / Append to proceed https://allegro.pl/oferta/goodyear-vector-4seasons-g2-205-60-r15-95-h-9561366496
+2020-08-06 09:44:58.1265 / Offer inserted
+2020-08-06 09:44:58.3917 / Append to proceed https://allegro.pl/oferta/goodyear-vector-4seasons-g2-205-60-r15-95-h-9561366496
+2020-08-06 09:44:58.6273 / Append to proceed https://allegro.pl/oferta/1xgoodyear-wrangler-at-sa-205-80r16-110s-2019-9561122349
+2020-08-06 09:44:58.6273 / Offer inserted
+2020-08-06 09:44:58.9074 / Append to proceed https://allegro.pl/oferta/1xgoodyear-wrangler-at-sa-205-80r16-110s-2019-9561122349
+2020-08-06 09:44:59.1328 / Append to proceed https://allegro.pl/oferta/opona-duro-di2025-power-grip-26x10r14-64n-4pr-e-9561114260
+2020-08-06 09:44:59.1328 / Offer inserted
+2020-08-06 09:44:59.3922 / Append to proceed https://allegro.pl/oferta/opona-duro-di2025-power-grip-26x10r14-64n-4pr-e-9561114260
+2020-08-06 09:44:59.6131 / Append to proceed https://allegro.pl/oferta/1xdunlop-sp-sport-bluresponse-205-65r15-94v-2019-9561081917
+2020-08-06 09:44:59.6131 / Offer inserted
+2020-08-06 09:44:59.8964 / Append to proceed https://allegro.pl/oferta/1xdunlop-sp-sport-bluresponse-205-65r15-94v-2019-9561081917
+2020-08-06 09:45:00.7025 / Fetched 10 offers
+2020-08-06 09:45:00.7407 / Append to proceed https://allegro.pl/oferta/1xbridgestone-lm001-205-55r16-91h-2019-9561076547
+2020-08-06 09:45:00.7407 / Offer inserted
+2020-08-06 09:45:01.0137 / Append to proceed https://allegro.pl/oferta/1xbridgestone-lm001-205-55r16-91h-2019-9561076547
+2020-08-06 09:45:01.2403 / Append to proceed https://allegro.pl/oferta/1xbridgestone-dueler-h-p-sport-d-sport-205-60r16-9-9561073839
+2020-08-06 09:45:01.2469 / Offer inserted
+2020-08-06 09:45:01.5116 / Append to proceed https://allegro.pl/oferta/1xbridgestone-dueler-h-p-sport-d-sport-205-60r16-9-9561073839
+2020-08-06 09:45:01.7421 / Append to proceed https://allegro.pl/oferta/1xfirestone-sz90-205-45r17-88v-2019-9561073090
+2020-08-06 09:45:01.7421 / Offer inserted
+2020-08-06 09:45:02.0098 / Append to proceed https://allegro.pl/oferta/1xfirestone-sz90-205-45r17-88v-2019-9561073090
+2020-08-06 09:45:02.2350 / Append to proceed https://allegro.pl/oferta/1xhankook-ventus-prime3-k125-225-55r17-101w-2019-9560817353
+2020-08-06 09:45:02.2350 / Offer inserted
+2020-08-06 09:45:02.4935 / Append to proceed https://allegro.pl/oferta/1xhankook-ventus-prime3-k125-225-55r17-101w-2019-9560817353
+2020-08-06 09:45:02.7140 / Append to proceed https://allegro.pl/oferta/1xkleber-dynaxer-hp3-225-55r16-99w-2019-9560815365
+2020-08-06 09:45:02.7140 / Offer inserted
+2020-08-06 09:45:02.9879 / Append to proceed https://allegro.pl/oferta/1xkleber-dynaxer-hp3-225-55r16-99w-2019-9560815365
+2020-08-06 09:45:03.7956 / Fetched 10 offers
+2020-08-06 09:45:03.8392 / Append to proceed https://allegro.pl/oferta/1-barum-brillantis-2-265-70r16-112h-2017-9560420968
+2020-08-06 09:45:03.8392 / Offer inserted
+2020-08-06 09:45:04.1087 / Append to proceed https://allegro.pl/oferta/1-barum-brillantis-2-265-70r16-112h-2017-9560420968
+2020-08-06 09:45:04.3291 / Append to proceed https://allegro.pl/oferta/continental-tkc70-twinduro-r-120-90-17-64-t-9466228116
+2020-08-06 09:45:04.3291 / Offer inserted
+2020-08-06 09:45:04.5922 / Append to proceed https://allegro.pl/oferta/continental-tkc70-twinduro-r-120-90-17-64-t-9466228116
+2020-08-06 09:45:04.8155 / Append to proceed https://allegro.pl/oferta/maxxis-classic-m-6011-150-90-15-74-h-9561615639
+2020-08-06 09:45:04.8155 / Offer inserted
+2020-08-06 09:45:05.0686 / Append to proceed https://allegro.pl/oferta/maxxis-classic-m-6011-150-90-15-74-h-9561615639
+2020-08-06 09:45:05.3007 / Append to proceed https://allegro.pl/oferta/bridgestone-battlax-a41-f-90-90-21-54-v-9459279384
+2020-08-06 09:45:05.3007 / Offer inserted
+2020-08-06 09:45:05.5668 / Append to proceed https://allegro.pl/oferta/bridgestone-battlax-a41-f-90-90-21-54-v-9459279384
+2020-08-06 09:45:05.7888 / Append to proceed https://allegro.pl/oferta/1x-opona-4-1-18-bridgestone-ax41r-59p-8857456447
+2020-08-06 09:45:05.7888 / Offer inserted
+2020-08-06 09:45:06.0441 / Append to proceed https://allegro.pl/oferta/1x-opona-4-1-18-bridgestone-ax41r-59p-8857456447
+2020-08-06 09:45:06.8728 / Fetched 10 offers
+2020-08-06 09:45:06.9163 / Append to proceed https://allegro.pl/oferta/opona-wielosezonowa-radar-dimax-255-50r19-8900382263
+2020-08-06 09:45:06.9163 / Offer inserted
+2020-08-06 09:45:07.1766 / Append to proceed https://allegro.pl/oferta/opona-wielosezonowa-radar-dimax-255-50r19-8900382263
+2020-08-06 09:45:07.4164 / Append to proceed https://allegro.pl/oferta/2szt-245-45r18-cityracing-100w-xl-powertrac-9294739382
+2020-08-06 09:45:07.4164 / Offer inserted
+2020-08-06 09:45:07.6714 / Append to proceed https://allegro.pl/oferta/2szt-245-45r18-cityracing-100w-xl-powertrac-9294739382
+2020-08-06 09:45:07.8893 / Append to proceed https://allegro.pl/oferta/2-sava-eskimo-s3-165-65r14-79t-2019-9563474970
+2020-08-06 09:45:07.8893 / Offer inserted
+2020-08-06 09:45:08.1521 / Append to proceed https://allegro.pl/oferta/2-sava-eskimo-s3-165-65r14-79t-2019-9563474970
+2020-08-06 09:45:08.3892 / Append to proceed https://allegro.pl/oferta/2-nexen-n-blue-hd-plus-205-60r15-91h-2020-9563465159
+2020-08-06 09:45:08.3892 / Offer inserted
+2020-08-06 09:45:08.6445 / Append to proceed https://allegro.pl/oferta/2-nexen-n-blue-hd-plus-205-60r15-91h-2020-9563465159
+2020-08-06 09:45:08.8681 / Append to proceed https://allegro.pl/oferta/2-firestone-multihawk-2-mulh2-165-70r14-85t-2019-9563453451
+2020-08-06 09:45:08.8681 / Offer inserted
+2020-08-06 09:45:09.1221 / Append to proceed https://allegro.pl/oferta/2-firestone-multihawk-2-mulh2-165-70r14-85t-2019-9563453451
+2020-08-06 09:45:09.9173 / Fetched 10 offers
+2020-08-06 09:45:09.9609 / Append to proceed https://allegro.pl/oferta/1-goodyear-wrangler-at-sa-205-80r16-110s-2019-9563445571
+2020-08-06 09:45:09.9609 / Offer inserted
+2020-08-06 09:45:10.2161 / Append to proceed https://allegro.pl/oferta/1-goodyear-wrangler-at-sa-205-80r16-110s-2019-9563445571
+2020-08-06 09:45:10.4399 / Append to proceed https://allegro.pl/oferta/2-matador-mp92-sibir-snow-195-55r15-85h-2019-9563438991
+2020-08-06 09:45:10.4399 / Offer inserted
+2020-08-06 09:45:10.6927 / Append to proceed https://allegro.pl/oferta/2-matador-mp92-sibir-snow-195-55r15-85h-2019-9563438991
+2020-08-06 09:45:10.9089 / Append to proceed https://allegro.pl/oferta/2-matador-mp54-sibir-snow-185-70r14-88t-2019-9563438941
+2020-08-06 09:45:10.9132 / Offer inserted
+2020-08-06 09:45:11.1730 / Append to proceed https://allegro.pl/oferta/2-matador-mp54-sibir-snow-185-70r14-88t-2019-9563438941
+2020-08-06 09:45:11.3912 / Append to proceed https://allegro.pl/oferta/1-matador-mp72-izzarda-a-t-2-235-70r16-106h-2019-9563436653
+2020-08-06 09:45:11.3912 / Offer inserted
+2020-08-06 09:45:11.6601 / Append to proceed https://allegro.pl/oferta/1-matador-mp72-izzarda-a-t-2-235-70r16-106h-2019-9563436653
+2020-08-06 09:45:11.8803 / Append to proceed https://allegro.pl/oferta/1-bridgestone-blizzak-dm-v2-215-65r16-102r-2019-9563436504
+2020-08-06 09:45:11.8803 / Offer inserted
+2020-08-06 09:45:12.1337 / Append to proceed https://allegro.pl/oferta/1-bridgestone-blizzak-dm-v2-215-65r16-102r-2019-9563436504
+2020-08-06 09:45:12.9383 / Fetched 10 offers
+2020-08-06 09:45:12.9774 / Append to proceed https://allegro.pl/oferta/1-dunlop-sp-sport-bluresponse-205-65r15-94v-2019-9563432555
+2020-08-06 09:45:12.9774 / Offer inserted
+2020-08-06 09:45:13.2481 / Append to proceed https://allegro.pl/oferta/1-dunlop-sp-sport-bluresponse-205-65r15-94v-2019-9563432555
+2020-08-06 09:45:13.4648 / Append to proceed https://allegro.pl/oferta/1-bridgestone-dueler-h-p-sport-d-sport-205-60r16-9-9563429092
+2020-08-06 09:45:13.4673 / Offer inserted
+2020-08-06 09:45:13.7385 / Append to proceed https://allegro.pl/oferta/1-bridgestone-dueler-h-p-sport-d-sport-205-60r16-9-9563429092
+2020-08-06 09:45:13.9578 / Append to proceed https://allegro.pl/oferta/2x-kleber-dynaxer-hp4-205-55-r16-91-h-7882929064
+2020-08-06 09:45:13.9578 / Offer inserted
+2020-08-06 09:45:14.2292 / Append to proceed https://allegro.pl/oferta/2x-kleber-dynaxer-hp4-205-55-r16-91-h-7882929064
+2020-08-06 09:45:14.4471 / Append to proceed https://allegro.pl/oferta/2x-kingstar-205-75r16-110-108r-radial-ra17-c-letni-9461320797
+2020-08-06 09:45:14.4471 / Offer inserted
+2020-08-06 09:45:14.7213 / Append to proceed https://allegro.pl/oferta/2x-kingstar-205-75r16-110-108r-radial-ra17-c-letni-9461320797
+2020-08-06 09:45:14.9410 / Append to proceed https://allegro.pl/oferta/opony-pirelli-215-55r18-sc-verde-99v-xl-dot2016-8418244646
+2020-08-06 09:45:14.9410 / Offer inserted
+2020-08-06 09:45:15.2046 / Append to proceed https://allegro.pl/oferta/opony-pirelli-215-55r18-sc-verde-99v-xl-dot2016-8418244646
+2020-08-06 09:45:16.0013 / Fetched 10 offers
+2020-08-06 09:45:16.0396 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-kumho-l175-60-r15-ecowing-es31-81h-9247375167
+2020-08-06 09:45:16.0396 / Offer inserted
+2020-08-06 09:45:16.3058 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-kumho-l175-60-r15-ecowing-es31-81h-9247375167
+2020-08-06 09:45:16.5250 / Append to proceed https://allegro.pl/oferta/2x-215-65r16-premiorri-z-plus-opony-zimowe-nowe-8513924695
+2020-08-06 09:45:16.5250 / Offer inserted
+2020-08-06 09:45:16.7794 / Append to proceed https://allegro.pl/oferta/2x-215-65r16-premiorri-z-plus-opony-zimowe-nowe-8513924695
+2020-08-06 09:45:17.0128 / Append to proceed https://allegro.pl/oferta/235-60zr18-opony-caloroczne-radar-4x4-suv-9561843462
+2020-08-06 09:45:17.0149 / Offer inserted
+2020-08-06 09:45:17.2793 / Append to proceed https://allegro.pl/oferta/235-60zr18-opony-caloroczne-radar-4x4-suv-9561843462
+2020-08-06 09:45:17.5011 / Append to proceed https://allegro.pl/oferta/235-60zr18-opony-caloroczne-radar-4x4-suv-9561823261
+2020-08-06 09:45:17.5011 / Offer inserted
+2020-08-06 09:45:17.7642 / Append to proceed https://allegro.pl/oferta/235-60zr18-opony-caloroczne-radar-4x4-suv-9561823261
+2020-08-06 09:45:18.0134 / Append to proceed https://allegro.pl/oferta/235-60zr18-opony-caloroczne-radar-4x4-suv-9561391020
+2020-08-06 09:45:18.0134 / Offer inserted
+2020-08-06 09:45:18.2898 / Append to proceed https://allegro.pl/oferta/235-60zr18-opony-caloroczne-radar-4x4-suv-9561391020
+2020-08-06 09:45:19.0946 / Fetched 10 offers
+2020-08-06 09:45:19.1384 / Append to proceed https://allegro.pl/oferta/goodyear-wrangler-at-s-205-80-r16c-110-108-s-9561389850
+2020-08-06 09:45:19.1384 / Offer inserted
+2020-08-06 09:45:19.4098 / Append to proceed https://allegro.pl/oferta/goodyear-wrangler-at-s-205-80-r16c-110-108-s-9561389850
+2020-08-06 09:45:19.6352 / Append to proceed https://allegro.pl/oferta/radar-235-60r17c-argonite-rv-4-117-115s-tl-e-m-s-9561215929
+2020-08-06 09:45:19.6352 / Offer inserted
+2020-08-06 09:45:19.8937 / Append to proceed https://allegro.pl/oferta/radar-235-60r17c-argonite-rv-4-117-115s-tl-e-m-s-9561215929
+2020-08-06 09:45:20.1234 / Append to proceed https://allegro.pl/oferta/1xcontinental-contipremiumcontact-6-235-45r17-97y-9561168001
+2020-08-06 09:45:20.1234 / Offer inserted
+2020-08-06 09:45:20.3930 / Append to proceed https://allegro.pl/oferta/1xcontinental-contipremiumcontact-6-235-45r17-97y-9561168001
+2020-08-06 09:45:20.6211 / Append to proceed https://allegro.pl/oferta/1xbridgestone-turanza-t005-195-55r15-85v-2019-9561165031
+2020-08-06 09:45:20.6211 / Offer inserted
+2020-08-06 09:45:20.8892 / Append to proceed https://allegro.pl/oferta/1xbridgestone-turanza-t005-195-55r15-85v-2019-9561165031
+2020-08-06 09:45:21.1304 / Append to proceed https://allegro.pl/oferta/1xbridgestone-dueler-h-t-d689-205-80r16-104t-2019-9561101075
+2020-08-06 09:45:21.1304 / Offer inserted
+2020-08-06 09:45:21.3943 / Append to proceed https://allegro.pl/oferta/1xbridgestone-dueler-h-t-d689-205-80r16-104t-2019-9561101075
+2020-08-06 09:45:22.2035 / Fetched 10 offers
+2020-08-06 09:45:22.2470 / Append to proceed https://allegro.pl/oferta/1xbridgestone-dueler-h-p-sport-d-sport-215-65r16-9-9561095513
+2020-08-06 09:45:22.2470 / Offer inserted
+2020-08-06 09:45:22.5118 / Append to proceed https://allegro.pl/oferta/1xbridgestone-dueler-h-p-sport-d-sport-215-65r16-9-9561095513
+2020-08-06 09:45:22.7410 / Append to proceed https://allegro.pl/oferta/1xfirestone-rhawk-215-60r16-99v-2019-9561078478
+2020-08-06 09:45:22.7477 / Offer inserted
+2020-08-06 09:45:23.0073 / Append to proceed https://allegro.pl/oferta/1xfirestone-rhawk-215-60r16-99v-2019-9561078478
+2020-08-06 09:45:23.2628 / Append to proceed https://allegro.pl/oferta/2xfalken-euroall-season-as210-165-60r14-79t-2020-9560981170
+2020-08-06 09:45:23.2647 / Offer inserted
+2020-08-06 09:45:23.5240 / Append to proceed https://allegro.pl/oferta/2xfalken-euroall-season-as210-165-60r14-79t-2020-9560981170
+2020-08-06 09:45:23.7506 / Append to proceed https://allegro.pl/oferta/1xmichelin-primacy-4-225-45r17-91y-2020-9560821386
+2020-08-06 09:45:23.7506 / Offer inserted
+2020-08-06 09:45:24.0168 / Append to proceed https://allegro.pl/oferta/1xmichelin-primacy-4-225-45r17-91y-2020-9560821386
+2020-08-06 09:45:24.2681 / Append to proceed https://allegro.pl/oferta/1xkleber-dynaxer-hp3-245-45r17-99y-2019-9560815468
+2020-08-06 09:45:24.2681 / Offer inserted
+2020-08-06 09:45:24.8137 / Append to proceed https://allegro.pl/oferta/1xkleber-dynaxer-hp3-245-45r17-99y-2019-9560815468
+2020-08-06 09:45:25.6143 / Fetched 10 offers
+2020-08-06 09:45:25.6556 / Append to proceed https://allegro.pl/oferta/1xbridgestone-blizzak-w810-205-70r15c-106r-2019-9560802177
+2020-08-06 09:45:25.6556 / Offer inserted
+2020-08-06 09:45:25.9151 / Append to proceed https://allegro.pl/oferta/1xbridgestone-blizzak-w810-205-70r15c-106r-2019-9560802177
+2020-08-06 09:45:26.1465 / Append to proceed https://allegro.pl/oferta/1x-michelin-agilis-195-65r16c-104-102r-9395730996
+2020-08-06 09:45:26.1465 / Offer inserted
+2020-08-06 09:45:26.4349 / Append to proceed https://allegro.pl/oferta/1x-michelin-agilis-195-65r16c-104-102r-9395730996
+2020-08-06 09:45:26.6648 / Append to proceed https://allegro.pl/oferta/1x-opona-170-60-b17-bridgestone-ax41r-72q-8522460905
+2020-08-06 09:45:26.6648 / Offer inserted
+2020-08-06 09:45:26.9245 / Append to proceed https://allegro.pl/oferta/1x-opona-170-60-b17-bridgestone-ax41r-72q-8522460905
+2020-08-06 09:45:27.1523 / Append to proceed https://allegro.pl/oferta/metzeler-mh90-21-me888-54h-f-tl-19-9423170648
+2020-08-06 09:45:27.1594 / Offer inserted
+2020-08-06 09:45:27.4471 / Append to proceed https://allegro.pl/oferta/metzeler-mh90-21-me888-54h-f-tl-19-9423170648
+2020-08-06 09:45:27.6736 / Append to proceed https://allegro.pl/oferta/1x-225-50r17-uniroyal-ms-plus-77-98v-nowe-zima-9450070124
+2020-08-06 09:45:27.6736 / Offer inserted
+2020-08-06 09:45:27.9342 / Append to proceed https://allegro.pl/oferta/1x-225-50r17-uniroyal-ms-plus-77-98v-nowe-zima-9450070124
+2020-08-06 09:45:28.7541 / Fetched 10 offers
+2020-08-06 09:45:28.7940 / Append to proceed https://allegro.pl/oferta/2x-opony-zima-goodride-225-55r16-sw608-xl-99h-8787210202
+2020-08-06 09:45:28.7959 / Offer inserted
+2020-08-06 09:45:29.0564 / Append to proceed https://allegro.pl/oferta/2x-opony-zima-goodride-225-55r16-sw608-xl-99h-8787210202
+2020-08-06 09:45:29.2793 / Append to proceed https://allegro.pl/oferta/1x-firestone-roadhawk-235-40r18-95y-xl-9559953026
+2020-08-06 09:45:29.2793 / Offer inserted
+2020-08-06 09:45:29.5585 / Append to proceed https://allegro.pl/oferta/1x-firestone-roadhawk-235-40r18-95y-xl-9559953026
+2020-08-06 09:45:29.7826 / Append to proceed https://allegro.pl/oferta/1x-falken-eurowinter-hs449-225-55r17-97h-rof-9559922183
+2020-08-06 09:45:29.7826 / Offer inserted
+2020-08-06 09:45:30.0502 / Append to proceed https://allegro.pl/oferta/1x-falken-eurowinter-hs449-225-55r17-97h-rof-9559922183
+2020-08-06 09:45:30.2798 / Append to proceed https://allegro.pl/oferta/1x-dunlop-sp-winter-sport-3d-205-50r17-93h-xl-9559918562
+2020-08-06 09:45:30.2798 / Offer inserted
+2020-08-06 09:45:30.5680 / Append to proceed https://allegro.pl/oferta/1x-dunlop-sp-winter-sport-3d-205-50r17-93h-xl-9559918562
+2020-08-06 09:45:30.7947 / Append to proceed https://allegro.pl/oferta/bridgestone-opona-120-90-17-exedra-max-64h-tt-19-9559856399
+2020-08-06 09:45:30.7947 / Offer inserted
+2020-08-06 09:45:31.0628 / Append to proceed https://allegro.pl/oferta/bridgestone-opona-120-90-17-exedra-max-64h-tt-19-9559856399
+2020-08-06 09:45:31.8712 / Fetched 10 offers
+2020-08-06 09:45:31.9151 / Append to proceed https://allegro.pl/oferta/kleber-215-60-r16c-transpro-103-101t-8482200712
+2020-08-06 09:45:31.9151 / Offer inserted
+2020-08-06 09:45:41.0620 / Append to proceed https://allegro.pl/oferta/kleber-215-60-r16c-transpro-103-101t-8482200712
+2020-08-06 09:45:41.2875 / Append to proceed https://allegro.pl/oferta/barum-z215-40-r17-polaris-5-87v-xl-fr-8475330113
+2020-08-06 09:45:41.2875 / Offer inserted
+2020-08-06 09:45:41.5497 / Append to proceed https://allegro.pl/oferta/barum-z215-40-r17-polaris-5-87v-xl-fr-8475330113
+2020-08-06 09:45:41.7667 / Append to proceed https://allegro.pl/oferta/2x-opony-letnie-205-55r16-toyo-proxes-cf2-91h-9024825236
+2020-08-06 09:45:41.7667 / Offer inserted
+2020-08-06 09:45:42.0205 / Append to proceed https://allegro.pl/oferta/2x-opony-letnie-205-55r16-toyo-proxes-cf2-91h-9024825236
+2020-08-06 09:45:42.2556 / Append to proceed https://allegro.pl/oferta/1-opona-bridgestone-t30-evo-120-70r18-59w-8969948845
+2020-08-06 09:45:42.2556 / Offer inserted
+2020-08-06 09:45:42.5129 / Append to proceed https://allegro.pl/oferta/1-opona-bridgestone-t30-evo-120-70r18-59w-8969948845
+2020-08-06 09:45:42.7333 / Append to proceed https://allegro.pl/oferta/2x-opony-quad-journey-p350-24x8-12-9481262407
+2020-08-06 09:45:42.7333 / Offer inserted
+2020-08-06 09:45:42.9898 / Append to proceed https://allegro.pl/oferta/2x-opony-quad-journey-p350-24x8-12-9481262407
+2020-08-06 09:45:43.7943 / Fetched 10 offers
+2020-08-06 09:45:43.8327 / Append to proceed https://allegro.pl/oferta/4x-opony-zimowe-175-80r14-hankook-rw06-q-c-8291442316
+2020-08-06 09:45:43.8327 / Offer inserted
+2020-08-06 09:45:44.0855 / Append to proceed https://allegro.pl/oferta/2x-good-year-z205-45-r18-ug-perf-g1-90h-xl-9510146816
+2020-08-06 09:45:44.3154 / Append to proceed https://allegro.pl/oferta/2x-good-year-z205-45-r18-ug-perf-g1-90h-xl-9510146816
+2020-08-06 09:45:44.5409 / Append to proceed https://allegro.pl/oferta/2x-225-55r17-97h-bridgestone-lm-001-rft-9521208770
+2020-08-06 09:45:44.7564 / Append to proceed https://allegro.pl/oferta/2x-225-55r17-97h-bridgestone-lm-001-rft-9521208770
+2020-08-06 09:45:44.9877 / Append to proceed https://allegro.pl/oferta/2x-235-55r17-103v-goodyear-vector-4s-g2-9509220995
+2020-08-06 09:45:45.2122 / Append to proceed https://allegro.pl/oferta/2x-235-55r17-103v-goodyear-vector-4s-g2-9509220995
+2020-08-06 09:45:45.4550 / Append to proceed https://allegro.pl/oferta/2x-245-65r17-111h-vredestein-xtreme-s-9389223011
+2020-08-06 09:45:45.6741 / Append to proceed https://allegro.pl/oferta/2x-245-65r17-111h-vredestein-xtreme-s-9389223011
+2020-08-06 09:45:45.8922 / Append to proceed https://allegro.pl/oferta/1x-245-40r20-99v-pirelli-wszer3-rft-9379366386
+2020-08-06 09:45:46.6856 / Fetched 10 offers
+2020-08-06 09:45:46.7239 / Append to proceed https://allegro.pl/oferta/1x-235-45r20-100v-michelin-ps4-suv-9378741701
+2020-08-06 09:45:46.9415 / Append to proceed https://allegro.pl/oferta/1x-235-45r20-100v-michelin-ps4-suv-9378741701
+2020-08-06 09:45:47.1596 / Append to proceed https://allegro.pl/oferta/2x-225-45r18-91v-bridgestone-d-sport-rft-9371059737
+2020-08-06 09:45:47.3798 / Append to proceed https://allegro.pl/oferta/2x-225-45r18-91v-bridgestone-d-sport-rft-9371059737
+2020-08-06 09:45:47.5981 / Append to proceed https://allegro.pl/oferta/2x-255-55r18-wintercontact-ts-850-p-suv-2018-9543913111
+2020-08-06 09:45:47.8188 / Append to proceed https://allegro.pl/oferta/2x-255-55r18-wintercontact-ts-850-p-suv-2018-9543913111
+2020-08-06 09:45:48.0438 / Append to proceed https://allegro.pl/oferta/4-x-hankook-winter-rw06-175-65-r14-90-88-t-c-9469406692
+2020-08-06 09:45:48.2610 / Append to proceed https://allegro.pl/oferta/4-x-hankook-winter-rw06-175-65-r14-90-88-t-c-9469406692
+2020-08-06 09:45:48.4931 / Append to proceed https://allegro.pl/oferta/4-x-kumho-ecsta-ps71-215-45-r17-91-y-xl-9554002921
+2020-08-06 09:45:48.7357 / Append to proceed https://allegro.pl/oferta/4-x-kumho-ecsta-ps71-215-45-r17-91-y-xl-9554002921
+2020-08-06 09:45:49.5339 / Fetched 10 offers
+2020-08-06 09:45:49.5736 / Append to proceed https://allegro.pl/oferta/2x-opona-zimowa-michelin-z205-65-r15c-agilis-51-sn-9340911459
+2020-08-06 09:45:49.7899 / Append to proceed https://allegro.pl/oferta/2x-opona-zimowa-michelin-z205-65-r15c-agilis-51-sn-9340911459
+2020-08-06 09:45:50.0085 / Append to proceed https://allegro.pl/oferta/2x-opona-zimowa-bridgestone-z225-40-r18-lm005dg-92-9440129578
+2020-08-06 09:45:50.2314 / Append to proceed https://allegro.pl/oferta/2x-opona-zimowa-bridgestone-z225-40-r18-lm005dg-92-9440129578
+2020-08-06 09:45:50.4607 / Append to proceed https://allegro.pl/oferta/2x-opona-zimowa-bridgestone-z205-45-r17-lm005-88v-9440122296
+2020-08-06 09:45:50.6910 / Append to proceed https://allegro.pl/oferta/2x-opona-zimowa-bridgestone-z205-45-r17-lm005-88v-9440122296
+2020-08-06 09:45:50.9167 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-pirelli-l245-35-zr18-pzero-92y-xl-9508312313
+2020-08-06 09:45:51.1367 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-pirelli-l245-35-zr18-pzero-92y-xl-9508312313
+2020-08-06 09:45:51.3578 / Append to proceed https://allegro.pl/oferta/1x-295-40r20-106v-pirelli-scorpion-winter-n0-9388373367
+2020-08-06 09:45:51.5711 / Append to proceed https://allegro.pl/oferta/1x-295-40r20-106v-pirelli-scorpion-winter-n0-9388373367
+2020-08-06 09:45:52.3637 / Fetched 10 offers
+2020-08-06 09:45:52.4043 / Append to proceed https://allegro.pl/oferta/1x-275-35r21-103y-pirelli-p-zero-pz4-n1-pncs-9373408721
+2020-08-06 09:45:52.6274 / Append to proceed https://allegro.pl/oferta/1x-275-35r21-103y-pirelli-p-zero-pz4-n1-pncs-9373408721
+2020-08-06 09:45:52.8536 / Append to proceed https://allegro.pl/oferta/opona-letnia-michelin-245-45r20-pilot-sport-4-103y-9353746659
+2020-08-06 09:45:53.0768 / Append to proceed https://allegro.pl/oferta/opona-letnia-michelin-245-45r20-pilot-sport-4-103y-9353746659
+2020-08-06 09:45:53.3024 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-toyo-l235-35-r20-proxes-tr1-92w-xl-9506177792
+2020-08-06 09:45:53.5217 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-toyo-l235-35-r20-proxes-tr1-92w-xl-9506177792
+2020-08-06 09:45:53.7550 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-michelin-l205-45-r17-pilot-sport-4-9506846901
+2020-08-06 09:45:53.9855 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-michelin-l205-45-r17-pilot-sport-4-9506846901
+2020-08-06 09:45:54.2068 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-bridgestone-l235-35-r19-s001-91y-x-9504768700
+2020-08-06 09:45:54.4298 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-bridgestone-l235-35-r19-s001-91y-x-9504768700
+2020-08-06 09:45:55.2371 / Fetched 10 offers
+2020-08-06 09:45:55.2809 / Append to proceed https://allegro.pl/oferta/opona-zimowa-nokian-265-45r21-wr-suv-4-108v-xl-9488910147
+2020-08-06 09:45:55.4997 / Append to proceed https://allegro.pl/oferta/opona-zimowa-nokian-265-45r21-wr-suv-4-108v-xl-9488910147
+2020-08-06 09:45:55.7187 / Append to proceed https://allegro.pl/oferta/2x-265-50r19-110y-toyo-proxes-t1-sport-suv-9507722436
+2020-08-06 09:45:55.9589 / Append to proceed https://allegro.pl/oferta/2x-265-50r19-110y-toyo-proxes-t1-sport-suv-9507722436
+2020-08-06 09:45:56.1831 / Append to proceed https://allegro.pl/oferta/1x-275-40r22-108y-continental-cross-lx-sport-csi-9378753376
+2020-08-06 09:45:56.4108 / Append to proceed https://allegro.pl/oferta/1x-275-40r22-108y-continental-cross-lx-sport-csi-9378753376
+2020-08-06 09:45:56.6403 / Append to proceed https://allegro.pl/oferta/1x-275-50r21-113y-continental-premium-6-mo-fr-9378744120
+2020-08-06 09:45:56.8645 / Append to proceed https://allegro.pl/oferta/1x-275-50r21-113y-continental-premium-6-mo-fr-9378744120
+2020-08-06 09:45:57.0844 / Append to proceed https://allegro.pl/oferta/2x-225-65r17-106v-michelin-latitude-sport-3-jlr-dt-9508044781
+2020-08-06 09:45:57.3084 / Append to proceed https://allegro.pl/oferta/2x-225-65r17-106v-michelin-latitude-sport-3-jlr-dt-9508044781
+2020-08-06 09:45:58.0984 / Fetched 10 offers
+2020-08-06 09:45:58.1367 / Append to proceed https://allegro.pl/oferta/4x-opona-letnia-continental-l175-65-r15-eco6-84t-9341366815
+2020-08-06 09:45:58.3542 / Append to proceed https://allegro.pl/oferta/4x-opona-letnia-continental-l175-65-r15-eco6-84t-9341366815
+2020-08-06 09:45:58.5708 / Append to proceed https://allegro.pl/oferta/2x-opona-zimowa-michelin-z205-65-r15c-agilis-51-sn-9341170761
+2020-08-06 09:45:58.7967 / Append to proceed https://allegro.pl/oferta/2x-opona-zimowa-michelin-z205-65-r15c-agilis-51-sn-9341170761
+2020-08-06 09:47:09.1752 / Fetched 10 offers
+2020-08-06 09:47:09.2546 / Append to proceed https://allegro.pl/oferta/2x-opony-caloroczne-265-60-r18-general-8517047721
+2020-08-06 09:47:09.2546 / Offer inserted
+2020-08-06 09:47:09.5864 / Append to proceed https://allegro.pl/oferta/4x-opony-firestone-winterhawk-3-205-65r15-94t-8749810449
+2020-08-06 09:47:09.5887 / Offer inserted
+2020-08-06 09:47:09.7853 / Append to proceed https://allegro.pl/oferta/opona-letnia-pirelli-l265-30-zr22-p-zero-s-c-97y-9281669891
+2020-08-06 09:47:09.7927 / Offer inserted
+2020-08-06 09:47:10.0064 / Append to proceed https://allegro.pl/oferta/uniroyal-rainsport-3-235-40-r18-91-y-8824782443
+2020-08-06 09:47:10.0085 / Offer inserted
+2020-08-06 09:47:10.2078 / Append to proceed https://allegro.pl/oferta/uniroyal-rainsport-3-235-40-r18-91-y-8824782443
+2020-08-06 09:47:10.3702 / Append to proceed https://allegro.pl/oferta/1x-nokian-225-45r17-94v-wr-d4-xl-zimowe-9399565558
+2020-08-06 09:47:10.3779 / Offer inserted
+2020-08-06 09:47:10.5788 / Append to proceed https://allegro.pl/oferta/1x-nokian-225-45r17-94v-wr-d4-xl-zimowe-9399565558
+2020-08-06 09:47:10.7448 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-hankook-l165-65-r15-kinergy-eco-2-9251184488
+2020-08-06 09:47:10.7448 / Offer inserted
+2020-08-06 09:47:10.9456 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-hankook-l165-65-r15-kinergy-eco-2-9251184488
+2020-08-06 09:47:11.1123 / Append to proceed https://allegro.pl/oferta/1x-opona-245-45r18-firestone-sz90-100y-xl-outlet-8547600553
+2020-08-06 09:47:11.1123 / Offer inserted
+2020-08-06 09:47:11.9015 / Fetched 10 offers
+2020-08-06 09:47:11.9454 / Append to proceed https://allegro.pl/oferta/2x-opony-letnie-riken-uhp-205-50r17-93w-8536593422
+2020-08-06 09:47:11.9454 / Offer inserted
+2020-08-06 09:47:12.1512 / Append to proceed https://allegro.pl/oferta/2x-opony-letnie-riken-uhp-205-50r17-93w-8536593422
+2020-08-06 09:47:12.3152 / Append to proceed https://allegro.pl/oferta/2x-opony-caloroczne-205-55r16-debica-navigator-2-9525200895
+2020-08-06 09:47:12.3152 / Offer inserted
+2020-08-06 09:47:12.5139 / Append to proceed https://allegro.pl/oferta/2x-opony-caloroczne-205-55r16-debica-navigator-2-9525200895
+2020-08-06 09:47:12.6855 / Append to proceed https://allegro.pl/oferta/1x-215-55r17-94v-pirelli-cinturato-p7-si-9402292857
+2020-08-06 09:47:12.6855 / Offer inserted
+2020-08-06 09:47:12.8850 / Append to proceed https://allegro.pl/oferta/1x-215-55r17-94v-pirelli-cinturato-p7-si-9402292857
+2020-08-06 09:47:13.0452 / Append to proceed https://allegro.pl/oferta/2xwindforce-performax-suv-235-65r17-104h-9313528338
+2020-08-06 09:47:13.0452 / Offer inserted
+2020-08-06 09:47:13.2636 / Append to proceed https://allegro.pl/oferta/2xwindforce-performax-suv-235-65r17-104h-9313528338
+2020-08-06 09:47:13.4246 / Append to proceed https://allegro.pl/oferta/1x-nokian-wr-snowproof-205-60r16-92h-9563364330
+2020-08-06 09:47:13.4246 / Offer inserted
+2020-08-06 09:47:13.6329 / Append to proceed https://allegro.pl/oferta/1x-nokian-wr-snowproof-205-60r16-92h-9563364330
+2020-08-06 09:47:14.3738 / Fetched 10 offers
+2020-08-06 09:47:14.4125 / Append to proceed https://allegro.pl/oferta/2-linglong-green-max-van-4season-205-70r15c-106-10-9197165937
+2020-08-06 09:47:14.4197 / Offer inserted
+2020-08-06 09:47:14.6223 / Append to proceed https://allegro.pl/oferta/2-linglong-green-max-van-4season-205-70r15c-106-10-9197165937
+2020-08-06 09:47:14.7869 / Append to proceed https://allegro.pl/oferta/opona-zimowa-kleber-215-60r16-krisalp-hp3-99h-xl-9564066528
+2020-08-06 09:47:14.7869 / Offer inserted
+2020-08-06 09:47:14.9844 / Append to proceed https://allegro.pl/oferta/opona-zimowa-kleber-215-60r16-krisalp-hp3-99h-xl-9564066528
+2020-08-06 09:47:15.1635 / Append to proceed https://allegro.pl/oferta/opona-caloroczna-kleber-205-70r16-quadraxer2-suv-9-9564053754
+2020-08-06 09:47:15.1655 / Offer inserted
+2020-08-06 09:47:15.3663 / Append to proceed https://allegro.pl/oferta/opona-caloroczna-kleber-205-70r16-quadraxer2-suv-9-9564053754
+2020-08-06 09:47:15.5281 / Append to proceed https://allegro.pl/oferta/opona-caloroczna-bridgestone-195-80r15-dueler-a-t-9564050320
+2020-08-06 09:47:15.5281 / Offer inserted
+2020-08-06 09:47:15.7444 / Append to proceed https://allegro.pl/oferta/opona-caloroczna-bridgestone-195-80r15-dueler-a-t-9564050320
+2020-08-06 09:47:15.9064 / Append to proceed https://allegro.pl/oferta/opona-letnia-vredestein-225-65r17-sportrac-5-102h-9564028125
+2020-08-06 09:47:15.9064 / Offer inserted
+2020-08-06 09:47:16.1053 / Append to proceed https://allegro.pl/oferta/opona-letnia-vredestein-225-65r17-sportrac-5-102h-9564028125
+2020-08-06 09:47:16.8471 / Fetched 10 offers
+2020-08-06 09:47:16.8853 / Append to proceed https://allegro.pl/oferta/opona-zimowa-uniroyal-225-50r17-ms-plus-77-98h-xl-9564025686
+2020-08-06 09:47:16.8853 / Offer inserted
+2020-08-06 09:47:17.0843 / Append to proceed https://allegro.pl/oferta/opona-zimowa-uniroyal-225-50r17-ms-plus-77-98h-xl-9564025686
+2020-08-06 09:47:17.2536 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-205-55r16-goodyear-ug-perf-2-rof-8523364162
+2020-08-06 09:47:17.2598 / Offer inserted
+2020-08-06 09:47:17.4601 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-205-55r16-goodyear-ug-perf-2-rof-8523364162
+2020-08-06 09:47:17.6267 / Append to proceed https://allegro.pl/oferta/2x-nexen-175-70r14-88t-xl-winguard-snow-g-3-wh21-8453896708
+2020-08-06 09:47:17.6267 / Offer inserted
+2020-08-06 09:47:17.8504 / Append to proceed https://allegro.pl/oferta/2x-nexen-175-70r14-88t-xl-winguard-snow-g-3-wh21-8453896708
+2020-08-06 09:47:18.0171 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-215-55r18-pirelli-scorpion-verde-9249673384
+2020-08-06 09:47:18.0171 / Offer inserted
+2020-08-06 09:47:18.2178 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-215-55r18-pirelli-scorpion-verde-9249673384
+2020-08-06 09:47:18.3857 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-215-55r18-pirelli-scorpion-verde-9249673349
+2020-08-06 09:47:18.3857 / Offer inserted
+2020-08-06 09:47:18.5986 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-215-55r18-pirelli-scorpion-verde-9249673349
+2020-08-06 09:47:19.3515 / Fetched 10 offers
+2020-08-06 09:47:19.3940 / Append to proceed https://allegro.pl/oferta/2x-kleber-krisalp-hp2-185-65-r14-86t-zima-9561915290
+2020-08-06 09:47:19.3940 / Offer inserted
+2020-08-06 09:47:19.5943 / Append to proceed https://allegro.pl/oferta/2x-kleber-krisalp-hp2-185-65-r14-86t-zima-9561915290
+2020-08-06 09:47:19.7542 / Append to proceed https://allegro.pl/oferta/opony-28x10-00r14-journey-p3036-9561915280
+2020-08-06 09:47:19.7542 / Offer inserted
+2020-08-06 09:47:19.9688 / Append to proceed https://allegro.pl/oferta/opony-28x10-00r14-journey-p3036-9561915280
+2020-08-06 09:47:20.1299 / Append to proceed https://allegro.pl/oferta/2x-kleber-krisalp-hp2-175-70-r14-84t-zima-9561890904
+2020-08-06 09:47:20.1318 / Offer inserted
+2020-08-06 09:47:20.3306 / Append to proceed https://allegro.pl/oferta/2x-kleber-krisalp-hp2-175-70-r14-84t-zima-9561890904
+2020-08-06 09:47:20.4901 / Append to proceed https://allegro.pl/oferta/2x-165-60r14-75h-kinergy-4s-2-h750-hankook-9561458317
+2020-08-06 09:47:20.4901 / Offer inserted
+2020-08-06 09:47:20.6889 / Append to proceed https://allegro.pl/oferta/2x-165-60r14-75h-kinergy-4s-2-h750-hankook-9561458317
+2020-08-06 09:47:20.8521 / Append to proceed https://allegro.pl/oferta/1xgoodyear-efficientgrip-suv-215-65r16-98v-2019-9561123063
+2020-08-06 09:47:20.8521 / Offer inserted
+2020-08-06 09:47:21.0592 / Append to proceed https://allegro.pl/oferta/1xgoodyear-efficientgrip-suv-215-65r16-98v-2019-9561123063
+2020-08-06 09:47:21.7968 / Fetched 10 offers
+2020-08-06 09:47:21.8354 / Append to proceed https://allegro.pl/oferta/opona-duro-di2038-power-grip-ii-27x11-12-56n-6pr-e-9561114631
+2020-08-06 09:47:21.8416 / Offer inserted
+2020-08-06 09:47:22.0564 / Append to proceed https://allegro.pl/oferta/opona-duro-di2038-power-grip-ii-27x11-12-56n-6pr-e-9561114631
+2020-08-06 09:47:22.2206 / Append to proceed https://allegro.pl/oferta/1x-205-60r16-dunlop-winter-sport-5-96h-nowe-zima-9560747402
+2020-08-06 09:47:22.2206 / Offer inserted
+2020-08-06 09:47:22.4193 / Append to proceed https://allegro.pl/oferta/1x-205-60r16-dunlop-winter-sport-5-96h-nowe-zima-9560747402
+2020-08-06 09:47:22.5815 / Append to proceed https://allegro.pl/oferta/1-radar-dimax-winter-sport-225-45r18-95v-9560435487
+2020-08-06 09:47:22.5815 / Offer inserted
+2020-08-06 09:47:22.7850 / Append to proceed https://allegro.pl/oferta/1-radar-dimax-winter-sport-225-45r18-95v-9560435487
+2020-08-06 09:47:22.9453 / Append to proceed https://allegro.pl/oferta/1-uniroyal-rain-expert-3-225-65r17-106v-2019-9560434127
+2020-08-06 09:47:22.9453 / Offer inserted
+2020-08-06 09:47:23.1573 / Append to proceed https://allegro.pl/oferta/1-uniroyal-rain-expert-3-225-65r17-106v-2019-9560434127
+2020-08-06 09:47:23.3197 / Append to proceed https://allegro.pl/oferta/1-hankook-dynapro-hp-ra23-235-60r17-102h-2019-9560428442
+2020-08-06 09:47:23.3197 / Offer inserted
+2020-08-06 09:47:23.5214 / Append to proceed https://allegro.pl/oferta/1-hankook-dynapro-hp-ra23-235-60r17-102h-2019-9560428442
+2020-08-06 09:47:24.2852 / Fetched 10 offers
+2020-08-06 09:47:24.3236 / Append to proceed https://allegro.pl/oferta/1-uniroyal-rain-expert-3-225-70r16-103v-2019-9560427574
+2020-08-06 09:47:24.3236 / Offer inserted
+2020-08-06 09:47:24.5253 / Append to proceed https://allegro.pl/oferta/1-uniroyal-rain-expert-3-225-70r16-103v-2019-9560427574
+2020-08-06 09:47:24.6863 / Append to proceed https://allegro.pl/oferta/1-firestone-destination-hp-245-70r16-107h-2019-9560427195
+2020-08-06 09:47:24.6863 / Offer inserted
+2020-08-06 09:47:24.8924 / Append to proceed https://allegro.pl/oferta/1-firestone-destination-hp-245-70r16-107h-2019-9560427195
+2020-08-06 09:47:25.0560 / Append to proceed https://allegro.pl/oferta/dunlop-winter-sport-5-215-65-r16-98-h-9223687508
+2020-08-06 09:47:25.0560 / Offer inserted
+2020-08-06 09:47:25.2840 / Append to proceed https://allegro.pl/oferta/dunlop-winter-sport-5-215-65-r16-98-h-9223687508
+2020-08-06 09:47:25.4441 / Append to proceed https://allegro.pl/oferta/2x-opony-205-50r17-autogreen-caloroczne-all-seaso-9218274154
+2020-08-06 09:47:25.4441 / Offer inserted
+2020-08-06 09:47:25.6443 / Append to proceed https://allegro.pl/oferta/2x-opony-205-50r17-autogreen-caloroczne-all-seaso-9218274154
+2020-08-06 09:47:25.8038 / Append to proceed https://allegro.pl/oferta/2x-205-60r15-91v-kumho-kh27-9461029038
+2020-08-06 09:47:25.8038 / Offer inserted
+2020-08-06 09:47:26.0171 / Append to proceed https://allegro.pl/oferta/2x-205-60r15-91v-kumho-kh27-9461029038
+2020-08-06 09:47:26.7740 / Fetched 10 offers
+2020-08-06 09:47:26.8170 / Append to proceed https://allegro.pl/oferta/1-hankook-dynapro-hp2-ra33-215-55r18-99v-2020-9420846589
+2020-08-06 09:47:26.8188 / Offer inserted
+2020-08-06 09:47:27.0193 / Append to proceed https://allegro.pl/oferta/1-hankook-dynapro-hp2-ra33-215-55r18-99v-2020-9420846589
+2020-08-06 09:47:27.1800 / Append to proceed https://allegro.pl/oferta/unigrip-lateral-force-4s-225-45r19-96w-2018-9528212552
+2020-08-06 09:47:27.1818 / Offer inserted
+2020-08-06 09:47:27.3891 / Append to proceed https://allegro.pl/oferta/unigrip-lateral-force-4s-225-45r19-96w-2018-9528212552
+2020-08-06 09:47:27.5517 / Append to proceed https://allegro.pl/oferta/metzeler-190-50-zr17-roadtec-z6-73w-9245439029
+2020-08-06 09:47:27.5517 / Offer inserted
+2020-08-06 09:47:27.7535 / Append to proceed https://allegro.pl/oferta/metzeler-190-50-zr17-roadtec-z6-73w-9245439029
+2020-08-06 09:47:27.9130 / Append to proceed https://allegro.pl/oferta/nokian-weatherproof-c-205-75-r16-113-r-9495821232
+2020-08-06 09:47:27.9130 / Offer inserted
+2020-08-06 09:47:28.1106 / Append to proceed https://allegro.pl/oferta/nokian-weatherproof-c-205-75-r16-113-r-9495821232
+2020-08-06 09:47:28.2725 / Append to proceed https://allegro.pl/oferta/1x-dunlop-sp-winter-sport-3d-225-50r17-94h-fr-9559915951
+2020-08-06 09:47:28.2725 / Offer inserted
+2020-08-06 09:47:28.4819 / Append to proceed https://allegro.pl/oferta/1x-dunlop-sp-winter-sport-3d-225-50r17-94h-fr-9559915951
+2020-08-06 09:47:29.2282 / Fetched 10 offers
+2020-08-06 09:47:29.2700 / Append to proceed https://allegro.pl/oferta/nexen-z235-40-r18-winguard-sport-2-95v-xl-8475837276
+2020-08-06 09:47:29.2765 / Offer inserted
+2020-08-06 09:47:29.4863 / Append to proceed https://allegro.pl/oferta/nexen-z235-40-r18-winguard-sport-2-95v-xl-8475837276
+2020-08-06 09:47:29.6448 / Append to proceed https://allegro.pl/oferta/letnie-4x-linglong-155-70r13-r701-75n-tl-nowe-9519083454
+2020-08-06 09:47:29.6448 / Offer inserted
+2020-08-06 09:47:29.8411 / Append to proceed https://allegro.pl/oferta/letnie-4x-linglong-155-70r13-r701-75n-tl-nowe-9519083454
+2020-08-06 09:47:30.0010 / Append to proceed https://allegro.pl/oferta/1x-opona-100-90r19-pirelli-sport-demon-f-57v-8624720822
+2020-08-06 09:47:30.0010 / Offer inserted
+2020-08-06 09:47:30.2021 / Append to proceed https://allegro.pl/oferta/1x-opona-100-90r19-pirelli-sport-demon-f-57v-8624720822
+2020-08-06 09:47:30.3775 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-general-l185-65-r14-altimax-comfor-9251233202
+2020-08-06 09:47:30.3775 / Offer inserted
+2020-08-06 09:47:30.5747 / Append to proceed https://allegro.pl/oferta/2x-opona-letnia-general-l185-65-r14-altimax-comfor-9251233202
+2020-08-06 09:47:30.7330 / Append to proceed https://allegro.pl/oferta/1x-opona-caloroczna-225-65r17-fortuna-ecoplus-8994394908
+2020-08-06 09:47:30.7330 / Offer inserted
+2020-08-06 09:47:30.9413 / Append to proceed https://allegro.pl/oferta/1x-opona-caloroczna-225-65r17-fortuna-ecoplus-8994394908
+2020-08-06 09:47:31.6810 / Fetched 10 offers
+2020-08-06 09:47:31.7201 / Append to proceed https://allegro.pl/oferta/continental-contisportcontact-5-225-45-r17-91-w-9003010946
+2020-08-06 09:47:31.7201 / Offer inserted
+2020-08-06 09:47:31.9236 / Append to proceed https://allegro.pl/oferta/continental-contisportcontact-5-225-45-r17-91-w-9003010946
+2020-08-06 09:47:32.0860 / Append to proceed https://allegro.pl/oferta/1x-opona-110-70-zr17-michelin-pilot-road-3-f-54w-8522293541
+2020-08-06 09:47:32.0860 / Offer inserted
+2020-08-06 09:47:32.2869 / Append to proceed https://allegro.pl/oferta/1x-opona-110-70-zr17-michelin-pilot-road-3-f-54w-8522293541
+2020-08-06 09:47:32.4446 / Append to proceed https://allegro.pl/oferta/1x-yokohama-bluearth-winter-v905-225-50r17-94h-fr-8496102385
+2020-08-06 09:47:32.4477 / Offer inserted
+2020-08-06 09:47:32.6569 / Append to proceed https://allegro.pl/oferta/1x-yokohama-bluearth-winter-v905-225-50r17-94h-fr-8496102385
+2020-08-06 09:47:32.8189 / Append to proceed https://allegro.pl/oferta/bridgestone-90-100-21-x20-100-90-19-x10-9506097781
+2020-08-06 09:47:32.8189 / Offer inserted
+2020-08-06 09:47:33.0177 / Append to proceed https://allegro.pl/oferta/bridgestone-90-100-21-x20-100-90-19-x10-9506097781
+2020-08-06 09:47:33.1752 / Append to proceed https://allegro.pl/oferta/2x-goodyear-195-65r15-91h-efficientgrip-performanc-9387565196
+2020-08-06 09:47:33.1752 / Offer inserted
+2020-08-06 09:47:33.3708 / Append to proceed https://allegro.pl/oferta/2x-goodyear-195-65r15-91h-efficientgrip-performanc-9387565196
+2020-08-06 09:47:34.1079 / Fetched 10 offers
+2020-08-06 09:47:34.1510 / Append to proceed https://allegro.pl/oferta/bridgestone-120-90-17-tl-64-h-exedra-max-przod-9499797583
+2020-08-06 09:47:34.1510 / Offer inserted
+2020-08-06 09:47:34.3477 / Append to proceed https://allegro.pl/oferta/bridgestone-120-90-17-tl-64-h-exedra-max-przod-9499797583
+2020-08-06 09:47:34.5062 / Append to proceed https://allegro.pl/oferta/2x-175-80r14-debica-frigo-2-opony-zimowe-88t-8578254871
+2020-08-06 09:47:34.5062 / Offer inserted
+2020-08-06 09:47:34.7279 / Append to proceed https://allegro.pl/oferta/2x-175-80r14-debica-frigo-2-opony-zimowe-88t-8578254871
+2020-08-06 09:47:34.8898 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-185-75r16-dunlop-econodrive-104r-c-8527976088
+2020-08-06 09:47:34.8898 / Offer inserted
+2020-08-06 09:47:35.0901 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-185-75r16-dunlop-econodrive-104r-c-8527976088
+2020-08-06 09:47:35.2500 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-165-65r15-hankook-w452-81t-fr-8527867442
+2020-08-06 09:47:35.2565 / Offer inserted
+2020-08-06 09:47:35.4694 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-165-65r15-hankook-w452-81t-fr-8527867442
+2020-08-06 09:47:35.6358 / Append to proceed https://allegro.pl/oferta/2x-opony-letnie-175-70r13-hankook-k435-82h-8527860434
+2020-08-06 09:47:35.6358 / Offer inserted
+2020-08-06 09:47:35.8354 / Append to proceed https://allegro.pl/oferta/2x-opony-letnie-175-70r13-hankook-k435-82h-8527860434
+2020-08-06 09:47:36.5767 / Fetched 10 offers
+2020-08-06 09:47:36.6203 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-195-75r16-pirelli-carrier-win-107r-8527726566
+2020-08-06 09:47:36.6267 / Offer inserted
+2020-08-06 09:47:36.8420 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-195-75r16-pirelli-carrier-win-107r-8527726566
+2020-08-06 09:47:36.9993 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-225-50r17-hankook-k117-94w-ao-8527625521
+2020-08-06 09:47:37.0059 / Offer inserted
+2020-08-06 09:47:37.2023 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-225-50r17-hankook-k117-94w-ao-8527625521
+2020-08-06 09:47:37.3617 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-165-65r15-hankook-w452-81t-fr-8527486339
+2020-08-06 09:47:37.3617 / Offer inserted
+2020-08-06 09:47:37.5664 / Append to proceed https://allegro.pl/oferta/2x-opony-zimowe-165-65r15-hankook-w452-81t-fr-8527486339
+2020-08-06 09:47:37.7244 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-225-50r17-hankook-k117-94w-mo-8527364499
+2020-08-06 09:47:37.7244 / Offer inserted
+2020-08-06 09:47:37.9206 / Append to proceed https://allegro.pl/oferta/1x-opona-letnia-225-50r17-hankook-k117-94w-mo-8527364499
+2020-08-06 09:47:38.0809 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-195-75r16-pirelli-carrier-win-110r-8527191697
+2020-08-06 09:47:38.0809 / Offer inserted
+2020-08-06 09:47:38.2874 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-195-75r16-pirelli-carrier-win-110r-8527191697
+2020-08-06 09:47:39.0231 / Fetched 10 offers
+2020-08-06 09:47:39.0677 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-185-75r16-hankook-rw06-r-c-8526986371
+2020-08-06 09:47:39.0677 / Offer inserted
+2020-08-06 09:47:39.2746 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-185-75r16-hankook-rw06-r-c-8526986371
+2020-08-06 09:47:39.4333 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-215-50r17-hankook-w320-95v-xl-fr-8526957621
+2020-08-06 09:47:39.4351 / Offer inserted
+2020-08-06 09:47:39.6303 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-215-50r17-hankook-w320-95v-xl-fr-8526957621
+2020-08-06 09:47:39.7890 / Append to proceed https://allegro.pl/oferta/2x-opony-uniroyal-ms-plus-77-185-60r15-84t-8574396012
+2020-08-06 09:47:39.7890 / Offer inserted
+2020-08-06 09:47:39.9945 / Append to proceed https://allegro.pl/oferta/2x-opony-uniroyal-ms-plus-77-185-60r15-84t-8574396012
+2020-08-06 09:47:40.1557 / Append to proceed https://allegro.pl/oferta/2x-opony-barum-polaris-5-185-60r15-84t-8541409987
+2020-08-06 09:47:40.1557 / Offer inserted
+2020-08-06 09:47:40.3632 / Append to proceed https://allegro.pl/oferta/2x-opony-barum-polaris-5-185-60r15-84t-8541409987
+2020-08-06 09:47:40.5270 / Append to proceed https://allegro.pl/oferta/opona-letnia-195-50r15-kleber-dynaxer-hp3-bezpiecz-8989601607
+2020-08-06 09:47:40.5270 / Offer inserted
+2020-08-06 09:47:40.7269 / Append to proceed https://allegro.pl/oferta/opona-letnia-195-50r15-kleber-dynaxer-hp3-bezpiecz-8989601607
+2020-08-06 09:47:41.4775 / Fetched 10 offers
+2020-08-06 09:47:41.5206 / Append to proceed https://allegro.pl/oferta/1-opona-metzeler-me-7-teen-140-70r12-60l-8982771826
+2020-08-06 09:47:41.5206 / Offer inserted
+2020-08-06 09:47:41.7207 / Append to proceed https://allegro.pl/oferta/1-opona-metzeler-me-7-teen-140-70r12-60l-8982771826
+2020-08-06 09:47:41.8845 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-debica-205-55r16-91h-frigo-hp-2-9402266342
+2020-08-06 09:47:41.8910 / Offer inserted
+2020-08-06 09:47:42.0994 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-debica-205-55r16-91h-frigo-hp-2-9402266342
+2020-08-06 09:47:42.2648 / Append to proceed https://allegro.pl/oferta/opona-heidenau-k63-120-70-14-piaggio-x8-x9-xp-9445458013
+2020-08-06 09:47:42.2648 / Offer inserted
+2020-08-06 09:47:42.4691 / Append to proceed https://allegro.pl/oferta/opona-heidenau-k63-120-70-14-piaggio-x8-x9-xp-9445458013
+2020-08-06 09:47:42.6376 / Append to proceed https://allegro.pl/oferta/komplet-opona-600-16-jodelka-detka-6-00-16-polskie-9276117748
+2020-08-06 09:47:42.6432 / Offer inserted
+2020-08-06 09:47:42.8445 / Append to proceed https://allegro.pl/oferta/komplet-opona-600-16-jodelka-detka-6-00-16-polskie-9276117748
+2020-08-06 09:47:43.0084 / Append to proceed https://allegro.pl/oferta/duro-hf904-median-130-80-17-65s-tt-e-9144770227
+2020-08-06 09:47:43.0084 / Offer inserted
+2020-08-06 09:47:43.2113 / Append to proceed https://allegro.pl/oferta/duro-hf904-median-130-80-17-65s-tt-e-9144770227
+2020-08-06 09:47:43.9547 / Fetched 10 offers
+2020-08-06 09:47:43.9985 / Append to proceed https://allegro.pl/oferta/opona-letnia-falken-l165-60-r15-sincera-sn110-77t-9204381201
+2020-08-06 09:47:43.9985 / Offer inserted
+2020-08-06 09:47:44.2229 / Append to proceed https://allegro.pl/oferta/opona-letnia-falken-l165-60-r15-sincera-sn110-77t-9204381201
+2020-08-06 09:47:44.3862 / Append to proceed https://allegro.pl/oferta/opona-matador-195-60-r15-mp47-hectorra-3-88-9204237242
+2020-08-06 09:47:44.3862 / Offer inserted
+2020-08-06 09:47:44.5941 / Append to proceed https://allegro.pl/oferta/opona-matador-195-60-r15-mp47-hectorra-3-88-9204237242
+2020-08-06 09:47:44.7707 / Append to proceed https://allegro.pl/oferta/opona-letnia-toyo-l195-60-r15-proxes-cf2-88h-9204163774
+2020-08-06 09:47:44.7707 / Offer inserted
+2020-08-06 09:47:44.9688 / Append to proceed https://allegro.pl/oferta/opona-letnia-toyo-l195-60-r15-proxes-cf2-88h-9204163774
+2020-08-06 09:47:45.1286 / Append to proceed https://allegro.pl/oferta/opona-letnia-sailun-l215-50-r17-atrezzo-zsr-95w-xl-9203068284
+2020-08-06 09:47:45.1286 / Offer inserted
+2020-08-06 09:47:45.3486 / Append to proceed https://allegro.pl/oferta/opona-letnia-sailun-l215-50-r17-atrezzo-zsr-95w-xl-9203068284
+2020-08-06 09:47:45.5038 / Append to proceed https://allegro.pl/oferta/opona-letnia-barum-l185-70-r14-brillantis-2-88t-9203043473
+2020-08-06 09:47:45.5038 / Offer inserted
+2020-08-06 09:47:45.7129 / Append to proceed https://allegro.pl/oferta/opona-letnia-barum-l185-70-r14-brillantis-2-88t-9203043473
+2020-08-06 09:47:46.4613 / Fetched 10 offers
+2020-08-06 09:47:46.4994 / Append to proceed https://allegro.pl/oferta/opona-paxaro-195-55-r15-paxaro-summer-performanc-9203020870
+2020-08-06 09:47:46.4994 / Offer inserted
+2020-08-06 09:47:46.7201 / Append to proceed https://allegro.pl/oferta/opona-paxaro-195-55-r15-paxaro-summer-performanc-9203020870
+2020-08-06 09:47:46.8787 / Append to proceed https://allegro.pl/oferta/opona-zimowa-uniroyal-z165-65-r14-ms-plus-77-79t-9203008659
+2020-08-06 09:47:46.8787 / Offer inserted
+2020-08-06 09:47:47.0756 / Append to proceed https://allegro.pl/oferta/opona-zimowa-uniroyal-z165-65-r14-ms-plus-77-79t-9203008659
+2020-08-06 09:47:47.2435 / Append to proceed https://allegro.pl/oferta/opona-zimowa-fortune-z215-55-r17-fsr901-94h-9203007264
+2020-08-06 09:47:47.2435 / Offer inserted
+2020-08-06 09:47:47.4542 / Append to proceed https://allegro.pl/oferta/opona-zimowa-fortune-z215-55-r17-fsr901-94h-9203007264
+2020-08-06 09:47:47.6161 / Append to proceed https://allegro.pl/oferta/opona-zimowa-uniroyal-z185-65-r14-ms-plus-77-86t-9202968585
+2020-08-06 09:47:47.6161 / Offer inserted
+2020-08-06 09:47:47.8114 / Append to proceed https://allegro.pl/oferta/opona-zimowa-uniroyal-z185-65-r14-ms-plus-77-86t-9202968585
+2020-08-06 09:47:47.9730 / Append to proceed https://allegro.pl/oferta/opona-zimowa-fulda-z165-65-r14-kristall-montero-3-9202937060
+2020-08-06 09:47:47.9758 / Offer inserted
+2020-08-06 09:47:48.1732 / Append to proceed https://allegro.pl/oferta/opona-zimowa-fulda-z165-65-r14-kristall-montero-3-9202937060
+2020-08-06 09:47:48.9308 / Fetched 10 offers
+2020-08-06 09:47:48.9694 / Append to proceed https://allegro.pl/oferta/opona-zimowa-tracmax-z205-50-r16-ice-plus-s210-91h-9202880016
+2020-08-06 09:47:48.9694 / Offer inserted
+2020-08-06 09:47:49.1660 / Append to proceed https://allegro.pl/oferta/opona-zimowa-tracmax-z205-50-r16-ice-plus-s210-91h-9202880016
+2020-08-06 09:47:49.3261 / Append to proceed https://allegro.pl/oferta/opona-zimowa-barum-z185-60-r15-polaris-5-88t-xl-9202873476
+2020-08-06 09:47:49.3261 / Offer inserted
+2020-08-06 09:47:49.5332 / Append to proceed https://allegro.pl/oferta/opona-zimowa-barum-z185-60-r15-polaris-5-88t-xl-9202873476
+2020-08-06 09:47:49.7068 / Append to proceed https://allegro.pl/oferta/opona-letnia-hankook-l175-65-r15-kinergy-eco-2-k43-9201700863
+2020-08-06 09:47:49.7068 / Offer inserted
+2020-08-06 09:47:49.9044 / Append to proceed https://allegro.pl/oferta/opona-letnia-hankook-l175-65-r15-kinergy-eco-2-k43-9201700863
+2020-08-06 09:47:50.0664 / Append to proceed https://allegro.pl/oferta/opona-letnia-falken-l175-65-r15-sincera-sn832-ec-8-9201693240
+2020-08-06 09:47:50.0664 / Offer inserted
+2020-08-06 09:47:50.2854 / Append to proceed https://allegro.pl/oferta/opona-letnia-falken-l175-65-r15-sincera-sn832-ec-8-9201693240
+2020-08-06 09:47:50.4572 / Append to proceed https://allegro.pl/oferta/opona-letnia-cst-l195-55-r15-marquis-mr61-85v-9200644596
+2020-08-06 09:47:50.4640 / Offer inserted
+2020-08-06 09:47:50.6664 / Append to proceed https://allegro.pl/oferta/opona-letnia-cst-l195-55-r15-marquis-mr61-85v-9200644596
+2020-08-06 09:47:51.4269 / Fetched 10 offers
+2020-08-06 09:47:51.4650 / Append to proceed https://allegro.pl/oferta/opona-barum-w175-70-r14-quartaris-5-84t-9200608324
+2020-08-06 09:47:51.4650 / Offer inserted
+2020-08-06 09:47:51.6647 / Append to proceed https://allegro.pl/oferta/opona-barum-w175-70-r14-quartaris-5-84t-9200608324
+2020-08-06 09:47:51.8269 / Append to proceed https://allegro.pl/oferta/opona-vredestein-w175-65-r14-quatrac-5-82t-9200588999
+2020-08-06 09:47:51.8335 / Offer inserted
+2020-08-06 09:47:52.0276 / Append to proceed https://allegro.pl/oferta/opona-vredestein-w175-65-r14-quatrac-5-82t-9200588999
+2020-08-06 09:47:52.1851 / Append to proceed https://allegro.pl/oferta/opona-falken-w185-65-r14-as210-86h-19-9200554848
+2020-08-06 09:47:52.1851 / Offer inserted
+2020-08-06 09:47:52.3835 / Append to proceed https://allegro.pl/oferta/opona-falken-w185-65-r14-as210-86h-19-9200554848
+2020-08-06 09:47:52.5432 / Append to proceed https://allegro.pl/oferta/opona-kumho-w165-60-r15-solus-ha31-81t-xl-9200242745
+2020-08-06 09:47:52.5432 / Offer inserted
+2020-08-06 09:47:52.7429 / Append to proceed https://allegro.pl/oferta/opona-kumho-w165-60-r15-solus-ha31-81t-xl-9200242745
+2020-08-06 09:47:52.9066 / Append to proceed https://allegro.pl/oferta/opona-toyo-w185-65-r15-celsius-92v-xl-9200236421
+2020-08-06 09:47:52.9066 / Offer inserted
+2020-08-06 09:47:53.1015 / Append to proceed https://allegro.pl/oferta/opona-toyo-w185-65-r15-celsius-92v-xl-9200236421
+2020-08-06 09:47:53.8655 / Fetched 10 offers
+2020-08-06 09:47:53.9083 / Append to proceed https://allegro.pl/oferta/opona-letnia-sailun-l195-60-r16c-commercio-vx1-99-9200185819
+2020-08-06 09:47:53.9083 / Offer inserted
+2020-08-06 09:47:54.1063 / Append to proceed https://allegro.pl/oferta/opona-letnia-sailun-l195-60-r16c-commercio-vx1-99-9200185819
+2020-08-06 09:47:54.2701 / Append to proceed https://allegro.pl/oferta/opona-vredestein-w175-65-r14-quatrac-5-82t-9170258674
+2020-08-06 09:47:54.2720 / Offer inserted
+2020-08-06 09:47:54.4667 / Append to proceed https://allegro.pl/oferta/opona-vredestein-w175-65-r14-quatrac-5-82t-9170258674
+2020-08-06 09:47:54.6276 / Append to proceed https://allegro.pl/oferta/opona-zimowa-kumho-z175-60-r15-wintercraft-wp51-81-9170220061
+2020-08-06 09:47:54.6276 / Offer inserted
+2020-08-06 09:47:54.8279 / Append to proceed https://allegro.pl/oferta/opona-zimowa-kumho-z175-60-r15-wintercraft-wp51-81-9170220061
+2020-08-06 09:47:54.9888 / Append to proceed https://allegro.pl/oferta/opona-zimowa-falken-z175-80-r14-hs-437-88t-19-9170219544
+2020-08-06 09:47:54.9888 / Offer inserted
+2020-08-06 09:47:55.1852 / Append to proceed https://allegro.pl/oferta/opona-zimowa-falken-z175-80-r14-hs-437-88t-19-9170219544
+2020-08-06 09:47:55.3432 / Append to proceed https://allegro.pl/oferta/opona-zimowa-barum-z175-80-r14-polaris-5-88t-9170187616
+2020-08-06 09:47:55.3432 / Offer inserted
+2020-08-06 09:47:55.5434 / Append to proceed https://allegro.pl/oferta/opona-zimowa-barum-z175-80-r14-polaris-5-88t-9170187616
+2020-08-06 09:47:56.2874 / Fetched 10 offers
+2020-08-06 09:47:56.3305 / Append to proceed https://allegro.pl/oferta/opona-zimowa-uniroyal-z185-65-r14-ms-plus-77-86t-9170159849
+2020-08-06 09:47:56.3305 / Offer inserted
+2020-08-06 09:47:56.5271 / Append to proceed https://allegro.pl/oferta/opona-zimowa-uniroyal-z185-65-r14-ms-plus-77-86t-9170159849
+2020-08-06 09:47:56.6855 / Append to proceed https://allegro.pl/oferta/opona-zimowa-debica-z175-80-r14-frigo-2n-88t-9170099884
+2020-08-06 09:47:56.6855 / Offer inserted
+2020-08-06 09:47:56.9127 / Append to proceed https://allegro.pl/oferta/opona-zimowa-debica-z175-80-r14-frigo-2n-88t-9170099884
+2020-08-06 09:47:57.0748 / Append to proceed https://allegro.pl/oferta/opona-zimowa-debica-z185-60-r15-frigo-2n-88t-xl-9170069619
+2020-08-06 09:47:57.0748 / Offer inserted
+2020-08-06 09:47:57.2727 / Append to proceed https://allegro.pl/oferta/opona-zimowa-debica-z185-60-r15-frigo-2n-88t-xl-9170069619
+2020-08-06 09:47:57.4346 / Append to proceed https://allegro.pl/oferta/opona-zimowa-uniroyal-z185-65-r15-ms-plus-77-88t-9170037689
+2020-08-06 09:47:57.4346 / Offer inserted
+2020-08-06 09:47:57.6570 / Append to proceed https://allegro.pl/oferta/opona-zimowa-uniroyal-z185-65-r15-ms-plus-77-88t-9170037689
+2020-08-06 09:47:57.8149 / Append to proceed https://allegro.pl/oferta/opona-zimowa-fulda-z165-65-r14-kristall-montero-3-9170036682
+2020-08-06 09:47:57.8214 / Offer inserted
+2020-08-06 09:47:58.0185 / Append to proceed https://allegro.pl/oferta/opona-zimowa-fulda-z165-65-r14-kristall-montero-3-9170036682
+2020-08-06 09:47:58.7588 / Fetched 10 offers
+2020-08-06 09:47:58.8022 / Append to proceed https://allegro.pl/oferta/opona-zimowa-cst-z185-65-r14-medallion-winter-wcp1-9169984208
+2020-08-06 09:47:58.8081 / Offer inserted
+2020-08-06 09:47:59.0116 / Append to proceed https://allegro.pl/oferta/opona-zimowa-cst-z185-65-r14-medallion-winter-wcp1-9169984208
+2020-08-06 09:47:59.1697 / Append to proceed https://allegro.pl/oferta/opona-zimowa-uniroyal-z175-70-r14-ms-plus-77-84t-9169954004
+2020-08-06 09:47:59.1697 / Offer inserted
+2020-08-06 09:47:59.3662 / Append to proceed https://allegro.pl/oferta/opona-zimowa-uniroyal-z175-70-r14-ms-plus-77-84t-9169954004
+2020-08-06 09:47:59.5300 / Append to proceed https://allegro.pl/oferta/opona-falken-w185-65-r14-as210-86h-19-9169814062
+2020-08-06 09:47:59.5300 / Offer inserted
+2020-08-06 09:47:59.7325 / Append to proceed https://allegro.pl/oferta/opona-falken-w185-65-r14-as210-86h-19-9169814062
+2020-08-06 09:47:59.9008 / Append to proceed https://allegro.pl/oferta/opona-debica-w185-70-r14-navigator-2-88t-9166033847
+2020-08-06 09:47:59.9072 / Offer inserted
+2020-08-06 09:48:00.1076 / Append to proceed https://allegro.pl/oferta/opona-debica-w185-70-r14-navigator-2-88t-9166033847
+2020-08-06 09:48:00.2749 / Append to proceed https://allegro.pl/oferta/opona-barum-w185-65-r15-quartaris-5-88t-9165996379
+2020-08-06 09:48:00.2749 / Offer inserted
+2020-08-06 09:48:00.4709 / Append to proceed https://allegro.pl/oferta/opona-barum-w185-65-r15-quartaris-5-88t-9165996379
+2020-08-06 09:48:01.2153 / Fetched 10 offers
+2020-08-06 09:48:01.2587 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-165-60r15-nokian-wr-snowproof-77t-9320323552
+2020-08-06 09:48:01.2587 / Offer inserted
+2020-08-06 09:48:01.4634 / Append to proceed https://allegro.pl/oferta/1x-opona-zimowa-165-60r15-nokian-wr-snowproof-77t-9320323552
+2020-08-06 09:48:01.6246 / Append to proceed https://allegro.pl/oferta/2x-opony-letnie-windforce-catchgre-gp100-185-65r14-8276523567
+2020-08-06 09:48:01.6246 / Offer inserted
+2020-08-06 09:48:01.8204 / Append to proceed https://allegro.pl/oferta/2x-opony-letnie-windforce-catchgre-gp100-185-65r14-8276523567
+2020-08-06 09:48:01.9794 / Append to proceed https://allegro.pl/oferta/1x-195-65r15-bfgoodrich-advantage-95t-nowe-lato-8998154040
+2020-08-06 09:48:01.9794 / Offer inserted
+2020-08-06 09:48:02.1983 / Append to proceed https://allegro.pl/oferta/1x-195-65r15-bfgoodrich-advantage-95t-nowe-lato-8998154040
+2020-08-06 09:48:02.3628 / Append to proceed https://allegro.pl/oferta/viking-zima-205-55r16-210-h-nowe-wroclaw-9557702814
+2020-08-06 09:48:02.3628 / Offer inserted
+2020-08-06 09:48:02.5673 / Append to proceed https://allegro.pl/oferta/viking-zima-205-55r16-210-h-nowe-wroclaw-9557702814
+2020-08-06 09:48:02.7264 / Append to proceed https://allegro.pl/oferta/matador-mp47-205-45-r16-83-y-9551279190
+2020-08-06 09:48:02.7264 / Offer inserted
+2020-08-06 09:48:02.9243 / Append to proceed https://allegro.pl/oferta/matador-mp47-205-45-r16-83-y-9551279190
+2020-08-06 09:48:03.6673 / Fetched 10 offers
+2020-08-06 09:48:03.7058 / Append to proceed https://allegro.pl/oferta/kleber-quadraxer2-195-65r15-nowe-195-65-r15-wrocla-9529948658
+2020-08-06 09:48:03.7058 / Offer inserted
+2020-08-06 09:48:03.9046 / Append to proceed https://allegro.pl/oferta/kleber-quadraxer2-195-65r15-nowe-195-65-r15-wrocla-9529948658
+2020-08-06 09:48:04.0648 / Append to proceed https://allegro.pl/oferta/1xminerva-s110-195-65r16c-104t-2019-9521336177
+2020-08-06 09:48:04.0648 / Offer inserted
+2020-08-06 09:48:04.2632 / Append to proceed https://allegro.pl/oferta/1xminerva-s110-195-65r16c-104t-2019-9521336177
+2020-08-06 09:48:04.4212 / Append to proceed https://allegro.pl/oferta/1xuniroyal-rainsport-5-205-55r16-91h-2019-9504773224
+2020-08-06 09:48:04.4212 / Offer inserted
+2020-08-06 09:48:04.6153 / Append to proceed https://allegro.pl/oferta/1xuniroyal-rainsport-5-205-55r16-91h-2019-9504773224
+2020-08-06 09:48:04.7792 / Append to proceed https://allegro.pl/oferta/1xkumho-crugen-hp91-255-65r17-110v-2016-9441320112
+2020-08-06 09:48:04.7792 / Offer inserted
+2020-08-06 09:48:04.9764 / Append to proceed https://allegro.pl/oferta/1xkumho-crugen-hp91-255-65r17-110v-2016-9441320112
+2020-08-06 09:48:05.1389 / Append to proceed https://allegro.pl/oferta/linglong-225-65r16-green-max-4x4-hp-100h-tl-e-221-9360881987
+2020-08-06 09:48:05.1389 / Offer inserted
+2020-08-06 09:48:05.3658 / Append to proceed https://allegro.pl/oferta/linglong-225-65r16-green-max-4x4-hp-100h-tl-e-221-9360881987
+2020-08-06 11:26:03.3932 / Moved 0 offers
+2020-08-06 11:26:03.4641 / Cleared buffor
+2020-08-06 11:26:28.6536 / Moved 1 offers
+2020-08-06 11:26:28.7070 / Cleared buffor
+2020-08-06 11:26:53.8402 / Moved 3 offers
+2020-08-06 11:26:53.8847 / Cleared buffor
+2020-08-06 11:27:19.0126 / Moved 11 offers
+2020-08-06 11:27:19.0549 / Cleared buffor
+2020-08-06 11:27:44.2208 / Moved 6 offers
+2020-08-06 11:27:44.2627 / Cleared buffor
+2020-08-06 11:28:09.4000 / Moved 7 offers
+2020-08-06 11:28:09.4450 / Cleared buffor
+2020-08-06 11:28:34.5752 / Moved 8 offers
+2020-08-06 11:28:34.6160 / Cleared buffor
+2020-08-06 11:28:59.7434 / Moved 2 offers
+2020-08-06 11:28:59.7861 / Cleared buffor
+2020-08-06 11:29:24.9191 / Moved 2 offers
+2020-08-06 11:29:24.9711 / Cleared buffor
+2020-08-06 11:29:50.0968 / Moved 5 offers
+2020-08-06 11:29:50.1380 / Cleared buffor
+2020-08-06 11:30:15.2894 / Moved 5 offers
+2020-08-06 11:30:15.3322 / Cleared buffor
+2020-08-06 11:30:40.4614 / Moved 34 offers
+2020-08-06 11:30:40.5019 / Cleared buffor
+2020-08-06 11:31:05.6292 / Moved 6 offers
+2020-08-06 11:31:05.6761 / Cleared buffor
+2020-08-06 11:31:30.8071 / Moved 4 offers
+2020-08-06 11:31:30.8519 / Cleared buffor
+2020-08-06 11:31:55.9985 / Moved 30 offers
+2020-08-06 11:31:56.0422 / Cleared buffor
+2020-08-06 11:32:21.1905 / Moved 60 offers
+2020-08-06 11:32:21.2327 / Cleared buffor
+2020-08-06 11:32:46.3668 / Moved 81 offers
+2020-08-06 11:32:46.4133 / Cleared buffor
+2020-08-06 11:33:11.5535 / Moved 60 offers
+2020-08-06 11:33:11.5957 / Cleared buffor
+2020-08-06 11:33:36.7221 / Moved 15 offers
+2020-08-06 11:33:36.7635 / Cleared buffor
+2020-08-06 11:34:01.8880 / Moved 47 offers
+2020-08-06 11:34:01.9305 / Cleared buffor
+2020-08-06 11:34:27.0655 / Moved 60 offers
+2020-08-06 11:34:27.1059 / Cleared buffor
+2020-08-06 11:34:52.2425 / Moved 31 offers
+2020-08-06 11:34:52.2904 / Cleared buffor
+2020-08-06 11:35:17.4245 / Moved 76 offers
+2020-08-06 11:35:17.4696 / Cleared buffor
+2020-08-06 11:35:42.6040 / Moved 60 offers
+2020-08-06 11:35:42.6445 / Cleared buffor
+2020-08-06 11:36:07.7604 / Moved 30 offers
+2020-08-06 11:36:07.8003 / Cleared buffor
+2020-08-06 11:36:32.9396 / Moved 67 offers
+2020-08-06 11:36:32.9859 / Cleared buffor
+2020-08-06 11:36:58.1208 / Moved 45 offers
+2020-08-06 11:36:58.1720 / Cleared buffor
+2020-08-06 11:37:23.3070 / Moved 49 offers
+2020-08-06 11:37:23.3517 / Cleared buffor
+2020-08-06 11:37:48.4767 / Moved 121 offers
+2020-08-06 11:37:48.5207 / Cleared buffor

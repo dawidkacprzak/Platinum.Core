@@ -10,14 +10,12 @@ namespace Platinum.Core.ApiIntegration
 
         public PlatinumBrowserRestClient()
         {
-            ApiUrl = "http://213.32.122.228:3001";
-            InitBrowser();
+            ApiUrl = "http://localhost:3001";
         }
 
         public PlatinumBrowserRestClient(string apiUrl)
         {
             this.ApiUrl = apiUrl;
-            InitBrowser();
         }
         public void InitBrowser()
         {

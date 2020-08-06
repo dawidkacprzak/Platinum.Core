@@ -12,26 +12,30 @@ using Platinum.Core.OfferListController;
 using Platinum.Core.Types;
 using Platinum.Core.Types.Exceptions;
 
-namespace Platinum.Service.UrlTaskIvoker
+namespace Platinum.Service.UrlTaskInvoker
 {
     public class AllegroTaskInvoker : IUrlTaskInvoker
     {
-        Logger _logger = LogManager.GetCurrentClassLogger();
+        readonly Logger logger = LogManager.GetCurrentClassLogger();
         private List<string> activeBrowsers;
         private List<string> activeTasksId;
 
         private const int TASKS_PER_RUN = 30;
-        private int FinishedTasks = 0;
+        private int finishedTasks = 0;
 
-        private static object getTaskLock = new object();
+        private static readonly object getTaskLock = new object();
 
         public async Task Run()
         {
             try
             {
-                _logger.Info("Service iteration started");
+                logger.Info("Service iteration started");
 
-                activeTasksId = new List<string>();
+                lock (getTaskLock)
+                {
+                    activeTasksId = new List<string>();
+                }
+
                 List<string> browsers = GetBrowsers().ToList();
                 activeBrowsers = new List<string>();
 
@@ -41,11 +45,11 @@ namespace Platinum.Service.UrlTaskIvoker
                     {
                         ResetBrowser(browser);
                         activeBrowsers.Add(browser);
-                        _logger.Info("Active browser: " + browser);
+                        logger.Info("Active browser: " + browser);
                     }
                     catch (Exception ex)
                     {
-                        _logger.Error(ex);
+                        logger.Error(ex);
                     }
                 }
 
@@ -57,15 +61,15 @@ namespace Platinum.Service.UrlTaskIvoker
                     tasks[i].Start();
                 }
 
-                _logger.Info("Created " + tasks.Length + " tasks");
+                logger.Info("Created " + tasks.Length + " tasks");
                 Task.WaitAll(tasks);
-                _logger.Info("Finished all tasks. Waiting 5s for next iteration");
+                logger.Info("Finished all tasks. Waiting 5s for next iteration");
                 await Task.Delay(5000);
-                _logger.Info("Next iteration...");
+                logger.Info("Next iteration...");
             }
             catch (Exception ex)
             {
-                _logger.Error(ex);
+                logger.Error(ex);
             }
         }
 
@@ -74,7 +78,7 @@ namespace Platinum.Service.UrlTaskIvoker
         {
             return new Task(() =>
             {
-                while (FinishedTasks < TASKS_PER_RUN)
+                while (finishedTasks < TASKS_PER_RUN)
                 {
                     KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>> task;
 
@@ -85,21 +89,24 @@ namespace Platinum.Service.UrlTaskIvoker
                     {
                         try
                         {
-                            _logger.Info("Started task #" + task.Key.Value);
+                            logger.Info("Started task #" + task.Key.Value);
                             ctrl.StartFetching(false, new OfferCategory(OfferWebsite.Allegro, task.Key.Key),
                                 task.Value.ToList());
 
                             PopTaskFromQueue(task.Key.Value);
-                            _logger.Info("Finished task #" + task.Key.Value);
-                            FinishedTasks++;
+                            logger.Info("Finished task #" + task.Key.Value);
+                            finishedTasks++;
                         }
                         catch (Exception ex)
                         {
-                            _logger.Info(ex);
+                            logger.Info(ex);
+                            logger.Info("Timeout task #" + task.Key.Value + " - BREAK");
+                            break;
                         }
                     }
                 }
-                _logger.Info("Finished task for host: "+ host);
+
+                logger.Info("Finished task for host: " + host);
             });
         }
 
@@ -117,12 +124,12 @@ namespace Platinum.Service.UrlTaskIvoker
                             $"DELETE FROM allegroUrlFetchTaskParameter where AllegroUrlFetchTaskId = {taskId}");
                         db.CommitTransaction();
                         activeTasksId.Remove(taskId.ToString());
-                        _logger.Info("Removed task #" + taskId + " from queue");
+                        logger.Info("Removed task #" + taskId + " from queue");
                     }
                     catch (DalException ex)
                     {
                         db.RollbackTransaction();
-                        _logger.Error(ex);
+                        logger.Error(ex);
                     }
                 }
             }
@@ -141,7 +148,7 @@ namespace Platinum.Service.UrlTaskIvoker
 
                     while (reader.Read())
                     {
-                        _logger.Info("Fetched browser: " + reader.GetString(0));
+                        logger.Info("Fetched browser: " + reader.GetString(0));
                         yield return reader.GetString(0);
                     }
                 }

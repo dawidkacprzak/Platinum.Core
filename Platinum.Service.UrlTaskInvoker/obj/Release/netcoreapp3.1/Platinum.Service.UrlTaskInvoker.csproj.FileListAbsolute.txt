@@ -7,6 +7,7 @@ C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Rel
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.runtimeconfig.dev.json
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.pdb
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\Elasticsearch.Net.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\HtmlAgilityPack.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
@@ -36,6 +37,7 @@ C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Rel
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\Microsoft.Win32.Registry.dll
+C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\Nest.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\NLog.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\RestSharp.dll
@@ -70,5 +72,3 @@ C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\obj\Rel
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\obj\Release\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.dll
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\obj\Release\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.pdb
 C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\obj\Release\netcoreapp3.1\Platinum.Service.UrlTaskInvoker.genruntimeconfig.cache
-C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\Elasticsearch.Net.dll
-C:\Users\dkacprzak\Desktop\Platinum.Core\Platinum.Service.UrlTaskInvoker\bin\Release\netcoreapp3.1\Nest.dll

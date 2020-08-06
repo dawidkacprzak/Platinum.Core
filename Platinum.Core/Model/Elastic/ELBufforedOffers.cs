@@ -1,5 +1,6 @@
 ﻿namespace Platinum.Core.Model.Elastic
 {
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
     public class ELBufforedOffers
     {
         public string uri { get; set; }
