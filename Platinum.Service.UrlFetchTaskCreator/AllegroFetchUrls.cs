@@ -103,7 +103,7 @@ namespace Platinum.Service.UrlFetchTaskCreator
             {
                 using (DbDataReader reader =
                     db.ExecuteReader(
-                        $"SELECT Id from websiteCategories WITH (NOLOCK) where websiteId = {(int) OfferWebsite.Allegro}"))
+                        $"SELECT Id from websiteCategories WITH (NOLOCK) where websiteId = {(int) EOfferWebsite.Allegro}"))
                 {
                     while (reader.Read())
                     {

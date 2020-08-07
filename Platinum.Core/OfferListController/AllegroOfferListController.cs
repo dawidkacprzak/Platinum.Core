@@ -163,7 +163,7 @@ namespace Platinum.Core.OfferListController
                     {
                         query += $@"
                         (
-                            {(int) OfferWebsite.Allegro}
+                            {(int) EOfferWebsite.Allegro}
                             ,'{offer}'
                             ,HashBytes('MD5','{offer}')
                             , getdate()

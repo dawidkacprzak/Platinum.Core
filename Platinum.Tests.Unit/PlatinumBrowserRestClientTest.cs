@@ -9,7 +9,7 @@ namespace Platinum.Tests.Unit
         [Test]
         public void ConstructorNoArgumentTestPass()
         {
-            IPlatinumBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserRestClient client = new PlatinumBrowserRestClient();
             Assert.IsInstanceOf<PlatinumBrowserRestClient>(client);
         }
         

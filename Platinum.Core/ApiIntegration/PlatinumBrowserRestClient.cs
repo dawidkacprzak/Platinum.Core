@@ -4,7 +4,7 @@ using RestSharp;
 
 namespace Platinum.Core.ApiIntegration
 {
-    public class PlatinumBrowserRestClient : RestClient, IPlatinumBrowserRestClient
+    public class PlatinumBrowserRestClient : RestClient, IBrowserRestClient
     {
         public string ApiUrl { get; set; }
 

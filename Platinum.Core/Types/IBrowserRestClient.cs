@@ -2,7 +2,7 @@
 
 namespace Platinum.Core.Types
 {
-    public interface IPlatinumBrowserRestClient
+    public interface IBrowserRestClient
     {
         void InitBrowser();
         string CreatePage();

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using NLog;
-using Platinum.Core.ApiIntegration;
 using Platinum.Core.DatabaseIntegration;
+using Platinum.Core.Factory.BrowserRestClient;
 using Platinum.Core.Model;
 using Platinum.Core.OfferListController;
 using Platinum.Core.Types;
@@ -17,34 +16,35 @@ namespace Platinum.Service.UrlTaskInvoker
     public class AllegroTaskInvoker : IUrlTaskInvoker
     {
         readonly Logger logger = LogManager.GetCurrentClassLogger();
-        private List<string> activeBrowsers;
         private List<string> activeTasksId;
 
         private const int TASKS_PER_RUN = 30;
         private int finishedTasks = 0;
 
         private static readonly object getTaskLock = new object();
+        List<string> activeBrowsers = new List<string>();
 
-        public async Task Run()
+
+        public AllegroTaskInvoker()
+        {
+            lock (getTaskLock)
+            {
+                activeTasksId = new List<string>();
+            }
+        }
+
+        public async Task Run(IBrowserRestClientFactory aBrowserRestClientFactory, IDal dal)
         {
             try
             {
                 logger.Info("Service iteration started");
 
-                lock (getTaskLock)
-                {
-                    activeTasksId = new List<string>();
-                }
-
-                List<string> browsers = GetBrowsers().ToList();
-                activeBrowsers = new List<string>();
-
-                foreach (string browser in browsers)
+                List<string> allBrowsers = GetBrowsers(dal).ToList();
+                foreach (string browser in allBrowsers)
                 {
                     try
                     {
-                        ResetBrowser(browser);
-                        activeBrowsers.Add(browser);
+                        ResetBrowser(aBrowserRestClientFactory.GetBrowser(browser), browser);
                         logger.Info("Active browser: " + browser);
                     }
                     catch (Exception ex)
@@ -53,13 +53,10 @@ namespace Platinum.Service.UrlTaskInvoker
                     }
                 }
 
-                Task[] tasks = new Task[activeBrowsers.Count];
-
-                for (int i = 0; i < tasks.Length; i++)
-                {
-                    tasks[i] = InvokeTask(activeBrowsers.ElementAt(i));
+                Task[] tasks = GetUrlFetchingTasks(activeBrowsers);
+                for (int i = 0; i < tasks.Count(); i++)
                     tasks[i].Start();
-                }
+
 
                 logger.Info("Created " + tasks.Length + " tasks");
                 Task.WaitAll(tasks);
@@ -72,7 +69,6 @@ namespace Platinum.Service.UrlTaskInvoker
                 logger.Error(ex);
             }
         }
-
 
         public Task InvokeTask(string host)
         {
@@ -90,10 +86,13 @@ namespace Platinum.Service.UrlTaskInvoker
                         try
                         {
                             logger.Info("Started task #" + task.Key.Value);
-                            ctrl.StartFetching(false, new OfferCategory(OfferWebsite.Allegro, task.Key.Key),
+                            ctrl.StartFetching(false, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
                                 task.Value.ToList());
+                            using (IDal db = new Dal())
+                            {
+                                PopTaskFromQueue(db, task.Key.Value);
+                            }
 
-                            PopTaskFromQueue(task.Key.Value);
                             logger.Info("Finished task #" + task.Key.Value);
                             finishedTasks++;
                         }
@@ -110,57 +109,68 @@ namespace Platinum.Service.UrlTaskInvoker
             });
         }
 
-        public void PopTaskFromQueue(int taskId)
+        public Task[] GetUrlFetchingTasks(IEnumerable<string> activeBrowsers)
+        {
+            List<string> browsers = activeBrowsers.ToList();
+            Task[] tasks = new Task[browsers.Count()];
+            for (int i = 0; i < tasks.Length; i++)
+            {
+                tasks[i] = InvokeTask(browsers.ElementAt(i));
+            }
+
+            return tasks;
+        }
+
+        public void PopTaskFromQueue(IDal db, int taskId)
         {
             lock (getTaskLock)
             {
-                using (Dal db = new Dal())
+                try
                 {
-                    try
-                    {
-                        db.BeginTransaction();
-                        db.ExecuteNonQuery($"DELETE FROM allegroUrlFetchTask WHERE Id = {taskId}");
-                        db.ExecuteNonQuery(
-                            $"DELETE FROM allegroUrlFetchTaskParameter where AllegroUrlFetchTaskId = {taskId}");
-                        db.CommitTransaction();
-                        activeTasksId.Remove(taskId.ToString());
-                        logger.Info("Removed task #" + taskId + " from queue");
-                    }
-                    catch (DalException ex)
-                    {
-                        db.RollbackTransaction();
-                        logger.Error(ex);
-                    }
+                    db.BeginTransaction();
+                    db.ExecuteNonQuery($"DELETE FROM allegroUrlFetchTask WHERE Id = {taskId}");
+                    db.ExecuteNonQuery(
+                        $"DELETE FROM allegroUrlFetchTaskParameter where AllegroUrlFetchTaskId = {taskId}");
+                    db.CommitTransaction();
+                    activeTasksId.Remove(taskId.ToString());
+                    logger.Info("Removed task #" + taskId + " from queue");
+                }
+                catch (DalException ex)
+                {
+                    db.RollbackTransaction();
+                    logger.Error(ex);
+                }
+                catch (Exception ex)
+                {
+                    db.RollbackTransaction();
+                    logger.Error(ex);
                 }
             }
         }
 
-        public IEnumerable<string> GetBrowsers()
+        public IEnumerable<string> GetBrowsers(IDal db)
         {
-            using (Dal db = new Dal())
+            using (DbDataReader reader = db.ExecuteReader("SELECT Host from browsers WITH(NOLOCK);"))
             {
-                using (DbDataReader reader = db.ExecuteReader("SELECT Host from browsers WITH(NOLOCK);"))
+                if (!reader.HasRows)
                 {
-                    if (!reader.HasRows)
-                    {
-                        throw new TaskInvokerException("No browsers found");
-                    }
+                    throw new TaskInvokerException("No browsers found");
+                }
 
-                    while (reader.Read())
-                    {
-                        logger.Info("Fetched browser: " + reader.GetString(0));
-                        yield return reader.GetString(0);
-                    }
+                while (reader.Read())
+                {
+                    logger.Info("Fetched browser: " + reader.GetString(0));
+                    yield return reader.GetString(0);
                 }
             }
         }
 
-        public void ResetBrowser(string host)
+        public void ResetBrowser(IBrowserRestClient client, string host)
         {
             try
             {
-                PlatinumBrowserRestClient client = new PlatinumBrowserRestClient(host);
                 client.ResetBrowser();
+                activeBrowsers.Add(host);
             }
             catch (RequestException ex)
             {
@@ -179,7 +189,7 @@ namespace Platinum.Service.UrlTaskInvoker
                 {
                     string taskQuery = $@"SELECT TOP 1 allegroUrlFetchTask.* FROM allegroUrlFetchTask WITH (NOLOCK) 
                                                 INNER JOIN websiteCategories on websiteCategories.ID = allegroUrlFetchTask.CategoryId
-                                                WHERE websiteCategories.websiteId = {(int) OfferWebsite.Allegro} ";
+                                                WHERE websiteCategories.websiteId = {(int) EOfferWebsite.Allegro} ";
                     if (activeTasksId.Count > 0)
                     {
                         taskQuery += $@" AND allegroUrlFetchTask.Id NOT IN ({string.Join(",", activeTasksId)}) ";

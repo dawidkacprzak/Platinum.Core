@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog;
+using Platinum.Core.DatabaseIntegration;
+using Platinum.Core.Factory.BrowserRestClient;
 using Platinum.Core.Types;
 using Platinum.Service.UrlTaskInvoker;
+using Platinum.Service.UrlTaskInvoker.Factory;
 
 namespace Platinum.Service.UrlTaskInvoker
 {
@@ -15,18 +18,21 @@ namespace Platinum.Service.UrlTaskInvoker
     {
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            UrlTaskInvokerFactory factory = new AllegroUrlTaskInvokerFactory();
             while (!stoppingToken.IsCancellationRequested)
             {
-                IUrlTaskInvoker invoker = new AllegroTaskInvoker();
-                await RunTaskInvoker(new AllegroTaskInvoker());
-                
+                await RunTaskInvoker(factory.GetInvoker());
+
                 await Task.Delay(1000, stoppingToken);
             }
         }
 
         private async Task RunTaskInvoker(IUrlTaskInvoker task)
         {
-            await task.Run();
+            using (Dal db = new Dal())
+            {
+                await task.Run(new PlatinumABrowserRestClientFactory(), db);
+            }
         }
     }
 }

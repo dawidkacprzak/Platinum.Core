@@ -11,10 +11,10 @@ namespace Platinum.Core.Model
     {
         public string CategoryUrl { get; }
         public string CategoryName { get; }
-        public OfferWebsite OfferWebsite { get; }
+        public EOfferWebsite EOfferWebsite { get; }
         public int CategoryId { get; }
 
-        public OfferCategory(OfferWebsite offerWebsite, int categoryId)
+        public OfferCategory(EOfferWebsite eOfferWebsite, int categoryId)
         {
             using (Dal db = new Dal(true))
             {
@@ -36,13 +36,13 @@ namespace Platinum.Core.Model
                 }
             }
 
-            this.OfferWebsite = offerWebsite;
+            this.EOfferWebsite = eOfferWebsite;
         }
 
         /// <summary>
         /// Just for test purposes
         /// </summary>
-        public OfferCategory(OfferWebsite offerWebsite, string categoryName)
+        public OfferCategory(EOfferWebsite eOfferWebsite, string categoryName)
         {
 #if RELEASE
             throw new Exception("Cannot invoke test methods on prod. env.");
@@ -50,7 +50,7 @@ namespace Platinum.Core.Model
 
             this.CategoryUrl = categoryName;
             this.CategoryName = categoryName;
-            this.OfferWebsite = offerWebsite;
+            this.EOfferWebsite = eOfferWebsite;
         }
 
         public override bool Equals(object obj)
@@ -62,19 +62,19 @@ namespace Platinum.Core.Model
 
             OfferCategory convertedCategory = (OfferCategory) obj;
 
-            return convertedCategory.OfferWebsite.Equals(OfferWebsite) &&
+            return convertedCategory.EOfferWebsite.Equals(EOfferWebsite) &&
                    convertedCategory.CategoryUrl.Equals(CategoryUrl);
         }
 
         protected bool Equals(OfferCategory other)
         {
             return CategoryUrl == other.CategoryUrl && CategoryName == other.CategoryName &&
-                   OfferWebsite == other.OfferWebsite && CategoryId == other.CategoryId;
+                   EOfferWebsite == other.EOfferWebsite && CategoryId == other.CategoryId;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(CategoryUrl, CategoryName, (int) OfferWebsite, CategoryId);
+            return HashCode.Combine(CategoryUrl, CategoryName, (int) EOfferWebsite, CategoryId);
         }
     }
 }
