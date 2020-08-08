@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Platinum.Core.DatabaseIntegration;
+using Platinum.Core.Types;
 
 namespace Platinum.Service.UrlTaskInvoker
 {
@@ -17,7 +19,7 @@ namespace Platinum.Service.UrlTaskInvoker
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .UseWindowsService()
+                .UseSystemDependedService()
                 .ConfigureServices((hostContext, services) => { services.AddHostedService<Worker>(); });
     }
 }

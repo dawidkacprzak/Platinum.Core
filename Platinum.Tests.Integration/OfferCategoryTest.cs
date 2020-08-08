@@ -20,7 +20,7 @@ namespace Platinum.Tests.Integration
             int categoryId)
         {
             OfferCategory offerCategoryBase = new OfferCategory(EOfferWebsite.Allegro, 1);
-            
+
             Assert.NotNull(offerCategoryBase.EOfferWebsite);
             Assert.AreEqual(offerCategoryBase.EOfferWebsite, EOfferWebsite.Allegro);
         }
@@ -65,29 +65,29 @@ namespace Platinum.Tests.Integration
         [Test]
         public void CheckObjectConversionEqualityPass()
         {
-            OfferCategory convertedCategory = new OfferCategory(EOfferWebsite.Allegro,1);
+            OfferCategory convertedCategory = new OfferCategory(EOfferWebsite.Allegro, 1);
             object objCategory = convertedCategory;
-            
-            Assert.AreEqual(convertedCategory,objCategory);
+
+            Assert.AreEqual(convertedCategory, objCategory);
         }
-        
+
         [Test]
         public void CheckObjectConversionEqualityPassFail()
         {
-            OfferCategory convertedCategory = new OfferCategory(EOfferWebsite.Allegro,1);
+            OfferCategory convertedCategory = new OfferCategory(EOfferWebsite.Allegro, 1);
 
-            Assert.AreNotEqual(convertedCategory,null);
+            Assert.AreNotEqual(convertedCategory, null);
         }
 
         [Test]
         public void CheckObjectEqualityBaseOfferWebsitePass()
         {
-            OfferCategory offerCategory1 = new OfferCategory(EOfferWebsite.Allegro,1);
+            OfferCategory offerCategory1 = new OfferCategory(EOfferWebsite.Allegro, 1);
             OfferCategory offerCategory2 = new OfferCategory(EOfferWebsite.NoInfo, 1);
-            
-            Assert.AreNotEqual(offerCategory1,offerCategory2);
+
+            Assert.AreNotEqual(offerCategory1, offerCategory2);
         }
-        
+
         [Test]
         public void CheckCategoryNameCorrect()
         {
@@ -95,15 +95,15 @@ namespace Platinum.Tests.Integration
 
             Assert.AreEqual(category1.CategoryName, "Cukierki reklamowe");
         }
-        
-                
+
+
         [Test]
         public void CheckNotFoundCategoryException()
         {
-            DalException ex = Assert.Throws<DalException>(()=>
-            {
-                OfferCategory offerCategory = new OfferCategory(EOfferWebsite.Allegro, -1);
-            });
+            OfferCategory offerCategory;
+            DalException ex = Assert.Throws<DalException>(() =>
+                offerCategory = new OfferCategory(EOfferWebsite.Allegro, -1)
+            );
             Assert.That(ex, Is.Not.Null);
         }
     }

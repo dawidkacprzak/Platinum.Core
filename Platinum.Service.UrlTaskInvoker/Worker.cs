@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace Platinum.Service.UrlTaskInvoker
 {
     public class Worker : BackgroundService
     {
+        [ExcludeFromCodeCoverage]
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             UrlTaskInvokerFactory factory = new AllegroUrlTaskInvokerFactory();
@@ -26,7 +28,8 @@ namespace Platinum.Service.UrlTaskInvoker
                 await Task.Delay(1000, stoppingToken);
             }
         }
-
+        
+        [ExcludeFromCodeCoverage]
         private async Task RunTaskInvoker(IUrlTaskInvoker task)
         {
             using (Dal db = new Dal())

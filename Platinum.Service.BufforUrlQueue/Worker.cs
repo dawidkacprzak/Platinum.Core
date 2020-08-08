@@ -1,6 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
+using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.Types;
 
 namespace Platinum.Service.BufforUrlQueue
@@ -15,6 +16,12 @@ namespace Platinum.Service.BufforUrlQueue
         {
             this.queueTask = queueTask;
             this.db = db;
+        }
+
+        public Worker()
+        {
+            this.queueTask = new AllegroBufforUrlQueue();
+            this.db = new Dal();
         }
         
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]

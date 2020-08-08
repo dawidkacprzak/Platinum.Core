@@ -2,6 +2,6 @@
 {
     public static class ElasticConfiguration
     {
-        public static string ELASTIC_HOST = "http://178.33.48.96:9200";
+        public static string ELASTIC_HOST = "http://5.196.143.190:9200";
     }
 }

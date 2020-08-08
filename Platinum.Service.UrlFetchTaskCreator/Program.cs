@@ -1,6 +1,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Platinum.Core.Types;
+
 namespace Platinum.Service.UrlFetchTaskCreator
 {
     public class Program
@@ -10,11 +12,11 @@ namespace Platinum.Service.UrlFetchTaskCreator
         {
             CreateHostBuilder(args).Build().Run();
         }
-        
+
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .UseWindowsService()
+                .UseSystemDependedService()
                 .ConfigureLogging(loggingBuilder =>
                 {
                     loggingBuilder.ClearProviders();

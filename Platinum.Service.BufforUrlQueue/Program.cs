@@ -24,7 +24,7 @@ namespace Platinum.Service.BufforUrlQueue
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
             return Host.CreateDefaultBuilder(args)
-                .UseWindowsService()
+                .UseSystemDependedService()
                 .ConfigureServices(
                     (host,services) => ConfigureServices(host,services)
                 );

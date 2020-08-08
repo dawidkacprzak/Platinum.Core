@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using NLog;
@@ -15,24 +16,26 @@ namespace Platinum.Service.UrlTaskInvoker
 {
     public class AllegroTaskInvoker : IUrlTaskInvoker
     {
-        readonly Logger logger = LogManager.GetCurrentClassLogger();
-        private List<string> activeTasksId;
-
-        private const int TASKS_PER_RUN = 30;
-        private int finishedTasks = 0;
+        public List<string> ActiveTasksId;
 
         private static readonly object getTaskLock = new object();
-        List<string> activeBrowsers = new List<string>();
+        readonly private Logger logger = LogManager.GetCurrentClassLogger();
+        
+        private const int TASKS_PER_RUN = 30;
+        
+        private int finishedTasks = 0;
+        private List<string> activeBrowsers = new List<string>();
 
 
         public AllegroTaskInvoker()
         {
             lock (getTaskLock)
             {
-                activeTasksId = new List<string>();
+                ActiveTasksId = new List<string>();
             }
         }
 
+        [ExcludeFromCodeCoverage]
         public async Task Run(IBrowserRestClientFactory aBrowserRestClientFactory, IDal dal)
         {
             try
@@ -57,7 +60,6 @@ namespace Platinum.Service.UrlTaskInvoker
                 for (int i = 0; i < tasks.Count(); i++)
                     tasks[i].Start();
 
-
                 logger.Info("Created " + tasks.Length + " tasks");
                 Task.WaitAll(tasks);
                 logger.Info("Finished all tasks. Waiting 5s for next iteration");
@@ -70,6 +72,7 @@ namespace Platinum.Service.UrlTaskInvoker
             }
         }
 
+        [ExcludeFromCodeCoverage]
         public Task InvokeTask(string host)
         {
             return new Task(() =>
@@ -78,8 +81,10 @@ namespace Platinum.Service.UrlTaskInvoker
                 {
                     KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>> task;
 
-                    task = GetOldestTask();
-
+                    using (IDal db = new Dal())
+                    {
+                        task = GetOldestTask(db);
+                    }
 
                     using (IBaseOfferListController ctrl = new AllegroOfferListController(host))
                     {
@@ -132,7 +137,7 @@ namespace Platinum.Service.UrlTaskInvoker
                     db.ExecuteNonQuery(
                         $"DELETE FROM allegroUrlFetchTaskParameter where AllegroUrlFetchTaskId = {taskId}");
                     db.CommitTransaction();
-                    activeTasksId.Remove(taskId.ToString());
+                    ActiveTasksId.Remove(taskId.ToString());
                     logger.Info("Removed task #" + taskId + " from queue");
                 }
                 catch (DalException ex)
@@ -178,64 +183,63 @@ namespace Platinum.Service.UrlTaskInvoker
             }
         }
 
-        public KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>> GetOldestTask()
+        public KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>> GetOldestTask(IDal db)
         {
             lock (getTaskLock)
             {
                 int taskId;
                 int categoryId;
                 List<WebsiteCategoriesFilterSearch> taskFilters = new List<WebsiteCategoriesFilterSearch>();
-                using (Dal db = new Dal())
-                {
-                    string taskQuery = $@"SELECT TOP 1 allegroUrlFetchTask.* FROM allegroUrlFetchTask WITH (NOLOCK) 
+
+                string taskQuery = $@"SELECT TOP 1 allegroUrlFetchTask.* FROM allegroUrlFetchTask WITH (NOLOCK) 
                                                 INNER JOIN websiteCategories on websiteCategories.ID = allegroUrlFetchTask.CategoryId
                                                 WHERE websiteCategories.websiteId = {(int) EOfferWebsite.Allegro} ";
-                    if (activeTasksId.Count > 0)
-                    {
-                        taskQuery += $@" AND allegroUrlFetchTask.Id NOT IN ({string.Join(",", activeTasksId)}) ";
-                    }
-
-                    taskQuery += " ORDER BY Id";
-                    using (DbDataReader taskReader =
-                        db.ExecuteReader(taskQuery)
-                    )
-                    {
-                        if (!taskReader.HasRows)
-                        {
-                            throw new TaskInvokerException("Cannot get olders task. Not found any.");
-                        }
-                        else
-                        {
-                            taskReader.Read();
-                            taskId = taskReader.GetInt32(taskReader.GetOrdinal("Id"));
-                            categoryId = taskReader.GetInt32(taskReader.GetOrdinal("CategoryId"));
-                        }
-                    }
-
-                    using (DbDataReader filterReader = db.ExecuteReader(
-                        $@"select * from allegroUrlFetchTaskParameter with(nolock)
-                                                                             WHERE AllegroUrlFetchTaskId = {taskId}"))
-                    {
-                        if (filterReader.HasRows)
-                        {
-                            while (filterReader.Read())
-                            {
-                                WebsiteCategoriesFilterSearch filter = new WebsiteCategoriesFilterSearch()
-                                {
-                                    Id = filterReader.GetInt32(filterReader.GetOrdinal("Id")),
-                                    SearchNumber = 0,
-                                    Argument = filterReader.GetString(filterReader.GetOrdinal("Name")),
-                                    Value = filterReader.GetString(filterReader.GetOrdinal("Values")),
-                                    WebsiteCategoryId = categoryId,
-                                    TaskId = taskId
-                                };
-                                taskFilters.Add(filter);
-                            }
-                        }
-                    }
-
-                    activeTasksId.Add(taskId.ToString());
+                if (ActiveTasksId.Count > 0)
+                {
+                    taskQuery += $@" AND allegroUrlFetchTask.Id NOT IN ({string.Join(",", ActiveTasksId)}) ";
                 }
+
+                taskQuery += " ORDER BY Id";
+                using (DbDataReader taskReader =
+                    db.ExecuteReader(taskQuery)
+                )
+                {
+                    if (!taskReader.HasRows)
+                    {
+                        throw new TaskInvokerException("Cannot get olders task. Not found any.");
+                    }
+                    else
+                    {
+                        taskReader.Read();
+                        taskId = taskReader.GetInt32(taskReader.GetOrdinal("Id"));
+                        categoryId = taskReader.GetInt32(taskReader.GetOrdinal("CategoryId"));
+                    }
+                }
+
+                using (DbDataReader filterReader = db.ExecuteReader(
+                    $@"select * from allegroUrlFetchTaskParameter with(nolock)
+                                                                             WHERE AllegroUrlFetchTaskId = {taskId}"))
+                {
+                    if (filterReader.HasRows)
+                    {
+                        while (filterReader.Read())
+                        {
+                            WebsiteCategoriesFilterSearch filter = new WebsiteCategoriesFilterSearch()
+                            {
+                                Id = filterReader.GetInt32(filterReader.GetOrdinal("Id")),
+                                SearchNumber = 0,
+                                Argument = filterReader.GetString(filterReader.GetOrdinal("Name")),
+                                Value = filterReader.GetString(filterReader.GetOrdinal("Values")),
+                                WebsiteCategoryId = categoryId,
+                                TaskId = taskId
+                            };
+                            taskFilters.Add(filter);
+                        }
+                    }
+                }
+
+                ActiveTasksId.Add(taskId.ToString());
+
 
                 KeyValuePair<int, int> categoryIdWithTaskId = new KeyValuePair<int, int>(categoryId, taskId);
                 return new KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>>(

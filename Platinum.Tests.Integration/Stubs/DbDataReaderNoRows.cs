@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Data.Common;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Platinum.Tests.Integration.Stubs
 {
+    
+    [ExcludeFromCodeCoverage]
     public class DbDataReaderNoRows : DbDataReader
     {
         public override bool GetBoolean(int ordinal)
