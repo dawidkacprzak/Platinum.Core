@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using HtmlAgilityPack;
+using NLog;
 using Platinum.Core.ApiIntegration;
 using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.ElasticIntegration;
@@ -19,6 +20,8 @@ namespace Platinum.Core.OfferListController
         private string pageId;
         private OfferCategory initiedOfferCategory;
         private string urlArgs = "";
+        readonly private Logger logger = LogManager.GetCurrentClassLogger();
+
         public AllegroOfferListController() : base()
         {
         }
@@ -31,11 +34,13 @@ namespace Platinum.Core.OfferListController
         public void StartFetching(bool fetchJustFirstPage, OfferCategory category,
             List<WebsiteCategoriesFilterSearch> urlArguments = null)
         {
+            logger.Info("Started fetching category: " + category.CategoryName);
             initiedOfferCategory = category;
             if (urlArguments != null && urlArguments.Any(x => x.WebsiteCategoryId != category.CategoryId))
                 throw new OfferListControllerException("Url argument do not fit to page", this);
 
             pageId = CreatePage();
+            logger.Info("Created page");
             if (urlArguments != null && urlArguments.Count > 0)
             {
                 int index = 0;
@@ -66,6 +71,7 @@ namespace Platinum.Core.OfferListController
             }
             else
             {
+                logger.Info("Append to open page :" +baseUrl + "/" + initiedOfferCategory.CategoryUrl + urlArgs);
                 Open(pageId, baseUrl + "/" + initiedOfferCategory.CategoryUrl + urlArgs);
                 IEnumerable<string> offerLinks = GetAllOfferLinks();
                 UpdateDatabaseWithOffers(offerLinks);
@@ -84,6 +90,7 @@ namespace Platinum.Core.OfferListController
             {
                 int currentPage = GetCurrentPageIndex();
                 int lastPage = GetLastPageIndex();
+                logger.Info($"Append to open next page - current page {currentPage} / last page {lastPage}");
                 if (currentPage >= lastPage)
                 {
                     return false;
@@ -142,6 +149,7 @@ namespace Platinum.Core.OfferListController
             using (Dal db = new Dal(false))
 #endif
             {
+                logger.Info("Updating database buffor with offers");
                 string query = $@"INSERT INTO [dbo].offersBuffor VALUES ";
                 int index = 0;
                 List<string> enumerable = offers.ToList();
@@ -177,8 +185,9 @@ namespace Platinum.Core.OfferListController
                         query += ",";
                     }
                 }
-
+                logger.Info("Executing buffer update query");
                 db.ExecuteNonQuery(query);
+                logger.Info("Buffer update query finished");
             }
         }
 

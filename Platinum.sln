@@ -12,8 +12,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Service.BufforUrlQ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Service.UrlTaskInvoker", "Platinum.Service.UrlTaskInvoker\Platinum.Service.UrlTaskInvoker.csproj", "{D1EED57B-3F65-4AC1-8ACB-B251559975CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Desktop.Admin", "Platinum.Desktop.Admin\Platinum.Desktop.Admin.csproj", "{20ED24AE-5D5F-4A50-B29A-6CD1A21D34A7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,9 +42,5 @@ Global
 		{D1EED57B-3F65-4AC1-8ACB-B251559975CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1EED57B-3F65-4AC1-8ACB-B251559975CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1EED57B-3F65-4AC1-8ACB-B251559975CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{20ED24AE-5D5F-4A50-B29A-6CD1A21D34A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20ED24AE-5D5F-4A50-B29A-6CD1A21D34A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20ED24AE-5D5F-4A50-B29A-6CD1A21D34A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20ED24AE-5D5F-4A50-B29A-6CD1A21D34A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

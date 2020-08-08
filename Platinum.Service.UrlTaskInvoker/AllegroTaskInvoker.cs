@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Threading.Tasks;
 using NLog;
 using Platinum.Core.DatabaseIntegration;
@@ -21,7 +22,7 @@ namespace Platinum.Service.UrlTaskInvoker
         private static readonly object getTaskLock = new object();
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
         
-        private const int TASKS_PER_RUN = 30;
+        private const int TASKS_PER_RUN = 10;
         
         private int finishedTasks = 0;
         private List<string> activeBrowsers = new List<string>();
@@ -61,7 +62,15 @@ namespace Platinum.Service.UrlTaskInvoker
                     tasks[i].Start();
 
                 logger.Info("Created " + tasks.Length + " tasks");
-                Task.WaitAll(tasks);
+                try
+                {
+                    Task.WaitAll(tasks, ((1000 * 60) * 60 * 30));
+                }
+                catch (Exception ex)
+                {
+                    logger.Info("Error during wait all tasks: " + ex.Message);
+                }
+
                 logger.Info("Finished all tasks. Waiting 5s for next iteration");
                 await Task.Delay(5000);
                 logger.Info("Next iteration...");
@@ -79,13 +88,14 @@ namespace Platinum.Service.UrlTaskInvoker
             {
                 while (finishedTasks < TASKS_PER_RUN)
                 {
+                    logger.Info("Invoke new task finished tasks: " + finishedTasks + " max tasks " + TASKS_PER_RUN);
                     KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>> task;
 
                     using (IDal db = new Dal())
                     {
                         task = GetOldestTask(db);
                     }
-
+                    logger.Info("Fetched oldest task " + task.Key.Value);
                     using (IBaseOfferListController ctrl = new AllegroOfferListController(host))
                     {
                         try
@@ -100,6 +110,7 @@ namespace Platinum.Service.UrlTaskInvoker
 
                             logger.Info("Finished task #" + task.Key.Value);
                             finishedTasks++;
+                            return;
                         }
                         catch (Exception ex)
                         {

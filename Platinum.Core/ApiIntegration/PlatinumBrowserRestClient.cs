@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using NLog;
 using Platinum.Core.Types;
 using RestSharp;
 
@@ -6,6 +7,7 @@ namespace Platinum.Core.ApiIntegration
 {
     public class PlatinumBrowserRestClient : RestClient, IBrowserRestClient
     {
+        readonly private Logger logger = LogManager.GetCurrentClassLogger();
         public string ApiUrl { get; set; }
 
         public PlatinumBrowserRestClient()
@@ -24,12 +26,14 @@ namespace Platinum.Core.ApiIntegration
 
         public string CreatePage()
         {
+            logger.Info("Append to create page");
             string pageId = Get(new RestRequest(ApiUrl + "/createPage")).Content;
             return JsonConvert.DeserializeObject<MessageResponse>(pageId).message;
         }
 
         public void Open(string pageId,string url)
         {
+            logger.Info("Append to open: " + ApiUrl + "/open?url="+System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(url))+"&pageid="+pageId);
             Get(new RestRequest(ApiUrl + "/open?url="+System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(url))+"&pageid="+pageId));
         }
 
