@@ -164,7 +164,7 @@ namespace Platinum.Tests.Integration
                 page = controller.GetCurrentPageIndex();
             }
 
-            Assert.AreEqual(page, lastPage);
+            Assert.AreEqual(page, lastPage-1);
         }
 
         [Test]

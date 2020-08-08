@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using HtmlAgilityPack;
 using NLog;
+using NLog.Fluent;
 using Platinum.Core.ApiIntegration;
 using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.ElasticIntegration;
@@ -21,6 +22,7 @@ namespace Platinum.Core.OfferListController
         private OfferCategory initiedOfferCategory;
         private string urlArgs = "";
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
+        private int lastPageNumber = 0;
 
         public AllegroOfferListController() : base()
         {
@@ -76,10 +78,17 @@ namespace Platinum.Core.OfferListController
                 IEnumerable<string> offerLinks = GetAllOfferLinks();
                 UpdateDatabaseWithOffers(offerLinks);
 
-                while (OpenNextPage())
+                try
                 {
-                    offerLinks = GetAllOfferLinks();
-                    UpdateDatabaseWithOffers(offerLinks);
+                    while (OpenNextPage())
+                    {
+                        offerLinks = GetAllOfferLinks();
+                        UpdateDatabaseWithOffers(offerLinks);
+                    }
+                }
+                catch (OfferListControllerException ex)
+                {
+                    logger.Error(ex);
                 }
             }
         }
@@ -89,6 +98,11 @@ namespace Platinum.Core.OfferListController
             try
             {
                 int currentPage = GetCurrentPageIndex();
+                if (lastPageNumber != 0 && currentPage == lastPageNumber)
+                {
+                    logger.Info($"ERROR - Last page index is same as current. BREAK {lastPageNumber} ~ {currentPage}");
+                    return false;
+                }
                 int lastPage = GetLastPageIndex();
                 logger.Info($"Append to open next page - current page {currentPage} / last page {lastPage}");
                 if (currentPage >= lastPage)
@@ -98,14 +112,19 @@ namespace Platinum.Core.OfferListController
 
                 if (urlArgs.Length > 1)
                 {
+                    lastPageNumber = currentPage;
                     Open(pageId,
                         baseUrl + "/" + initiedOfferCategory.CategoryUrl + urlArgs + "&p=" + (currentPage + 1));
                 }
                 else
                 {
+                    lastPageNumber = currentPage;
                     Open(pageId, baseUrl + "/" + initiedOfferCategory.CategoryUrl + "?p=" + (currentPage + 1));
                 }
 
+                if (lastPage == currentPage + 1)
+                    return false;
+                
                 return true;
             }
             catch (Exception)

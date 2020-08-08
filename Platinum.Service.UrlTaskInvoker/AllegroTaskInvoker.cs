@@ -21,10 +21,10 @@ namespace Platinum.Service.UrlTaskInvoker
 
         private static readonly object getTaskLock = new object();
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
-        
+
         private const int TASKS_PER_RUN = 10;
-        
-        private int finishedTasks = 0;
+
+        private static int finishedTasks = 0;
         private List<string> activeBrowsers = new List<string>();
 
 
@@ -95,13 +95,14 @@ namespace Platinum.Service.UrlTaskInvoker
                     {
                         task = GetOldestTask(db);
                     }
+
                     logger.Info("Fetched oldest task " + task.Key.Value);
                     using (IBaseOfferListController ctrl = new AllegroOfferListController(host))
                     {
                         try
                         {
                             logger.Info("Started task #" + task.Key.Value);
-                            ctrl.StartFetching(false, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
+                            ctrl.StartFetching(true, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
                                 task.Value.ToList());
                             using (IDal db = new Dal())
                             {
@@ -114,6 +115,8 @@ namespace Platinum.Service.UrlTaskInvoker
                         }
                         catch (Exception ex)
                         {
+                            finishedTasks++;
+
                             logger.Info(ex);
                             logger.Info("Timeout task #" + task.Key.Value + " - BREAK");
                             break;
@@ -121,7 +124,14 @@ namespace Platinum.Service.UrlTaskInvoker
                     }
                 }
 
-                logger.Info("Finished task for host: " + host);
+                if (finishedTasks < TASKS_PER_RUN)
+                {
+                    logger.Info(host + " finished from healthy state");
+                }
+                else
+                {
+                    logger.Info(host + " finished from NOT healthy state");
+                }
             });
         }
 
@@ -166,6 +176,7 @@ namespace Platinum.Service.UrlTaskInvoker
 
         public IEnumerable<string> GetBrowsers(IDal db)
         {
+#if RELEASE
             using (DbDataReader reader = db.ExecuteReader("SELECT Host from browsers WITH(NOLOCK);"))
             {
                 if (!reader.HasRows)
@@ -179,6 +190,10 @@ namespace Platinum.Service.UrlTaskInvoker
                     yield return reader.GetString(0);
                 }
             }
+#endif
+#if DEBUG
+            return new List<string>() {"http://localhost:3001"};
+#endif
         }
 
         public void ResetBrowser(IBrowserRestClient client, string host)
