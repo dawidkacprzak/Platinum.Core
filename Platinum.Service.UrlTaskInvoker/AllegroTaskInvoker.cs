@@ -97,7 +97,7 @@ namespace Platinum.Service.UrlTaskInvoker
                     try
                     {
                         logger.Info("Started task #" + task.Key.Value);
-                        ctrl.StartFetching(true, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
+                        ctrl.StartFetching(false, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
                             task.Value.ToList());
                         using (IDal db = new Dal())
                         {
