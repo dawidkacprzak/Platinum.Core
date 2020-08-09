@@ -31,6 +31,10 @@ namespace Platinum.Core.OfferListController
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
         public AllegroOfferListController(string host) : base(host)
         {
+            lastPageNumber = 0;
+            urlArgs = "";
+            initiedOfferCategory = null;
+            pageId = string.Empty;
         }
 
         public void StartFetching(bool fetchJustFirstPage, OfferCategory category,

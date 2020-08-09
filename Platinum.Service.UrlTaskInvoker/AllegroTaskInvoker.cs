@@ -22,7 +22,8 @@ namespace Platinum.Service.UrlTaskInvoker
         private static readonly object getTaskLock = new object();
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
         private List<string> activeBrowsers = new List<string>();
-
+        public static int MAX_TASKS_PER_RUN = 20;
+        public static int CURRENT_TASK_COUNT = 0;
 
         public AllegroTaskInvoker()
         {
@@ -37,6 +38,7 @@ namespace Platinum.Service.UrlTaskInvoker
         {
             try
             {
+                CURRENT_TASK_COUNT = 0;
                 logger.Info("Service iteration started");
 
                 List<string> allBrowsers = GetBrowsers(dal).ToList();
@@ -56,8 +58,9 @@ namespace Platinum.Service.UrlTaskInvoker
                 Task[] tasks = GetUrlFetchingTasks(activeBrowsers);
                 for (int i = 0; i < tasks.Length; i++)
                 {
-                    logger.Info("Task "+i+" status: " + tasks[i].Status);
+                    logger.Info("Task " + i + " status: " + tasks[i].Status);
                 }
+
                 for (int i = 0; i < tasks.Count(); i++)
                     tasks[i].Start();
 
@@ -84,33 +87,40 @@ namespace Platinum.Service.UrlTaskInvoker
         {
             return new Task(() =>
             {
-                KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>> task;
-
-                using (IDal db = new Dal())
-                {
-                    task = GetOldestTask(db);
-                }
-
-                logger.Info("Fetched oldest task " + task.Key.Value);
                 using (IBaseOfferListController ctrl = new AllegroOfferListController(host))
                 {
-                    try
+                    while (CURRENT_TASK_COUNT <= MAX_TASKS_PER_RUN)
                     {
-                        logger.Info("Started task #" + task.Key.Value);
-                        ctrl.StartFetching(false, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
-                            task.Value.ToList());
+                        KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>> task;
+
                         using (IDal db = new Dal())
                         {
-                            PopTaskFromQueue(db, task.Key.Value);
+                            task = GetOldestTask(db);
                         }
 
-                        logger.Info("Finished task #" + task.Key.Value);
-                    }
-                    catch (Exception ex)
-                    {
+                        logger.Info("Fetched oldest task " + task.Key.Value);
 
-                        logger.Info(ex);
-                        logger.Info("Timeout task #" + task.Key.Value + " - BREAK");
+                        try
+                        {
+                            logger.Info("Started task #" + task.Key.Value);
+                            ctrl.StartFetching(false, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
+                                task.Value.ToList());
+                            using (IDal db = new Dal())
+                            {
+                                PopTaskFromQueue(db, task.Key.Value);
+                            }
+
+                            logger.Info("Finished task #" + task.Key.Value);
+                        }
+                        catch (Exception ex)
+                        {
+                            logger.Info(ex);
+                            logger.Info("Timeout task #" + task.Key.Value + " - BREAK");
+                        }
+                        finally
+                        {
+                            CURRENT_TASK_COUNT++;
+                        }
                     }
                 }
             });
