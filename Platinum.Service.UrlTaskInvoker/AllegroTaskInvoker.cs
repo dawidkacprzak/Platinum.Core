@@ -21,10 +21,6 @@ namespace Platinum.Service.UrlTaskInvoker
 
         private static readonly object getTaskLock = new object();
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
-
-        private const int TASKS_PER_RUN = 10;
-
-        private static int finishedTasks = 0;
         private List<string> activeBrowsers = new List<string>();
 
 
@@ -58,21 +54,23 @@ namespace Platinum.Service.UrlTaskInvoker
                 }
 
                 Task[] tasks = GetUrlFetchingTasks(activeBrowsers);
+                for (int i = 0; i < tasks.Length; i++)
+                {
+                    logger.Info("Task "+i+" status: " + tasks[i].Status);
+                }
                 for (int i = 0; i < tasks.Count(); i++)
                     tasks[i].Start();
 
                 logger.Info("Created " + tasks.Length + " tasks");
                 try
                 {
-                    Task.WaitAll(tasks, ((1000 * 60) * 60 * 30));
+                    Task.WaitAll(tasks, ((1000 * 60) * 20));
                 }
                 catch (Exception ex)
                 {
                     logger.Info("Error during wait all tasks: " + ex.Message);
                 }
 
-                logger.Info("Finished all tasks. Waiting 5s for next iteration");
-                await Task.Delay(5000);
                 logger.Info("Next iteration...");
             }
             catch (Exception ex)
@@ -86,51 +84,34 @@ namespace Platinum.Service.UrlTaskInvoker
         {
             return new Task(() =>
             {
-                while (finishedTasks < TASKS_PER_RUN)
+                KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>> task;
+
+                using (IDal db = new Dal())
                 {
-                    logger.Info("Invoke new task finished tasks: " + finishedTasks + " max tasks " + TASKS_PER_RUN);
-                    KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>> task;
-
-                    using (IDal db = new Dal())
-                    {
-                        task = GetOldestTask(db);
-                    }
-
-                    logger.Info("Fetched oldest task " + task.Key.Value);
-                    using (IBaseOfferListController ctrl = new AllegroOfferListController(host))
-                    {
-                        try
-                        {
-                            logger.Info("Started task #" + task.Key.Value);
-                            ctrl.StartFetching(true, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
-                                task.Value.ToList());
-                            using (IDal db = new Dal())
-                            {
-                                PopTaskFromQueue(db, task.Key.Value);
-                            }
-
-                            logger.Info("Finished task #" + task.Key.Value);
-                            finishedTasks++;
-                            return;
-                        }
-                        catch (Exception ex)
-                        {
-                            finishedTasks++;
-
-                            logger.Info(ex);
-                            logger.Info("Timeout task #" + task.Key.Value + " - BREAK");
-                            break;
-                        }
-                    }
+                    task = GetOldestTask(db);
                 }
 
-                if (finishedTasks < TASKS_PER_RUN)
+                logger.Info("Fetched oldest task " + task.Key.Value);
+                using (IBaseOfferListController ctrl = new AllegroOfferListController(host))
                 {
-                    logger.Info(host + " finished from healthy state");
-                }
-                else
-                {
-                    logger.Info(host + " finished from NOT healthy state");
+                    try
+                    {
+                        logger.Info("Started task #" + task.Key.Value);
+                        ctrl.StartFetching(true, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
+                            task.Value.ToList());
+                        using (IDal db = new Dal())
+                        {
+                            PopTaskFromQueue(db, task.Key.Value);
+                        }
+
+                        logger.Info("Finished task #" + task.Key.Value);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        logger.Info(ex);
+                        logger.Info("Timeout task #" + task.Key.Value + " - BREAK");
+                    }
                 }
             });
         }
