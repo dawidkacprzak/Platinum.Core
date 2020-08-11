@@ -16,7 +16,7 @@ namespace Platinum.Core.Model
 
         public OfferCategory(EOfferWebsite eOfferWebsite, int categoryId)
         {
-            using (Dal db = new Dal(true))
+            using (Dal db = new Dal())
             {
                 using (DbDataReader reader =
                     db.ExecuteReader($"SELECT TOP 1 * FROM websiteCategories WITH (NOLOCK) WHERE id = {categoryId}"))
