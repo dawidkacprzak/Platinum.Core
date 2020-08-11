@@ -12,7 +12,19 @@ namespace Platinum.Core.ApiIntegration
             IRestResponse response = client.Get(request);
             if (!response.IsSuccessful)
             {
-                throw new RequestException(response.ErrorMessage + " Uri: " + client.BaseUrl?.AbsoluteUri ,response);
+                throw new RequestException(response.ErrorMessage + " Uri: " + response.ResponseUri ,response);
+            }
+
+            return response;
+        }
+        
+        public IRestResponse Post(IRestRequest request)
+        {
+            RestSharp.RestClient client = new RestSharp.RestClient();
+            IRestResponse response = client.Post(request);
+            if (!response.IsSuccessful)
+            {
+                throw new RequestException(response.ErrorMessage + " Uri: " + response.ResponseUri ,response);
             }
 
             return response;

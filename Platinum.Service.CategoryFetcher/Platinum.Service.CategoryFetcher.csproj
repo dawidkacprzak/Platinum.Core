@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UserSecretsId>dotnet-Platinum.Service.CategoryFetcher-974E55C0-98EB-428B-BFC5-50572B355006</UserSecretsId>
+        <RootNamespace>Platinum.Service.CategoryFetcher</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0-preview.7.20364.11" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.Systemd" Version="5.0.0-preview.7.20365.4" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="5.0.0-preview.7.20365.4" />
+        <PackageReference Include="NLog" Version="4.7.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Platinum.Core\Platinum.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="nlog.config">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+</Project>

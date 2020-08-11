@@ -37,9 +37,9 @@ namespace Platinum.Core.ElasticIntegration
 
         public void InsertOffer(string offer)
         {
-            #if RELEASE
+         
             client.Index(new ELBufforedOffers(offer), i => i.Index("buffered_offers"));
-            #endif
+       
         }
 
         public bool OfferExistsInBuffor(string uri)

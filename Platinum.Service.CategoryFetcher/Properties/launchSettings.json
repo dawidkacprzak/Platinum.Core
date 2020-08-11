@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "Platinum.Service.AllegroAPICategoryFetcher": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

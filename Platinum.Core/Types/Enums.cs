@@ -11,4 +11,11 @@
         NoInfo = 0,
         AllegroRimsAndTires = 1
     }
+
+    public enum EOfferProcessed
+    {
+        NotProcessed = 0,
+        Processed = 1,
+        Inactive = 2
+    }
 }

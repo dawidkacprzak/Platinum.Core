@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Service.BufforUrlQ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Service.UrlTaskInvoker", "Platinum.Service.UrlTaskInvoker\Platinum.Service.UrlTaskInvoker.csproj", "{D1EED57B-3F65-4AC1-8ACB-B251559975CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Service.CategoryFetcher", "Platinum.Service.CategoryFetcher\Platinum.Service.CategoryFetcher.csproj", "{CA447139-EA8C-4CF2-8563-9B998D693278}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{D1EED57B-3F65-4AC1-8ACB-B251559975CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1EED57B-3F65-4AC1-8ACB-B251559975CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1EED57B-3F65-4AC1-8ACB-B251559975CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA447139-EA8C-4CF2-8563-9B998D693278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA447139-EA8C-4CF2-8563-9B998D693278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA447139-EA8C-4CF2-8563-9B998D693278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA447139-EA8C-4CF2-8563-9B998D693278}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

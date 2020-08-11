@@ -61,24 +61,56 @@ namespace Platinum.Service.UrlTaskInvoker
                     logger.Info("Task " + i + " status: " + tasks[i].Status);
                 }
 
-                for (int i = 0; i < tasks.Count(); i++)
-                    tasks[i].Start();
+                Parallel.ForEach(activeBrowsers, InvokeTaskTest);
 
                 logger.Info("Created " + tasks.Length + " tasks");
-                try
-                {
-                    Task.WaitAll(tasks, ((1000 * 60) * 20));
-                }
-                catch (Exception ex)
-                {
-                    logger.Info("Error during wait all tasks: " + ex.Message);
-                }
 
                 logger.Info("Next iteration...");
             }
             catch (Exception ex)
             {
                 logger.Error(ex);
+            }
+        }
+
+        [ExcludeFromCodeCoverage]
+        public void InvokeTaskTest(string host)
+        {
+            using (IBaseOfferListController ctrl = new AllegroOfferListController(host))
+            {
+                while (CURRENT_TASK_COUNT <= MAX_TASKS_PER_RUN)
+                {
+                    KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>> task;
+
+                    using (IDal db = new Dal())
+                    {
+                        task = GetOldestTask(db);
+                    }
+
+                    logger.Info("Fetched oldest task " + task.Key.Value);
+
+                    try
+                    {
+                        logger.Info("Started task #" + task.Key.Value);
+                        ctrl.StartFetching(false, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
+                            task.Value.ToList());
+                        using (IDal db = new Dal())
+                        {
+                            PopTaskFromQueue(db, task.Key.Value);
+                        }
+
+                        logger.Info("Finished task #" + task.Key.Value);
+                    }
+                    catch (Exception ex)
+                    {
+                        logger.Info(ex);
+                        logger.Info("Timeout task #" + task.Key.Value + " - BREAK");
+                    }
+                    finally
+                    {
+                        CURRENT_TASK_COUNT++;
+                    }
+                }
             }
         }
 
@@ -167,7 +199,6 @@ namespace Platinum.Service.UrlTaskInvoker
 
         public IEnumerable<string> GetBrowsers(IDal db)
         {
-#if RELEASE
             using (DbDataReader reader = db.ExecuteReader("SELECT Host from browsers WITH(NOLOCK);"))
             {
                 if (!reader.HasRows)
@@ -181,10 +212,6 @@ namespace Platinum.Service.UrlTaskInvoker
                     yield return reader.GetString(0);
                 }
             }
-#endif
-#if DEBUG
-            return new List<string>() {"http://localhost:3001"};
-#endif
         }
 
         public void ResetBrowser(IBrowserRestClient client, string host)

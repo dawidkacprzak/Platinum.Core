@@ -174,7 +174,6 @@ namespace Platinum.Core.OfferListController
             {
                 logger.Info("Updating database buffor with offers");
                 string query = $@"INSERT INTO [dbo].offersBuffor VALUES ";
-                int index = 0;
                 List<string> enumerable = offers.ToList();
                 List<string> uniqueOffers = new List<string>();
                 for (int i = 0; i < enumerable.Count; i++)
@@ -188,28 +187,23 @@ namespace Platinum.Core.OfferListController
                 }
                 int offerCount = uniqueOffers.Count();
                 if (offerCount == 0) return;
+                List<string> queryValues = new List<string>();
                 foreach (string offer in uniqueOffers)
                 {
                     if (!offer.Contains("\'"))
                     {
-                        query += $@"
+                        queryValues.Add($@"
                         (
                             {(int) EOfferWebsite.Allegro}
                             ,'{offer}'
                             ,HashBytes('MD5','{offer}')
                             , getdate()
                             , {initiedOfferCategory.CategoryId}
-                        )";
-                    }
-
-                    index++;
-                    if (index < offerCount)
-                    {
-                        query += ",";
+                        )");
                     }
                 }
                 logger.Info("Executing buffer update query");
-                db.ExecuteNonQuery(query);
+                db.ExecuteNonQuery(query + string.Join(",",queryValues));
                 logger.Info("Buffer update query finished");
             }
         }

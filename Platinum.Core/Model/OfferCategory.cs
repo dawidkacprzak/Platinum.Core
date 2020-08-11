@@ -14,6 +14,14 @@ namespace Platinum.Core.Model
         public EOfferWebsite EOfferWebsite { get; }
         public int CategoryId { get; }
 
+        #region ApiIntegrationsFields
+        /// <summary>
+        /// Id in fetched website db like allegro or olx
+        /// </summary>
+        public int WebsiteCategoryId { get; set; }
+        #endregion
+        
+
         public OfferCategory(EOfferWebsite eOfferWebsite, int categoryId)
         {
             using (Dal db = new Dal())
@@ -39,6 +47,14 @@ namespace Platinum.Core.Model
             this.EOfferWebsite = eOfferWebsite;
         }
 
+        public OfferCategory(EOfferWebsite website, int websiteCategoryId, string categoryName)
+        {
+            this.EOfferWebsite = website;
+            this.WebsiteCategoryId = websiteCategoryId;
+            this.CategoryName = categoryName;
+            this.CategoryUrl = "kategoria/"+websiteCategoryId;
+        }
+        
         /// <summary>
         /// Just for test purposes
         /// </summary>

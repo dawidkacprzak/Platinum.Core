@@ -17,7 +17,8 @@ namespace Platinum.Service.BufforUrlQueue
             this.queueTask = queueTask;
             this.db = db;
         }
-
+        
+        [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
         public Worker()
         {
             this.queueTask = new AllegroBufforUrlQueue();
