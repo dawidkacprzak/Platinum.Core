@@ -23,7 +23,7 @@ namespace Platinum.Core.Model
                 {
                     if (!reader.HasRows)
                     {
-                        throw new DalException("Category cannot be found");
+                        throw new DalException("Category cannot be found: " + categoryId + " website: " + eOfferWebsite);
                     }
                     else
                     {
