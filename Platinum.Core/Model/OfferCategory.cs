@@ -23,7 +23,7 @@ namespace Platinum.Core.Model
                 {
                     if (!reader.HasRows)
                     {
-                        throw new DalException("Category cannot be found: " + categoryId + " website: " + eOfferWebsite);
+                        throw new DalException("Category cannot be found: " + categoryId + " website: " + eOfferWebsite + $"\n query: SELECT TOP 1 * FROM websiteCategories WITH (NOLOCK) WHERE id = {categoryId}");
                     }
                     else
                     {
