@@ -31,8 +31,8 @@ namespace Platinum.Service.BufforUrlQueue
                 int ret = db.ExecuteNonQuery(@"
                 WITH OFFERS_BUFF(Id,WebsiteId,UriHash,CreatedDate,WebsiteCategoryId) as
                 (
-                    SELECT max(Id),WebsiteId,UriHash,MAX(CreatedDate),WebsiteCategoryId FROM offersBuffor WITH (NOLOCK)
-                    GROUP BY WebsiteId,WebsiteCategoryId,UriHash,WebsiteCategoryId
+                    SELECT max(Id),WebsiteId,UriHash,MAX(CreatedDate),max(WebsiteCategoryId) FROM offersBuffor WITH(NOLOCK)
+                    GROUP BY WebsiteId,UriHash
                 ) 
                 INSERT INTO offers (WebsiteId,Uri,UriHash,CreatedDate,WebsiteCategoryId,Processed)
                 SELECT 
