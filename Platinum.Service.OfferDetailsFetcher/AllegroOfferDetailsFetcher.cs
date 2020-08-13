@@ -65,7 +65,7 @@ namespace Platinum.Service.OfferDetailsFetcher
             List<int> ids = new List<int>();
             using (DbDataReader reader =
                 dal.ExecuteReader(
-                    $"update offers set Processed = {(int)EOfferProcessed.InProcess} Output inserted.Id where Id in (select top 10 Id from offers with(nolock) where Processed = {(int)EOfferProcessed.NotProcessed})")
+                    $"update offers set Processed = {(int)EOfferProcessed.InProcess} Output inserted.Id where Id in (select top {count} Id from offers with(nolock) where Processed = {(int)EOfferProcessed.NotProcessed})")
             )
             {
                 while (reader.Read())
