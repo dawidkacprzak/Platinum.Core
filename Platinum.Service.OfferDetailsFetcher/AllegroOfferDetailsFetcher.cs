@@ -44,17 +44,18 @@ namespace Platinum.Service.OfferDetailsFetcher
             Task[] tasks = new Task[lastNotProcessedOffers.Count()];
             for (int i = 0; i < lastNotProcessedOffers.Count(); i++)
             {
+                int i1 = i;
                 tasks[i] = new Task(() =>
                 {
                     using (Dal db = new Dal())
                     {
-                        Task t = CreateTaskForProcessOrder(db, lastNotProcessedOffers.ElementAt(i),
+                        Task t = CreateTaskForProcessOrder(db, lastNotProcessedOffers.ElementAt(i1),
                             new AllegroOfferDetailsParser("http://localhost:" + LocalBrowserPort));
                         t.RunSynchronously();
                     }
                 });
                 tasks[i].Start();
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
             }
 
             Task.WaitAll(tasks);
@@ -72,6 +73,7 @@ namespace Platinum.Service.OfferDetailsFetcher
                 {
                     ids.Add(reader.GetInt32(0));
                 }
+                _logger.Info("Downloaded offers with id: " + string.Join(",",ids));
             }
             foreach (int id in ids)
             {
@@ -81,14 +83,17 @@ namespace Platinum.Service.OfferDetailsFetcher
 
         public void SetOffersAsInProcess(IDal dal, IEnumerable<Offer> offers)
         {
+            _logger.Info($"UPDATE Offers set Processed = {(int) EOfferProcessed.InProcess} WHERE Id in {string.Join(",", offers)}");
             dal.ExecuteNonQuery(
                 $"UPDATE Offers set Processed = {(int) EOfferProcessed.InProcess} WHERE Id in {string.Join(",", offers)}");
         }
 
         public void SetOfferAsProcessed(IDal dal, Offer offer)
         {
+            _logger.Info( $"UPDATE Offers set Processed = {(int) EOfferProcessed.Processed} WHERE Id = {offer.Id}");
+
             dal.ExecuteNonQuery(
-                $"UPDATE Offers set Processed = {(int) EOfferProcessed.InProcess} WHERE Id = {offer.Id}");
+                $"UPDATE Offers set Processed = {(int) EOfferProcessed.Processed} WHERE Id = {offer.Id}");
         }
 
 
