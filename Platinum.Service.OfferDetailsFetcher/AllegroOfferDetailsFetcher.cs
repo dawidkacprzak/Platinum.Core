@@ -33,7 +33,10 @@ namespace Platinum.Service.OfferDetailsFetcher
 
         public void Run(IDal dal)
         {
+            Console.WriteLine($"Application started on port {LocalBrowserPort} and tak count {CountOfParallelTasks}");
+            _logger.Info($"Application started on port {LocalBrowserPort} and tak count {CountOfParallelTasks}");
             List<Offer> lastNotProcessedOffers = GetLastNotProcessedOffers(dal, CountOfParallelTasks).ToList();
+            _logger.Info($"Fetched: " + lastNotProcessedOffers.Count +" offers");
             AllegroOfferDetailsParser tempParser =
                 new AllegroOfferDetailsParser("http://localhost:" + LocalBrowserPort);
             tempParser.InitBrowser();
@@ -51,7 +54,7 @@ namespace Platinum.Service.OfferDetailsFetcher
                     }
                 });
                 tasks[i].Start();
-                Thread.Sleep(1500);
+                Thread.Sleep(1000);
             }
 
             Task.WaitAll(tasks);
@@ -62,7 +65,7 @@ namespace Platinum.Service.OfferDetailsFetcher
             List<int> ids = new List<int>();
             using (DbDataReader reader =
                 dal.ExecuteReader(
-                    $"SELECT TOP {count} Id FROM offers WHERE processed = {(int) EOfferProcessed.NotProcessed} and id > 5000")
+                    $"update offers set Processed = {(int)EOfferProcessed.InProcess} Output inserted.Id where Id in (select top 10 Id from offers with(nolock) where Processed = {(int)EOfferProcessed.NotProcessed})")
             )
             {
                 while (reader.Read())
@@ -70,7 +73,6 @@ namespace Platinum.Service.OfferDetailsFetcher
                     ids.Add(reader.GetInt32(0));
                 }
             }
-
             foreach (int id in ids)
             {
                 yield return new Offer(dal, id);
@@ -101,13 +103,7 @@ namespace Platinum.Service.OfferDetailsFetcher
             dal.ExecuteNonQuery(
                 $"UPDATE Offers set Processed = {(int) EOfferProcessed.Inactive} WHERE Id = {offer.Id}");
         }
-
-        public void SetOffersAsUnprocessed(IDal dal, IEnumerable<Offer> offer)
-        {
-            dal.ExecuteNonQuery(
-                $"UPDATE Offers set Processed = {(int) EOfferProcessed.InProcess} WHERE Id in {string.Join(",", offer)}");
-        }
-
+        
         public Task CreateTaskForProcessOrder(IDal dal, Offer offer, IOfferDetailsParser parser)
         {
             return new Task(() =>
@@ -117,16 +113,20 @@ namespace Platinum.Service.OfferDetailsFetcher
                     OfferDetails details = parser.GetPageDetails(offer.Uri, offer);
                     BufforController.Instance.InsertOfferDetails(details);
                     SetOfferAsProcessed(dal, offer);
+                    _logger.Info(offer.Uri+ ": processed");
                 }
                 catch (OfferDetailsFailException ex)
                 {
                     _logger.Info(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
                     SetOfferAsInActive(dal, offer);
+                    _logger.Info(offer.Uri+ ": fail - "+ex.Message);
+
                 }
                 catch (Exception ex)
                 {
                     _logger.Info(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
                     SetOfferAsUnprocessed(dal, offer);
+                    _logger.Info(offer.Uri+ ": fail - "+ex.Message);
                 }
             });
         }

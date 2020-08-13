@@ -20,10 +20,14 @@ namespace Platinum.Service.OfferDetailsFetcher
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            if (Program.AppArgs.Count() < 2)
+            {
+                Console.WriteLine("Error, application MUST contain 2 arguments.  application Port and tasks count");
+            }
             while (!stoppingToken.IsCancellationRequested)
             {
                 OfferDetailsFetcherFactory factory = new AllegroOfferDetailsFetcherFactory();
-                IOfferDetailsFetcher fetcher = factory.GetOfferDetailsFetcher("3001", 10);
+                IOfferDetailsFetcher fetcher = factory.GetOfferDetailsFetcher(Program.AppArgs[0], int.Parse(Program.AppArgs[1]));
                 using (Dal db = new Dal())
                 {
                     fetcher.Run(db);

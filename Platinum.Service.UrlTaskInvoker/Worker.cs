@@ -25,7 +25,7 @@ namespace Platinum.Service.UrlTaskInvoker
             {
                 await RunTaskInvoker(factory.GetInvoker());
 
-                await Task.Delay(1000, stoppingToken);
+                await Task.Delay(50, stoppingToken);
             }
         }
         
