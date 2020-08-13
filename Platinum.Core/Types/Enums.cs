@@ -15,7 +15,8 @@
     public enum EOfferProcessed
     {
         NotProcessed = 0,
-        Processed = 1,
-        Inactive = 2
+        InProcess = 1,
+        Processed = 2,
+        Inactive = 3
     }
 }

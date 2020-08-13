@@ -94,10 +94,6 @@ namespace Platinum.Service.UrlTaskInvoker
                         logger.Info("Started task #" + task.Key.Value);
                         ctrl.StartFetching(false, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
                             task.Value.ToList());
-                        using (IDal db = new Dal())
-                        {
-                            PopTaskFromQueue(db, task.Key.Value);
-                        }
 
                         logger.Info("Finished task #" + task.Key.Value);
                     }
@@ -109,6 +105,10 @@ namespace Platinum.Service.UrlTaskInvoker
                     finally
                     {
                         CURRENT_TASK_COUNT++;
+                        using (IDal db = new Dal())
+                        {
+                            PopTaskFromQueue(db, task.Key.Value);
+                        }
                     }
                 }
             }

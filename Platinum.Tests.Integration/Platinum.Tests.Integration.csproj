@@ -19,6 +19,7 @@
       <ProjectReference Include="..\Platinum.Core\Platinum.Core.csproj" />
       <ProjectReference Include="..\Platinum.Service.BufforUrlQueue\Platinum.Service.BufforUrlQueue.csproj" />
       <ProjectReference Include="..\Platinum.Service.CategoryFetcher\Platinum.Service.CategoryFetcher.csproj" />
+      <ProjectReference Include="..\Platinum.Service.OfferDetailsFetcher\Platinum.Service.OfferDetailsFetcher.csproj" />
       <ProjectReference Include="..\Platinum.Service.UrlFetchTaskCreator\Platinum.Service.UrlFetchTaskCreator.csproj" />
       <ProjectReference Include="..\Platinum.Service.UrlTaskInvoker\Platinum.Service.UrlTaskInvoker.csproj" />
     </ItemGroup>

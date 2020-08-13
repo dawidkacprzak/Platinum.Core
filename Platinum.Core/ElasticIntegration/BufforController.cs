@@ -37,9 +37,30 @@ namespace Platinum.Core.ElasticIntegration
 
         public void InsertOffer(string offer)
         {
-         
             client.Index(new ELBufforedOffers(offer), i => i.Index("buffered_offers"));
-       
+        }
+
+        public void InsertOfferDetails(OfferDetails offerDetails)
+        {
+            if (!OfferDetailsExists(offerDetails.Id))
+                client.Index(offerDetails, i => i.Index("offer_details"));
+        }
+
+        public bool OfferDetailsExists(int offerId)
+        {
+            var searchResponse = client.Search<OfferDetails>(s => s.Index("offer_details")
+                .From(0)
+                .Size(10)
+                .Query(q =>
+                    q
+                        .MatchPhrase(c => c
+                            .Field(p => p.Id)
+                            .Query(offerId.ToString())
+                        )
+                )
+            );
+
+            return searchResponse.Documents.Count > 0;
         }
 
         public bool OfferExistsInBuffor(string uri)
@@ -53,8 +74,8 @@ namespace Platinum.Core.ElasticIntegration
                             .Field(p => p.uri)
                             .Query(uri)
                         )
-                    )
-                );
+                )
+            );
 
             return searchResponse.Documents.Count > 0;
         }

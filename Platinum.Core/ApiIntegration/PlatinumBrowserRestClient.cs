@@ -58,6 +58,11 @@ namespace Platinum.Core.ApiIntegration
             return response.Content;
         }
 
+        public string CurrentSiteHeader(string pageId)
+        {
+            IRestResponse response = Get(new RestRequest(ApiUrl + "/currentSiteHeader?pageid="+ pageId));
+            return response.Content;
+        }
         public void ResetBrowser()
         {
             Get(new RestRequest(ApiUrl + "/resetBrowser"));
