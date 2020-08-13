@@ -22,7 +22,8 @@ namespace Platinum.Service.OfferDetailsFetcher
         {
             if (Program.AppArgs.Count() < 2)
             {
-                Console.WriteLine("Error, application MUST contain 2 arguments.  application Port and tasks count");
+                Console.WriteLine("Error, application MUST contain 2 arguments.  application Port and tasks count, default 3001/10 set");
+                Program.AppArgs = new[] {"3001", "10"};
             }
             while (!stoppingToken.IsCancellationRequested)
             {

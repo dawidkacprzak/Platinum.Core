@@ -1,5 +1,8 @@
 ﻿using System;
 using Nest;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using NLog;
 using Platinum.Core.Model;
 using Platinum.Core.Model.Elastic;
 
@@ -9,6 +12,8 @@ namespace Platinum.Core.ElasticIntegration
     {
         private static ElasticClient client;
         private static BufforController instance;
+        private static object padlock = new object();
+        Logger _logger = LogManager.GetCurrentClassLogger();
 
         public static BufforController Instance
         {
@@ -42,8 +47,14 @@ namespace Platinum.Core.ElasticIntegration
 
         public void InsertOfferDetails(OfferDetails offerDetails)
         {
-            if (!OfferDetailsExists(offerDetails.Id))
-                client.Index(offerDetails, i => i.Index("offer_details"));
+            lock (padlock)
+            {
+                IndexResponse status = client.Index(offerDetails, i => i.Index("offer_details"));
+                if (!status.IsValid)
+                {
+                    throw new Exception("Cannot insert offer details: " + JsonConvert.SerializeObject(status));
+                }
+            }
         }
 
         public bool OfferDetailsExists(int offerId)
