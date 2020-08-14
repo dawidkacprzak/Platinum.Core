@@ -39,7 +39,7 @@ namespace Platinum.Core.Model
         public Offer(IDal dal, int id)
         {
             using (DbDataReader reader = dal.ExecuteReader(
-                $" SELECT Id,WebsiteId,UriHash,CreatedDate,WebsiteCategoryId,Uri Processed FROM offers WITH(NOLOCK) where Id = {id}")
+                $" SELECT Id,WebsiteId,UriHash,CreatedDate,WebsiteCategoryId,Uri,Processed FROM offers WITH(NOLOCK) where Id = {id}")
             )
             {
                 if (!reader.HasRows)
@@ -50,11 +50,12 @@ namespace Platinum.Core.Model
                 while (reader.Read())
                 {
                     this.Id = reader.GetInt32(0);
-                    this.WebsiteCategoryId = reader.GetInt32(1);
+                    this.WebsiteId = reader.GetInt32(1);
                     this.UriHash = (byte[]) reader.GetValue(2);
                     this.CreatedDate = reader.GetDateTime(3);
-                    this.Processed = reader.GetInt32(4);
+                    this.WebsiteCategoryId = reader.GetInt32(4);
                     this.Uri = reader.GetString(5);
+                    this.Processed = reader.GetInt32(6);
                 }
             }
         }
