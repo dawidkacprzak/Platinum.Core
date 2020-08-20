@@ -22,8 +22,8 @@ namespace Platinum.Service.UrlTaskInvoker
 
         private static readonly object getTaskLock = new object();
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
-        public static int MAX_TASKS_PER_RUN = 15;
-        public static int MAX_CONCURRENT_TASKS = 1;
+        public static int MAX_TASKS_PER_RUN = 55;
+        public static int MAX_CONCURRENT_TASKS = 3;
         public static int CURRENT_TASK_COUNT = 0;
         public AllegroTaskInvoker()
         {
