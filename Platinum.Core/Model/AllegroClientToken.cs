@@ -1,5 +1,8 @@
-﻿namespace Platinum.Core.Model
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Platinum.Core.Model
 {
+    [ExcludeFromCodeCoverage]
     public class AllegroClientToken
     {
         public string access_token { get; set; }

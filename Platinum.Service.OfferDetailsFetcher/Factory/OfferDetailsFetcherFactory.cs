@@ -4,6 +4,6 @@ namespace Platinum.Service.OfferDetailsFetcher.Factory
 {
     public abstract class OfferDetailsFetcherFactory
     {
-        public abstract IOfferDetailsFetcher GetOfferDetailsFetcher(string port, int countOfTasks);
+        public abstract IOfferDetailsFetcher GetOfferDetailsFetcher(int countOfTasks);
     }
 }

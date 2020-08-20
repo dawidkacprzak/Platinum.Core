@@ -16,6 +16,14 @@ namespace Platinum.Core.Model
         public int WebsiteCategoryId { get; set; }
         public int Processed { get; set; }
 
+        public Offer()
+        {
+#if RELEASE
+throw new Exception("Cannot create empty offer in production");
+#endif
+            this.Id = 0;
+        }
+
         public Offer(int id, int websiteId, string uri, byte[] uriHash, DateTime createdDate, int websiteCategoryId)
         {
             Id = id;
@@ -25,7 +33,9 @@ namespace Platinum.Core.Model
             CreatedDate = createdDate;
             WebsiteCategoryId = websiteCategoryId;
         }
-        public Offer(int id, int websiteId, string uri, byte[] uriHash, DateTime createdDate, int websiteCategoryId,int processed)
+
+        public Offer(int id, int websiteId, string uri, byte[] uriHash, DateTime createdDate, int websiteCategoryId,
+            int processed)
         {
             Id = id;
             WebsiteId = websiteId;

@@ -1,4 +1,5 @@
 # Common IntelliJ Platform excludes
+.local-chromium
 
 # User specific
 **/.idea/**/workspace.xml
@@ -394,3 +395,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+UrlTaskInvoker/.local-chromium

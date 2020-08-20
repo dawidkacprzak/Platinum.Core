@@ -4,9 +4,9 @@ namespace Platinum.Service.OfferDetailsFetcher.Factory
 {
     public class AllegroOfferDetailsFetcherFactory : OfferDetailsFetcherFactory
     {
-        public override IOfferDetailsFetcher GetOfferDetailsFetcher(string port, int countOfTasks)
+        public override IOfferDetailsFetcher GetOfferDetailsFetcher(int countOfTasks)
         {
-            return new AllegroOfferDetailsFetcher(port,countOfTasks);
+            return new AllegroOfferDetailsFetcher(countOfTasks);
         }
     }
 }

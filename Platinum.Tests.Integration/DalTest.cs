@@ -11,7 +11,6 @@ using Platinum.Core.Types.Exceptions;
 
 namespace Platinum.Tests.Integration
 {
-    [Apartment(ApartmentState.STA)]
     public class DalTest
     {
         [TearDown]

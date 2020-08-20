@@ -10,13 +10,9 @@ using Platinum.Core.Types.Exceptions;
 
 namespace Platinum.Core.OfferDetailsParser
 {
-    public class AllegroOfferDetailsParser : PlatinumBrowserRestClient, IOfferDetailsParser
+    public class AllegroOfferDetailsParser : SharpBrowserClient, IOfferDetailsParser
     {
         private string pageId;
-
-        public AllegroOfferDetailsParser(string host) : base(host)
-        {
-        }
 
         public OfferDetails GetPageDetails(string pageUrl, Offer offer)
         {

@@ -2,6 +2,6 @@
 {
     public interface IBrowserRestClientFactory
     {
-        IBrowserRestClient GetBrowser(string host);
+        IBrowserClient GetBrowser(string host);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -49,6 +50,10 @@ namespace Platinum.Service.CategoryFetcher
 
         public void SetIndexCategoryFetchLimit(int limit)
         {
+            if (limit <= 0)
+            {
+                throw new RequestException("Cannot set task count <= 0");
+            }
             MAX_CATEGORY_ID = limit;
         }
 
@@ -108,6 +113,7 @@ namespace Platinum.Service.CategoryFetcher
             }
         }
 
+        [ExcludeFromCodeCoverage]
         private IRestResponse HandleRequestError(RequestException ex, string route, bool tokenRequested)
         {
             if (ex.Response.StatusCode == HttpStatusCode.TooManyRequests)

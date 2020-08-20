@@ -8,9 +8,9 @@ namespace Platinum.Core.Factory.BrowserRestClient
     [ExcludeFromCodeCoverage]
     public class PlatinumABrowserRestClientFactory : ABrowserRestClientFactory
     {
-        public override IBrowserRestClient GetBrowser(string host)
+        public override IBrowserClient GetBrowser(string host)
         {
-            return new PlatinumBrowserRestClient(host);
+            return new PlatinumBrowserClient(host);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using HtmlAgilityPack;
@@ -15,7 +16,7 @@ using Platinum.Core.Types.Exceptions;
 
 namespace Platinum.Core.OfferListController
 {
-    public class AllegroOfferListController : PlatinumBrowserRestClient, IBaseOfferListController
+    public class AllegroOfferListController : SharpBrowserClient, IBaseOfferListController
     {
         private const string baseUrl = "https://allegro.pl";
         private string pageId;
@@ -29,7 +30,7 @@ namespace Platinum.Core.OfferListController
         }
 
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
-        public AllegroOfferListController(string host) : base(host)
+        public AllegroOfferListController(string host) : base()
         {
             lastPageNumber = 0;
             urlArgs = "";
@@ -67,6 +68,7 @@ namespace Platinum.Core.OfferListController
             RunFetching(fetchJustFirstPage);
         }
 
+        [ExcludeFromCodeCoverage]
         private void RunFetching(bool fetchJustFirstPage)
         {
             if (fetchJustFirstPage)
@@ -97,6 +99,7 @@ namespace Platinum.Core.OfferListController
             }
         }
 
+        [ExcludeFromCodeCoverage]
         public bool OpenNextPage()
         {
             try
@@ -131,17 +134,22 @@ namespace Platinum.Core.OfferListController
                 
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new OfferListControllerException("Cannot open next page, check browser is initied", this);
+                throw new OfferListControllerException("Cannot open next page, check browser is initied "+ex.Message, this);
             }
         }
 
         public IEnumerable<string> GetAllOfferLinks()
         {
+            logger.Info("get all offer links - get site source");
             string pageSource = CurrentSiteSource(pageId);
+            logger.Info("source fetched" +  pageSource.Length);
+
             HtmlDocument document = new HtmlDocument();
             document.LoadHtml(pageSource);
+            logger.Info("load html");
+
             var offerContainer = document.DocumentNode.SelectNodes("//div[@id=\"opbox-listing--base\"]");
             if (offerContainer == null || !offerContainer.Any())
             {
@@ -152,6 +160,7 @@ namespace Platinum.Core.OfferListController
                 HtmlNodeCollection offerLinks = offerContainer.First().SelectNodes("//a");
 
                 List<HtmlNode> offerLinksNode = offerLinks.Where(x => x.HasAttributes).ToList();
+                logger.Info("offerl links: "+ offerLinksNode.Count);
 
                 foreach (var offerLink in offerLinksNode)
                 {
@@ -178,14 +187,20 @@ namespace Platinum.Core.OfferListController
                 List<string> uniqueOffers = new List<string>();
                 for (int i = 0; i < enumerable.Count; i++)
                 {
+                    logger.Info("Check offer exists in buffor: " + enumerable.ElementAt(i));
                     bool offerBuffored = BufforController.Instance.OfferExistsInBuffor(enumerable.ElementAt(i));
                     if (!offerBuffored)
                     {
+                        logger.Info("not exists insert");
                         BufforController.Instance.InsertOffer(enumerable.ElementAt(i));
+                        logger.Info("inserted");
+
                         uniqueOffers.Add(enumerable.ElementAt(i));
                     }
                 }
                 int offerCount = uniqueOffers.Count();
+                logger.Info("unique offer count: "+offers);
+
                 if (offerCount == 0) return;
                 List<string> queryValues = new List<string>();
                 foreach (string offer in uniqueOffers)

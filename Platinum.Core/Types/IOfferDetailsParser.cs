@@ -2,7 +2,7 @@
 
 namespace Platinum.Core.Types
 {
-    public interface IOfferDetailsParser : IBrowserRestClient
+    public interface IOfferDetailsParser : IBrowserClient
     {
         public OfferDetails GetPageDetails(string pageUrl, Offer offer);
     }

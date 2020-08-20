@@ -10,8 +10,7 @@ namespace Platinum.Core.Types
         public void SetOffersAsInProcess(IDal dal, IEnumerable<Offer> offers);
         public void SetOfferAsProcessed(IDal dal, Offer offer);
         public void SetOfferAsUnprocessed(IDal dal, Offer offer);
-        public Task CreateTaskForProcessOrder(IDal DAL, Offer offer, IOfferDetailsParser parser);
-        public void InsertToElastic(OfferDetails offer);
+        public Task CreateTaskForProcessOrder(IDal dal, Offer offer, IOfferDetailsParser parser);
         public void Run(IDal dal);
     }
 }

@@ -7,7 +7,6 @@ using Platinum.Core.Types.Exceptions;
 namespace Platinum.Tests.Integration
 {
     [TestFixture]
-    [Apartment(ApartmentState.STA)]
     public class PlatinumBrowserRestClientTest
     {
         [TearDown]
@@ -19,7 +18,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void InitBrowserNoException()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
 
             Assert.DoesNotThrow(() => { client.InitBrowser(); });
             client.CloseBrowser();
@@ -31,7 +30,7 @@ namespace Platinum.Tests.Integration
         [TestCase("")]
         public void OpenPageBrowserNotInitiated(string url)
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
             client.CloseBrowser();
             RequestException ex = Assert.Throws<RequestException>(() => client.Open("0",url));
             Assert.That(ex, Is.Not.Null);
@@ -41,7 +40,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void GetSiteSourceNotInitiated()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
             client.DeInit();
             client.CloseBrowser();
             RequestException ex = Assert.Throws<RequestException>(() => client.CurrentSiteSource("0"));
@@ -51,7 +50,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void GetSiteSourceInitiated()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
             client.InitBrowser();
             string pageId = client.CreatePage();
             client.Open(pageId,"http://allegro.pl");
@@ -68,7 +67,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void ResetBrowserNotInitiated()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
             client.DeInit();
             Assert.DoesNotThrow(() => client.ResetBrowser());
         }
@@ -76,7 +75,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void ResetBrowserInitiated()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
             client.InitBrowser();
             client.ResetBrowser();
             client.CloseBrowser();
@@ -85,7 +84,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void ClosePageNotInitiated()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
             client.ClosePage("0");
             client.CloseBrowser();
         }
@@ -93,7 +92,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void ClosePageInitiated()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
             client.InitBrowser();
             string pageId = client.CreatePage();
             client.Open(pageId,"https://google.pl");
@@ -104,14 +103,14 @@ namespace Platinum.Tests.Integration
         [Test]
         public void CloseBrowserNotInitiated()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
             client.CloseBrowser();
         }
 
         [Test]
         public void CloseBrowserInitiated()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
             client.InitBrowser();
             client.CloseBrowser();
         }
@@ -119,7 +118,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void CloseBrowserInitiatedAndPageOpened()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
             client.InitBrowser();
             string pageId = client.CreatePage();
             client.Open(pageId,"https://google.pl");
@@ -129,7 +128,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void RefreshPageBrowserNotInitiated()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
             client.RefreshPage("0");
             client.CloseBrowser();
         }
@@ -137,7 +136,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void RefreshPageBrowserInitiated()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
             client.InitBrowser();
             string pageId = client.CreatePage();
             client.RefreshPage(pageId);
@@ -147,7 +146,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void RefreshPageInitiatedAndPageOpened()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
+            IBrowserClient client = new PlatinumBrowserClient();
             client.InitBrowser();
             string pageId = client.CreatePage();
             client.Open(pageId,"https://google.pl");

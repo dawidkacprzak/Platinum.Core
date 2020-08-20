@@ -5,17 +5,17 @@ using RestSharp;
 
 namespace Platinum.Core.ApiIntegration
 {
-    public class PlatinumBrowserRestClient : RestClient, IBrowserRestClient
+    public class PlatinumBrowserClient : RestClient, IBrowserClient
     {
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
         public string ApiUrl { get; set; }
 
-        public PlatinumBrowserRestClient()
+        public PlatinumBrowserClient()
         {
             ApiUrl = "http://localhost:3001";
         }
 
-        public PlatinumBrowserRestClient(string apiUrl)
+        public PlatinumBrowserClient(string apiUrl)
         {
             this.ApiUrl = apiUrl;
         }

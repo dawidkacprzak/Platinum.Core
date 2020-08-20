@@ -5,6 +5,7 @@ using NUnit.Framework;
 using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.Model;
 using Platinum.Core.Types;
+using Platinum.Core.Types.Exceptions;
 using Platinum.Service.CategoryFetcher;
 using Platinum.Service.CategoryFetcher.Factory;
 using RestSharp;
@@ -23,6 +24,29 @@ namespace Platinum.Tests.Integration
             Assert.IsInstanceOf<AllegroCategoryFetcher>(instance);
         }
 
+        [Test]
+        public void RunDoNotThrow()
+        {
+            Mock<IDal> db = new Mock<IDal>();
+            CategoryFetcherFactory fetcher = new AllegroCategoryFetcherFactory();
+            ICategoryFetcher instance = fetcher.GetFetcher();
+            instance.SetIndexCategoryFetchLimit(1);
+            instance.Run(db.Object);
+        }
+        
+        [TestCase(0)]
+        [TestCase(-4)]
+        [TestCase(-2)]
+        [TestCase(-22)]
+
+        public void NegativeTaskCountThrow(int taskCount)
+        {
+            CategoryFetcherFactory fetcher = new AllegroCategoryFetcherFactory();
+            ICategoryFetcher instance = fetcher.GetFetcher();
+            RequestException ex = Assert.Throws<RequestException>(() => instance.SetIndexCategoryFetchLimit(taskCount));
+            Assert.That(ex.Message,Contains.Substring("Cannot set task count <= 0"));
+        }
+        
         [Test]
         public void DatabaseExceptionDuringRunDoNotThrowUp()
         {

@@ -9,17 +9,17 @@ namespace Platinum.Tests.Unit
         [Test]
         public void ConstructorNoArgumentTestPass()
         {
-            IBrowserRestClient client = new PlatinumBrowserRestClient();
-            Assert.IsInstanceOf<PlatinumBrowserRestClient>(client);
+            IBrowserClient client = new PlatinumBrowserClient();
+            Assert.IsInstanceOf<PlatinumBrowserClient>(client);
         }
         
         [TestCase("https://google.pl")]
         [TestCase("https://allegro.pl")]
         public void ConstructorArgumentTestPass(string url)
         {
-            PlatinumBrowserRestClient client = new PlatinumBrowserRestClient(url);
+            PlatinumBrowserClient client = new PlatinumBrowserClient(url);
             Assert.AreEqual(client.ApiUrl,url);
-            Assert.IsInstanceOf<PlatinumBrowserRestClient>(client);
+            Assert.IsInstanceOf<PlatinumBrowserClient>(client);
         }
     }
 }

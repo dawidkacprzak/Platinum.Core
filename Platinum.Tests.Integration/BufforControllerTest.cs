@@ -21,5 +21,14 @@ namespace Platinum.Tests.Integration
             Offer offer = new Offer(3,(int)EOfferWebsite.Allegro,"https://test.pl",new byte[]{0},DateTime.Now,0);
             Assert.DoesNotThrow(()=>BufforController.Instance.InsertOffer(offer));
         }
+
+        [Test]
+        public void CheckOfferDetailsExist()
+        {
+            for (int i = 0; i < 50; i++)
+            {
+                BufforController.Instance.OfferDetailsExists(i);
+            }
+        }
     }
 }

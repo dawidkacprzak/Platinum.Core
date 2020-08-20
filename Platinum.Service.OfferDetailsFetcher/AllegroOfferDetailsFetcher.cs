@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,27 +19,21 @@ namespace Platinum.Service.OfferDetailsFetcher
     {
         Logger _logger = LogManager.GetCurrentClassLogger();
         public int CountOfParallelTasks { get; set; }
-        public string LocalBrowserPort { get; set; }
 
-        public AllegroOfferDetailsFetcher(string port, int countOfTasks)
+        public AllegroOfferDetailsFetcher(int countOfTasks)
         {
-            LocalBrowserPort = port;
             CountOfParallelTasks = countOfTasks;
         }
 
-        public void InsertToElastic(OfferDetails offer)
-        {
-            throw new NotImplementedException();
-        }
-
+        [ExcludeFromCodeCoverage]
         public void Run(IDal dal)
         {
-            Console.WriteLine($"Application started on port {LocalBrowserPort} and tak count {CountOfParallelTasks}");
-            _logger.Info($"Application started on port {LocalBrowserPort} and tak count {CountOfParallelTasks}");
+            Console.WriteLine($"Application started and tak count {CountOfParallelTasks}");
+            _logger.Info($"Application started and tak count {CountOfParallelTasks}");
             List<Offer> lastNotProcessedOffers = GetLastNotProcessedOffers(dal, CountOfParallelTasks).ToList();
             _logger.Info($"Fetched: " + lastNotProcessedOffers.Count + " offers");
             AllegroOfferDetailsParser tempParser =
-                new AllegroOfferDetailsParser("http://localhost:" + LocalBrowserPort);
+                new AllegroOfferDetailsParser();
             tempParser.InitBrowser();
 
             Task[] tasks = new Task[lastNotProcessedOffers.Count()];
@@ -50,7 +45,7 @@ namespace Platinum.Service.OfferDetailsFetcher
                     using (Dal db = new Dal())
                     {
                         Task t = CreateTaskForProcessOrder(db, lastNotProcessedOffers.ElementAt(i1),
-                            new AllegroOfferDetailsParser("http://localhost:" + LocalBrowserPort));
+                            new AllegroOfferDetailsParser());
                         t.RunSynchronously();
                     }
                 });
@@ -112,11 +107,12 @@ namespace Platinum.Service.OfferDetailsFetcher
                 $"UPDATE Offers set Processed = {(int) EOfferProcessed.Inactive} WHERE Id = {offer.Id}");
         }
 
+        [ExcludeFromCodeCoverage]
         public Task CreateTaskForProcessOrder(IDal dal, Offer offer, IOfferDetailsParser parser)
         {
             return new Task(() =>
             {
-                try
+                try 
                 {
                     OfferDetails details = parser.GetPageDetails(offer.Uri, offer);
                     BufforController.Instance.InsertOfferDetails(details);

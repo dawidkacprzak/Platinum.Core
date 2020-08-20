@@ -9,7 +9,6 @@ using RestClient = Platinum.Core.ApiIntegration.RestClient;
 namespace Platinum.Tests.Integration
 {
     [TestFixture]
-    [Apartment(ApartmentState.STA)]
     public class RestClientTest
     {
         [TearDown]

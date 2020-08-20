@@ -7,16 +7,14 @@ namespace Platinum.Core.Types
 {
     public interface IUrlTaskInvoker
     {
-        Task Run(IBrowserRestClientFactory browserRestClientFactory, IDal dal);
-        IEnumerable<string> GetBrowsers(IDal dal);
-        void ResetBrowser(IBrowserRestClient client, string hosts);
-        
+        Task Run();
+
         /// <summary>
         /// KeyValuePair<<CategoryId,TaskId>, List of filter parameters>
         /// </summary>
         KeyValuePair<KeyValuePair<int,int>, IEnumerable<WebsiteCategoriesFilterSearch>> GetOldestTask(IDal db);
-        Task InvokeTask(string host);
+        Task InvokeTask();
         void PopTaskFromQueue(IDal db,int taskId);
-        Task[] GetUrlFetchingTasks(IEnumerable<string> activeBrowsers);
+        Task[] GetUrlFetchingTasks(int maxTaskCount);
     }
 }

@@ -19,4 +19,10 @@
         Processed = 2,
         Inactive = 3
     }
+    
+    public enum EUrlFetchTaskProcessed
+    {
+        NotProcessed = 0,
+        InProcess = 1
+    }
 }

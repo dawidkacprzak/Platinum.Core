@@ -50,10 +50,6 @@ namespace Platinum.Core.ElasticIntegration
             lock (padlock)
             {
                 IndexResponse status = client.Index(offerDetails, i => i.Index("offer_details"));
-                if (!status.IsValid)
-                {
-                    throw new Exception("Cannot insert offer details: " + JsonConvert.SerializeObject(status));
-                }
             }
         }
 
@@ -76,6 +72,7 @@ namespace Platinum.Core.ElasticIntegration
 
         public bool OfferExistsInBuffor(string uri)
         {
+            
             var searchResponse = client.Search<ELBufforedOffers>(s => s.Index("buffered_offers")
                 .From(0)
                 .Size(10)
