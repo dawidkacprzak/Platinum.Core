@@ -12,8 +12,17 @@ namespace Platinum.Service.UrlTaskInvoker
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
     public class Program
     {
+        public static string NumberOfTasksArg;
         public static void Main(string[] args)
         {
+            if (args.Length > 0)
+            {
+                NumberOfTasksArg = args[0];
+            }
+            else
+            {
+                NumberOfTasksArg = "3";
+            }
             CreateHostBuilder(args).Build().Run();
         }
 

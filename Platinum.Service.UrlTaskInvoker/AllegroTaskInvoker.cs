@@ -27,6 +27,15 @@ namespace Platinum.Service.UrlTaskInvoker
         public static int CURRENT_TASK_COUNT = 0;
         public AllegroTaskInvoker()
         {
+            try
+            {
+                MAX_CONCURRENT_TASKS = int.Parse(Program.NumberOfTasksArg);
+            }
+            catch (Exception)
+            {
+                MAX_CONCURRENT_TASKS = 3;
+            }
+            logger.Info("Number of max tasks: " + MAX_CONCURRENT_TASKS);
             lock (getTaskLock)
             {
                 StaticSharpBrowserContainer.Init();
