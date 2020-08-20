@@ -28,14 +28,11 @@ namespace Platinum.Service.UrlTaskInvoker
                 await Task.Delay(50, stoppingToken);
             }
         }
-        
+
         [ExcludeFromCodeCoverage]
         private async Task RunTaskInvoker(IUrlTaskInvoker task)
         {
-            using (Dal db = new Dal())
-            {
-                await task.Run(new PlatinumABrowserRestClientFactory(), db);
-            }
+            await task.Run();
         }
     }
 }
