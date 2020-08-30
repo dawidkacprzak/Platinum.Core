@@ -231,8 +231,8 @@ namespace Platinum.Service.UrlTaskInvoker
 
                 int updatedTaskId = -1;
                 taskQuery += "ORDER BY Id)";
-                logger.Info("Bef query");
-
+                logger.Info("Bef query " + taskQuery);
+    
                 using (DbDataReader taskReader =
                     db.ExecuteReader(taskQuery)
                 )

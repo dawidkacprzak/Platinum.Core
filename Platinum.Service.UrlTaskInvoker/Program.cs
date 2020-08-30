@@ -21,7 +21,7 @@ namespace Platinum.Service.UrlTaskInvoker
             }
             else
             {
-                NumberOfTasksArg = "3";
+                NumberOfTasksArg = "1";
             }
             CreateHostBuilder(args).Build().Run();
         }
