@@ -4,6 +4,7 @@ using System.Data.Common;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Threading;
 using System.Threading.Tasks;
 using NLog;
 using Platinum.Core.ApiIntegration;
@@ -59,6 +60,7 @@ namespace Platinum.Service.UrlTaskInvoker
                     {
                         logger.Info("Task " + i + " status: " + tasks[i].Status);
                         tasks[i].Start();
+                        Thread.Sleep(5000);
                     }
                 }
 
