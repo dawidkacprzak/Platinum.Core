@@ -26,8 +26,11 @@ namespace Platinum.Service.UrlFetchTaskCreator
                 _logger.Info("Started service");
                 if (VerifyTaskCanBeStarted())
                 {
-                    List<int> categoryIds = GetAllCategories().ToList();
-
+                    //List<int> categoryIds = GetAllCategories().ToList();
+                    List<int> categoryIds = new List<int>()
+                    {
+                        6472
+                    };
                     _logger.Info($"Found {categoryIds.Count} category count");
 
                     foreach (int categoryId in categoryIds)
