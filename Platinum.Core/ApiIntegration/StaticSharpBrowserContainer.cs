@@ -10,6 +10,7 @@ namespace Platinum.Core.ApiIntegration
 
         public static void Init()
         {
+            new BrowserFetcher().DownloadAsync(BrowserFetcher.DefaultRevision);
             if (browser == null)
             {
                 var launchOptions = new LaunchOptions
