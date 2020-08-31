@@ -115,20 +115,20 @@ namespace Platinum.Service.OfferDetailsFetcher
                 try 
                 {
                     OfferDetails details = parser.GetPageDetails(offer.Uri, offer);
-                    BufforController.Instance.InsertOfferDetails(details);
+                   // BufforController.Instance.InsertOfferDetails(details);
                 }
                 catch (OfferDetailsFailException ex)
                 {
                     _logger.Info(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
                     SetOfferAsInActive(dal, offer);
-                    _logger.Info(offer.Uri + ": fail - " + ex.Message);
+                    _logger.Info(offer.Uri + ": fail - " + ex.Message + ex.StackTrace);
                     return;
                 }
                 catch (Exception ex)
                 {
                     _logger.Info(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
-                    SetOfferAsUnprocessed(dal, offer);
-                    _logger.Info(offer.Uri + ": fail - " + ex.Message);
+                    SetOfferAsInActive(dal, offer);
+                    _logger.Info(offer.Uri + ": fail - " + ex.Message + ex.StackTrace);
                     return;
                 }
 
@@ -141,13 +141,13 @@ namespace Platinum.Service.OfferDetailsFetcher
                 {
                     _logger.Info(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
                     SetOfferAsInActive(dal, offer);
-                    _logger.Info(offer.Uri + ": fail - " + ex.Message);
+                    _logger.Info(offer.Uri + ": fail - " + ex.Message + ex.StackTrace);
                 }
                 catch (Exception ex)
                 {
                     _logger.Info(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
-                    SetOfferAsUnprocessed(dal, offer);
-                    _logger.Info(offer.Uri + ": fail - " + ex.Message);
+                    SetOfferAsInActive(dal, offer);
+                    _logger.Info(offer.Uri + ": fail - " + ex.Message + ex.StackTrace);
                 }
             });
         }

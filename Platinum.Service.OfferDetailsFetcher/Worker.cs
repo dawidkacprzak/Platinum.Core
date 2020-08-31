@@ -24,12 +24,12 @@ namespace Platinum.Service.OfferDetailsFetcher
             if (Program.AppArgs.Count() < 2)
             {
                 Console.WriteLine("Error, application MUST contain 1 arguments - tasks count, default 10 set");
-                Program.AppArgs = new[] {"10"};
+                Program.AppArgs = new[] {"1"};
             }
             while (!stoppingToken.IsCancellationRequested)
             {
                 OfferDetailsFetcherFactory factory = new AllegroOfferDetailsFetcherFactory();
-                IOfferDetailsFetcher fetcher = factory.GetOfferDetailsFetcher(int.Parse(Program.AppArgs[1]));
+                IOfferDetailsFetcher fetcher = factory.GetOfferDetailsFetcher(int.Parse(Program.AppArgs[0]));
                 using (Dal db = new Dal())
                 {
                     fetcher.Run(db);

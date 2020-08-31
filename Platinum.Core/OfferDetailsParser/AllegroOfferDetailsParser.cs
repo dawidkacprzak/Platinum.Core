@@ -18,6 +18,10 @@ namespace Platinum.Core.OfferDetailsParser
         {
             try
             {
+                if (pageUrl.Contains("allegrolokalnie"))
+                {
+                    throw new OfferDetailsFailException("Allegro lokalnie is not supported");
+                }
                 Dictionary<string, string> offerArguments = new Dictionary<string, string>();
                 string description;
                 string title;
