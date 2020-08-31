@@ -96,19 +96,16 @@ namespace Platinum.Core.OfferDetailsParser
                     HtmlDocument parameterInnerDocument = new HtmlDocument();
                     parameterInnerDocument.LoadHtml(listElement.InnerHtml);
                     var divs = parameterInnerDocument.DocumentNode.SelectNodes("//div");
-                    if (divs.Count != 3)
-                    {
-                        break;
-                    }
-                    else
-                    {
+
+                    if (divs[1].InnerText.Where(x => x.Equals(':')).Count() > 1)
+                        continue;
                         string keyArg = divs[1].InnerText;
                         string valArg = divs[2].InnerText;
 
                         if (keyArg[keyArg.Length - 1].Equals(':'))
                             keyArg = keyArg.Substring(0, keyArg.Length - 1);
                         parameters.TryAdd(keyArg, valArg);
-                    }
+                    
                 }
             }
 

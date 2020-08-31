@@ -5,6 +5,7 @@ using Moq;
 using NUnit.Framework;
 using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.Model;
+using Platinum.Core.OfferDetailsParser;
 using Platinum.Core.Types;
 using Platinum.Service.OfferDetailsFetcher;
 using Platinum.Service.OfferDetailsFetcher.Factory;
