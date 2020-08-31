@@ -21,7 +21,7 @@ namespace Platinum.Service.OfferDetailsFetcher
         [ExcludeFromCodeCoverage]
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            if (Program.AppArgs.Count() < 2)
+            if (Program.AppArgs.Count() < 1)
             {
                 Console.WriteLine("Error, application MUST contain 1 arguments - tasks count, default 10 set");
                 Program.AppArgs = new[] {"1"};

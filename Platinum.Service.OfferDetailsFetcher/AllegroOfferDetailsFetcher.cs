@@ -29,7 +29,7 @@ namespace Platinum.Service.OfferDetailsFetcher
         public void Run(IDal dal)
         {
             Console.WriteLine($"Application started and tak count {CountOfParallelTasks}");
-            _logger.Info($"Application started and tak count {CountOfParallelTasks}");
+            _logger.Info($"Application started and task count {CountOfParallelTasks}");
             List<Offer> lastNotProcessedOffers = GetLastNotProcessedOffers(dal, CountOfParallelTasks).ToList();
             _logger.Info($"Fetched: " + lastNotProcessedOffers.Count + " offers");
             AllegroOfferDetailsParser tempParser =
@@ -115,7 +115,7 @@ namespace Platinum.Service.OfferDetailsFetcher
                 try 
                 {
                     OfferDetails details = parser.GetPageDetails(offer.Uri, offer);
-                   // BufforController.Instance.InsertOfferDetails(details);
+                    BufforController.Instance.InsertOfferDetails(details);
                 }
                 catch (OfferDetailsFailException ex)
                 {
