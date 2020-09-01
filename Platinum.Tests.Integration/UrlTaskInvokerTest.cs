@@ -9,6 +9,7 @@ using NUnit.Framework;
 using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.Factory.BrowserRestClient;
 using Platinum.Core.Model;
+using Platinum.Core.OfferDetailsParser;
 using Platinum.Core.Types;
 using Platinum.Core.Types.Exceptions;
 using Platinum.Service.UrlTaskInvoker;
@@ -93,6 +94,15 @@ namespace Platinum.Tests.Integration
             {
                 Assert.DoesNotThrow(() => invoker.GetOldestTask(db));
             }
+        }
+
+        [Test]
+        public void test()
+        {
+            AllegroOfferDetailsParser parser = new AllegroOfferDetailsParser();
+            parser.GetPageDetails(
+                "https://allegro.pl/oferta/4x-dunlop-sport-bluresponse-205-55r16-91v-8920620839",
+                new Offer());
         }
     }
 }

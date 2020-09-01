@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using HtmlAgilityPack;
 using Platinum.Core.ApiIntegration;
@@ -142,8 +143,9 @@ namespace Platinum.Core.OfferDetailsParser
                 try
                 {
                     string priceText = nodes.First().InnerText;
-                    priceText = priceText.Replace("zł", "").Trim();
-                    decimal newPrice = decimal.Parse(priceText);
+                    priceText = priceText.Replace("zł", "").Trim().Replace(" ",string.Empty);
+                    var numberFormatInfo = new NumberFormatInfo { NumberDecimalSeparator = "," };
+                    decimal newPrice = decimal.Parse(priceText, numberFormatInfo);
                     return newPrice;
                 }
                 catch (Exception ex)
