@@ -231,13 +231,10 @@ namespace Platinum.Service.UrlTaskInvoker
 
                 int updatedTaskId = -1;
                 taskQuery += " ORDER BY Id)";
-                logger.Info("Bef query " + taskQuery);
-    
                 using (DbDataReader taskReader =
                     db.ExecuteReader(taskQuery)
                 )
                 {
-                    logger.Info("ex reader");
 
                     if (!taskReader.HasRows)
                     {
@@ -253,9 +250,7 @@ namespace Platinum.Service.UrlTaskInvoker
                         updatedTaskId = taskReader.GetInt32(0);
                     }
                 }
-
-                logger.Info("get urlfetchtasks");
-
+                
                 using (DbDataReader reader =
                     db.ExecuteReader($"SELECT * FROM allegroUrlFetchTask WITH (NOLOCK) WHERE ID = {updatedTaskId}"))
                 {
@@ -270,9 +265,7 @@ namespace Platinum.Service.UrlTaskInvoker
                         throw new TaskInvokerException("Cannot get olders task. Not found any.");
                     }
                 }
-
-                logger.Info("next reader");
-
+                
                 using (DbDataReader filterReader = db.ExecuteReader(
                     $@"select * from allegroUrlFetchTaskParameter with(nolock)
                                                                              WHERE AllegroUrlFetchTaskId = {taskId}"))

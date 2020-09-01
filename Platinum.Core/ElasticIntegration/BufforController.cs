@@ -43,7 +43,6 @@ namespace Platinum.Core.ElasticIntegration
         public void InsertOffer(string offer)
         {
             var response = client.Index(new ELBufforedOffers(offer), i => i.Index("buffered_offers"));
-            _logger.Info(JsonConvert.SerializeObject(response));
         }
 
         public void InsertOfferDetails(OfferDetails offerDetails)
@@ -85,7 +84,6 @@ namespace Platinum.Core.ElasticIntegration
                         )
                 )
             );
-            _logger.Info(JsonConvert.SerializeObject(searchResponse));
             return searchResponse.Documents.Count > 0;
         }
     }

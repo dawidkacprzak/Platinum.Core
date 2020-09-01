@@ -47,7 +47,6 @@ namespace Platinum.Core.OfferListController
                 throw new OfferListControllerException("Url argument do not fit to page", this);
 
             pageId = CreatePage();
-            logger.Info("Created page");
             if (urlArguments != null && urlArguments.Count > 0)
             {
                 int index = 0;
@@ -142,13 +141,9 @@ namespace Platinum.Core.OfferListController
 
         public IEnumerable<string> GetAllOfferLinks()
         {
-            logger.Info("get all offer links - get site source");
             string pageSource = CurrentSiteSource(pageId);
-            logger.Info("source fetched" +  pageSource.Length);
-
             HtmlDocument document = new HtmlDocument();
             document.LoadHtml(pageSource);
-            logger.Info("load html");
 
             var offerContainer = document.DocumentNode.SelectNodes("//div[@id=\"opbox-listing--base\"]");
             if (offerContainer == null || !offerContainer.Any())
@@ -193,14 +188,10 @@ namespace Platinum.Core.OfferListController
                     {
                         logger.Info("not exists insert");
                         BufforController.Instance.InsertOffer(enumerable.ElementAt(i));
-                        logger.Info("inserted");
-
                         uniqueOffers.Add(enumerable.ElementAt(i));
                     }
                 }
                 int offerCount = uniqueOffers.Count();
-                logger.Info("unique offer count: "+offers);
-
                 if (offerCount == 0) return;
                 List<string> queryValues = new List<string>();
                 foreach (string offer in uniqueOffers)
