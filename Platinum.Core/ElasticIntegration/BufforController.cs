@@ -48,10 +48,12 @@ namespace Platinum.Core.ElasticIntegration
 
         public void InsertOfferDetails(OfferDetails offerDetails)
         {
+            #if RELEASE
             lock (padlock)
             {
                 IndexResponse status = client.Index(offerDetails, i => i.Index("offer_details"));
             }
+            #endif
         }
 
         public bool OfferDetailsExists(int offerId)

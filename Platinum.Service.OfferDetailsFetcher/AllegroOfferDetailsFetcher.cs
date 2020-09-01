@@ -30,30 +30,41 @@ namespace Platinum.Service.OfferDetailsFetcher
         {
             Console.WriteLine($"Application started and tak count {CountOfParallelTasks}");
             _logger.Info($"Application started and task count {CountOfParallelTasks}");
-            List<Offer> lastNotProcessedOffers = GetLastNotProcessedOffers(dal, CountOfParallelTasks).ToList();
+            List<Offer> lastNotProcessedOffers = GetLastNotProcessedOffers(dal, CountOfParallelTasks * 20).ToList();
             _logger.Info($"Fetched: " + lastNotProcessedOffers.Count + " offers");
             AllegroOfferDetailsParser tempParser =
                 new AllegroOfferDetailsParser();
             tempParser.InitBrowser();
-
-            Task[] tasks = new Task[lastNotProcessedOffers.Count()];
-            for (int i = 0; i < lastNotProcessedOffers.Count(); i++)
+            int taskLimit = -1;
+            using (SemaphoreSlim concurrencySemaphore = new SemaphoreSlim(taskLimit))
             {
-                int i1 = i;
-                tasks[i] = new Task(() =>
+                List<Task> tasks = new List<Task>();
+                foreach (var offer in lastNotProcessedOffers)
                 {
-                    using (Dal db = new Dal())
-                    {
-                        Task t = CreateTaskForProcessOrder(db, lastNotProcessedOffers.ElementAt(i1),
-                            new AllegroOfferDetailsParser());
-                        t.RunSynchronously();
-                    }
-                });
-                tasks[i].Start();
-                Thread.Sleep(2000);
-            }
+                    concurrencySemaphore.Wait();
 
-            Task.WaitAll(tasks);
+                    var t = Task.Factory.StartNew(() =>
+                    {
+                        try
+                        {
+                            using (Dal db = new Dal())
+                            {
+                                Task tx = CreateTaskForProcessOrder(db, lastNotProcessedOffers.ElementAt(++taskLimit),
+                                    new AllegroOfferDetailsParser());
+                                tx.RunSynchronously();
+                            }
+                        }
+                        finally
+                        {
+                            concurrencySemaphore.Release();
+                        }
+                    });
+
+                    tasks.Add(t);
+                }
+
+                Task.WaitAll(tasks.ToArray());
+            }
         }
 
         public IEnumerable<Offer> GetLastNotProcessedOffers(IDal dal, int count)
@@ -112,7 +123,8 @@ namespace Platinum.Service.OfferDetailsFetcher
         {
             return new Task(() =>
             {
-                try 
+                System.Diagnostics.Debug.WriteLine("start");
+                try
                 {
                     OfferDetails details = parser.GetPageDetails(offer.Uri, offer);
                     BufforController.Instance.InsertOfferDetails(details);
@@ -122,6 +134,8 @@ namespace Platinum.Service.OfferDetailsFetcher
                     _logger.Info(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
                     SetOfferAsInActive(dal, offer);
                     _logger.Info(offer.Uri + ": fail - " + ex.Message + ex.StackTrace);
+                    System.Diagnostics.Debug.WriteLine("end");
+
                     return;
                 }
                 catch (Exception ex)
@@ -129,6 +143,8 @@ namespace Platinum.Service.OfferDetailsFetcher
                     _logger.Info(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
                     SetOfferAsInActive(dal, offer);
                     _logger.Info(offer.Uri + ": fail - " + ex.Message + ex.StackTrace);
+                    System.Diagnostics.Debug.WriteLine("end");
+
                     return;
                 }
 
@@ -149,6 +165,8 @@ namespace Platinum.Service.OfferDetailsFetcher
                     SetOfferAsInActive(dal, offer);
                     _logger.Info(offer.Uri + ": fail - " + ex.Message + ex.StackTrace);
                 }
+                System.Diagnostics.Debug.WriteLine("end");
+
             });
         }
     }
