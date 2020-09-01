@@ -23,7 +23,7 @@ namespace Platinum.Service.OfferDetailsFetcher
         {
             if (Program.AppArgs.Count() < 1)
             {
-                Console.WriteLine("Error, application MUST contain 1 arguments - tasks count, default 10 set");
+                Console.WriteLine("Error, application MUST contain 1 arguments - tasks count, default 1 set");
                 Program.AppArgs = new[] {"1"};
             }
             while (!stoppingToken.IsCancellationRequested)
