@@ -119,7 +119,13 @@ namespace Platinum.Core.OfferDetailsParser
                 document.DocumentNode.SelectNodes("//*[@data-prototype-id=\"allegro.showoffer.description\"]");
 
             if (descriptionContainer.Count >= 1)
-                return descriptionContainer.First().InnerText;
+            {
+                string parsedDescription = descriptionContainer.First().InnerText
+                    .Replace("&nbsp;", " ")
+                    .Replace("\\n", " ")
+                    .Replace("\\t", " ");
+                return System.Text.RegularExpressions.Regex.Replace(parsedDescription, @"\s+", " ");
+            }
             else return String.Empty;
         }
 

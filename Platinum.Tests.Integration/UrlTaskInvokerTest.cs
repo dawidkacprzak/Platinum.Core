@@ -95,14 +95,5 @@ namespace Platinum.Tests.Integration
                 Assert.DoesNotThrow(() => invoker.GetOldestTask(db));
             }
         }
-
-        [Test]
-        public void test()
-        {
-            AllegroOfferDetailsParser parser = new AllegroOfferDetailsParser();
-            parser.GetPageDetails(
-                "https://allegro.pl/oferta/4x-dunlop-sport-bluresponse-205-55r16-91v-8920620839",
-                new Offer());
-        }
     }
 }
