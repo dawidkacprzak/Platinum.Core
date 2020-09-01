@@ -35,12 +35,12 @@ namespace Platinum.Service.OfferDetailsFetcher
             AllegroOfferDetailsParser tempParser =
                 new AllegroOfferDetailsParser();
             tempParser.InitBrowser();
-            int taskLimit = -1;
             using (SemaphoreSlim concurrencySemaphore = new SemaphoreSlim(CountOfParallelTasks))
             {
                 List<Task> tasks = new List<Task>();
                 foreach (var offer in lastNotProcessedOffers)
                 {
+                    _logger.Info("last not processed offers: " + lastNotProcessedOffers.Count);
                     concurrencySemaphore.Wait();
 
                     var t = Task.Factory.StartNew(() =>
@@ -49,7 +49,7 @@ namespace Platinum.Service.OfferDetailsFetcher
                         {
                             using (Dal db = new Dal())
                             {
-                                Task tx = CreateTaskForProcessOrder(db, lastNotProcessedOffers.ElementAt(++taskLimit),
+                                Task tx = CreateTaskForProcessOrder(db, offer,
                                     new AllegroOfferDetailsParser());
                                 tx.RunSynchronously();
                             }
