@@ -36,7 +36,7 @@ namespace Platinum.Service.OfferDetailsFetcher
                 new AllegroOfferDetailsParser();
             tempParser.InitBrowser();
             int taskLimit = -1;
-            using (SemaphoreSlim concurrencySemaphore = new SemaphoreSlim(taskLimit))
+            using (SemaphoreSlim concurrencySemaphore = new SemaphoreSlim(CountOfParallelTasks))
             {
                 List<Task> tasks = new List<Task>();
                 foreach (var offer in lastNotProcessedOffers)
