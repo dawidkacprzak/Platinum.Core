@@ -11,11 +11,11 @@ namespace Platinum.Tests.Unit
         public void ValidatePaginationContainerTestEmptyCollection()
         {
             HtmlNodeCollection collection = new HtmlNodeCollection(null);
-            object obj = typeof(AllegroOfferListController).GetMethod(
+            object obj = typeof(BrowserAllegroOfferListController).GetMethod(
                     "ValidatePaginationContainer",
                     BindingFlags.NonPublic | BindingFlags.Instance)
                 ?.Invoke(
-                    new AllegroOfferListController()
+                    new BrowserAllegroOfferListController()
                     , new object[]{collection});
              
             Assert.NotNull(obj);
@@ -30,11 +30,11 @@ namespace Platinum.Tests.Unit
         [Test]
         public void ValidatePaginationContainerTestNullCollection()
         {
-            object obj = typeof(AllegroOfferListController).GetMethod(
+            object obj = typeof(BrowserAllegroOfferListController).GetMethod(
                     "ValidatePaginationContainer",
                     BindingFlags.NonPublic | BindingFlags.Instance)
                 ?.Invoke(
-                    new AllegroOfferListController()
+                    new BrowserAllegroOfferListController()
                     , new object[]{null});
              
             Assert.NotNull(obj);
@@ -49,11 +49,11 @@ namespace Platinum.Tests.Unit
         public void ValidatePaginationContainerTestNotEmptyCollection()
         {
             HtmlNodeCollection collection = new HtmlNodeCollection(null) {HtmlNode.CreateNode("<h1>")};
-            object obj = typeof(AllegroOfferListController).GetMethod(
+            object obj = typeof(BrowserAllegroOfferListController).GetMethod(
                     "ValidatePaginationContainer",
                     BindingFlags.NonPublic | BindingFlags.Instance)
                 ?.Invoke(
-                    new AllegroOfferListController()
+                    new BrowserAllegroOfferListController()
                     , new object[]{collection});
              
             Assert.NotNull(obj);

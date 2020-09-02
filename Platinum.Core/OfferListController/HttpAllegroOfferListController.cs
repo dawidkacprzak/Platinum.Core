@@ -1,42 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using HtmlAgilityPack;
 using NLog;
-using NLog.Fluent;
 using Platinum.Core.ApiIntegration;
 using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.ElasticIntegration;
 using Platinum.Core.Model;
 using Platinum.Core.Types;
 using Platinum.Core.Types.Exceptions;
+using RestSharp;
 
 namespace Platinum.Core.OfferListController
 {
-    public class AllegroOfferListController : SharpBrowserClient, IBaseOfferListController
+    public class HttpAllegroOfferListController: HttpClientInstance, IBaseOfferListController
     {
-        private const string baseUrl = "https://allegro.pl";
+         private const string baseUrl = "https://allegro.pl";
         private string pageId;
         private OfferCategory initiedOfferCategory;
         private string urlArgs = "";
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
         private int lastPageNumber = 0;
 
-        public AllegroOfferListController() : base()
-        {
-        }
-
-        [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
-        public AllegroOfferListController(string host) : base()
+        public HttpAllegroOfferListController() : base()
         {
             lastPageNumber = 0;
             urlArgs = "";
             initiedOfferCategory = null;
-            pageId = string.Empty;
         }
+
 
         public void StartFetching(bool fetchJustFirstPage, OfferCategory category,
             List<WebsiteCategoriesFilterSearch> urlArguments = null)
@@ -45,8 +39,7 @@ namespace Platinum.Core.OfferListController
             initiedOfferCategory = category;
             if (urlArguments != null && urlArguments.Any(x => x.WebsiteCategoryId != category.CategoryId))
                 throw new OfferListControllerException("Url argument do not fit to page", this);
-
-            pageId = CreatePage();
+            
             if (urlArguments != null && urlArguments.Count > 0)
             {
                 int index = 0;
@@ -72,14 +65,14 @@ namespace Platinum.Core.OfferListController
         {
             if (fetchJustFirstPage)
             {
-                Open(pageId, baseUrl + "/" + initiedOfferCategory.CategoryUrl + urlArgs);
+                OpenUrl(baseUrl + "/" + initiedOfferCategory.CategoryUrl + urlArgs);
                 IEnumerable<string> offerLinks = GetAllOfferLinks();
                 UpdateDatabaseWithOffers(offerLinks);
             }
             else
             {
                 logger.Info("Append to open page :" +baseUrl + "/" + initiedOfferCategory.CategoryUrl + urlArgs);
-                Open(pageId, baseUrl + "/" + initiedOfferCategory.CategoryUrl + urlArgs);
+                OpenUrl(baseUrl + "/" + initiedOfferCategory.CategoryUrl + urlArgs);
                 IEnumerable<string> offerLinks = GetAllOfferLinks();
                 UpdateDatabaseWithOffers(offerLinks);
 
@@ -119,13 +112,12 @@ namespace Platinum.Core.OfferListController
                 if (urlArgs.Length > 1)
                 {
                     lastPageNumber = currentPage;
-                    Open(pageId,
-                        baseUrl + "/" + initiedOfferCategory.CategoryUrl + urlArgs + "&p=" + (currentPage + 1));
+                    OpenUrl(baseUrl + "/" + initiedOfferCategory.CategoryUrl + urlArgs + "&p=" + (currentPage + 1));
                 }
                 else
                 {
                     lastPageNumber = currentPage;
-                    Open(pageId, baseUrl + "/" + initiedOfferCategory.CategoryUrl + "?p=" + (currentPage + 1));
+                    OpenUrl(baseUrl + "/" + initiedOfferCategory.CategoryUrl + "?p=" + (currentPage + 1));
                 }
 
                 if (lastPage == currentPage + 1)
@@ -141,7 +133,7 @@ namespace Platinum.Core.OfferListController
 
         public IEnumerable<string> GetAllOfferLinks()
         {
-            string pageSource = CurrentSiteSource(pageId);
+            string pageSource = LastResponse; 
             HtmlDocument document = new HtmlDocument();
             document.LoadHtml(pageSource);
 
@@ -176,17 +168,16 @@ namespace Platinum.Core.OfferListController
             using (Dal db = new Dal(false))
 #endif
             {
+                System.Diagnostics.Debug.WriteLine("Updating database");
                 logger.Info("Updating database buffor with offers");
                 string query = $@"INSERT INTO [dbo].offersBuffor VALUES ";
                 List<string> enumerable = offers.ToList();
                 List<string> uniqueOffers = new List<string>();
                 for (int i = 0; i < enumerable.Count; i++)
                 {
-                    logger.Info("Check offer exists in buffor: " + enumerable.ElementAt(i));
                     bool offerBuffored = BufforController.Instance.OfferExistsInBuffor(enumerable.ElementAt(i));
                     if (!offerBuffored)
                     {
-                        logger.Info("not exists insert");
                         BufforController.Instance.InsertOffer(enumerable.ElementAt(i));
                         uniqueOffers.Add(enumerable.ElementAt(i));
                     }
@@ -208,9 +199,8 @@ namespace Platinum.Core.OfferListController
                         )");
                     }
                 }
-                logger.Info("Executing buffer update query");
                 db.ExecuteNonQuery(query + string.Join(",",queryValues));
-                logger.Info("Buffer update query finished");
+                logger.Info($"Buffer updated for {uniqueOffers.Count()} offers");
             }
         }
 
@@ -220,7 +210,7 @@ namespace Platinum.Core.OfferListController
             int validationCounter = 0;
             do
             {
-                string pageSource = CurrentSiteSource(pageId);
+                string pageSource = LastResponse;
                 HtmlDocument document = new HtmlDocument();
                 document.LoadHtml(pageSource);
                 paginationContainer =
@@ -229,8 +219,7 @@ namespace Platinum.Core.OfferListController
                 if (validationCounter > 1)
                 {
                     Thread.Sleep(2500);
-                    RefreshPage(pageId);
-                    Thread.Sleep(2500);
+                    OpenUrl(LastRequestedUrl);
                 }
 
                 if (validationCounter == 10)
@@ -255,17 +244,16 @@ namespace Platinum.Core.OfferListController
             do
 
             {
-                string pageSource = CurrentSiteSource(pageId);
+               
                 HtmlDocument document = new HtmlDocument();
-                document.LoadHtml(pageSource);
+                document.LoadHtml(LastResponse);
                 paginationContainer =
                     document.DocumentNode.SelectNodes("//*[@aria-label=\"paginacja\"]");
                 validationCounter++;
                 if (validationCounter > 1)
                 {
                     Thread.Sleep(2500);
-                    RefreshPage(pageId);
-                    Thread.Sleep(2500);
+                    OpenUrl(LastRequestedUrl);
                 }
 
                 if (validationCounter == 10)
@@ -287,9 +275,12 @@ namespace Platinum.Core.OfferListController
             return int.Parse(maxPage.Value);
         }
 
+        public void DeInit()
+        {
+        }
+
         public void Dispose()
         {
-            ClosePage(pageId);
         }
 
         private bool ValidatePaginationContainer(HtmlNodeCollection collection)

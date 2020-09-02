@@ -18,9 +18,9 @@ namespace Platinum.Tests.Unit
         [Test]
         public void CheckOfferListControllerExceptionType()
         {
-            OfferListControllerException ex = new OfferListControllerException("Example message", new AllegroOfferListController());
+            OfferListControllerException ex = new OfferListControllerException("Example message", new BrowserAllegroOfferListController());
             Assert.IsInstanceOf<Exception>(ex);
-            Assert.IsInstanceOf<AllegroOfferListController>(ex.InvalidController);
+            Assert.IsInstanceOf<BrowserAllegroOfferListController>(ex.InvalidController);
         }
         
         [Test]

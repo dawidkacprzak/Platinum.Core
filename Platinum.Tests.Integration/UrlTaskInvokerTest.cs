@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
@@ -51,24 +52,7 @@ namespace Platinum.Tests.Integration
             Assert.DoesNotThrow(() => invoker.PopTaskFromQueue(dbMock.Object, 6));
             dbMock.Verify(x => x.RollbackTransaction(), Times.Once);
         }
-
-        [Test]
-        public void GetUrlFetchingTasksWithZeroTasks()
-        {
-            AllegroTaskInvoker invoker = new AllegroTaskInvoker();
-            Task[] tasks = invoker.GetUrlFetchingTasks(0);
-
-            Assert.IsTrue(tasks.Length == 0);
-        }
-
-        [Test]
-        public void GetUrlFetchingTasksWithZeroTasksReturnsSameTasksAsCount()
-        {
-            AllegroTaskInvoker invoker = new AllegroTaskInvoker();
-            Task[] tasks = invoker.GetUrlFetchingTasks(3);
-
-            Assert.IsTrue(tasks.Length == 3);
-        }
+        
 
         [Test]
         public void GetOldestTaskReaderHasNoRows()
@@ -95,5 +79,6 @@ namespace Platinum.Tests.Integration
                 Assert.DoesNotThrow(() => invoker.GetOldestTask(db));
             }
         }
+
     }
 }

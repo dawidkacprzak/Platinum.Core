@@ -24,8 +24,9 @@ namespace Platinum.Service.UrlTaskInvoker
         private static readonly object getTaskLock = new object();
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
         public static int MAX_TASKS_PER_RUN = 55;
-        public static int MAX_CONCURRENT_TASKS = 3;
+        public static int MAX_CONCURRENT_TASKS = 5;
         public static int CURRENT_TASK_COUNT = 0;
+
         public AllegroTaskInvoker()
         {
             try
@@ -36,6 +37,7 @@ namespace Platinum.Service.UrlTaskInvoker
             {
                 MAX_CONCURRENT_TASKS = 3;
             }
+
             logger.Info("Number of max tasks: " + MAX_CONCURRENT_TASKS);
             lock (getTaskLock)
             {
@@ -52,23 +54,34 @@ namespace Platinum.Service.UrlTaskInvoker
                 CURRENT_TASK_COUNT = 0;
                 logger.Info("Service iteration started");
 
-
-                Task[] tasks = GetUrlFetchingTasks(MAX_TASKS_PER_RUN);
-                for (int i = 0; i < MAX_CONCURRENT_TASKS; i++)
+                using (SemaphoreSlim concurrencySemaphore = new SemaphoreSlim(MAX_CONCURRENT_TASKS))
                 {
-                    if (i <= tasks.Length)
+                    List<Task> tasks = new List<Task>();
+                    for (int i = 0; i <= MAX_TASKS_PER_RUN; i++)
                     {
-                        logger.Info("Task " + i + " status: " + tasks[i].Status);
-                        tasks[i].Start();
-                        Thread.Sleep(5000);
+                        concurrencySemaphore.Wait();
+                        Thread.Sleep(2500);
+                        var t = Task.Factory.StartNew(() =>
+                        {
+                            try
+                            {
+                                InvokeTask();
+                            }
+                            finally
+                            {
+                                concurrencySemaphore.Release();
+                            }
+                        });
+
+                        tasks.Add(t);
                     }
+
+                    Task.WaitAll(tasks.ToArray());
                 }
 
                 logger.Info("Waiting for task end");
+                ;
 
-                Task.WaitAll(tasks);
-
-                logger.Info("Created " + tasks.Length + " tasks");
 
                 logger.Info("Next iteration...");
             }
@@ -81,7 +94,7 @@ namespace Platinum.Service.UrlTaskInvoker
         [ExcludeFromCodeCoverage]
         public void InvokeTaskTest(string host)
         {
-            using (IBaseOfferListController ctrl = new AllegroOfferListController(host))
+            using (IBaseOfferListController ctrl = new HttpAllegroOfferListController())
             {
                 while (CURRENT_TASK_COUNT <= MAX_TASKS_PER_RUN)
                 {
@@ -120,66 +133,47 @@ namespace Platinum.Service.UrlTaskInvoker
         }
 
         [ExcludeFromCodeCoverage]
-        public Task InvokeTask()
+        public void InvokeTask()
         {
-            logger.Info("Invoke task - invoke");
-            return new Task(() =>
+            logger.Info("Invoke task - loop started");
+
+            KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>> task;
+
+            using (IDal db = new Dal())
             {
-                while (CURRENT_TASK_COUNT <= MAX_TASKS_PER_RUN)
-                {
-                    logger.Info("Invoke task - loop started");
+                logger.Info("Invoke task - attempt to get task");
 
-                    KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>> task;
-
-                    using (IDal db = new Dal())
-                    {
-                        logger.Info("Invoke task - attempt to get task");
-
-                        task = GetOldestTask(db);
-                        
-                    }
-
-                    logger.Info("Fetched oldest task " + task.Key.Value);
-
-                    try
-                    {
-                        using (AllegroOfferListController ctrl = new AllegroOfferListController())
-                        {
-                            logger.Info("Started task #" + task.Key.Value);
-                            ctrl.StartFetching(false, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
-                                task.Value.ToList());
-                            using (IDal db = new Dal())
-                            {
-                                PopTaskFromQueue(db, task.Key.Value);
-                            }
-                        }
-
-                        logger.Info("Finished task #" + task.Key.Value);
-                    }
-                    catch (Exception ex)
-                    {
-                        logger.Info(ex);
-                        logger.Info("Timeout task #" + task.Key.Value + " - BREAK");
-                    }
-                    finally
-                    {
-                        CURRENT_TASK_COUNT++;
-                    }
-                }
-            });
-        }
-
-        public Task[] GetUrlFetchingTasks(int maxTaskCount)
-        {
-            Task[] tasks = new Task[maxTaskCount];
-            for (int i = 0; i < tasks.Length; i++)
-            {
-                tasks[i] = InvokeTask();
+                task = GetOldestTask(db);
             }
 
-            return tasks;
-        }
+            logger.Info("Fetched oldest task " + task.Key.Value);
 
+            try
+            {
+                using (HttpAllegroOfferListController ctrl = new HttpAllegroOfferListController())
+                {
+                    logger.Info("Started task #" + task.Key.Value);
+                    ctrl.StartFetching(false, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
+                        task.Value.ToList());
+                    using (IDal db = new Dal())
+                    {
+                        PopTaskFromQueue(db, task.Key.Value);
+                    }
+                }
+
+                logger.Info("Finished task #" + task.Key.Value);
+            }
+            catch (Exception ex)
+            {
+                logger.Info(ex);
+                logger.Info("Timeout task #" + task.Key.Value + " - BREAK");
+            }
+            finally
+            {
+                CURRENT_TASK_COUNT++;
+            }
+        }
+        
         public void PopTaskFromQueue(IDal db, int taskId)
         {
             lock (getTaskLock)
@@ -235,7 +229,6 @@ namespace Platinum.Service.UrlTaskInvoker
                     db.ExecuteReader(taskQuery)
                 )
                 {
-
                     if (!taskReader.HasRows)
                     {
                         logger.Info("no rows");
@@ -250,7 +243,7 @@ namespace Platinum.Service.UrlTaskInvoker
                         updatedTaskId = taskReader.GetInt32(0);
                     }
                 }
-                
+
                 using (DbDataReader reader =
                     db.ExecuteReader($"SELECT * FROM allegroUrlFetchTask WITH (NOLOCK) WHERE ID = {updatedTaskId}"))
                 {
@@ -265,7 +258,7 @@ namespace Platinum.Service.UrlTaskInvoker
                         throw new TaskInvokerException("Cannot get olders task. Not found any.");
                     }
                 }
-                
+
                 using (DbDataReader filterReader = db.ExecuteReader(
                     $@"select * from allegroUrlFetchTaskParameter with(nolock)
                                                                              WHERE AllegroUrlFetchTaskId = {taskId}"))

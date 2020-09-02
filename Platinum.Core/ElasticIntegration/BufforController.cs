@@ -42,7 +42,9 @@ namespace Platinum.Core.ElasticIntegration
 
         public void InsertOffer(string offer)
         {
+            #if RELEASE
             var response = client.Index(new ELBufforedOffers(offer), i => i.Index("buffered_offers"));
+            #endif
         }
 
         public void InsertOfferDetails(OfferDetails offerDetails)
@@ -74,7 +76,7 @@ namespace Platinum.Core.ElasticIntegration
 
         public bool OfferExistsInBuffor(string uri)
         {
-            
+            #if RELEASE
             var searchResponse = client.Search<ELBufforedOffers>(s => s.Index("buffered_offers")
                 .From(0)
                 .Size(10)
@@ -87,6 +89,8 @@ namespace Platinum.Core.ElasticIntegration
                 )
             );
             return searchResponse.Documents.Count > 0;
+            #endif
+            return false;
         }
     }
 }

@@ -11,7 +11,7 @@ using Platinum.Core.Types.Exceptions;
 namespace Platinum.Tests.Integration
 {
     [TestFixture]
-    public class AllegroOfferListControllerTest
+    public class HttpAllegroOfferListControllerTest
     {
         private IBaseOfferListController controller;
         private int mainCategory = 1;
@@ -25,7 +25,7 @@ namespace Platinum.Tests.Integration
         [SetUp]
         public void SetController()
         {
-            controller = new BrowserAllegroOfferListController();
+            controller = new HttpAllegroOfferListController();
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void OpenNextPageWithoutStartFetching()
         {
-            using IBaseOfferListController allegroOfferListController = new BrowserAllegroOfferListController();
+            using IBaseOfferListController allegroOfferListController = new HttpAllegroOfferListController();
             OfferListControllerException ex =
                 Assert.Throws<OfferListControllerException>(() => allegroOfferListController.OpenNextPage());
             Assert.That(ex, Is.Not.Null);
@@ -76,7 +76,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void FetchFailAllegroLink()
         {
-            using IBaseOfferListController ctr = new BrowserAllegroOfferListController();
+            using IBaseOfferListController ctr = new HttpAllegroOfferListController();
             OfferListControllerException ex = Assert.Throws<OfferListControllerException>(
                 () => ctr.StartFetching(false, new OfferCategory(EOfferWebsite.Allegro, "testfaillink")));
 
@@ -88,7 +88,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void IndexPageFailAllegroLink()
         {
-            using IBaseOfferListController ctr = new BrowserAllegroOfferListController();
+            using IBaseOfferListController ctr = new HttpAllegroOfferListController();
 
             OfferListControllerException e =
                 Assert.Throws<OfferListControllerException>(
@@ -104,7 +104,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void IndexPageFailAllegroLinkNoCategoryWithPagination()
         {
-            using IBaseOfferListController ctr = new BrowserAllegroOfferListController();
+            using IBaseOfferListController ctr = new HttpAllegroOfferListController();
             Assert.Throws<OfferListControllerException>(
                 () => ctr.StartFetching(false,
                     new OfferCategory(EOfferWebsite.Allegro, "uzytkownik/KOLEKCJONER-PL--/oceny")));
@@ -118,7 +118,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void IndexPageFailAllegroLinkNoCategoryWithPaginationLastIndex()
         {
-            using IBaseOfferListController ctr = new BrowserAllegroOfferListController();
+            using IBaseOfferListController ctr = new HttpAllegroOfferListController();
             Assert.Throws<OfferListControllerException>(
                 () => ctr.StartFetching(false,
                     new OfferCategory(EOfferWebsite.Allegro, "uzytkownik/KOLEKCJONER-PL--/oceny")));
@@ -183,7 +183,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void FetchAllPages()
         {
-            using IBaseOfferListController ctr = new BrowserAllegroOfferListController();
+            using IBaseOfferListController ctr = new HttpAllegroOfferListController();
             ctr.StartFetching(false,
                 new OfferCategory(EOfferWebsite.Allegro,
                     1));
@@ -192,7 +192,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void FetchAllPagesWithFilter()
         {
-            using IBaseOfferListController ctr = new BrowserAllegroOfferListController();
+            using IBaseOfferListController ctr = new HttpAllegroOfferListController();
             ctr.StartFetching(false,
                 new OfferCategory(EOfferWebsite.Allegro,
                     1),new List<WebsiteCategoriesFilterSearch>()
@@ -218,7 +218,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void FetchAllPagesWithWrongFilter()
         {
-            using IBaseOfferListController ctr = new BrowserAllegroOfferListController();
+            using IBaseOfferListController ctr = new HttpAllegroOfferListController();
             OfferListControllerException ex =Assert.Throws<OfferListControllerException>(() => ctr.StartFetching(false,
                 new OfferCategory(EOfferWebsite.Allegro,
                     1), new List<WebsiteCategoriesFilterSearch>()
