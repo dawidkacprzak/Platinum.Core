@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading;
+using NLog;
 using Platinum.Core.Types.Exceptions;
 
 namespace Platinum.Core.ApiIntegration
@@ -13,6 +14,8 @@ namespace Platinum.Core.ApiIntegration
         public string LastRequestedUrl { get; set; }
         public Exception LastException;
         private int retry = 0;
+        readonly private Logger logger = LogManager.GetCurrentClassLogger();
+
         public HttpClientInstance()
         {
             client = new HttpClient();
@@ -23,12 +26,12 @@ namespace Platinum.Core.ApiIntegration
             {
                 throw new RequestException("Cannot open website with empty url");
             }
+            logger.Info($"Request to: {url}");
             string response = string.Empty;
             try
             {
                 response = client.GetStringAsync(url).GetAwaiter().GetResult();
                 retry = 0;
-                System.Diagnostics.Debug.WriteLine("Req success");
                 LastResponse = response;
                 LastRequestedUrl = url;
             }
@@ -39,7 +42,7 @@ namespace Platinum.Core.ApiIntegration
                 LastException = ex;
                 LastResponse = string.Empty;
                 LastRequestedUrl = url;
-                System.Diagnostics.Debug.WriteLine("Req fail");
+                logger.Info($"Request to: {url} failed");
 
                 throw;
             }
@@ -48,7 +51,7 @@ namespace Platinum.Core.ApiIntegration
                 LastException = ex;
                 LastResponse = string.Empty;
                 LastRequestedUrl = url;
-                System.Diagnostics.Debug.WriteLine("Req fail");
+                logger.Info($"Request to: {url} failed");
 
                 throw;
             }

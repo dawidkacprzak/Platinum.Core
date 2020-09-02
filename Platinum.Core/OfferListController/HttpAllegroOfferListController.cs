@@ -175,11 +175,17 @@ namespace Platinum.Core.OfferListController
                 List<string> uniqueOffers = new List<string>();
                 for (int i = 0; i < enumerable.Count; i++)
                 {
+                    logger.Info("Check offer exist in buffor");
                     bool offerBuffored = BufforController.Instance.OfferExistsInBuffor(enumerable.ElementAt(i));
                     if (!offerBuffored)
                     {
+                        logger.Info("Offer not exist in buffor - insert");
                         BufforController.Instance.InsertOffer(enumerable.ElementAt(i));
                         uniqueOffers.Add(enumerable.ElementAt(i));
+                    }
+                    else
+                    {
+                        logger.Info("Offer exist in buffor - skip");
                     }
                 }
                 int offerCount = uniqueOffers.Count();
@@ -199,6 +205,7 @@ namespace Platinum.Core.OfferListController
                         )");
                     }
                 }
+                logger.Info($"Execute insert to buffor for {uniqueOffers} offers");
                 db.ExecuteNonQuery(query + string.Join(",",queryValues));
                 logger.Info($"Buffer updated for {uniqueOffers.Count()} offers");
             }
