@@ -32,9 +32,8 @@ namespace Platinum.Service.OfferDetailsFetcher
             _logger.Info($"Application started and task count {CountOfParallelTasks}");
             List<Offer> lastNotProcessedOffers = GetLastNotProcessedOffers(dal, CountOfParallelTasks * 20).ToList();
             _logger.Info($"Fetched: " + lastNotProcessedOffers.Count + " offers");
-            AllegroOfferDetailsParser tempParser =
-                new AllegroOfferDetailsParser();
-            tempParser.InitBrowser();
+            HttpAllegroOfferDetailsParser tempParser =
+                new HttpAllegroOfferDetailsParser();
             using (SemaphoreSlim concurrencySemaphore = new SemaphoreSlim(CountOfParallelTasks))
             {
                 List<Task> tasks = new List<Task>();
@@ -50,7 +49,7 @@ namespace Platinum.Service.OfferDetailsFetcher
                             using (Dal db = new Dal())
                             {
                                 Task tx = CreateTaskForProcessOrder(db, offer,
-                                    new AllegroOfferDetailsParser());
+                                    new HttpAllegroOfferDetailsParser());
                                 tx.RunSynchronously();
                             }
                         }
@@ -127,7 +126,7 @@ namespace Platinum.Service.OfferDetailsFetcher
                 try
                 {
                     OfferDetails details = parser.GetPageDetails(offer.Uri, offer);
-                    BufforController.Instance.InsertOfferDetails(details);
+                   // BufforController.Instance.InsertOfferDetails(details);
                 }
                 catch (OfferDetailsFailException ex)
                 {
@@ -150,6 +149,7 @@ namespace Platinum.Service.OfferDetailsFetcher
 
                 try
                 {
+                    System.Diagnostics.Debug.WriteLine("PROCESSED");
                     SetOfferAsProcessed(dal, offer);
                     _logger.Info(offer.Uri + ": processed");
                 }

@@ -59,7 +59,7 @@ namespace Platinum.Core.ApiIntegration
 
         public string GetTitleFromLastWebsite()
         {
-            if (LastException != null)
+            if (LastException == null)
             {
                  return Regex.Match(LastResponse, @"\<title\b[^>]*\>\s*(?<Title>[\s\S]*?)\</title\>",
                     RegexOptions.IgnoreCase).Groups["Title"].Value;
