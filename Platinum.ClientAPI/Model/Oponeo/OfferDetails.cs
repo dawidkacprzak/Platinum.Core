@@ -37,8 +37,10 @@ namespace Platinum.ClientAPI.Model.Oponeo
 
         [JsonProperty("processed")]
         public long Processed { get; set; }
-        
+        [JsonProperty("_id")]
+        public int ElasticId { get; set; }
         public double PriceForOne { get; set; }
         public int QuantityInOffer { get; set; }
+
     }
 }
