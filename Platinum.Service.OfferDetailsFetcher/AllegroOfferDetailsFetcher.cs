@@ -126,7 +126,7 @@ namespace Platinum.Service.OfferDetailsFetcher
                 try
                 {
                     OfferDetails details = parser.GetPageDetails(offer.Uri, offer);
-                   // BufforController.Instance.InsertOfferDetails(details);
+                    BufforController.Instance.InsertOfferDetails(details);
                 }
                 catch (OfferDetailsFailException ex)
                 {
