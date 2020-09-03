@@ -183,11 +183,11 @@ namespace Platinum.Core.OfferListController
                 for (int i = 0; i < enumerable.Count; i++)
                 {
                     logger.Info("Check offer exists in buffor: " + enumerable.ElementAt(i));
-                    bool offerBuffored = BufforController.Instance.OfferExistsInBuffor(enumerable.ElementAt(i));
+                    bool offerBuffored = ElasticController.Instance.OfferExistsInBuffor(enumerable.ElementAt(i));
                     if (!offerBuffored)
                     {
                         logger.Info("not exists insert");
-                        BufforController.Instance.InsertOffer(enumerable.ElementAt(i));
+                        ElasticController.Instance.InsertOffer(enumerable.ElementAt(i));
                         uniqueOffers.Add(enumerable.ElementAt(i));
                     }
                 }

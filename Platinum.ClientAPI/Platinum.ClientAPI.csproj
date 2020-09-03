@@ -8,5 +8,16 @@
       <ProjectReference Include="..\Platinum.Core\Platinum.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Model\Oponeo" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    </ItemGroup>
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
 
 </Project>

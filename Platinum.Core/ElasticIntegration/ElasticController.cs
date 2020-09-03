@@ -8,27 +8,27 @@ using Platinum.Core.Model.Elastic;
 
 namespace Platinum.Core.ElasticIntegration
 {
-    public class BufforController
+    public class ElasticController
     {
         private static ElasticClient client;
-        private static BufforController instance;
+        private static ElasticController instance;
         private static object padlock = new object();
         Logger _logger = LogManager.GetCurrentClassLogger();
 
-        public static BufforController Instance
+        public static ElasticController Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new BufforController();
+                    instance = new ElasticController();
                 }
 
                 return instance;
             }
         }
 
-        private BufforController()
+        private ElasticController()
         {
             client = new ElasticClient(new ConnectionSettings(new Uri(ElasticConfiguration.ELASTIC_HOST)));
         }

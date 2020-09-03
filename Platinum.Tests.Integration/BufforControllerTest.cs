@@ -11,7 +11,7 @@ namespace Platinum.Tests.Integration
         [Test]
         public void CheckOfferExist()
         {
-            bool exist = BufforController.Instance.OfferExistsInBuffor("https://allegro.pl/oferta/opony-18x8-8-journey-p340-9545976287");
+            bool exist = ElasticController.Instance.OfferExistsInBuffor("https://allegro.pl/oferta/opony-18x8-8-journey-p340-9545976287");
             Assert.IsTrue(exist);
         }
 
@@ -19,7 +19,7 @@ namespace Platinum.Tests.Integration
         public void InsertOffer()
         {
             Offer offer = new Offer(3,(int)EOfferWebsite.Allegro,"https://test.pl",new byte[]{0},DateTime.Now,0);
-            Assert.DoesNotThrow(()=>BufforController.Instance.InsertOffer(offer));
+            Assert.DoesNotThrow(()=>ElasticController.Instance.InsertOffer(offer));
         }
 
         [Test]
@@ -27,7 +27,7 @@ namespace Platinum.Tests.Integration
         {
             for (int i = 0; i < 50; i++)
             {
-                BufforController.Instance.OfferDetailsExists(i);
+                ElasticController.Instance.OfferDetailsExists(i);
             }
         }
     }
