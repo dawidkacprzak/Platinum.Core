@@ -39,5 +39,6 @@ namespace Platinum.ClientAPI.Model.Oponeo
         public long Processed { get; set; }
         
         public double PriceForOne { get; set; }
+        public int QuantityInOffer { get; set; }
     }
 }

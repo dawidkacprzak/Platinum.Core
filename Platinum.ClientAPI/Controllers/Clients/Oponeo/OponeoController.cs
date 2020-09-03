@@ -189,6 +189,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                     {
                         int countOfItem = int.Parse(foundCount);
                         k.Documents.ElementAt(i).PriceForOne = Math.Round(k.Documents.ElementAt(i).Price / countOfItem);
+                        k.Documents.ElementAt(i).QuantityInOffer = countOfItem;
                     }
                 }
             }
