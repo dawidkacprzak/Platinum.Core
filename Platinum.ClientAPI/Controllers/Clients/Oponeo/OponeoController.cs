@@ -165,25 +165,6 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                 titleQueries.Add(szerokoscOponyQuery);
             }
             
-            if (!string.IsNullOrEmpty(szerokoscOpony))
-            {
-                string decodedString = Uri.UnescapeDataString(szerokoscOpony);
-                QueryContainer szerokoscOponyQuery = new QueryContainer();
-                szerokoscOponyQuery = (new NestedQuery()
-                {
-                    Path = "attributes",
-                    Query = new MatchQuery()
-                    {
-                        Field = "attributes.Szerokość opony",
-                        Query = decodedString + " ",
-                    } || new MatchPhraseQuery()
-                    {
-                        Field = "attributes.Szerokość opony",
-                        Query = decodedString,
-                    }
-                });
-                titleQueries.Add(szerokoscOponyQuery);
-            }
 
             SearchRequest request = new SearchRequest<OfferDetails>("offer_details")
             {
