@@ -128,6 +128,23 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                 titleQueries.Add(profilOponyQuery);
             }
 
+            if (!string.IsNullOrEmpty(indekspredkosci))
+            {
+                string decodedString = Uri.UnescapeDataString(indekspredkosci);
+                QueryContainer indekspredkosciQuery = new QueryContainer();
+                indekspredkosciQuery = (new NestedQuery()
+                {
+                    Path = "attributes",
+                    Query = new WildcardQuery()
+                    {
+                        Field = "attributes.Indeks prędkości",
+                        Value = decodedString + "*",
+                    }
+                });
+                titleQueries.Add(indekspredkosciQuery);
+            }
+
+            
             if (!string.IsNullOrEmpty(szerokoscOpony))
             {
                 string decodedString = Uri.UnescapeDataString(szerokoscOpony);
