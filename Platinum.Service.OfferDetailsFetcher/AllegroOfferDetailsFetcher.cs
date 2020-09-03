@@ -41,7 +41,6 @@ namespace Platinum.Service.OfferDetailsFetcher
                 {
                     _logger.Info("last not processed offers: " + lastNotProcessedOffers.Count);
                     concurrencySemaphore.Wait();
-                    Thread.Sleep(2500);
                     var t = Task.Factory.StartNew(() =>
                     {
                         try
