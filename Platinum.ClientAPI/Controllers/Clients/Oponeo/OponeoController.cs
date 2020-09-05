@@ -87,28 +87,41 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
             {
                 string decodedString = Uri.UnescapeDataString(model);
                 QueryContainer modelQuery = new QueryContainer();
-                modelQuery = (new NestedQuery()
-                              {
-                                  Path = "attributes",
-                                  Query = new WildcardQuery()
+                if (decodedString.Contains(' '))
+                {
+                    modelQuery = (new NestedQuery()
+                    {
+                        Path = "attributes",
+                        Query = new MatchQuery()
+                        {
+                            Field = "attributes.Model",
+                            Query = decodedString,
+                        }
+                    });
+                }
+                else
+                {
+                    modelQuery = (new NestedQuery()
                                   {
-                                      Field = "attributes.Model",
+                                      Path = "attributes",
+                                      Query = new WildcardQuery()
+                                      {
+                                          Field = "attributes.Model",
+                                          Value = decodedString,
+                                      },
+                                  }
+                                  || new WildcardQuery()
+                                  {
+                                      Field = "tile",
                                       Value = decodedString,
-                                      Boost = 5
-                                  },
-                                  Boost = 5
-                              }
-                              || new WildcardQuery()
-                              {
-                                  Field = "tile",
-                                  Value = decodedString,
-                                  Boost = 2
-                              }
-                              || new WildcardQuery()
-                              {
-                                  Field = "tile",
-                                  Value = "*" + decodedString + "*"
-                              });
+                                  }
+                                  || new WildcardQuery()
+                                  {
+                                      Field = "tile",
+                                      Value = "*" + decodedString + "*"
+                                  });
+                }
+
                 titleQueries.Add(modelQuery);
             }
 
@@ -176,6 +189,11 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
             };
 
             var k = client.Search<OfferDetails>(request);
+            for (int x = 0; x < k.Documents.Count; x++)
+            {
+                k.Documents.ElementAt(x).Id = k.Hits.ElementAt(x).Source.Id;
+            }
+
             var json = client.RequestResponseSerializer.SerializeToString(request);
 
             for (int i = 0; i < k.Documents.Count; i++)
