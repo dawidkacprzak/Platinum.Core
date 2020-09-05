@@ -87,8 +87,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
             {
                 string decodedString = Uri.UnescapeDataString(model);
                 QueryContainer modelQuery = new QueryContainer();
-                if (decodedString.Contains(' '))
-                {
+
                     modelQuery = (new NestedQuery()
                     {
                         Path = "attributes",
@@ -98,29 +97,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                             Query = decodedString,
                         }
                     });
-                }
-                else
-                {
-                    modelQuery = (new NestedQuery()
-                                  {
-                                      Path = "attributes",
-                                      Query = new WildcardQuery()
-                                      {
-                                          Field = "attributes.Model",
-                                          Value = decodedString,
-                                      },
-                                  }
-                                  || new WildcardQuery()
-                                  {
-                                      Field = "tile",
-                                      Value = decodedString,
-                                  }
-                                  || new WildcardQuery()
-                                  {
-                                      Field = "tile",
-                                      Value = "*" + decodedString + "*"
-                                  });
-                }
+                
 
                 titleQueries.Add(modelQuery);
             }
@@ -195,7 +172,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
             }
 
             var json = client.RequestResponseSerializer.SerializeToString(request);
-
+    
             for (int i = 0; i < k.Documents.Count; i++)
             {
                 foreach (var attr in  k.Documents.ElementAt(i).Attributes.Where(x=>x.Key.ToLower().Contains("liczba opon")))
@@ -211,7 +188,24 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                     }
                 }
             }
-            return JsonConvert.SerializeObject(k.Documents);
+            List<int> idsToRemove = new List<int>();
+            foreach (var offer in k.Documents.Where(x=>x.Attributes.ContainsKey("Model")))
+            {
+                if (model != null)
+                {
+                    string decodedString = Uri.UnescapeDataString(model).ToLower();
+
+                    string attrValue = offer.Attributes["Model"].ToLower();
+                    if (!decodedString.Equals(attrValue))
+                    {
+                        idsToRemove.Add(offer.Id);
+                    }
+                }
+            }
+
+            var returnOffers = k.Documents.Where(x => !idsToRemove.Contains(x.Id)).ToList();
+            
+            return JsonConvert.SerializeObject(returnOffers);
         }
     }
 }
