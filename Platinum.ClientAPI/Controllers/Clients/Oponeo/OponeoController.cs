@@ -214,7 +214,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
             }
             else
             {
-                _logger.Info($@"Not found for: producent, {srednica}, {model}, {indekspredkosci},
+                _logger.Info($@"Not found for: {producent}, {srednica}, {model}, {indekspredkosci},
                 {szerokoscOpony}, {profilOpony}");
             }
 
