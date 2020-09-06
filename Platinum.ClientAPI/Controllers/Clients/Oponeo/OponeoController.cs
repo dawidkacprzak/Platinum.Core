@@ -7,6 +7,7 @@ using Elasticsearch.Net;
 using Microsoft.AspNetCore.Mvc;
 using Nest;
 using Newtonsoft.Json;
+using NLog;
 using Platinum.ClientAPI.Auth;
 using Platinum.Core.ElasticIntegration;
 using Platinum.Core.Model;
@@ -21,6 +22,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
     public class OponeoController : ControllerBase
     {
         ElasticClient client;
+        Logger _logger = LogManager.GetCurrentClassLogger();
 
         public OponeoController()
         {
@@ -88,16 +90,16 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                 string decodedString = Uri.UnescapeDataString(model);
                 QueryContainer modelQuery = new QueryContainer();
 
-                    modelQuery = (new NestedQuery()
+                modelQuery = (new NestedQuery()
+                {
+                    Path = "attributes",
+                    Query = new MatchQuery()
                     {
-                        Path = "attributes",
-                        Query = new MatchQuery()
-                        {
-                            Field = "attributes.Model",
-                            Query = decodedString,
-                        }
-                    });
-                
+                        Field = "attributes.Model",
+                        Query = decodedString,
+                    }
+                });
+
 
                 titleQueries.Add(modelQuery);
             }
@@ -134,7 +136,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                 titleQueries.Add(indekspredkosciQuery);
             }
 
-            
+
             if (!string.IsNullOrEmpty(szerokoscOpony))
             {
                 string decodedString = Uri.UnescapeDataString(szerokoscOpony);
@@ -154,7 +156,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                 });
                 titleQueries.Add(szerokoscOponyQuery);
             }
-            
+
 
             SearchRequest request = new SearchRequest<OfferDetails>("offer_details")
             {
@@ -172,12 +174,12 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
             }
 
             var json = client.RequestResponseSerializer.SerializeToString(request);
-    
+
             for (int i = 0; i < k.Documents.Count; i++)
             {
-                foreach (var attr in  k.Documents.ElementAt(i).Attributes.Where(x=>x.Key.ToLower().Contains("liczba opon")))
+                foreach (var attr in k.Documents.ElementAt(i).Attributes
+                    .Where(x => x.Key.ToLower().Contains("liczba opon")))
                 {
-
                     string foundCount = Regex.Match(attr.Value, @"\d+",
                         RegexOptions.IgnoreCase).Value;
                     if (int.TryParse(foundCount, out _))
@@ -188,8 +190,9 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                     }
                 }
             }
+
             List<int> idsToRemove = new List<int>();
-            foreach (var offer in k.Documents.Where(x=>x.Attributes.ContainsKey("Model")))
+            foreach (var offer in k.Documents.Where(x => x.Attributes.ContainsKey("Model")))
             {
                 if (model != null)
                 {
@@ -204,7 +207,17 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
             }
 
             var returnOffers = k.Documents.Where(x => !idsToRemove.Contains(x.Id)).ToList();
-            
+            if (returnOffers.Count > 0)
+            {
+                _logger.Info("Returned: " + returnOffers.Count + " offers. Ids: " +
+                             string.Join(',', k.Documents.Select(x => x.Id).ToList()));
+            }
+            else
+            {
+                _logger.Info($@"Not found for: producent, {srednica}, {model}, {indekspredkosci},
+                {szerokoscOpony}, {profilOpony}");
+            }
+
             return JsonConvert.SerializeObject(returnOffers);
         }
     }
