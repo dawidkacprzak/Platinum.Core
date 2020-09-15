@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Web;
 using Elasticsearch.Net;
 using Microsoft.AspNetCore.Mvc;
 using Nest;
@@ -40,7 +41,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
             List<QueryContainer> titleQueries = new List<QueryContainer>();
             if (!string.IsNullOrEmpty(producent))
             {
-                string decodedString = Uri.UnescapeDataString(producent);
+                string decodedString = HttpUtility.UrlDecode(producent);
                 QueryContainer producentQuery = new QueryContainer();
 
                 producentQuery = (new NestedQuery()
@@ -71,7 +72,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
 
             if (!string.IsNullOrEmpty(srednica))
             {
-                string decodedString = Uri.UnescapeDataString(srednica);
+                string decodedString = HttpUtility.UrlDecode(srednica);
                 QueryContainer srednicaQuery = new QueryContainer();
                 srednicaQuery = (new NestedQuery()
                 {
@@ -87,7 +88,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
 
             if (!string.IsNullOrEmpty(model))
             {
-                string decodedString = Uri.UnescapeDataString(model);
+                string decodedString = HttpUtility.UrlDecode(model);
                 QueryContainer modelQuery = new QueryContainer();
 
                 modelQuery = (new NestedQuery()
@@ -106,7 +107,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
 
             if (!string.IsNullOrEmpty(profilOpony))
             {
-                string decodedString = Uri.UnescapeDataString(profilOpony);
+                string decodedString = HttpUtility.UrlDecode(profilOpony);
                 QueryContainer profilOponyQuery = new QueryContainer();
                 profilOponyQuery = (new NestedQuery()
                 {
@@ -122,7 +123,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
 
             if (!string.IsNullOrEmpty(indekspredkosci))
             {
-                string decodedString = Uri.UnescapeDataString(indekspredkosci);
+                string decodedString = HttpUtility.UrlDecode(indekspredkosci);
                 QueryContainer indekspredkosciQuery = new QueryContainer();
                 indekspredkosciQuery = (new NestedQuery()
                 {
@@ -139,7 +140,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
 
             if (!string.IsNullOrEmpty(szerokoscOpony))
             {
-                string decodedString = Uri.UnescapeDataString(szerokoscOpony);
+                string decodedString = HttpUtility.UrlDecode(szerokoscOpony);
                 QueryContainer szerokoscOponyQuery = new QueryContainer();
                 szerokoscOponyQuery = (new NestedQuery()
                 {
@@ -196,7 +197,7 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
             {
                 if (model != null)
                 {
-                    string decodedString = Uri.UnescapeDataString(model).ToLower();
+                    string decodedString = HttpUtility.UrlDecode(model).ToLower();
 
                     string attrValue = offer.Attributes["Model"].ToLower();
                     if (!decodedString.Equals(attrValue))
