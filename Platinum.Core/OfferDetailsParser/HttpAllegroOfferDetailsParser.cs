@@ -40,7 +40,8 @@ namespace Platinum.Core.OfferDetailsParser
                 HtmlDocument document = new HtmlDocument();
                 document.LoadHtml(content);
                 offerArguments = GetAttributes(document);
-                description = GetOfferDescription(document);
+                //description = GetOfferDescription(document);
+                description = ""; //removed cuz of waste of memory
                 title = HttpUtility.HtmlDecode(GetOfferTitle(document));
                 decimal price = GetPrice(document);
                 if (string.IsNullOrEmpty(title))
