@@ -34,9 +34,9 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
         /// Zwraca oferty pasujące do parametrów
         /// </summary>
         /// <returns></returns>
-        [HttpGet("{producent}/{srednica}/{model}/{indekspredkosci}/{szerokoscOpony}/{profilOpony}")]
+        [HttpGet("{producent}/{srednica}/{model}/{indekspredkosci}/{szerokoscOpony}/{profilOpony}/{indeksNosnosci}")]
         public string GetTires(string producent, string srednica, string model, string indekspredkosci,
-            string szerokoscOpony, string profilOpony)
+            string szerokoscOpony, string profilOpony, string indeksNosnosci)
         {
             List<QueryContainer> titleQueries = new List<QueryContainer>();
             if (!string.IsNullOrEmpty(producent))
@@ -158,6 +158,52 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                 titleQueries.Add(szerokoscOponyQuery);
             }
 
+            bool indeksPredkosciEmpty = false;
+            if (!string.IsNullOrEmpty(indeksNosnosci) && !indeksNosnosci.Equals("nullvalue"))
+            {
+                string decodedString = HttpUtility.UrlDecode(indeksNosnosci);
+                if (!decodedString.Equals("nullvalue"))
+                {
+                    QueryContainer indeksNosnosciQuery = new QueryContainer();
+                    indeksNosnosciQuery = (new NestedQuery()
+                    {
+                        Path = "attributes",
+                        Query = new MatchQuery()
+                        {
+                            Field = "attributes.Indeks nośności",
+                            Query = decodedString + " -",
+                        }
+                    });
+                    titleQueries.Add(indeksNosnosciQuery);
+                }
+                else indeksPredkosciEmpty = true;
+            }
+            else
+            {
+                indeksPredkosciEmpty = true;
+            }
+
+            if (indeksPredkosciEmpty)
+            {
+                QueryContainer indeksNosnosciQuery = new QueryContainer();
+                indeksNosnosciQuery = (
+                    new BoolQuery()
+                    {
+                        MustNot = new QueryContainer[]
+                        {
+                            new NestedQuery()
+                            {
+                                Path = "attributes",
+                                Query = new ExistsQuery()
+                                {
+                                    Field = "attributes.Indeks nośności"
+                                }
+                            }
+                        }
+                    }
+                );
+                titleQueries.Add(indeksNosnosciQuery);
+            }
 
             SearchRequest request = new SearchRequest<OfferDetails>("offer_details")
             {
