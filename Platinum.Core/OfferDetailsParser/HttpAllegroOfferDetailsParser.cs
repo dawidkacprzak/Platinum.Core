@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using HtmlAgilityPack;
 using Platinum.Core.ApiIntegration;
@@ -31,7 +32,7 @@ namespace Platinum.Core.OfferDetailsParser
                 {
                     throw new RequestException("Cannot get page details. pageUrl is empty? : " + pageUrl);
                 }
-
+                Thread.Sleep(200);
                 OpenUrl(pageUrl);
 
                 string content = LastResponse;

@@ -9,12 +9,26 @@ namespace Platinum.Core.ApiIntegration
 {
     public class HttpClientInstance : RestClient
     {
-        private static HttpClient client;
+        private HttpClient client;
         public string LastResponse { get; set; }
         public string LastRequestedUrl { get; set; }
         public Exception LastException;
-        private int retry = 0;
+        private static int retry = 0;
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
+        private int CalcRetryTimeout
+        {
+            get
+            {
+                if(retry <= 5)
+                {
+                    return retry * 5000;
+                }
+                else
+                {
+                    return 5000 * 5;
+                }
+            }
+        }
 
         public HttpClientInstance()
         {
@@ -37,7 +51,7 @@ namespace Platinum.Core.ApiIntegration
             }
             catch (HttpRequestException ex)
             {
-                Thread.Sleep(5000*retry);
+                Thread.Sleep(CalcRetryTimeout);
                 retry++;
                 LastException = ex;
                 LastResponse = string.Empty;
@@ -48,6 +62,8 @@ namespace Platinum.Core.ApiIntegration
             }
             catch (Exception ex)
             {
+                Thread.Sleep(CalcRetryTimeout);
+                retry++;
                 LastException = ex;
                 LastResponse = string.Empty;
                 LastRequestedUrl = url;
@@ -61,8 +77,8 @@ namespace Platinum.Core.ApiIntegration
         {
             if (LastException == null)
             {
-                 return Regex.Match(LastResponse, @"\<title\b[^>]*\>\s*(?<Title>[\s\S]*?)\</title\>",
-                    RegexOptions.IgnoreCase).Groups["Title"].Value;
+                return Regex.Match(LastResponse, @"\<title\b[^>]*\>\s*(?<Title>[\s\S]*?)\</title\>",
+                   RegexOptions.IgnoreCase).Groups["Title"].Value;
             }
             else
             {

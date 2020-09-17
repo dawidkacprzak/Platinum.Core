@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using NLog;
@@ -29,8 +30,18 @@ namespace Platinum.Service.OfferDetailsFetcher
         public void Run(IDal dal)
         {
             Console.WriteLine($"Application started and tak count {CountOfParallelTasks}");
+            try
+            {
+                WebClient c = new WebClient();
+                string exIp = c.DownloadString("https://ifconfig.me");
+                AddErrorLogsToDb("App (V2) started with ip: " + exIp);
+            }catch(Exception)
+            {
+
+            }
+
             _logger.Info($"Application started and task count {CountOfParallelTasks}");
-            List<Offer> lastNotProcessedOffers = GetLastNotProcessedOffers(dal, CountOfParallelTasks * 20).ToList();
+            List<Offer> lastNotProcessedOffers = GetLastNotProcessedOffers(dal, CountOfParallelTasks * 60).ToList();
             _logger.Info($"Fetched: " + lastNotProcessedOffers.Count + " offers");
             HttpAllegroOfferDetailsParser tempParser =
                 new HttpAllegroOfferDetailsParser();
@@ -70,7 +81,7 @@ namespace Platinum.Service.OfferDetailsFetcher
             List<int> ids = new List<int>();
             using (DbDataReader reader =
                 dal.ExecuteReader(
-                    $"update offers set Processed = {(int) EOfferProcessed.InProcess} Output inserted.Id where Id in (select top {count} Id from offers with(nolock) where Processed = {(int) EOfferProcessed.NotProcessed})")
+                    $"update offers set Processed = {(int)EOfferProcessed.InProcess} Output inserted.Id where Id in (select top {count} Id from offers with(nolock) where Processed = {(int)EOfferProcessed.NotProcessed})")
             )
             {
                 while (reader.Read())
@@ -90,30 +101,30 @@ namespace Platinum.Service.OfferDetailsFetcher
         public void SetOffersAsInProcess(IDal dal, IEnumerable<Offer> offers)
         {
             _logger.Info(
-                $"UPDATE Offers set Processed = {(int) EOfferProcessed.InProcess} WHERE Id in {string.Join(",", offers)}");
+                $"UPDATE Offers set Processed = {(int)EOfferProcessed.InProcess} WHERE Id in {string.Join(",", offers)}");
             dal.ExecuteNonQuery(
-                $"UPDATE Offers set Processed = {(int) EOfferProcessed.InProcess} WHERE Id in {string.Join(",", offers)}");
+                $"UPDATE Offers set Processed = {(int)EOfferProcessed.InProcess} WHERE Id in {string.Join(",", offers)}");
         }
 
         public void SetOfferAsProcessed(IDal dal, Offer offer)
         {
-            _logger.Info($"UPDATE Offers set Processed = {(int) EOfferProcessed.Processed} WHERE Id = {offer.Id}");
+            _logger.Info($"UPDATE Offers set Processed = {(int)EOfferProcessed.Processed} WHERE Id = {offer.Id}");
 
             dal.ExecuteNonQuery(
-                $"UPDATE Offers set Processed = {(int) EOfferProcessed.Processed} WHERE Id = {offer.Id}");
+                $"UPDATE Offers set Processed = {(int)EOfferProcessed.Processed} WHERE Id = {offer.Id}");
         }
 
 
         public void SetOfferAsUnprocessed(IDal dal, Offer offer)
         {
             dal.ExecuteNonQuery(
-                $"UPDATE Offers set Processed = {(int) EOfferProcessed.NotProcessed} WHERE Id = {offer.Id}");
+                $"UPDATE Offers set Processed = {(int)EOfferProcessed.NotProcessed} WHERE Id = {offer.Id}");
         }
 
         public void SetOfferAsInActive(IDal dal, Offer offer)
         {
             dal.ExecuteNonQuery(
-                $"UPDATE Offers set Processed = {(int) EOfferProcessed.Inactive} WHERE Id = {offer.Id}");
+                $"UPDATE Offers set Processed = {(int)EOfferProcessed.Inactive} WHERE Id = {offer.Id}");
         }
 
         [ExcludeFromCodeCoverage]
@@ -130,6 +141,7 @@ namespace Platinum.Service.OfferDetailsFetcher
                 catch (OfferDetailsFailException ex)
                 {
                     _logger.Info(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
+                    AddErrorLogsToDb(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
                     SetOfferAsInActive(dal, offer);
                     _logger.Info(offer.Uri + ": fail - " + ex.Message + ex.StackTrace);
                     System.Diagnostics.Debug.WriteLine("end");
@@ -139,6 +151,7 @@ namespace Platinum.Service.OfferDetailsFetcher
                 catch (Exception ex)
                 {
                     _logger.Info(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
+                    AddErrorLogsToDb(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
                     SetOfferAsInActive(dal, offer);
                     _logger.Info(offer.Uri + ": fail - " + ex.Message + ex.StackTrace);
                     System.Diagnostics.Debug.WriteLine("end");
@@ -155,18 +168,40 @@ namespace Platinum.Service.OfferDetailsFetcher
                 catch (OfferDetailsFailException ex)
                 {
                     _logger.Info(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
+                    AddErrorLogsToDb(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
                     SetOfferAsInActive(dal, offer);
                     _logger.Info(offer.Uri + ": fail - " + ex.Message + ex.StackTrace);
                 }
                 catch (Exception ex)
                 {
                     _logger.Info(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
+                    AddErrorLogsToDb(ex.Message + " " + ex.StackTrace + " " + offer.Uri);
+
                     SetOfferAsInActive(dal, offer);
                     _logger.Info(offer.Uri + ": fail - " + ex.Message + ex.StackTrace);
                 }
-                System.Diagnostics.Debug.WriteLine("end");
-
             });
+        }
+
+        private void AddErrorLogsToDb(string message)
+        {
+            string machineName;
+            try
+            {
+                machineName = Environment.MachineName;
+            }
+            catch (Exception)
+            {
+                machineName = "unknown";
+            }
+            using (Dal db = new Dal())
+            {
+                message = message.Replace('\'', ' ');
+                message = message.Replace('\"', ' ');
+                db.ExecuteNonQuery(@"
+                    INSERT INTO dockerOfferDetailsFetcherLogs VALUES('" + message + "',getdate(),'" + machineName + "');"
+                );
+            }
         }
     }
 }
