@@ -19,12 +19,14 @@ namespace Platinum.Core.OfferDetailsParser
 
         public OfferDetails GetPageDetails(string pageUrl, Offer offer)
         {
+            pageUrl = pageUrl.Trim();
             try
             {
                 if (pageUrl.Contains("allegrolokalnie"))
                 {
                     throw new OfferDetailsFailException("Allegro lokalnie is not supported");
                 }
+
                 Dictionary<string, string> offerArguments = new Dictionary<string, string>();
                 string description;
                 string title;
@@ -32,11 +34,12 @@ namespace Platinum.Core.OfferDetailsParser
                 {
                     throw new RequestException("Cannot get page details. pageUrl is empty? : " + pageUrl);
                 }
+
                 Thread.Sleep(200);
                 OpenUrl(pageUrl);
 
                 string content = LastResponse;
-      
+
 
                 HtmlDocument document = new HtmlDocument();
                 document.LoadHtml(content);
@@ -51,12 +54,13 @@ namespace Platinum.Core.OfferDetailsParser
                 }
 
                 if (offerArguments.Count == 0 && string.IsNullOrEmpty(description))
-                { ;
+                {
+                    ;
                     throw new OfferDetailsFailException(
                         "Arguments and offer description is empty, cannot fetch offer details. : " +
                         pageUrl);
                 }
-                
+
                 using (Dal db = new Dal())
                 {
                     return new OfferDetails(offer)
@@ -93,13 +97,12 @@ namespace Platinum.Core.OfferDetailsParser
 
                     if (divs[1].InnerText.Where(x => x.Equals(':')).Count() > 1)
                         continue;
-                        string keyArg = divs[1].InnerText;
-                        string valArg = divs[2].InnerText;
+                    string keyArg = divs[1].InnerText;
+                    string valArg = divs[2].InnerText;
 
-                        if (keyArg[keyArg.Length - 1].Equals(':'))
-                            keyArg = keyArg.Substring(0, keyArg.Length - 1);
-                        parameters.TryAdd(keyArg, valArg);
-                    
+                    if (keyArg[keyArg.Length - 1].Equals(':'))
+                        keyArg = keyArg.Substring(0, keyArg.Length - 1);
+                    parameters.TryAdd(keyArg, valArg);
                 }
             }
 
@@ -135,8 +138,8 @@ namespace Platinum.Core.OfferDetailsParser
                 try
                 {
                     string priceText = nodes.First().InnerText;
-                    priceText = priceText.Replace("zł", "").Trim().Replace(" ",string.Empty);
-                    var numberFormatInfo = new NumberFormatInfo { NumberDecimalSeparator = "," };
+                    priceText = priceText.Replace("zł", "").Trim().Replace(" ", string.Empty);
+                    var numberFormatInfo = new NumberFormatInfo {NumberDecimalSeparator = ","};
                     decimal newPrice = decimal.Parse(priceText, numberFormatInfo);
                     return newPrice;
                 }
