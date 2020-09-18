@@ -27,7 +27,13 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
 
         public OponeoController()
         {
-            client = new ElasticClient(new ConnectionSettings(new Uri(ElasticConfiguration.ELASTIC_HOST)));
+            ConnectionSettings settings = new ConnectionSettings(new Uri(ElasticConfiguration.ELASTIC_HOST));
+            settings.GlobalHeaders(new System.Collections.Specialized.NameValueCollection()
+            {
+                {"authorization","opnsdgsd353sapgqejpg"},
+                {"http_authorization","opnsdgsd353sapgqejpg"}
+            });
+            client = new ElasticClient(settings);
         }
 
         /// <summary>
@@ -45,11 +51,11 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                 QueryContainer producentQuery = new QueryContainer();
 
                 producentQuery = (new NestedQuery()
-                                     {
-                                         Path = "attributes",
-                                         Query = new BoolQuery()
-                                         {
-                                             Should = new QueryContainer[]
+                {
+                    Path = "attributes",
+                    Query = new BoolQuery()
+                    {
+                        Should = new QueryContainer[]
                                              {
                                                  new WildcardQuery()
                                                  {
@@ -58,8 +64,8 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                                                      Boost = 1
                                                  }
                                              }
-                                         }
-                                     }
+                    }
+                }
                                  )
                                  || new WildcardQuery()
                                  {
@@ -213,7 +219,14 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                     Filter = titleQueries
                 }
             };
-
+            IRequestConfiguration conf = new RequestConfiguration();
+            conf.Headers = new System.Collections.Specialized.NameValueCollection();
+            conf.Headers.Add(new System.Collections.Specialized.NameValueCollection()
+            {
+                {"authorization","opnsdgsd353sapgqejpg"},
+                {"http_authorization","opnsdgsd353sapgqejpg"}
+            });
+            request.RequestConfiguration = conf;
             var k = client.Search<OfferDetails>(request);
             for (int x = 0; x < k.Documents.Count; x++)
             {

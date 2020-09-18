@@ -34,7 +34,7 @@ namespace Platinum.Service.OfferDetailsFetcher
             {
                 WebClient c = new WebClient();
                 string exIp = c.DownloadString("https://ifconfig.me");
-                AddErrorLogsToDb("App (V3) started with ip: " + exIp);
+                AddErrorLogsToDb("App (V4) started with ip: " + exIp);
             }catch(Exception)
             {
 

@@ -30,31 +30,32 @@ namespace Platinum.Core.ElasticIntegration
 
         private ElasticController()
         {
-            client = new ElasticClient(new ConnectionSettings(new Uri(ElasticConfiguration.ELASTIC_HOST)));
+            ConnectionSettings settings = new ConnectionSettings(new Uri(ElasticConfiguration.ELASTIC_HOST));
+            settings.GlobalHeaders(new System.Collections.Specialized.NameValueCollection()
+            {
+                {"authorization","opnsdgsd353sapgqejpg"}
+            });
+            client = new ElasticClient(settings);
         }
 
         public void InsertOffer(Offer offer)
         {
-#if RELEASE
+
             client.Index(new ELBufforedOffers(offer), i => i.Index("buffered_offers"));
-#endif
+
         }
 
         public void InsertOffer(string offer)
         {
-            #if RELEASE
             var response = client.Index(new ELBufforedOffers(offer), i => i.Index("buffered_offers"));
-            #endif
         }
 
         public void InsertOfferDetails(OfferDetails offerDetails)
         {
-            #if RELEASE
             lock (padlock)
             {
                 IndexResponse status = client.Index(offerDetails, i => i.Index("offer_details"));
             }
-            #endif
         }
 
         public bool OfferDetailsExists(int offerId)
@@ -76,7 +77,7 @@ namespace Platinum.Core.ElasticIntegration
 
         public bool OfferExistsInBuffor(string uri)
         {
-            #if RELEASE
+#if RELEASE
             var searchResponse = client.Search<ELBufforedOffers>(s => s.Index("buffered_offers")
                 .From(0)
                 .Size(10)
@@ -89,7 +90,7 @@ namespace Platinum.Core.ElasticIntegration
                 )
             );
             return searchResponse.Documents.Count > 0;
-            #endif
+#endif
             return false;
         }
     }
