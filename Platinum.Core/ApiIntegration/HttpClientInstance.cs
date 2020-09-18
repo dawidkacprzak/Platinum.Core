@@ -15,11 +15,12 @@ namespace Platinum.Core.ApiIntegration
         public Exception LastException;
         private static int retry = 0;
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
+
         private int CalcRetryTimeout
         {
             get
             {
-                if(retry <= 10)
+                if (retry <= 10)
                 {
                     return retry * 5000;
                 }
@@ -34,12 +35,14 @@ namespace Platinum.Core.ApiIntegration
         {
             client = new HttpClient();
         }
+
         public void OpenUrl(string url)
         {
             if (string.IsNullOrEmpty(url))
             {
                 throw new RequestException("Cannot open website with empty url");
             }
+
             logger.Info($"Request to: {url}");
             string response = string.Empty;
             try
@@ -48,11 +51,12 @@ namespace Platinum.Core.ApiIntegration
                 LastResponse = response;
                 LastRequestedUrl = url;
                 retry -= 1;
+                if (retry < 0) retry = 0;
             }
             catch (HttpRequestException ex)
             {
                 Thread.Sleep(CalcRetryTimeout);
-                retry+=2;
+                retry += 2;
                 LastException = ex;
                 LastResponse = string.Empty;
                 LastRequestedUrl = url;
@@ -63,7 +67,7 @@ namespace Platinum.Core.ApiIntegration
             catch (Exception ex)
             {
                 Thread.Sleep(CalcRetryTimeout);
-                retry+=2;
+                retry += 2;
                 LastException = ex;
                 LastResponse = string.Empty;
                 LastRequestedUrl = url;
@@ -78,7 +82,7 @@ namespace Platinum.Core.ApiIntegration
             if (LastException == null)
             {
                 return Regex.Match(LastResponse, @"\<title\b[^>]*\>\s*(?<Title>[\s\S]*?)\</title\>",
-                   RegexOptions.IgnoreCase).Groups["Title"].Value;
+                    RegexOptions.IgnoreCase).Groups["Title"].Value;
             }
             else
             {
