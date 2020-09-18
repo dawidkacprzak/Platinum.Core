@@ -198,7 +198,7 @@ namespace Platinum.Service.OfferDetailsFetcher
             {
                 message = message.Replace('\'', ' ');
                 message = message.Replace('\"', ' ');
-                db.ExecuteNonQuery(@"
+                db.ExecuteNonQuery(@$"
                     INSERT INTO dockerOfferDetailsFetcherLogs VALUES('" + message + "',getdate(),'" + machineName + "');"
                 );
             }

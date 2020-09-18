@@ -19,7 +19,7 @@ namespace Platinum.Core.ApiIntegration
         {
             get
             {
-                if(retry <= 5)
+                if(retry <= 10)
                 {
                     return retry * 5000;
                 }
@@ -45,14 +45,14 @@ namespace Platinum.Core.ApiIntegration
             try
             {
                 response = client.GetStringAsync(url).GetAwaiter().GetResult();
-                retry = 0;
                 LastResponse = response;
                 LastRequestedUrl = url;
+                retry -= 1;
             }
             catch (HttpRequestException ex)
             {
                 Thread.Sleep(CalcRetryTimeout);
-                retry++;
+                retry+=2;
                 LastException = ex;
                 LastResponse = string.Empty;
                 LastRequestedUrl = url;
@@ -63,7 +63,7 @@ namespace Platinum.Core.ApiIntegration
             catch (Exception ex)
             {
                 Thread.Sleep(CalcRetryTimeout);
-                retry++;
+                retry+=2;
                 LastException = ex;
                 LastResponse = string.Empty;
                 LastRequestedUrl = url;
