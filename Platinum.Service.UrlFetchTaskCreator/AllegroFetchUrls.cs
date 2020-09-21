@@ -29,7 +29,7 @@ namespace Platinum.Service.UrlFetchTaskCreator
                     //List<int> categoryIds = GetAllCategories().ToList();
                     List<int> categoryIds = new List<int>()
                     {
-                        6472
+                        6406
                     };
                     _logger.Info($"Found {categoryIds.Count} category count");
 
