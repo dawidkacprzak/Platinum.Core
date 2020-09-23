@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
+using Nest;
 using NLog;
 using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.Model;
@@ -25,18 +26,33 @@ namespace Platinum.Service.UrlFetchTaskCreator
             {
                 _logger.Info("Started service");
 
-                List<KeyValuePair<int, int>> categoryIds = GetAllCategories().ToList().OrderByDescending(x => x.Key)
-                    .ToList().Where(x => x.Value != 1).ToList();
+                List<KeyValuePair<int, int>> categoryIds = GetAllCategories().ToList().OrderByDescending(x => x.Key).ToList();
 
                 List<int> catsToRemove = new List<int>();
                 foreach (var c in categoryIds)
                 {
                     using (Dal db = new Dal())
                     {
-                        db
+                        int paramsCount = (int) db.ExecuteScalar(
+                            $"SELECT isnull(MAX(searchNumber),0) FROM websiteCategoriesFilterSearch where websiteCategoriesFilterSearch.WebsiteCategoryId in (SELECT allegroUrlFetchTask.CategoryId from allegroUrlFetchTask where CategoryId={c.Key} and WebApiUserId={c.Value})");
+                        if (paramsCount == 0)
+                        {
+                            if(!VerifyTaskCanBeStarted(c.Key,c.Value,5))
+                            {
+                                catsToRemove.Add(c.Key);
+                            }
+                        }
+                        else
+                        {
+                            if(!VerifyTaskCanBeStarted(c.Key,c.Value,paramsCount*2))
+                            {
+                                catsToRemove.Add(c.Key);
+                            }
+                        }
                     } 
                 }
-                
+
+                categoryIds = categoryIds.Where(x => !catsToRemove.Contains(x.Key)).ToList();
                 _logger.Info($"Found {categoryIds.Count} category count");
 
                 foreach (KeyValuePair<int, int> categoryId in categoryIds)
@@ -170,10 +186,10 @@ namespace Platinum.Service.UrlFetchTaskCreator
 
 
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
-        public bool VerifyTaskCanBeStarted()
+        public bool VerifyTaskCanBeStarted(int categoryId, int webApiUserId,int maxOffers)
         {
-            int taskCount = GetTaskCount();
-            if (taskCount > 10000)
+            int taskCount = GetTaskCount(categoryId,webApiUserId);
+            if (taskCount > maxOffers)
             {
                 _logger.Info("Service loop skipped - task count > 10000");
                 return false;
@@ -183,11 +199,11 @@ namespace Platinum.Service.UrlFetchTaskCreator
             return true;
         }
 
-        public int GetTaskCount()
+        public int GetTaskCount(int categoryId, int webApiUserId)
         {
             using (Dal db = new Dal())
             {
-                return (int) db.ExecuteScalar("SELECT COUNT(*) FROM allegroUrlFetchTask with(nolock);");
+                return (int) db.ExecuteScalar($"SELECT COUNT(*) FROM allegroUrlFetchTask with(nolock) where CategoryId={categoryId} and WebApiUserId={webApiUserId} and Processed != 0;");
             }
         }
     }

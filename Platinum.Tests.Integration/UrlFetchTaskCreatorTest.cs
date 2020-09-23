@@ -41,7 +41,7 @@ namespace Platinum.Tests.Integration
         public void AllegroGetTaskCountNotThrow()
         {
             AllegroFetchUrls afu = new AllegroFetchUrls();
-            Assert.DoesNotThrow(()=>afu.GetTaskCount());
+            Assert.DoesNotThrow(()=>afu.GetTaskCount(6406,1));
         }
     }
 }
