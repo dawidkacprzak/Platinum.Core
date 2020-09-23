@@ -44,7 +44,7 @@ namespace Platinum.Service.UrlFetchTaskCreator
                         }
                         else
                         {
-                            if(!VerifyTaskCanBeStarted(c.Key,c.Value,paramsCount*2))
+                            if(!VerifyTaskCanBeStarted(c.Key,c.Value,5))
                             {
                                 catsToRemove.Add(c.Key);
                             }
