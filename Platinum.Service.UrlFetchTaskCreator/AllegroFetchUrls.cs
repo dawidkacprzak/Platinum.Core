@@ -17,58 +17,63 @@ namespace Platinum.Service.UrlFetchTaskCreator
     {
         Logger _logger = LogManager.GetCurrentClassLogger();
 
-        
+
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.Info("Started service");
-                if (!VerifyTaskCanBeStarted())
+
+                List<KeyValuePair<int, int>> categoryIds = GetAllCategories().ToList().OrderByDescending(x => x.Key)
+                    .ToList().Where(x => x.Value != 1).ToList();
+
+                List<int> catsToRemove = new List<int>();
+                foreach (var c in categoryIds)
                 {
-                    List<KeyValuePair<int,int>> categoryIds = GetAllCategories().ToList().OrderByDescending(x=>x.Key).ToList().Where(x=>x.Value!=1).ToList();
-
-                    _logger.Info($"Found {categoryIds.Count} category count");
-
-                    foreach (KeyValuePair<int,int> categoryId in categoryIds)
+                    using (Dal db = new Dal())
                     {
-                        if (stoppingToken.IsCancellationRequested)
+                        db
+                    } 
+                }
+                
+                _logger.Info($"Found {categoryIds.Count} category count");
+
+                foreach (KeyValuePair<int, int> categoryId in categoryIds)
+                {
+                    if (stoppingToken.IsCancellationRequested)
+                    {
+                        _logger.Info("Task canceled by token");
+                        return;
+                    }
+
+                    try
+                    {
+                        List<WebsiteCategoriesFilterSearch> arguments = GetCategoryFilters(categoryId.Key).ToList();
+
+                        if (arguments.Count == 0)
                         {
-                            _logger.Info("Task canceled by token");
-                            return;
+                            AddNonFilterTaskOnQueue(categoryId.Key, categoryId.Value);
                         }
-
-                        try
+                        else
                         {
-                            List<WebsiteCategoriesFilterSearch> arguments = GetCategoryFilters(categoryId.Key).ToList();
+                            Dictionary<int, List<WebsiteCategoriesFilterSearch>> groupedArguments =
+                                arguments.GroupBy(x => x.SearchNumber).ToDictionary(
+                                    websiteCategoriesFilterSearches => websiteCategoriesFilterSearches.Key,
+                                    websiteCategoriesFilterSearches => websiteCategoriesFilterSearches.ToList());
 
-                            if (arguments.Count == 0)
-                            {
-                                AddNonFilterTaskOnQueue(categoryId.Key,categoryId.Value);
-                            }
-                            else
-                            {
-                                Dictionary<int, List<WebsiteCategoriesFilterSearch>> groupedArguments =
-                                    arguments.GroupBy(x => x.SearchNumber).ToDictionary(
-                                        websiteCategoriesFilterSearches => websiteCategoriesFilterSearches.Key,
-                                        websiteCategoriesFilterSearches => websiteCategoriesFilterSearches.ToList());
-
-                                AddFilteredTaskOnQueue(categoryId, groupedArguments);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            _logger.Error(ex);
+                            AddFilteredTaskOnQueue(categoryId, groupedArguments);
                         }
                     }
-                }
-                else
-                {
-                    _logger.Info("Task canceled");
+                    catch (Exception ex)
+                    {
+                        _logger.Error(ex);
+                    }
                 }
 
+
                 _logger.Info("Task finished");
-             //   await Task.Delay(60000 * 15, stoppingToken);
+                //   await Task.Delay(60000 * 15, stoppingToken);
             }
         }
 
@@ -97,9 +102,9 @@ namespace Platinum.Service.UrlFetchTaskCreator
             }
         }
 
-        public  List<KeyValuePair<int,int>> GetAllCategories()
+        public List<KeyValuePair<int, int>> GetAllCategories()
         {
-            List<KeyValuePair<int,int>> retList = new List<KeyValuePair<int, int>>();
+            List<KeyValuePair<int, int>> retList = new List<KeyValuePair<int, int>>();
             using (Dal db = new Dal())
             {
                 using (DbDataReader reader =
@@ -107,29 +112,32 @@ namespace Platinum.Service.UrlFetchTaskCreator
                         $@"
                                 select websiteCategories.Id,WebApiUserId from websiteCategories with (nolock)
                                 INNER JOIN WebApiUserWebsiteCategory on WebApiUserWebsiteCategory.WebsiteCategoryId = websiteCategories.Id
-                                WHERE websiteCategories.WebsiteId = {(int) EOfferWebsite.Allegro} group by websiteCategories.Id, WebApiUserId"))
+                                WHERE websiteCategories.WebsiteId = {(int) EOfferWebsite.Allegro} group by websiteCategories.Id, WebApiUserId")
+                )
                 {
                     while (reader.Read())
                     {
-                        retList.Add(new KeyValuePair<int, int>(reader.GetInt32(reader.GetOrdinal("Id")),reader.GetInt32(reader.GetOrdinal("WebApiUserId"))));
+                        retList.Add(new KeyValuePair<int, int>(reader.GetInt32(reader.GetOrdinal("Id")),
+                            reader.GetInt32(reader.GetOrdinal("WebApiUserId"))));
                     }
                 }
             }
 
             return retList;
         }
-        
+
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
-        public void AddNonFilterTaskOnQueue(int categoryId,int userId)
+        public void AddNonFilterTaskOnQueue(int categoryId, int userId)
         {
             using (Dal db = new Dal())
             {
-                db.ExecuteNonQuery($"INSERT INTO allegroUrlFetchTask (CategoryId,WebApiUserId) VALUES({categoryId},{userId})");
+                db.ExecuteNonQuery(
+                    $"INSERT INTO allegroUrlFetchTask (CategoryId,WebApiUserId) VALUES({categoryId},{userId})");
             }
         }
-        
+
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
-        public void AddFilteredTaskOnQueue(KeyValuePair<int,int> categoryUser,
+        public void AddFilteredTaskOnQueue(KeyValuePair<int, int> categoryUser,
             Dictionary<int, List<WebsiteCategoriesFilterSearch>> arguments)
         {
             using (Dal db = new Dal())
@@ -160,7 +168,7 @@ namespace Platinum.Service.UrlFetchTaskCreator
             }
         }
 
-        
+
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
         public bool VerifyTaskCanBeStarted()
         {
