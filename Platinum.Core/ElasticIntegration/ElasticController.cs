@@ -23,7 +23,6 @@ namespace Platinum.Core.ElasticIntegration
                 {
                     instance = new ElasticController();
                 }
-
                 return instance;
             }
         }
@@ -50,11 +49,30 @@ namespace Platinum.Core.ElasticIntegration
             var response = client.Index(new ELBufforedOffers(offer), i => i.Index("buffered_offers"));
         }
 
-        public void InsertOfferDetails(OfferDetails offerDetails)
+        public void InsertOfferDetails(OfferDetails offerDetails, int userId,int categoryId)
         {
             lock (padlock)
             {
-                IndexResponse status = client.Index(offerDetails, i => i.Index("offer_details"));
+                string index = userId + "_cat" + categoryId;
+                if (userId == 1)
+                {
+                    IndexResponse status = client.Index(offerDetails, i => i.Index("offer_details"));
+                }
+                else
+                {
+                    var ex = client.Indices.Exists(index);
+                    if(ex.Exists == false)
+                    {
+                        var res = client.Indices.Create(index, c => c
+                            .Map<OfferDetails>(x => x.AutoMap()).Settings(s =>
+                                s.NumberOfReplicas(2).NumberOfShards(2)));
+                        if (!res.IsValid || !res.Acknowledged)
+                        {
+                            throw new Exception("Cannot create index: " + index);
+                        }
+                    }
+                    IndexResponse status = client.Index<OfferDetails>(offerDetails, i => i.Index(index));
+                }
             }
         }
 
@@ -77,7 +95,7 @@ namespace Platinum.Core.ElasticIntegration
 
         public bool OfferExistsInBuffor(string uri)
         {
-#if RELEASE
+
             var searchResponse = client.Search<ELBufforedOffers>(s => s.Index("buffered_offers")
                 .From(0)
                 .Size(10)
@@ -90,8 +108,6 @@ namespace Platinum.Core.ElasticIntegration
                 )
             );
             return searchResponse.Documents.Count > 0;
-#endif
-            return false;
         }
     }
 }

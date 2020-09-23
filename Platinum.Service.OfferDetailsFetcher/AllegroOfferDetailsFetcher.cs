@@ -20,7 +20,6 @@ namespace Platinum.Service.OfferDetailsFetcher
     {
         Logger _logger = LogManager.GetCurrentClassLogger();
         public int CountOfParallelTasks { get; set; }
-
         public AllegroOfferDetailsFetcher(int countOfTasks)
         {
             CountOfParallelTasks = countOfTasks;
@@ -81,7 +80,8 @@ namespace Platinum.Service.OfferDetailsFetcher
             List<int> ids = new List<int>();
             using (DbDataReader reader =
                 dal.ExecuteReader(
-                    $"update offers set Processed = {(int)EOfferProcessed.InProcess} Output inserted.Id where Id in (select top {count} Id from offers with(nolock) where Processed = {(int)EOfferProcessed.NotProcessed})")
+                    $"update offers set Processed = {(int)EOfferProcessed.InProcess} Output inserted.Id where Id in (select top {count} Id from offers with(nolock) where Processed = {(int)EOfferProcessed.NotProcessed} and" +
+                    $" WebApiUserId = {Worker.WebApiUserId})")
             )
             {
                 while (reader.Read())
@@ -136,7 +136,7 @@ namespace Platinum.Service.OfferDetailsFetcher
                 try
                 {
                     OfferDetails details = parser.GetPageDetails(offer.Uri, offer);
-                    ElasticController.Instance.InsertOfferDetails(details);
+                    ElasticController.Instance.InsertOfferDetails(details,Worker.WebApiUserId,offer.WebsiteCategoryId);
                 }
                 catch (OfferDetailsFailException ex)
                 {

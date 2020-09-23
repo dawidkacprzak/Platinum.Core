@@ -33,9 +33,8 @@ namespace Platinum.Tests.Integration
         public void AllegroGetAllCategories()
         {
             AllegroFetchUrls afu = new AllegroFetchUrls();
-            List<int> categories = afu.GetAllCategories().ToList();
+            var categories = afu.GetAllCategories().ToList();
             Assert.IsTrue(categories.Any());
-            Assert.IsTrue(categories.All(x=>x != 0));
         }
 
         [Test]

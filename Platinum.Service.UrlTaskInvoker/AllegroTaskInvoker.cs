@@ -23,8 +23,8 @@ namespace Platinum.Service.UrlTaskInvoker
 
         private static readonly object getTaskLock = new object();
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
-        public static int MAX_TASKS_PER_RUN = 55;
-        public static int MAX_CONCURRENT_TASKS = 5;
+        public static int MAX_TASKS_PER_RUN = 5;
+        public static int MAX_CONCURRENT_TASKS = 55;
         public static int CURRENT_TASK_COUNT = 0;
 
         public AllegroTaskInvoker()
@@ -35,13 +35,12 @@ namespace Platinum.Service.UrlTaskInvoker
             }
             catch (Exception)
             {
-                MAX_CONCURRENT_TASKS = 3;
+                MAX_CONCURRENT_TASKS = 1;
             }
 
             logger.Info("Number of max tasks: " + MAX_CONCURRENT_TASKS);
             lock (getTaskLock)
             {
-                StaticSharpBrowserContainer.Init();
                 ActiveTasksId = new List<string>();
             }
         }
@@ -154,7 +153,7 @@ namespace Platinum.Service.UrlTaskInvoker
                 {
                     logger.Info("Started task #" + task.Key.Value);
                     ctrl.StartFetching(false, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
-                        task.Value.ToList());
+                        task.Value.ToList(),Program.UserId);
                     using (IDal db = new Dal())
                     {
                         PopTaskFromQueue(db, task.Key.Value);
@@ -217,7 +216,8 @@ namespace Platinum.Service.UrlTaskInvoker
                 SELECT TOP 1 allegroUrlFetchTask.Id FROM allegroUrlFetchTask WITH (NOLOCK) 
                                             INNER JOIN websiteCategories on websiteCategories.ID = allegroUrlFetchTask.CategoryId
                                             WHERE websiteCategories.websiteId = {(int) EOfferWebsite.Allegro}
-                                            AND allegroUrlFetchTask.Processed = {(int) EUrlFetchTaskProcessed.NotProcessed}";
+                                            AND allegroUrlFetchTask.Processed = {(int) EUrlFetchTaskProcessed.NotProcessed}
+                                            AND WebApiUserId = {Program.UserId}";
                 if (ActiveTasksId.Count > 0)
                 {
                     taskQuery += $@" AND allegroUrlFetchTask.Id NOT IN ({string.Join(",", ActiveTasksId)}) ";

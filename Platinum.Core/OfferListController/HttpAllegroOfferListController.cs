@@ -17,11 +17,12 @@ namespace Platinum.Core.OfferListController
 {
     public class HttpAllegroOfferListController: HttpClientInstance, IBaseOfferListController
     {
-         private const string baseUrl = "https://allegro.pl";
+        private const string baseUrl = "https://allegro.pl";
         private string pageId;
         private OfferCategory initiedOfferCategory;
         private string urlArgs = "";
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
+        private int webApiUser;
         private int lastPageNumber = 0;
 
         public HttpAllegroOfferListController() : base()
@@ -31,6 +32,12 @@ namespace Platinum.Core.OfferListController
             initiedOfferCategory = null;
         }
 
+
+        public void StartFetching(bool fetchJustFirstPage, OfferCategory category, List<WebsiteCategoriesFilterSearch> urlArguments = null, int webApiUser = 0)
+        {
+            this.webApiUser = webApiUser;
+            StartFetching(fetchJustFirstPage,category,urlArguments);
+        }
 
         public void StartFetching(bool fetchJustFirstPage, OfferCategory category,
             List<WebsiteCategoriesFilterSearch> urlArguments = null)
@@ -138,6 +145,10 @@ namespace Platinum.Core.OfferListController
             document.LoadHtml(pageSource);
 
             var offerContainer = document.DocumentNode.SelectNodes("//div[@id=\"opbox-listing--base\"]");
+            if (offerContainer == null)
+            {
+                offerContainer = document.DocumentNode.SelectNodes("//div[@data-box-name=\"items container\"]");
+            }
             if (offerContainer == null || !offerContainer.Any())
             {
                 throw new OfferListControllerException("Allegro layout has been changed", this);
@@ -201,7 +212,8 @@ namespace Platinum.Core.OfferListController
                             ,'{offer}'
                             ,HashBytes('MD5','{offer}')
                             , getdate()
-                            , {initiedOfferCategory.CategoryId}
+                            , {initiedOfferCategory.CategoryId},
+                            {webApiUser} 
                         )");
                     }
                 }

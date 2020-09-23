@@ -1,12 +1,15 @@
+using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.Types;
 
 namespace Platinum.Service.UrlFetchTaskCreator
 {
     public class Program
     {
+        public static int UserId { get; set; }
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
         public static void Main(string[] args)
         {

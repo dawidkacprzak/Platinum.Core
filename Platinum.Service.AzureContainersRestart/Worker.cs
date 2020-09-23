@@ -69,7 +69,7 @@ namespace Platinum.Service.AzureContainersRestart
         private static IEnumerable<string> ListContainerGroups(IAzure azure, string resourceGroupName)
         {
             foreach (var containerGroup in azure.ContainerGroups.ListByResourceGroup(resourceGroupName)
-                .Where(x => x.State.ToLower().Contains("succeeded") || x.State.ToLower().Contains("stopped")))
+                .Where(x => x.State.ToLower().Contains("succeeded") || x.State.ToLower().Contains("stopped")|| x.State.ToLower().Contains("failed")))
             {
                 yield return containerGroup.Name;
             }

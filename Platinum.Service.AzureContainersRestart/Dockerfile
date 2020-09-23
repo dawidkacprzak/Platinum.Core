@@ -3,4 +3,4 @@ RUN apt-get update
 WORKDIR /home/app
 COPY bin/Release/netcoreapp3.1/publish/ .
 
-ENTRYPOINT ["dotnet","Platinum.Service.UrlTaskInvoker.dll"] 
+ENTRYPOINT ["dotnet","Platinum.Service.AzureContainersRestart.dll"] 

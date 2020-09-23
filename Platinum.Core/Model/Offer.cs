@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Common;
+using Nest;
 using Platinum.Core.Types;
 using Platinum.Core.Types.Exceptions;
 
@@ -11,6 +12,8 @@ namespace Platinum.Core.Model
         public int Id { get; set; }
         public int WebsiteId { get; set; }
         public string Uri { get; set; }
+        
+        [Binary]
         public byte[] UriHash { get; set; }
         public DateTime CreatedDate { get; set; }
         public int WebsiteCategoryId { get; set; }

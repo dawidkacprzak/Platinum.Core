@@ -29,22 +29,23 @@ namespace Platinum.Service.BufforUrlQueue
             try
             {
                 int ret = db.ExecuteNonQuery(@"
-                WITH OFFERS_BUFF(Id,WebsiteId,UriHash,CreatedDate,WebsiteCategoryId) as
+                WITH OFFERS_BUFF(Id,WebsiteId,UriHash,WebApiUserId,CreatedDate,WebsiteCategoryId) as
                 (
-                    SELECT max(Id),WebsiteId,UriHash,MAX(CreatedDate),max(WebsiteCategoryId) FROM offersBuffor WITH(NOLOCK)
-                    GROUP BY WebsiteId,UriHash
+                    SELECT max(Id),WebsiteId,UriHash,WebApiUserId,MAX(CreatedDate),max(WebsiteCategoryId) FROM offersBuffor WITH(NOLOCK)
+                    GROUP BY WebsiteId,UriHash,WebApiUserId
                 ) 
-                INSERT INTO offers (WebsiteId,Uri,UriHash,CreatedDate,WebsiteCategoryId,Processed)
+                INSERT INTO offers (WebsiteId,Uri,UriHash,WebApiUserId,CreatedDate,WebsiteCategoryId,Processed)
                 SELECT 
 	                OFFERS_BUFF.WebsiteId,
 	                offersBuffor.Uri,
 	                OFFERS_BUFF.UriHash,
+                    OFFERS_BUFF.WebApiUserId,
 	                OFFERS_BUFF.CreatedDate,
 	                OFFERS_BUFF.WebsiteCategoryId,
 	                0 AS Processed 
                 FROM OFFERS_BUFF WITH (NOLOCK)
                 INNER JOIN offersBuffor WITH(NOLOCK) ON offersBuffor.Id = OFFERS_BUFF.Id
-                where OFFERS_BUFF.UriHash NOT IN (SELECT UriHash FROM Offers WITH (NOLOCK))
+                where OFFERS_BUFF.UriHash NOT IN (SELECT UriHash FROM Offers WITH (NOLOCK) where WebApiUserId = OFFERS_BUFF.WebApiUserId)
                 ");
 
                 _logger.Info("Moved " + ret + " offers");

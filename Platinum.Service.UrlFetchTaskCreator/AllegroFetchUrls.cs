@@ -26,14 +26,11 @@ namespace Platinum.Service.UrlFetchTaskCreator
                 _logger.Info("Started service");
                 if (VerifyTaskCanBeStarted())
                 {
-                    //List<int> categoryIds = GetAllCategories().ToList();
-                    List<int> categoryIds = new List<int>()
-                    {
-                        6406
-                    };
+                    List<KeyValuePair<int,int>> categoryIds = GetAllCategories().ToList().OrderByDescending(x=>x.Key).ToList();
+
                     _logger.Info($"Found {categoryIds.Count} category count");
 
-                    foreach (int categoryId in categoryIds)
+                    foreach (KeyValuePair<int,int> categoryId in categoryIds)
                     {
                         if (stoppingToken.IsCancellationRequested)
                         {
@@ -43,11 +40,11 @@ namespace Platinum.Service.UrlFetchTaskCreator
 
                         try
                         {
-                            List<WebsiteCategoriesFilterSearch> arguments = GetCategoryFilters(categoryId).ToList();
+                            List<WebsiteCategoriesFilterSearch> arguments = GetCategoryFilters(categoryId.Key).ToList();
 
                             if (arguments.Count == 0)
                             {
-                                AddNonFilterTaskOnQueue(categoryId);
+                                AddNonFilterTaskOnQueue(categoryId.Key,categoryId.Value);
                             }
                             else
                             {
@@ -100,33 +97,39 @@ namespace Platinum.Service.UrlFetchTaskCreator
             }
         }
 
-        public IEnumerable<int> GetAllCategories()
+        public  List<KeyValuePair<int,int>> GetAllCategories()
         {
+            List<KeyValuePair<int,int>> retList = new List<KeyValuePair<int, int>>();
             using (Dal db = new Dal())
             {
                 using (DbDataReader reader =
                     db.ExecuteReader(
-                        $"SELECT Id from websiteCategories WITH (NOLOCK) where websiteId = {(int) EOfferWebsite.Allegro}"))
+                        $@"
+                                select websiteCategories.Id,WebApiUserId from websiteCategories with (nolock)
+                                INNER JOIN WebApiUserWebsiteCategory on WebApiUserWebsiteCategory.WebsiteCategoryId = websiteCategories.Id
+                                WHERE websiteCategories.WebsiteId = {(int) EOfferWebsite.Allegro} group by websiteCategories.Id, WebApiUserId"))
                 {
                     while (reader.Read())
                     {
-                        yield return reader.GetInt32(reader.GetOrdinal("Id"));
+                        retList.Add(new KeyValuePair<int, int>(reader.GetInt32(reader.GetOrdinal("Id")),reader.GetInt32(reader.GetOrdinal("WebApiUserId"))));
                     }
                 }
             }
+
+            return retList;
         }
         
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
-        public void AddNonFilterTaskOnQueue(int categoryId)
+        public void AddNonFilterTaskOnQueue(int categoryId,int userId)
         {
             using (Dal db = new Dal())
             {
-                db.ExecuteNonQuery($"INSERT INTO allegroUrlFetchTask (CategoryId) VALUES({categoryId})");
+                db.ExecuteNonQuery($"INSERT INTO allegroUrlFetchTask (CategoryId,WebApiUserId) VALUES({categoryId},{userId})");
             }
         }
         
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
-        public void AddFilteredTaskOnQueue(int categoryId,
+        public void AddFilteredTaskOnQueue(KeyValuePair<int,int> categoryUser,
             Dictionary<int, List<WebsiteCategoriesFilterSearch>> arguments)
         {
             using (Dal db = new Dal())
@@ -137,7 +140,7 @@ namespace Platinum.Service.UrlFetchTaskCreator
                     {
                         db.BeginTransaction();
                         int insertedId = (int) db.ExecuteScalar(
-                            $"INSERT INTO allegroUrlFetchTask (CategoryId) OUTPUT inserted.Id VALUES({categoryId})");
+                            $"INSERT INTO allegroUrlFetchTask (CategoryId,WebApiUserId) OUTPUT inserted.Id VALUES({categoryUser.Key},{categoryUser.Value})");
 
                         foreach (var singleArg in arg)
                         {
