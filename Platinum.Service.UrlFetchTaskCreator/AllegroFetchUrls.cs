@@ -203,7 +203,7 @@ namespace Platinum.Service.UrlFetchTaskCreator
         {
             using (Dal db = new Dal())
             {
-                return (int) db.ExecuteScalar($"SELECT COUNT(*) FROM allegroUrlFetchTask with(nolock) where CategoryId={categoryId} and WebApiUserId={webApiUserId} and Processed != 0;");
+                return (int) db.ExecuteScalar($"SELECT COUNT(*) FROM allegroUrlFetchTask with(nolock) where CategoryId={categoryId} and WebApiUserId={webApiUserId} and Processed = 0;");
             }
         }
     }
