@@ -24,9 +24,9 @@ namespace Platinum.Service.UrlFetchTaskCreator
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.Info("Started service");
-                if (VerifyTaskCanBeStarted())
+                if (!VerifyTaskCanBeStarted())
                 {
-                    List<KeyValuePair<int,int>> categoryIds = GetAllCategories().ToList().OrderByDescending(x=>x.Key).ToList();
+                    List<KeyValuePair<int,int>> categoryIds = GetAllCategories().ToList().OrderByDescending(x=>x.Key).ToList().Where(x=>x.Value!=1).ToList();
 
                     _logger.Info($"Found {categoryIds.Count} category count");
 
@@ -68,7 +68,7 @@ namespace Platinum.Service.UrlFetchTaskCreator
                 }
 
                 _logger.Info("Task finished");
-                await Task.Delay(60000 * 15, stoppingToken);
+             //   await Task.Delay(60000 * 15, stoppingToken);
             }
         }
 

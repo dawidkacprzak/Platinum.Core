@@ -16,12 +16,14 @@ namespace Platinum.Service.UrlTaskInvoker
         public static int UserId;
         public static void Main(string[] args)
         {
+            Console.WriteLine("Args: " + string.Join("/",args));
             if (args.Length < 2)
             {
                 #if DEBUG
                 NumberOfTasksArg = "1";
                 UserId = 2;
 #else
+                Console.WriteLine("User id and task count cannot be empty (first app argument)");
                 throw new Exception("User id and task count cannot be empty (first app argument)");
 #endif
             }
@@ -37,6 +39,7 @@ namespace Platinum.Service.UrlTaskInvoker
                         int userCount = (int)db.ExecuteScalar("SELECT COUNT(*) FROM WebApiUsers with (nolock) where Id = " + userId);
                         if (userCount == 0)
                         {
+                            Console.WriteLine($"User with id {userId} cannot be fount");
                             throw  new Exception($"User with id {userId} cannot be fount");
                         }
                         else
@@ -47,6 +50,7 @@ namespace Platinum.Service.UrlTaskInvoker
                 }
                 else
                 {
+                    Console.WriteLine("User id cannot be parsed to int. Val: " + args[0]);
                     throw new Exception("User id cannot be parsed to int. Val: " + args[0]);
                 }
             }

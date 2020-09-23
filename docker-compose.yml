@@ -1,0 +1,10 @@
+version: "3.3"
+services: 
+    url_fetcher:
+        build:
+            context: .
+            dockerfile: urlfetcherdockerfile
+    details_fetcher:
+        build:
+            context: .
+            dockerfile: offerdetailsdockerfile

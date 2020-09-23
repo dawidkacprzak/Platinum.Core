@@ -1,0 +1,13 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+ARG webApiUserId
+ARG taskCount
+ENV wa ${webApiUserId}
+ENV tc ${taskCount}
+
+RUN apt-get update
+WORKDIR /home/app
+COPY Platinum.Service.UrlTaskInvoker/bin/Release/netcoreapp3.1/publish/ .
+RUN echo $webApiUserId
+RUN echo $taskCount
+RUN ls -la
+CMD dotnet Platinum.Service.UrlTaskInvoker.dll ${wa} ${tc} 
