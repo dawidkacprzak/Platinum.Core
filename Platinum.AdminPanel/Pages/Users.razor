@@ -1,0 +1,20 @@
+﻿@page "/users"
+@using Platinum.Core;
+
+<h1>User list</h1>
+<button class="btn btn-primary" @onclick="RefreshUsers">Refresh</button>
+<b>@users</b>
+
+
+@code {
+    string users = "0";
+
+    private void RefreshUsers()
+    {
+        using(Platinum.Core.DatabaseIntegration.Dal db = new Core.DatabaseIntegration.Dal())
+        {
+            users = ((int)db.ExecuteScalar("Select count(*) from webapiusers")).ToString();
+            
+        }
+    }
+}

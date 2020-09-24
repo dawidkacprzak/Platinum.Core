@@ -17,16 +17,20 @@ namespace Platinum.Service.UrlTaskInvoker
 {
     public class Worker : BackgroundService
     {
+        IHostApplicationLifetime lifetimeApp;
+
+        public Worker(IHostApplicationLifetime hostApplicationLifetime)
+        {
+            lifetimeApp = hostApplicationLifetime;
+        }
+
         [ExcludeFromCodeCoverage]
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             UrlTaskInvokerFactory factory = new AllegroUrlTaskInvokerFactory();
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                await RunTaskInvoker(factory.GetInvoker());
 
-                await Task.Delay(50, stoppingToken);
-            }
+            await RunTaskInvoker(factory.GetInvoker());
+            lifetimeApp.StopApplication();
         }
 
         [ExcludeFromCodeCoverage]

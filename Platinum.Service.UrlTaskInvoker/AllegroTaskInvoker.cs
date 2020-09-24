@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Hosting;
 using NLog;
 using Platinum.Core.ApiIntegration;
 using Platinum.Core.DatabaseIntegration;
@@ -24,7 +25,7 @@ namespace Platinum.Service.UrlTaskInvoker
         private static readonly object getTaskLock = new object();
         readonly private Logger logger = LogManager.GetCurrentClassLogger();
         public static int MAX_TASKS_PER_RUN = 5;
-        public static int MAX_CONCURRENT_TASKS = 55;
+        public static int MAX_CONCURRENT_TASKS = 3;
         public static int CURRENT_TASK_COUNT = 0;
 
         public AllegroTaskInvoker()

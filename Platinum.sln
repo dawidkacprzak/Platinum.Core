@@ -1,24 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Core", "Platinum.Core\Platinum.Core.csproj", "{684448DC-D120-42B9-A6D5-D212C92712AE}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platinum.Core", "Platinum.Core\Platinum.Core.csproj", "{684448DC-D120-42B9-A6D5-D212C92712AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Tests.Unit", "Platinum.Tests.Unit\Platinum.Tests.Unit.csproj", "{5FAC2439-F9BE-4FEF-A72A-32215332C1D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platinum.Tests.Unit", "Platinum.Tests.Unit\Platinum.Tests.Unit.csproj", "{5FAC2439-F9BE-4FEF-A72A-32215332C1D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Tests.Integration", "Platinum.Tests.Integration\Platinum.Tests.Integration.csproj", "{CD1197D9-D436-4BC4-852E-2C99489C3625}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platinum.Tests.Integration", "Platinum.Tests.Integration\Platinum.Tests.Integration.csproj", "{CD1197D9-D436-4BC4-852E-2C99489C3625}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Service.UrlFetchTaskCreator", "Platinum.Service.UrlFetchTaskCreator\Platinum.Service.UrlFetchTaskCreator.csproj", "{15229D4B-AA35-4183-A858-DC8CC06A4566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platinum.Service.UrlFetchTaskCreator", "Platinum.Service.UrlFetchTaskCreator\Platinum.Service.UrlFetchTaskCreator.csproj", "{15229D4B-AA35-4183-A858-DC8CC06A4566}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Service.BufforUrlQueue", "Platinum.Service.BufforUrlQueue\Platinum.Service.BufforUrlQueue.csproj", "{0C5BF4C4-BFAD-41EA-B636-6E28FA077F21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platinum.Service.BufforUrlQueue", "Platinum.Service.BufforUrlQueue\Platinum.Service.BufforUrlQueue.csproj", "{0C5BF4C4-BFAD-41EA-B636-6E28FA077F21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Service.UrlTaskInvoker", "Platinum.Service.UrlTaskInvoker\Platinum.Service.UrlTaskInvoker.csproj", "{D1EED57B-3F65-4AC1-8ACB-B251559975CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platinum.Service.UrlTaskInvoker", "Platinum.Service.UrlTaskInvoker\Platinum.Service.UrlTaskInvoker.csproj", "{D1EED57B-3F65-4AC1-8ACB-B251559975CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Service.CategoryFetcher", "Platinum.Service.CategoryFetcher\Platinum.Service.CategoryFetcher.csproj", "{CA447139-EA8C-4CF2-8563-9B998D693278}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platinum.Service.CategoryFetcher", "Platinum.Service.CategoryFetcher\Platinum.Service.CategoryFetcher.csproj", "{CA447139-EA8C-4CF2-8563-9B998D693278}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Service.OfferDetailsFetcher", "Platinum.Service.OfferDetailsFetcher\Platinum.Service.OfferDetailsFetcher.csproj", "{3FD85567-12AD-4C41-922A-4A3BBEF1ABB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platinum.Service.OfferDetailsFetcher", "Platinum.Service.OfferDetailsFetcher\Platinum.Service.OfferDetailsFetcher.csproj", "{3FD85567-12AD-4C41-922A-4A3BBEF1ABB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.ClientAPI", "Platinum.ClientAPI\Platinum.ClientAPI.csproj", "{63F0B276-67A7-4F1F-8FAB-3959CCB2F7A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platinum.ClientAPI", "Platinum.ClientAPI\Platinum.ClientAPI.csproj", "{63F0B276-67A7-4F1F-8FAB-3959CCB2F7A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.Service.AzureContainersRestart", "Platinum.Service.AzureContainersRestart\Platinum.Service.AzureContainersRestart.csproj", "{26583C28-3708-4270-A820-5D535A2B9528}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platinum.Service.AzureContainersRestart", "Platinum.Service.AzureContainersRestart\Platinum.Service.AzureContainersRestart.csproj", "{26583C28-3708-4270-A820-5D535A2B9528}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.AdminPanel", "Platinum.AdminPanel\Platinum.AdminPanel.csproj", "{A1D40ACA-8084-45BC-BA14-C772E86AD7B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,5 +71,15 @@ Global
 		{26583C28-3708-4270-A820-5D535A2B9528}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26583C28-3708-4270-A820-5D535A2B9528}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26583C28-3708-4270-A820-5D535A2B9528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1D40ACA-8084-45BC-BA14-C772E86AD7B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D40ACA-8084-45BC-BA14-C772E86AD7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1D40ACA-8084-45BC-BA14-C772E86AD7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1D40ACA-8084-45BC-BA14-C772E86AD7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0615B7BD-40FE-4591-86EE-5509A97D67DF}
 	EndGlobalSection
 EndGlobal
