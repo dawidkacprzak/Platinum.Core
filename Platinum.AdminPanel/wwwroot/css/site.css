@@ -19,9 +19,18 @@ a, .btn-link {
     margin-right: 5px;
 }
 
+.pointer-cursor :hover {
+    cursor: pointer;
+}
+
 .m-b10
 {
     margin-bottom: 10px;
+}
+
+.border-bottom-2-sol-b
+{
+    border-bottom: 2px solid black;
 }
 app {
     position: relative;

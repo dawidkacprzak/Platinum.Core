@@ -45,6 +45,7 @@ namespace Platinum.Service.UrlTaskInvoker
                 ActiveTasksId = new List<string>();
             }
         }
+        //TODO Różne taski na wiele wątków nie tylko najstarszy
 
         [ExcludeFromCodeCoverage]
         public async Task Run()
@@ -80,7 +81,6 @@ namespace Platinum.Service.UrlTaskInvoker
                 }
 
                 logger.Info("Waiting for task end");
-                ;
 
 
                 logger.Info("Next iteration...");
@@ -154,7 +154,7 @@ namespace Platinum.Service.UrlTaskInvoker
                 {
                     logger.Info("Started task #" + task.Key.Value);
                     ctrl.StartFetching(false, new OfferCategory(EOfferWebsite.Allegro, task.Key.Key),
-                        task.Value.ToList(),Program.UserId);
+                        task.Value.ToList(), Program.UserId);
                     using (IDal db = new Dal())
                     {
                         PopTaskFromQueue(db, task.Key.Value);
@@ -167,13 +167,20 @@ namespace Platinum.Service.UrlTaskInvoker
             {
                 logger.Info(ex);
                 logger.Info("Timeout task #" + task.Key.Value + " - BREAK");
+                if (ex.Message.ToLower().Contains("too many req"))
+                {
+                    using (IDal db = new Dal())
+                    {
+                        SetTaskAsNotProcessedQueue(db, task.Key.Value);
+                    }
+                }
             }
             finally
             {
                 CURRENT_TASK_COUNT++;
             }
         }
-        
+
         public void PopTaskFromQueue(IDal db, int taskId)
         {
             lock (getTaskLock)
@@ -199,6 +206,29 @@ namespace Platinum.Service.UrlTaskInvoker
             }
         }
 
+        public void SetTaskAsNotProcessedQueue(IDal db, int taskId)
+        {
+            lock (getTaskLock)
+            {
+                try
+                {
+                    db.ExecuteNonQuery($"UPDATE allegroUrlFetchTask SET PROCESSED = 0 WHERE Id = {taskId}");
+                    ActiveTasksId.Remove(taskId.ToString());
+                    logger.Info("Updated as not processed task #" + taskId + " from queue");
+                }
+                catch (DalException ex)
+                {
+                    db.RollbackTransaction();
+                    logger.Error(ex);
+                }
+                catch (Exception ex)
+                {
+                    db.RollbackTransaction();
+                    logger.Error(ex);
+                }
+            }
+        }
+        
         public KeyValuePair<KeyValuePair<int, int>, IEnumerable<WebsiteCategoriesFilterSearch>> GetOldestTask(IDal db)
         {
             logger.Info("Started task get - bef lock");

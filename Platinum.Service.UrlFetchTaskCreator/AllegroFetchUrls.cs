@@ -37,14 +37,14 @@ namespace Platinum.Service.UrlFetchTaskCreator
                             $"SELECT isnull(MAX(searchNumber),0) FROM websiteCategoriesFilterSearch where websiteCategoriesFilterSearch.WebsiteCategoryId in (SELECT allegroUrlFetchTask.CategoryId from allegroUrlFetchTask where CategoryId={c.Key} and WebApiUserId={c.Value})");
                         if (paramsCount == 0)
                         {
-                            if(!VerifyTaskCanBeStarted(c.Key,c.Value,5))
+                            if(!VerifyTaskCanBeStarted(c.Key,c.Value,2))
                             {
                                 catsToRemove.Add(c.Key);
                             }
                         }
                         else
                         {
-                            if(!VerifyTaskCanBeStarted(c.Key,c.Value,5))
+                            if(!VerifyTaskCanBeStarted(c.Key,c.Value,2))
                             {
                                 catsToRemove.Add(c.Key);
                             }

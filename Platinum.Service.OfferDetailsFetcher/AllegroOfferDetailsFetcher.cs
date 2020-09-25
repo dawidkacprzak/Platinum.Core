@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net;
@@ -19,6 +20,10 @@ namespace Platinum.Service.OfferDetailsFetcher
     public class AllegroOfferDetailsFetcher : IOfferDetailsFetcher
     {
         Logger _logger = LogManager.GetCurrentClassLogger();
+        public static int SumOfProcessedOffers { get; set; }
+        public bool TimeoutError = false;
+        public static Stopwatch sw = new Stopwatch();
+
         public int CountOfParallelTasks { get; set; }
         public AllegroOfferDetailsFetcher(int countOfTasks)
         {
@@ -28,6 +33,7 @@ namespace Platinum.Service.OfferDetailsFetcher
         [ExcludeFromCodeCoverage]
         public void Run(IDal dal)
         {
+            sw.Start();
             Console.WriteLine($"Application started and tak count {CountOfParallelTasks}");
             try
             {
@@ -72,6 +78,9 @@ namespace Platinum.Service.OfferDetailsFetcher
                 }
 
                 Task.WaitAll(tasks.ToArray());
+                sw.Stop();
+                AddErrorLogsToDb("Details fetcher finished with " + SumOfProcessedOffers +
+                                 " offers and elapsed time: " + sw.ElapsedMilliseconds/1000);
             }
         }
 
@@ -126,17 +135,24 @@ namespace Platinum.Service.OfferDetailsFetcher
             dal.ExecuteNonQuery(
                 $"UPDATE Offers set Processed = {(int)EOfferProcessed.Inactive} WHERE Id = {offer.Id}");
         }
-
+        
+        
         [ExcludeFromCodeCoverage]
         public Task CreateTaskForProcessOrder(IDal dal, Offer offer, IOfferDetailsParser parser)
         {
             return new Task(() =>
             {
+                if (TimeoutError)
+                {
+                    SetOfferAsUnprocessed(dal,offer);
+                    return;
+                }
                 System.Diagnostics.Debug.WriteLine("start");
                 try
                 {
                     OfferDetails details = parser.GetPageDetails(offer.Uri, offer);
                     ElasticController.Instance.InsertOfferDetails(details,Worker.WebApiUserId,offer.WebsiteCategoryId);
+                    SumOfProcessedOffers++;
                 }
                 catch (OfferDetailsFailException ex)
                 {
@@ -145,7 +161,10 @@ namespace Platinum.Service.OfferDetailsFetcher
                     SetOfferAsInActive(dal, offer);
                     _logger.Info(offer.Uri + ": fail - " + ex.Message + ex.StackTrace);
                     System.Diagnostics.Debug.WriteLine("end");
-
+                    if (ex.Message.ToLower().Contains("too many req"))
+                    {
+                        TimeoutError = true;
+                    }
                     return;
                 }
                 catch (Exception ex)
@@ -155,7 +174,10 @@ namespace Platinum.Service.OfferDetailsFetcher
                     SetOfferAsInActive(dal, offer);
                     _logger.Info(offer.Uri + ": fail - " + ex.Message + ex.StackTrace);
                     System.Diagnostics.Debug.WriteLine("end");
-
+                    if (ex.Message.ToLower().Contains("too many req"))
+                    {
+                        TimeoutError = true;
+                    }
                     return;
                 }
 

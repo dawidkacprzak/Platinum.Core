@@ -66,8 +66,6 @@ namespace Platinum.Service.OfferDetailsFetcher
             {
                 fetcher.Run(db);
             }
-
-            await Task.Delay(5000, stoppingToken);
             lifetimeApp.StopApplication();
         }
     }

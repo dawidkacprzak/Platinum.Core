@@ -1,46 +1,109 @@
 ﻿@page "/fetchdata"
 
 @using Platinum.AdminPanel.Data
+@using Platinum.AdminPanel.Model
+@using Nest
 @inject WeatherForecastService ForecastService
 
-<h1>Weather forecast</h1>
+<h1>Fetching details</h1>
+<div class="row m-b10">
+</div>
+<div hidden="@ContainerViewHidden" class="container-fluid">
+    <button class="btn btn-primary m-lr5" @onclick="LoadUserListView">Back</button>
+    <button class="btn btn-primary m-lr5" @onclick="RefreshAzureContainers">Refresh</button>
 
-<p>This component demonstrates fetching data from a service.</p>
-
-@if (forecasts == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
+    <table class="table table-hover">
         <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
+        <tr>
+            <th>Container name</th>
+            <th>Container type</th>
+            <th>Container status</th>
+        </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
+        @foreach (AzureContainerRow row in azureContainerRows)
+        {
+            <tr class="pointer-cursor">
+                <td>@row.ContainerName</td>
+                <td>@row.ContainerType</td>
+                <td> @row.ContainerStatus</td>
+            </tr>
+        }
         </tbody>
     </table>
-}
+</div>
+
+<div hidden="@UserListHidden" class="container-fluid">
+    <button class="btn btn-primary m-lr5" @onclick="RefreshRows">Refresh</button>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>User</th>
+            <th>In process Tasks</th>
+            <th>Waiting Tasks</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (FetchingRow row in rows)
+        {
+            <tr class="pointer-cursor" @onclick="() => { LoadContainerView(row.RowId); }">
+                <td>@row.DisplayName</td>
+                <td>@row.InProcessTasks</td>
+                <td> @row.WaitingTasks</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
 
 @code {
-    private WeatherForecast[] forecasts;
+    FetchDataController fdc = new FetchDataController();
+    AzureController azureController = new AzureController();
+    List<FetchingRow> rows = new List<FetchingRow>();
+    List<AzureContainerRow> azureContainerRows = new List<AzureContainerRow>();
+    List<bool> isIdRowVisible = new List<bool>();
+    bool UserListHidden = false;
+    bool ContainerViewHidden = true;
+    int loadedContainerViewRowId = 0;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        base.OnInitialized();
+        RefreshRows();
+        azureController.LoginToAzure();
     }
+
+    private void RefreshRows()
+    {
+        rows = fdc.GetRows();
+        isIdRowVisible.ForEach(x => x = false);
+        isIdRowVisible = new List<bool>();
+        foreach (var row in rows)
+            isIdRowVisible.Add(true);
+    }
+
+    private void LoadContainerView(int rowId)
+    {
+        loadedContainerViewRowId = rowId;
+        UserListHidden = true;
+        ContainerViewHidden = false;
+        InvokeAsync(() =>
+        {
+            FetchingRow row = rows.First(x => x.RowId == rowId);
+            azureContainerRows = azureController.GetUserContainers(row.UserId).ToList();
+        });
+    }
+
+    private void LoadUserListView()
+    {
+        UserListHidden = false;
+        ContainerViewHidden = true;
+    }
+
+    private void RefreshAzureContainers()
+    {
+        FetchingRow row = rows.First(x => x.RowId == loadedContainerViewRowId);
+        azureContainerRows = azureController.GetUserContainers(row.UserId).ToList();
+    }
+
 }

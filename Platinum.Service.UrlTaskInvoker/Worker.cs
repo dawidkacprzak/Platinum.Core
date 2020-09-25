@@ -17,7 +17,7 @@ namespace Platinum.Service.UrlTaskInvoker
 {
     public class Worker : BackgroundService
     {
-        IHostApplicationLifetime lifetimeApp;
+        public static IHostApplicationLifetime lifetimeApp;
 
         public Worker(IHostApplicationLifetime hostApplicationLifetime)
         {
