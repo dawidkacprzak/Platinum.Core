@@ -1,20 +1,180 @@
 ﻿@page "/users"
-@using Platinum.Core;
+@using System.Data.Common
+@using System.Data.SqlClient
+@using Platinum.Core.DatabaseIntegration
+@using System.Data
+@inject IJSRuntime JsRuntime;
 
 <h1>User list</h1>
-<button class="btn btn-primary" @onclick="RefreshUsers">Refresh</button>
-<b>@users</b>
+<div class="row m-b10">
+    <button class="btn btn-primary m-lr5" @onclick="RefreshUsers">Refresh</button>
+    <button class="btn btn-primary m-lr5" @onclick="() => isAddUserVisible = !isAddUserVisible">New user</button>
+</div>
+@{
+    if (isAddUserVisible)
+    {
+        <table class="table table-primary">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Login</th>
+                <th scope="col">Realm</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            <tr>
+                <td>
+                    <input @bind=newUserLogin class="form-control" type="text" placeholder="Login"/>
+                </td>
+                <td>
+                    <input @bind=newUserPassword class="form-control" type="password" placeholder="Password"/>
+                </td>
+                <td>
+                    <input @bind=newUserRealm class="form-control" type="text" placeholder="Realm"/>
+                </td>
+                <td>
+                    <button class="btn btn-block btn-danger" @onclick="ClearNewUserFields">Clear</button>
+                </td>
+                <td>
+                    <button class="btn btn-block btn-primary" @onclick="AddNewUser">Add</button>
+                </td>
+            </tr>
+            </thead>
+        </table>
+    }
+}
+<table class="table content">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Login</th>
+        <th scope="col">Realm</th>
+    </tr>
+    </thead>
+    @foreach (var item in users)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Login</td>
+            <td>@item.Realm</td>
+        </tr>
+    }
+</table>
 
+
+@{
+    RefreshUsers();
+}
 
 @code {
-    string users = "0";
+    List<UserRow> users = new List<UserRow>();
+    bool isAddUserVisible = false;
+
+    private string newUserLogin;
+    private string newUserPassword;
+    private string newUserRealm;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        RefreshUsers();
+    }
 
     private void RefreshUsers()
     {
-        using(Platinum.Core.DatabaseIntegration.Dal db = new Core.DatabaseIntegration.Dal())
+        using (Dal db = new Core.DatabaseIntegration.Dal())
         {
-            users = ((int)db.ExecuteScalar("Select count(*) from webapiusers")).ToString();
-            
+            using (DbDataReader reader = db.ExecuteReader("Select Id,Login,Realm from webapiusers"))
+            {
+                users.Clear();
+                while (reader.Read())
+                {
+                    users.Add(new UserRow(reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
+                }
+            }
         }
     }
+
+    private void AddNewUser()
+    {
+        if (string.IsNullOrEmpty(newUserLogin) || string.IsNullOrEmpty(newUserPassword) || string.IsNullOrEmpty(newUserRealm))
+        {
+            JsRuntime.InvokeVoidAsync("alert", "All fields must be filled").GetAwaiter().GetResult();
+        }else if (newUserLogin.Contains("\"") || newUserLogin.Contains("'") || newUserLogin.Contains('-'))
+        {
+            JsRuntime.InvokeVoidAsync("alert", "Login cannot contains \",\',-").GetAwaiter().GetResult();
+        }
+        else
+        {
+            using (Dal db = new Dal())
+            {
+                int userExists = (int)db.ExecuteScalar($"select COUNT(*) from WebApiUsers where LOWER([Login]) = '{newUserLogin.ToLower()}'");
+                if (userExists != 0)
+                {
+                    JsRuntime.InvokeVoidAsync("alert", "User with same login exists").GetAwaiter().GetResult();
+                }
+                else
+                {
+                    try
+                    {
+                        db.ExecuteNonQuery("INSERT INTO WebApiUsers VALUES (@login,@password,@realm);", new List<SqlParameter>()
+                        {
+                            new SqlParameter()
+                            {
+                                ParameterName = "login",
+                                SqlDbType = SqlDbType.Text,
+                                Value = newUserLogin
+                            },
+                            new SqlParameter()
+                            {
+                                ParameterName = "password",
+                                SqlDbType = SqlDbType.Text,
+                                Value = newUserPassword
+                            },
+                            new SqlParameter()
+                            {
+                                ParameterName = "realm",
+                                SqlDbType = SqlDbType.Text,
+                                Value = newUserRealm
+                            }
+                        });
+                        ClearNewUserFields();
+                        isAddUserVisible = false;
+                        RefreshUsers();
+                        JsRuntime.InvokeVoidAsync("alert", "OK!").GetAwaiter().GetResult();
+                    }
+                    catch (Exception ex)
+                    {
+                        JsRuntime.InvokeVoidAsync("alert", ex.Message).GetAwaiter().GetResult();
+                    }
+                }
+            }
+        }
+    }
+
+    private void ClearNewUserFields()
+    {
+        newUserLogin = string.Empty;
+        newUserPassword = string.Empty;
+        newUserRealm = string.Empty;
+    }
+
+    #region helperClasses
+
+    private class UserRow
+    {
+        public int Id { get; set; }
+        public string Login { get; set; }
+        public string Realm { get; set; }
+
+        public UserRow(int id, string login, string realm)
+        {
+            this.Id = id;
+            this.Login = login;
+            this.Realm = realm;
+        }
+    }
+
+    #endregion
+
 }
