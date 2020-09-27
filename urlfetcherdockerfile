@@ -3,11 +3,11 @@ ARG webApiUserId
 ARG taskCount
 ENV wa ${webApiUserId}
 ENV tc ${taskCount}
-
+ENV ci ${categoryId}
 RUN apt-get update
 WORKDIR /home/app
 COPY Platinum.Service.UrlTaskInvoker/bin/Release/netcoreapp3.1/publish/ .
 RUN echo $webApiUserId
 RUN echo $taskCount
 RUN ls -la
-CMD dotnet Platinum.Service.UrlTaskInvoker.dll ${wa} ${tc} 
+CMD dotnet Platinum.Service.UrlTaskInvoker.dll ${wa} ${tc} ${ci}
