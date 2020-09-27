@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Nest;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -43,13 +45,13 @@ namespace Platinum.Core.ElasticIntegration
             client.Index(new ELBufforedOffers(offer), i => i.Index("buffered_offers"));
 
         }
-
-        public void InsertOffer(string offer)
+        public bool InsertOffer(string offer)
         {
             var response = client.Index(new ELBufforedOffers(offer), i => i.Index("buffered_offers"));
+            return response.IsValid;
         }
 
-        public void InsertOfferDetails(OfferDetails offerDetails, int userId,int categoryId)
+        public bool InsertOfferDetails(OfferDetails offerDetails, int userId,int categoryId)
         {
             lock (padlock)
             {
@@ -57,12 +59,14 @@ namespace Platinum.Core.ElasticIntegration
                 if (userId == 1)
                 {
                     IndexResponse status = client.Index(offerDetails, i => i.Index("offer_details"));
+                    return status.IsValid;
                 }
                 else
                 {
                     var ex = client.Indices.Exists(index);
                     if(ex.Exists == false)
                     {
+                        offerDetails.CreatedDate = DateTime.Now;
                         var res = client.Indices.Create(index, c => c
                             .Map<OfferDetails>(x => x.AutoMap()).Settings(s =>
                                 s.NumberOfReplicas(2).NumberOfShards(2)));
@@ -72,6 +76,7 @@ namespace Platinum.Core.ElasticIntegration
                         }
                     }
                     IndexResponse status = client.Index<OfferDetails>(offerDetails, i => i.Index(index));
+                    return status.IsValid;
                 }
             }
         }
@@ -108,6 +113,34 @@ namespace Platinum.Core.ElasticIntegration
                 )
             );
             return searchResponse.Documents.Count > 0;
+        }
+
+        public long GetIndexDocumentCount(int categoryId, int userId)
+        {
+            try
+            {
+                var indicies = client.Indices.Get(Indices.All);
+                string indexName = userId + "_cat" + categoryId;
+                if (userId == 1)
+                {
+                    indexName = "offer_details";
+                }
+                List<string> filteredIndicies = indicies.Indices.Where(x => x.Key.Name.ToLower().Contains(indexName))
+                    .Select(x => x.Key.Name).ToList();
+                if (filteredIndicies.Count > 0)
+                {
+                    return client.Count<OfferDetails>(x => x.Index(filteredIndicies.First())).Count;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                return 0;
+            }
         }
     }
 }

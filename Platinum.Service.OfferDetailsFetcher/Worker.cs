@@ -14,6 +14,8 @@ namespace Platinum.Service.OfferDetailsFetcher
     {
         IHostApplicationLifetime lifetimeApp;
         public static int WebApiUserId;
+        public static int CategoryId;
+
         [ExcludeFromCodeCoverage]
         public Worker(IHostApplicationLifetime hostApplicationLifetime)
         {
@@ -24,21 +26,23 @@ namespace Platinum.Service.OfferDetailsFetcher
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             int pararellTasks = 0;
-            if (Program.AppArgs.Count() < 2)
+            if (Program.AppArgs.Count() < 3)
             {
                 #if DEBUG
                 WebApiUserId = 2;
                 pararellTasks = 1;
+                CategoryId = 6406;
                 //configure by hand
                 #endif
                 Console.WriteLine("Error, application MUST contain 2 arguments - user id and tasks count");
             }
             else
             {
-                if (int.TryParse(Program.AppArgs[0], out _) && int.TryParse(Program.AppArgs[1], out _))
+                if (int.TryParse(Program.AppArgs[0], out _) && int.TryParse(Program.AppArgs[1], out _) && int.TryParse(Program.AppArgs[2], out _))
                 {
                     int userId = int.Parse(Program.AppArgs[0]);
                     pararellTasks = int.Parse(Program.AppArgs[1]);
+                    CategoryId = int.Parse(Program.AppArgs[2]);
                     using (IDal db = new Dal())
                     {
                         int userCount =

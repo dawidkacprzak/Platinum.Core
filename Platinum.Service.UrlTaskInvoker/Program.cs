@@ -14,14 +14,16 @@ namespace Platinum.Service.UrlTaskInvoker
     {
         public static string NumberOfTasksArg;
         public static int UserId;
+        public static int CategoryId;
         public static void Main(string[] args)
         {
             Console.WriteLine("Args: " + string.Join("/",args));
-            if (args.Length < 2)
+            if (args.Length < 3)
             {
                 #if DEBUG
                 NumberOfTasksArg = "1";
-                UserId = 2;
+                UserId = 1;
+                CategoryId = 6406;
 #else
                 Console.WriteLine("User id and task count cannot be empty (first app argument)");
                 throw new Exception("User id and task count cannot be empty (first app argument)");
@@ -29,10 +31,11 @@ namespace Platinum.Service.UrlTaskInvoker
             }
             else
             {
-                if (int.TryParse(args[0], out _) && int.TryParse(args[1], out _))
+                if (int.TryParse(args[0], out _) && int.TryParse(args[1], out _) && int.TryParse(args[2], out _))
                 {
                     int userId = int.Parse(args[0]);
                     int taskCount = int.Parse(args[1]);
+                    CategoryId = int.Parse(args[2]);
                     NumberOfTasksArg = taskCount.ToString();
                     using (IDal db = new Dal())
                     {

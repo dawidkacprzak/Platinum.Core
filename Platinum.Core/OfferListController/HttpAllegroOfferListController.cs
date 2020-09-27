@@ -191,8 +191,9 @@ namespace Platinum.Core.OfferListController
                     if (!offerBuffored)
                     {
                         logger.Info("Offer not exist in buffor - insert");
-                        ElasticController.Instance.InsertOffer(enumerable.ElementAt(i));
-                        uniqueOffers.Add(enumerable.ElementAt(i));
+                        bool successInsert = ElasticController.Instance.InsertOffer(enumerable.ElementAt(i));
+                        if(successInsert)
+                            uniqueOffers.Add(enumerable.ElementAt(i));
                     }
                     else
                     {

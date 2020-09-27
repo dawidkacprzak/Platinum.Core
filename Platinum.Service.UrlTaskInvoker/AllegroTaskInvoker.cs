@@ -254,6 +254,8 @@ namespace Platinum.Service.UrlTaskInvoker
                     taskQuery += $@" AND allegroUrlFetchTask.Id NOT IN ({string.Join(",", ActiveTasksId)}) ";
                 }
 
+                taskQuery += $@" AND allegroUrlFetchTask.CategoryId = {Program.CategoryId}";
+
                 int updatedTaskId = -1;
                 taskQuery += " ORDER BY Id)";
                 using (DbDataReader taskReader =

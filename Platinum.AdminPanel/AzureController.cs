@@ -14,7 +14,6 @@ namespace Platinum.AdminPanel
         public void LoginToAzure()
         {
             string authFilePath = "my.azureauth";
-
             azure = GetAzureContext(authFilePath);
         }
 

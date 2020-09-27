@@ -26,16 +26,17 @@ namespace Platinum.Service.AzureContainersRestart
                     string resourceGroupName = "container_Registry_fetcher";
 
                     string authFilePath = "my.azureauth";
-
-                    // Authenticate with Azure
+                    
                     IAzure azure = GetAzureContext(authFilePath);
 
                     IEnumerable<string> containers = ListContainerGroups(azure, resourceGroupName);
                     var enumerable = containers as string[] ?? containers.ToArray();
                     _logger.Info($"found: " + enumerable.Count() +
                                  $" containers to restart. ({string.Join(",", enumerable)})");
-                    foreach (var container in enumerable)
+                    foreach (string container in enumerable)
                     {
+                       // int clientId = int.Parse(container.Split('0')[1]);
+                      //  int categoryId = 
                         RestartContainers(azure, resourceGroupName, container);
                     }
                 }

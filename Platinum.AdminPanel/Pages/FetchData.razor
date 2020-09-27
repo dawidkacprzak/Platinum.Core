@@ -12,6 +12,7 @@
     <button class="btn btn-primary m-lr5" @onclick="LoadUserListView">Back</button>
     <button class="btn btn-primary m-lr5" @onclick="RefreshAzureContainers">Refresh</button>
 
+    <h3 class="m-t20">Containers</h3>
     <table class="table table-hover">
         <thead>
         <tr>
@@ -27,6 +28,31 @@
                 <td>@row.ContainerName</td>
                 <td>@row.ContainerType</td>
                 <td> @row.ContainerStatus</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <h3 class="m-t20">Offers stats</h3>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Category Id</th>
+            <th>Category Name</th>
+            <th>Processed offers(SQL)</th>
+            <th>Not processed offers(SQL)</th>
+            <th>Processed offers(Elastic)</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (FetchingProcessedOffersRow row in offersCountRows)
+        {
+            <tr class="pointer-cursor">
+                <td>@row.CategoryId</td>
+                <td>@row.CategoryName</td>
+                <td>@row.ProcessedOffers</td>
+                <td>@row.NotProcessedOffersSql</td>
+                <td>@row.ProcessedOffersElastic</td>
             </tr>
         }
         </tbody>
@@ -61,6 +87,7 @@
     AzureController azureController = new AzureController();
     List<FetchingRow> rows = new List<FetchingRow>();
     List<AzureContainerRow> azureContainerRows = new List<AzureContainerRow>();
+    List<FetchingProcessedOffersRow> offersCountRows = new List<FetchingProcessedOffersRow>();
     List<bool> isIdRowVisible = new List<bool>();
     bool UserListHidden = false;
     bool ContainerViewHidden = true;
@@ -84,13 +111,15 @@
 
     private void LoadContainerView(int rowId)
     {
-        loadedContainerViewRowId = rowId;
-        UserListHidden = true;
-        ContainerViewHidden = false;
         InvokeAsync(() =>
         {
+            offersCountRows = new List<FetchingProcessedOffersRow>();
+            loadedContainerViewRowId = rowId;
+            UserListHidden = true;
+            ContainerViewHidden = false;
             FetchingRow row = rows.First(x => x.RowId == rowId);
             azureContainerRows = azureController.GetUserContainers(row.UserId).ToList();
+            offersCountRows = fdc.GetOffers(row.UserId);
         });
     }
 
@@ -104,6 +133,7 @@
     {
         FetchingRow row = rows.First(x => x.RowId == loadedContainerViewRowId);
         azureContainerRows = azureController.GetUserContainers(row.UserId).ToList();
+        offersCountRows = fdc.GetOffers(row.UserId);
     }
 
 }

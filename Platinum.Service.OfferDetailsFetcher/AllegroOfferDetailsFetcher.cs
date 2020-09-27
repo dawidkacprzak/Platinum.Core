@@ -39,7 +39,7 @@ namespace Platinum.Service.OfferDetailsFetcher
             {
                 WebClient c = new WebClient();
                 string exIp = c.DownloadString("https://ifconfig.me");
-                AddErrorLogsToDb("App (V4) started with ip: " + exIp);
+                AddErrorLogsToDb("App (V5) started with ip: " + exIp + " and category id: " + Worker.CategoryId);
             }catch(Exception)
             {
 
@@ -90,7 +90,7 @@ namespace Platinum.Service.OfferDetailsFetcher
             using (DbDataReader reader =
                 dal.ExecuteReader(
                     $"update offers set Processed = {(int)EOfferProcessed.InProcess} Output inserted.Id where Id in (select top {count} Id from offers with(nolock) where Processed = {(int)EOfferProcessed.NotProcessed} and" +
-                    $" WebApiUserId = {Worker.WebApiUserId})")
+                    $" WebApiUserId = {Worker.WebApiUserId} and WebsiteCategoryId = {Worker.CategoryId})")
             )
             {
                 while (reader.Read())
@@ -142,6 +142,7 @@ namespace Platinum.Service.OfferDetailsFetcher
         {
             return new Task(() =>
             {
+                bool successInsert = false;
                 if (TimeoutError)
                 {
                     SetOfferAsUnprocessed(dal,offer);
@@ -151,8 +152,9 @@ namespace Platinum.Service.OfferDetailsFetcher
                 try
                 {
                     OfferDetails details = parser.GetPageDetails(offer.Uri, offer);
-                    ElasticController.Instance.InsertOfferDetails(details,Worker.WebApiUserId,offer.WebsiteCategoryId);
-                    SumOfProcessedOffers++;
+                    successInsert = ElasticController.Instance.InsertOfferDetails(details,Worker.WebApiUserId,offer.WebsiteCategoryId);
+                    if(successInsert) 
+                        SumOfProcessedOffers++;
                 }
                 catch (OfferDetailsFailException ex)
                 {
@@ -183,9 +185,17 @@ namespace Platinum.Service.OfferDetailsFetcher
 
                 try
                 {
-                    System.Diagnostics.Debug.WriteLine("PROCESSED");
-                    SetOfferAsProcessed(dal, offer);
-                    _logger.Info(offer.Uri + ": processed");
+                    if (successInsert)
+                    {
+                        System.Diagnostics.Debug.WriteLine("PROCESSED");
+                        SetOfferAsProcessed(dal, offer);
+                        _logger.Info(offer.Uri + ": processed");
+                    }
+                    else
+                    {
+                        _logger.Info(offer.Uri + ": not processed - error during elastic insert");
+                        SetOfferAsUnprocessed(dal,offer);
+                    }
                 }
                 catch (OfferDetailsFailException ex)
                 {
