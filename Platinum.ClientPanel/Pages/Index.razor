@@ -20,7 +20,7 @@
             <div class="card-body">
                 @if (areOffersLoaded)
                 {
-                    <div  class="table-responsive">
+                    <div class="table-responsive">
                         <table class="table">
                             <thead>
                             <th>Kategoria</th>
@@ -42,7 +42,7 @@
                             }
                             </tbody>
                         </table>
-                        </div>
+                    </div>
                 }
                 else
                 {
@@ -65,10 +65,10 @@
 {
     ConcurrentBag<UserServiceList> userServiceLists = new ConcurrentBag<UserServiceList>();
     bool areOffersLoaded = false;
-    
+
     protected override Task OnInitializedAsync()
     {
-        return Task.Run(LoadServiceList); 
+        return Task.Run(LoadServiceList);
     }
 
 
@@ -77,8 +77,11 @@
         if (AuthController.IsUserAuthenticated(AuthenticationStateProvider))
         {
             int userId = AuthController.GetAuthenticatedUserId(AuthenticationStateProvider);
-            UserServicesController.GetUserServicePanelData(userId).ContinueWith((e) => { userServiceLists = new ConcurrentBag<UserServiceList>(e.Result); });
+            List<UserServiceList> services = UserServicesController.GetUserServicePanelData(userId).GetAwaiter().GetResult();
+
+            userServiceLists = new ConcurrentBag<UserServiceList>(services);
             areOffersLoaded = true;
+            System.Diagnostics.Debug.WriteLine("found offers: " + userServiceLists.Count);
         }
     }
 }
