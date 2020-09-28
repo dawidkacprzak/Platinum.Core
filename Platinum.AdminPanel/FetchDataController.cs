@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using Platinum.AdminPanel.Model;
 using Platinum.Core.DatabaseIntegration;
 using Platinum.Core.ElasticIntegration;
+using Platinum.Core.Finances;
+using Platinum.Core.Model;
 
 namespace Platinum.AdminPanel
 {
@@ -65,26 +68,43 @@ namespace Platinum.AdminPanel
                     processed (offerId) as (
 	                    SELECT offers.Id as offerId FROM offers where WebApiUserId = {userId} AND Processed <> 0
                     )
-                    select offers.WebsiteCategoryId, offers.WebApiUserId, COUNT(notProcessed.offerId) as NotProcessedOffers, COUNT(processed.offerId) as ProcessedOffers,ISNULL(websiteCategories.name,'')
+                    select offers.WebsiteCategoryId,
+                    offers.WebApiUserId,
+                    COUNT(notProcessed.offerId) as NotProcessedOffers,
+                    COUNT(processed.offerId) as ProcessedOffers,
+                    ISNULL(websiteCategories.name,''),
+                    PaidPlan.Id
                     FROM WebApiUserWebsiteCategory
                     INNER JOIN offers on offers.WebApiUserId = WebApiUserWebsiteCategory.WebApiUserId
                     LEFT JOIN notProcessed on notProcessed.offerId = offers.Id
                     LEFT JOIN processed on processed.offerId = offers.Id
                     LEFT JOIN websiteCategories ON websiteCategories.Id = offers.WebsiteCategoryId
-
+                    LEFT JOIN PaidPlan on PaidPlan.Id = WebApiUserWebsiteCategory.PaidPlanId
                     WHERE offers.WebApiUserId = {userId}
-                    group by offers.WebsiteCategoryId, OFFERS.WebApiUserId, websiteCategories.name
+                    group by offers.WebsiteCategoryId, OFFERS.WebApiUserId, websiteCategories.name, PaidPlan.Id
                 "))
                 {
                     while (reader.Read())
                     {
+                        PaidPlan plan = new PaidPlan(reader.GetInt32(5));
+                        long offersThisMonth =
+                            ElasticController.Instance.GetIndexDocumentCountThisMonth(reader.GetInt32(0), userId);
+                        long offersAllTime =
+                            ElasticController.Instance.GetIndexDocumentCount(reader.GetInt32(0), userId);
                         ret.Add(new FetchingProcessedOffersRow()
                         {
                             CategoryId   = reader.GetInt32(0),
-                            ProcessedOffers   = reader.GetInt32(3),
+                            ProcessedOffersSql   = reader.GetInt32(3),
                             NotProcessedOffersSql   = reader.GetInt32(2),
                             WebApiUserId   = reader.GetInt32(1),
-                            CategoryName = reader.GetString(4)
+                            CategoryName = reader.GetString(4),
+                            PaidPlan = plan.Name,
+                            OffersThisMonth = offersThisMonth,
+                            MonthPay = Math.Round(CalculatePriceController.GetPrice(offersThisMonth,reader.GetInt32(5)),2),
+                            MaxOffersInPlan = plan.MaxOffersInDb,
+                            ProcessedOffersElastic = ElasticController.Instance.GetIndexDocumentCount(reader.GetInt32(0), userId),
+                            AllTimePay = Math.Round(CalculatePriceController.GetPrice(offersAllTime,reader.GetInt32(5)),2),
+                            MaxOffersPerMonth = plan.MaxProceedOffersInMonth
                         });
                     }
                 }

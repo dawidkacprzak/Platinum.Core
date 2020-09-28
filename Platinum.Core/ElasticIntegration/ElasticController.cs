@@ -25,6 +25,7 @@ namespace Platinum.Core.ElasticIntegration
                 {
                     instance = new ElasticController();
                 }
+
                 return instance;
             }
         }
@@ -34,24 +35,23 @@ namespace Platinum.Core.ElasticIntegration
             ConnectionSettings settings = new ConnectionSettings(new Uri(ElasticConfiguration.ELASTIC_HOST));
             settings.GlobalHeaders(new System.Collections.Specialized.NameValueCollection()
             {
-                {"authorization","opnsdgsd353sapgqejpg"}
+                {"authorization", "opnsdgsd353sapgqejpg"}
             });
             client = new ElasticClient(settings);
         }
 
         public void InsertOffer(Offer offer)
         {
-
             client.Index(new ELBufforedOffers(offer), i => i.Index("buffered_offers"));
-
         }
+
         public bool InsertOffer(string offer)
         {
             var response = client.Index(new ELBufforedOffers(offer), i => i.Index("buffered_offers"));
             return response.IsValid;
         }
 
-        public bool InsertOfferDetails(OfferDetails offerDetails, int userId,int categoryId)
+        public bool InsertOfferDetails(OfferDetails offerDetails, int userId, int categoryId)
         {
             lock (padlock)
             {
@@ -64,7 +64,7 @@ namespace Platinum.Core.ElasticIntegration
                 else
                 {
                     var ex = client.Indices.Exists(index);
-                    if(ex.Exists == false)
+                    if (ex.Exists == false)
                     {
                         offerDetails.CreatedDate = DateTime.Now;
                         var res = client.Indices.Create(index, c => c
@@ -75,6 +75,7 @@ namespace Platinum.Core.ElasticIntegration
                             throw new Exception("Cannot create index: " + index);
                         }
                     }
+
                     IndexResponse status = client.Index<OfferDetails>(offerDetails, i => i.Index(index));
                     return status.IsValid;
                 }
@@ -100,7 +101,6 @@ namespace Platinum.Core.ElasticIntegration
 
         public bool OfferExistsInBuffor(string uri)
         {
-
             var searchResponse = client.Search<ELBufforedOffers>(s => s.Index("buffered_offers")
                 .From(0)
                 .Size(10)
@@ -115,6 +115,13 @@ namespace Platinum.Core.ElasticIntegration
             return searchResponse.Documents.Count > 0;
         }
 
+        public long GetIndexDocumentCountThisMonth(int categoryId, int userId)
+        {
+            DateTime thisMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            DateTime nextMonth = thisMonth.AddMonths(1);
+            return GetIndexDocumentCountByDateRange(categoryId, userId, thisMonth, nextMonth);
+        }
+
         public long GetIndexDocumentCount(int categoryId, int userId)
         {
             try
@@ -125,11 +132,63 @@ namespace Platinum.Core.ElasticIntegration
                 {
                     indexName = "offer_details";
                 }
+
                 List<string> filteredIndicies = indicies.Indices.Where(x => x.Key.Name.ToLower().Contains(indexName))
                     .Select(x => x.Key.Name).ToList();
                 if (filteredIndicies.Count > 0)
                 {
-                    return client.Count<OfferDetails>(x => x.Index(filteredIndicies.First())).Count;
+                    var k = client.Count<OfferDetails>(c=>c.Index(indexName));
+
+                    return k.Count;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex);
+                return 0;
+            }
+        }
+
+
+        public long GetIndexDocumentCountByDateRange(int categoryId, int userId, DateTime minDate, DateTime maxDate)
+        {
+            try
+            {
+                var indicies = client.Indices.Get(Indices.All);
+                string indexName = userId + "_cat" + categoryId;
+                if (userId == 1)
+                {
+                    indexName = "offer_details";
+                }
+
+                List<string> filteredIndicies = indicies.Indices.Where(x => x.Key.Name.ToLower().Contains(indexName))
+                    .Select(x => x.Key.Name).ToList();
+                if (filteredIndicies.Count > 0)
+                {
+                    List<QueryContainer> queries = new List<QueryContainer>();
+                    QueryContainer dateQuery = new QueryContainer();
+                    dateQuery = (new DateRangeQuery()
+                    {
+                        Field = "createdDate",
+                        GreaterThanOrEqualTo = minDate,
+                        LessThan = maxDate
+                    });
+
+                    queries.Add(dateQuery);
+                    CountRequest request = new CountRequest<OfferDetails>(indexName)
+                    {
+                        Query = new BoolQuery()
+                        {
+                            Filter = queries
+                        }
+                    };
+                    var k = client.Count(request);
+
+                    return k.Count;
                 }
                 else
                 {

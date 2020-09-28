@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
 using Platinum.Core.DatabaseIntegration;
+using Platinum.Core.ElasticIntegration;
 using Platinum.Core.Factory.BrowserRestClient;
 using Platinum.Core.Model;
 using Platinum.Core.OfferDetailsParser;
@@ -79,6 +80,7 @@ namespace Platinum.Tests.Integration
                 Assert.DoesNotThrow(() => invoker.GetOldestTask(db));
             }
         }
+        
 
     }
 }

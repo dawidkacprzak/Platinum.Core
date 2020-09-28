@@ -42,6 +42,11 @@
             <th>Processed offers(SQL)</th>
             <th>Not processed offers(SQL)</th>
             <th>Processed offers(Elastic)</th>
+            <th>Paid plan</th>
+            <th>Month offers / Max offers</th>
+            <th>Month income</th>
+            <th>All offers / Max offers</th>
+            <th>All income</th>
         </tr>
         </thead>
         <tbody>
@@ -50,9 +55,14 @@
             <tr class="pointer-cursor">
                 <td>@row.CategoryId</td>
                 <td>@row.CategoryName</td>
-                <td>@row.ProcessedOffers</td>
+                <td>@row.ProcessedOffersSql</td>
                 <td>@row.NotProcessedOffersSql</td>
                 <td>@row.ProcessedOffersElastic</td>
+                <td>@row.PaidPlan</td>
+                <td>@row.OffersThisMonth / @row.MaxOffersPerMonth</td>
+                <td>@row.MonthPay</td>
+                <td>@row.ProcessedOffersElastic / @row.MaxOffersInPlan</td>
+                <td>@row.AllTimePay</td>
             </tr>
         }
         </tbody>
