@@ -7,6 +7,7 @@
 @using Platinum.ClientPanel.Controllers
 @using Platinum.Core.Finances
 @using System.Collections.Concurrent
+@using Platinum.Core.ElasticIntegration
 @using Platinum.Core.Model
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
@@ -29,7 +30,8 @@
                             {
                                 for (int i = 0; i < userCategoryList.Count; i++)
                                 {
-                                    <li class="list-group-item list-group-item-action">
+                                    int index = i;
+                                    <li class="list-group-item list-group-item-action" @onclick="() => ChangeCategory(userCategoryList.ElementAt(index).WebsiteCategoryId)">
                                         @userCategoryList.ElementAt(i).CategoryName
                                     </li>
                                 }
@@ -37,15 +39,68 @@
                         </ul>
                     </div>
                     <div class="col-8">
-                        <h4 class="m-md-2">Oferty</h4>
-                        <ul class="list-group">
-                            @if (areCatsAndOffersLoading)
+
+                        <div class="row justify-content-sm-between align-content-center align-items-center">
+                            <h4 class="m-md-2">Oferty</h4>
+                            @if (loadedOffers.Count > 0)
+                            {
+                                @if (maxOffersPage != -1 && maxOffersPage > 0)
+                                {
+                                    <div class="row m-0 justify-content-center align-items-center">
+
+                                        <button class="mr-2" @onclick="PrevOfferPage">&#60;</button>
+                                        <input @onchange="SetPageFromInput" class="w-15" type="text" value="@visibleCurrentPage"/>
+                                        <h5 class="m-0 p-0">&nbsp;/ @visibleMaxPage</h5>
+                                        <button @onclick="NextOfferPage" class="ml-2">&#62;</button>
+
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <span></span>
+                            }
+
+                        </div>
+
+                        <div class="table-responsive max-viewport-height-75">
+                            @if (areOffersLoading)
                             {
                                 <div class="spinner-border" role="status">
                                     <span class="sr-only">Loading...</span>
                                 </div>
                             }
-                        </ul>
+                            else if (selectedCategory == 0)
+                            {
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-action">
+                                        Wybierz kategorie z listy
+                                    </li>
+                                </ul>
+                            }
+                            else
+                            {
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <th>Tytuł</th>
+                                        <th>Link</th>
+                                        <th width="100">Cena</th>
+                                        </thead>
+                                        <tbody>
+                                        @for (int i = 0; i < loadedOffers.Count; i++)
+                                        {
+                                            <tr>
+                                                <td>@loadedOffers.ElementAt(i).Title</td>
+                                                <td>@loadedOffers.ElementAt(i).Uri</td>
+                                                <td>@loadedOffers.ElementAt(i).Price zł</td>
+                                            </tr>
+                                        }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,13 +111,36 @@
 @code
 {
     bool areCatsAndOffersLoading = true;
+    bool areOffersLoading = true;
     List<WebApiUserWebsiteCategory> userCategoryList = new List<WebApiUserWebsiteCategory>();
+    List<OfferDetails> loadedOffers = new List<OfferDetails>();
+    int userId = 0;
+    int listedCategoryId = -1;
+    int selectedCategory = 0;
+    long maxOffersPage = -1;
+    long allOfferCount = -1;
+    int defaultPageSize = 100;
+    int currentPage = 0;
+
+    long visibleCurrentPage
+    {
+        get { return currentPage + 1; }
+    }
+
+    long visibleMaxPage
+    {
+        get { return maxOffersPage + 1; }
+    }
 
     protected override void OnInitialized()
     {
         if (!AuthController.IsUserAuthenticated(AuthenticationStateProvider))
         {
             NavManager.NavigateTo("/");
+        }
+        else
+        {
+            userId = AuthController.GetAuthenticatedUserId(AuthenticationStateProvider);
         }
     }
 
@@ -72,8 +150,94 @@
         {
             userCategoryList = WebApiUserWebsiteCategory.GetAllUserCategories(AuthController.GetAuthenticatedUserId(AuthenticationStateProvider)).ToList();
             areCatsAndOffersLoading = false;
+            areOffersLoading = false;
         });
     }
 
+    public void ChangeCategory(int catId)
+    {
+        areOffersLoading = true;
+        maxOffersPage = -1;
+        allOfferCount = -1;
+        listedCategoryId = -1;
+        currentPage = 0;
+        loadedOffers = new List<OfferDetails>();
+        InvokeAsync(() =>
+        {
+            allOfferCount = ElasticController.Instance.GetIndexDocumentCount(catId, userId);
+            loadedOffers = ElasticController.Instance.GetPaginatedOfferDetails(catId, userId, 100, 0);
+            maxOffersPage = allOfferCount / defaultPageSize;
+            if (maxOffersPage > 99)
+                maxOffersPage = 99;
+            listedCategoryId = catId;
+            selectedCategory = catId;
+            areOffersLoading = false;
+        });
+    }
+
+    public void NextOfferPage()
+    {
+        if (listedCategoryId != -1 && currentPage < maxOffersPage)
+        {
+            InvokeAsync(() =>
+            {
+                allOfferCount = ElasticController.Instance.GetIndexDocumentCount(listedCategoryId, userId);
+                loadedOffers = ElasticController.Instance.GetPaginatedOfferDetails(listedCategoryId, userId, 100, currentPage + 1);
+                maxOffersPage = allOfferCount / defaultPageSize;
+                if (maxOffersPage > 99)
+                    maxOffersPage = 99;
+                listedCategoryId = listedCategoryId;
+                selectedCategory = listedCategoryId;
+                areOffersLoading = false;
+                currentPage++;
+            });
+        }
+    }
+
+    public void PrevOfferPage()
+    {
+        if (listedCategoryId != -1 && currentPage > 0)
+        {
+            InvokeAsync(() =>
+            {
+                allOfferCount = ElasticController.Instance.GetIndexDocumentCount(listedCategoryId, userId);
+                loadedOffers = ElasticController.Instance.GetPaginatedOfferDetails(listedCategoryId, userId, 100, currentPage - 1);
+                maxOffersPage = allOfferCount / defaultPageSize;
+                if (maxOffersPage > 99)
+                    maxOffersPage = 99;
+                listedCategoryId = listedCategoryId;
+                selectedCategory = listedCategoryId;
+                areOffersLoading = false;
+                currentPage--;
+            });
+        }
+    }
+
+    public void SetPageFromInput(ChangeEventArgs args)
+    {
+        if (args.Value != null && int.TryParse(args.Value.ToString(), out _))
+        {
+            long newPage = long.Parse(args.Value.ToString());
+            if (newPage > 0 && newPage <= visibleMaxPage)
+            {
+                if (listedCategoryId != -1 && currentPage >= 0)
+                {
+                    InvokeAsync(() =>
+                    {
+                        allOfferCount = ElasticController.Instance.GetIndexDocumentCount(listedCategoryId, userId);
+                        loadedOffers = ElasticController.Instance.GetPaginatedOfferDetails(listedCategoryId, userId, 100, (int) newPage - 1);
+                        maxOffersPage = allOfferCount / defaultPageSize;
+                        if (maxOffersPage > 99)
+                            maxOffersPage = 99;
+                        listedCategoryId = listedCategoryId;
+                        selectedCategory = listedCategoryId;
+                        areOffersLoading = false;
+                        currentPage = (int) (newPage - 1);
+                    });
+                    return;
+                }
+            }
+        }
+    }
 
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Elasticsearch.Net;
 using Nest;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -200,6 +201,37 @@ namespace Platinum.Core.ElasticIntegration
                 _logger.Error(ex);
                 return 0;
             }
+        }
+
+        public List<OfferDetails> GetPaginatedOfferDetails(int categoryId, int userId, int maxPerPage, int page)
+        {
+            QueryContainer producentQuery = new QueryContainer();
+            List<QueryContainer> titleQueries = new List<QueryContainer>();
+            
+            
+            IRequestConfiguration conf = new RequestConfiguration();
+            conf.Headers = new System.Collections.Specialized.NameValueCollection();
+            conf.Headers.Add(new System.Collections.Specialized.NameValueCollection()
+            {
+                {"authorization","opnsdgsd353sapgqejpg"},
+                {"http_authorization","opnsdgsd353sapgqejpg"}
+            });
+            
+            SearchRequest request = new SearchRequest<OfferDetails>($"{userId}_cat{categoryId}")
+            {
+                Size = maxPerPage,
+                From = page*maxPerPage
+            };
+            
+            request.RequestConfiguration = conf;
+            var k = client.Search<OfferDetails>(request);
+            for (int x = 0; x < k.Documents.Count; x++)
+            {
+                k.Documents.ElementAt(x).Id = k.Hits.ElementAt(x).Source.Id;
+            }
+
+
+            return k.Documents.ToList();
         }
     }
 }
