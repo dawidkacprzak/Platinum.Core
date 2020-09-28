@@ -1,0 +1,79 @@
+﻿@page "/Oferty"
+@using Microsoft.AspNetCore.WebUtilities
+@inject NavigationManager NavManager
+@inject IJSRuntime JsRuntime;
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Components.Authorization
+@using Platinum.ClientPanel.Controllers
+@using Platinum.Core.Finances
+@using System.Collections.Concurrent
+@using Platinum.Core.Model
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<AuthorizeView>
+    <Authorized>
+        <h1>Oferty</h1>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        <h4 class="m-md-2">Kategorie</h4>
+                        <ul class="list-group">
+                            @if (areCatsAndOffersLoading)
+                            {
+                                <div class="spinner-border" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            }
+                            else
+                            {
+                                for (int i = 0; i < userCategoryList.Count; i++)
+                                {
+                                    <li class="list-group-item list-group-item-action">
+                                        @userCategoryList.ElementAt(i).CategoryName
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                    <div class="col-8">
+                        <h4 class="m-md-2">Oferty</h4>
+                        <ul class="list-group">
+                            @if (areCatsAndOffersLoading)
+                            {
+                                <div class="spinner-border" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Authorized>
+</AuthorizeView>
+
+@code
+{
+    bool areCatsAndOffersLoading = true;
+    List<WebApiUserWebsiteCategory> userCategoryList = new List<WebApiUserWebsiteCategory>();
+
+    protected override void OnInitialized()
+    {
+        if (!AuthController.IsUserAuthenticated(AuthenticationStateProvider))
+        {
+            NavManager.NavigateTo("/");
+        }
+    }
+
+    protected override Task OnInitializedAsync()
+    {
+        return Task.Run(() =>
+        {
+            userCategoryList = WebApiUserWebsiteCategory.GetAllUserCategories(AuthController.GetAuthenticatedUserId(AuthenticationStateProvider)).ToList();
+            areCatsAndOffersLoading = false;
+        });
+    }
+
+
+}

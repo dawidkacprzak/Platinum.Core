@@ -136,21 +136,50 @@ app {
     top: 0.5rem;
 }
 
-@media (max-width: 767.98px) {
-    .main .top-row:not(.auth) {
-        display: none;
-    }
+@media (max-width: 1156px) {
+    .auth-navigation-container
+    {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-content: center;
+        align-items: center;
+        justify-content: space-between !important;
 
+    }
     .main .top-row.auth {
         justify-content: space-between;
     }
-
+    .main .top-row
+    {
+        justify-content: space-between !important;
+    }
     .main .top-row a, .main .top-row .btn-link {
         margin-left: 0;
     }
+
+    .auth-navigation-control
+    {
+        width: 100% !important;
+        margin: 0!important;
+        margin-top: 5px !important;
+    }
+    
+    .navbar-header
+    {
+        height: auto!important;
+        padding: 5px;
+    }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1156.1px) {
+    .auth-navigation-container
+    {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
+    }
     app {
         flex-direction: row;
     }

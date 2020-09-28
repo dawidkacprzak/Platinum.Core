@@ -4,4 +4,33 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="3.1.8" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.8" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.8" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="Pages\Login.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Pages\Logout.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="Shared\LoginControl.razor">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </Content>
+      <Content Update="Pages\Oferty.razor">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Platinum.Core\Platinum.Core.csproj" />
+    </ItemGroup>
+
 </Project>

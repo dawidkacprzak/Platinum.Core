@@ -1,14 +1,16 @@
-﻿@inherits LayoutComponentBase
+﻿@using Platinum.ClientPanel.Pages
+@inherits LayoutComponentBase
+@inject IJSRuntime JsRuntime;
 
 <div class="sidebar">
-    <NavMenu/>
+    <NavMenu />
 </div>
-
 <div class="main">
-    <div class="top-row px-4">
-        <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+    <div class="top-row px-4 navbar-header">
+        <!-- BLAZOR COOKIE Auth Code (begin) -->
+        <LoginControl />
+        <!-- BLAZOR COOKIE Auth Code (end) -->
     </div>
-
     <div class="content px-4">
         @Body
     </div>

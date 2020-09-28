@@ -1,0 +1,55 @@
+﻿@page "/loginControl"
+@using System.Web;
+@using Platinum.ClientPanel.Pages
+<AuthorizeView>
+    <Authorized>
+        <b>Cześć, @context.User.Identity.Name!</b>
+        <a class="ml-md-auto btn btn-primary"
+           href="/logout?returnUrl=/"
+           target="_top">
+            Wyloguj się
+        </a>
+    </Authorized>
+    <NotAuthorized>
+        <div class="auth-navigation-container">
+
+
+            <label hidden="@IsErrorHidden" class="text-danger m-md-0 p-md-0 align-content-center align-self-center auth-navigation-control">@Error</label>
+
+            <input type="text"
+                   class="form-control w-15 ml-5 auth-navigation-control"
+                   placeholder="Login"
+                   @bind="@Username"/>
+            <input type="password"
+                   placeholder="Hasło"
+                   class="form-control w-15 ml-2 auth-navigation-control"
+                   @bind="@Password"/>
+
+            <a class="ml-5 btn btn-primary auth-navigation-control"
+               href="/login?paramUsername=@encode(@Username)&paramPassword=@encode(@Password)"
+               target="_top">
+                Zaloguj się
+            </a>
+
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    string Username = "";
+    string Password = "";
+    string Error = LoginModel.Error;
+    bool IsErrorHidden = string.IsNullOrEmpty(LoginModel.Error) ? true : false;
+
+    private string encode(string param)
+    {
+        return HttpUtility.UrlEncode(param);
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        LoginModel.Error = null;
+        base.OnAfterRender(firstRender);
+    }
+
+}
