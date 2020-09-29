@@ -34,7 +34,7 @@ namespace Platinum.ClientPanel.Model
         public decimal IncomeThisMonth { get; set; }
         public PaidPlan PaidPlan { get; set; }
         public WebApiUserWebsiteCategory webApiUserWebsiteCategory { get; set; }
-        public List<string> FoundMappings { get; set; }
+        public List<SimpleMapping> FoundMappings { get; set; }
         public decimal DatabaseSize { get; set; }
 
         public OffersSelectedCategoryStats(int categoryId, int userId, int webApiUserWebsiteCategoryId)

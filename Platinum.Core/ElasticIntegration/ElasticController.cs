@@ -39,6 +39,7 @@ namespace Platinum.Core.ElasticIntegration
             {
                 {"authorization", "opnsdgsd353sapgqejpg"}
             });
+            settings.DisableDirectStreaming(true);
             client = new ElasticClient(settings);
         }
 
@@ -204,7 +205,7 @@ namespace Platinum.Core.ElasticIntegration
             }
         }
 
-        public List<string> GetIndexMappings(int categoryId, int userId)
+        public List<SimpleMapping> GetIndexMappings(int categoryId, int userId)
         {
             IRequestConfiguration conf = new RequestConfiguration();
             conf.Headers = new System.Collections.Specialized.NameValueCollection();
@@ -213,7 +214,7 @@ namespace Platinum.Core.ElasticIntegration
                 {"authorization", "opnsdgsd353sapgqejpg"},
                 {"http_authorization", "opnsdgsd353sapgqejpg"}
             });
-            List<string> ret = new List<string>();
+            List<SimpleMapping> ret = new List<SimpleMapping>();
             var response = client.LowLevel.Indices.GetMapping<GetMappingResponse>($"{userId}_cat{categoryId}");
             if (response.Indices.Values.Any())
             {
@@ -237,7 +238,7 @@ namespace Platinum.Core.ElasticIntegration
                                       baseName.Equals("count") ||
                                       baseName.Equals("values")))
                                 {
-                                    ret.Add(propValue.Name.Name);
+                                    ret.Add(new SimpleMapping(propValue.Name.Name, "object"));
                                 }
 
                                 foreach (IProperty property in propValue.Properties.Values)
@@ -249,13 +250,14 @@ namespace Platinum.Core.ElasticIntegration
                                         propName.Equals("websiteCategoryId") || propName.Equals("value") ||
                                         propName.Equals("keys") || propName.Equals("key") ||
                                         propName.Equals("item") || propName.Equals("items") ||
-                                        propName.Equals("count") ||
+                                        propName.Equals("count") || propName.Equals("description") ||
+                                        propName.Equals("id") ||
                                         propName.Equals("values"))
                                     {
                                         continue;
                                     }
 
-                                    ret.Add(property.Name.Name);
+                                    ret.Add(new SimpleMapping(property.Name.Name, baseName, property.Type));
                                 }
                             }
                         }
@@ -263,7 +265,7 @@ namespace Platinum.Core.ElasticIntegration
                         {
                             IProperty propValue = ((IProperty) v.Value);
 
-                            ret.Add(propValue.Name.Name);
+                            ret.Add(new SimpleMapping(propValue.Name.Name, propValue.Type));
                         }
                     }
                 }
@@ -297,6 +299,63 @@ namespace Platinum.Core.ElasticIntegration
             }
 
 
+            return k.Documents.ToList();
+        }
+
+        public List<OfferDetails> GetByAnyFieldKeywords(string keywords, int categoryId, int userId)
+        {
+            string[] args = keywords.Split(',');
+
+            QueryContainer qc = new QueryContainer();
+            BoolQuery bq = new BoolQuery();
+
+            foreach (var VARIABLE in args)
+            {
+                qc &= new MultiMatchQuery()
+                {
+                    Fields = "*",
+                    Query = VARIABLE,
+                    Operator = Operator.Or
+                };
+            }
+
+            bq = new BoolQuery()
+            {
+                Must = new[] {qc}
+            };
+
+            string indexName = $"{userId}_cat{categoryId}";
+            if (userId == 1)
+            {
+                indexName = "offer_details";
+            }
+
+            SearchRequest request = new SearchRequest<OfferDetails>(indexName)
+            {
+                Size = 100,
+                Query = bq
+            };
+            IRequestConfiguration conf = new RequestConfiguration();
+            conf.Headers = new System.Collections.Specialized.NameValueCollection();
+            conf.Headers.Add(new System.Collections.Specialized.NameValueCollection()
+            {
+                {
+                    "authorization", "opnsdgsd353sapgqejpg"
+                },
+                {
+                    "http_authorization", "opnsdgsd353sapgqejpg"
+                }
+            });
+            request.RequestConfiguration = conf;
+            var k = client.Search<OfferDetails>(request);
+            for (int x = 0;
+                x < k.Documents.Count;
+                x++)
+            {
+                k.Documents.ElementAt(x).Id = k.Hits.ElementAt(x).Source.Id;
+            }
+
+            var json = client.RequestResponseSerializer.SerializeToString(request);
             return k.Documents.ToList();
         }
     }

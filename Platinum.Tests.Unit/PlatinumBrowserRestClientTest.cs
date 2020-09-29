@@ -27,7 +27,7 @@ namespace Platinum.Tests.Unit
         [Test]
         public void x()
         {
-            ElasticController.Instance.GetIndexMappings(16520, 2);
+            ElasticController.Instance.GetByAnyFieldKeywords("Ryobi",16520, 2);
         }
     }
 }

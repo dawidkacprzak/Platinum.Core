@@ -3,7 +3,9 @@
 @inject IJSRuntime JsRuntime;
 @using Platinum.ClientPanel.Controllers
 @using Platinum.ClientPanel.Model
+@using Platinum.Core.ElasticIntegration
 @using Platinum.Core.Model
+@using Platinum.Core.Types.Exceptions
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
 <AuthorizeView>
@@ -41,7 +43,6 @@
                                 <div class="row justify-content-sm-between align-content-center align-items-center">
                                     <h4 class="m-md-2">Oferty</h4>
                                 </div>
-
                                 <div class="table-responsive max-viewport-height-75">
                                     @if (areCatStatsLoading)
                                     {
@@ -91,8 +92,7 @@
                                                 </li>
                                                 <li class="list-group-item list-group-item-action">
                                                     <div class="row container-fluid">
-                                                        <button @onclick="ShowMappingView" class="btn btn-primary m-1">Zobacz dostępne mapowania</button>
-                                                        <button class="btn btn-primary m-1">Eksport danych</button>
+                                                        <button @onclick="ShowExportView" class="btn btn-primary m-1">Eksplorator danych</button>
                                                     </div>
                                                 </li>
 
@@ -106,24 +106,65 @@
                 </div>
             </div>
         }
-        else if (showPossibleMappings)
+        else if (showDataExport)
         {
             <div class="container-fluid">
                 <h1>Mapowania</h1>
-                <div class="card-body table-responsive max-viewport-height-75">
+                <button class="btn btn-primary" @onclick="ShowCategoryView">Wróć</button>
+                <div class="card-body table-responsive max-viewport-height-75 mt-2">
                     <div class="col-12">
-                        <ul class="list-group">
-
-                            @for (int i = 0; i < selectedCategoryStats.FoundMappings.Count; i++)
+                        <div class="alert alert-primary" role="alert">
+                            Liczba ofert ograniczona jest do 100. Aby uzyskać większą ilość odpowiedzi użyj funkcjonalności WebAPI lub rządania eksportu danych
+                        </div>
+                        <div class="alert alert-danger mt-1" role="alert">
+                            Jeżeli dane typu cena i ilość się nie zgadzają oznacza to że po zaindeksowaniu przez nas oferty jej atrybuty zostały zmienione.
+                        </div>
+                        <div class="flex-row d-flex mb-2 align-items-center align-content-center">
+                            <input value="@filterSearchInputValue"
+                                   @onchange="@((ChangeEventArgs __e) => filterSearchInputValue = __e.Value.ToString())" placeholder="Słowa kluczowe oddzielone przecinkiem" type="text" class="form-control w-25 mr-3"/>
+                            <button @onclick="FilterOffers" class="btn btn-block fill btn-info w-auto mr-2">Filtruj</button>
+                            <button @onclick="ExportToCSV" class="m-0 btn btn-block fill btn-info w-auto">Eksport do CSV</button>
+                            @if (isCsvGenerating)
                             {
-                                int index = i;
-                                <li class="list-group-item list-group-item-action">
-                                    @selectedCategoryStats.FoundMappings.ElementAt(i)
-                                </li>
+                                <div class="spinner-border" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
                             }
-
-                        </ul>
+                        </div>
+                        @if (areOffersLoading)
+                        {
+                            <div class="spinner-border" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        }
+                        else
+                        {
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Tytuł oferty</th>
+                                    <th>Link</th>
+                                    <th>Data zaindeksowania</th>
+                                    <th>Cena</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (OfferDetails row in loadedOffers)
+                                {
+                                    <tr class="pointer-cursor">
+                                        <td>@row.Title</td>
+                                        <td>
+                                            <a class="nav-link p-0 m-0" @onclick="() => { OpenLinkInNewTab(row.Uri); }">[Click]</a>
+                                        </td>
+                                        <td>@row.CreatedDate</td>
+                                        <td>@row.Price&nbsp;zł</td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        }
                     </div>
+
                 </div>
             </div>
         }
@@ -137,11 +178,13 @@
     List<WebApiUserWebsiteCategory> userCategoryList = new List<WebApiUserWebsiteCategory>();
     OffersSelectedCategoryStats selectedCategoryStats;
     List<OfferDetails> loadedOffers = new List<OfferDetails>();
+    string filterSearchInputValue = string.Empty;
     int userId = 0;
     int selectedCategory = 0;
-    bool showPossibleMappings = false;
     bool showMainPage = true;
     bool showDataExport = false;
+    bool areOffersLoading = false;
+    bool isCsvGenerating = false;
 
     protected override void OnInitialized()
     {
@@ -177,11 +220,64 @@
         });
     }
 
-    public void ShowMappingView()
+    public Task ShowExportView()
     {
         showMainPage = false;
-        showPossibleMappings = true;
+        showDataExport = true;
+        areOffersLoading = true;
+        return Task.Run(() =>
+        {
+            loadedOffers = ElasticController.Instance.GetByAnyFieldKeywords("", selectedCategory, userId);
+            areOffersLoading = false;
+        });
+    }
+
+    public void ShowCategoryView()
+    {
+        showMainPage = true;
         showDataExport = false;
     }
 
+    public Task FilterOffers()
+    {
+        string args = filterSearchInputValue;
+        if (args.Trim() == "" || string.IsNullOrEmpty(args.Trim()))
+        {
+            args = null;
+        }
+        areOffersLoading = true;
+        return Task.Run(() =>
+        {
+            loadedOffers = ElasticController.Instance.GetByAnyFieldKeywords(filterSearchInputValue, selectedCategory, userId);
+            areOffersLoading = false;
+        });
+    }
+
+    public Task ExportToCSV()
+    {
+        if (isCsvGenerating)
+            return Task.CompletedTask;
+
+        if (loadedOffers.Count == 0)
+        {
+            JsRuntime.InvokeVoidAsync("alert", "Nie można wyeksportować danych jeżeli nie załadowano żadnych ofert.");
+            return Task.CompletedTask;
+        }
+        else
+        {
+            isCsvGenerating = true;
+            return Task.Run(() =>
+            {
+                string urlFile = DownloadFileController.CreateCsvOffer(loadedOffers);
+                string baseUri = NavManager.BaseUri;
+                JsRuntime.InvokeVoidAsync("open", baseUri + urlFile, "_blank");
+                isCsvGenerating = false;
+            });
+        }
+    }
+
+    public void OpenLinkInNewTab(string url)
+    {
+        JsRuntime.InvokeVoidAsync("open", url, "_blank");
+    }
 }

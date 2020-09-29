@@ -30,8 +30,8 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
             ConnectionSettings settings = new ConnectionSettings(new Uri(ElasticConfiguration.ELASTIC_HOST));
             settings.GlobalHeaders(new System.Collections.Specialized.NameValueCollection()
             {
-                {"authorization","opnsdgsd353sapgqejpg"},
-                {"http_authorization","opnsdgsd353sapgqejpg"}
+                {"authorization", "opnsdgsd353sapgqejpg"},
+                {"http_authorization", "opnsdgsd353sapgqejpg"}
             });
             client = new ElasticClient(settings);
         }
@@ -51,11 +51,11 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                 QueryContainer producentQuery = new QueryContainer();
 
                 producentQuery = (new NestedQuery()
-                {
-                    Path = "attributes",
-                    Query = new BoolQuery()
-                    {
-                        Should = new QueryContainer[]
+                                     {
+                                         Path = "attributes",
+                                         Query = new BoolQuery()
+                                         {
+                                             Should = new QueryContainer[]
                                              {
                                                  new WildcardQuery()
                                                  {
@@ -64,8 +64,8 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
                                                      Boost = 1
                                                  }
                                              }
-                    }
-                }
+                                         }
+                                     }
                                  )
                                  || new WildcardQuery()
                                  {
@@ -223,8 +223,8 @@ namespace Platinum.ClientAPI.Controllers.Clients.Oponeo
             conf.Headers = new System.Collections.Specialized.NameValueCollection();
             conf.Headers.Add(new System.Collections.Specialized.NameValueCollection()
             {
-                {"authorization","opnsdgsd353sapgqejpg"},
-                {"http_authorization","opnsdgsd353sapgqejpg"}
+                {"authorization", "opnsdgsd353sapgqejpg"},
+                {"http_authorization", "opnsdgsd353sapgqejpg"}
             });
             request.RequestConfiguration = conf;
             var k = client.Search<OfferDetails>(request);
