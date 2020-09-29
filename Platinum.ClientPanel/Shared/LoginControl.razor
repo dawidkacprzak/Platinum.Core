@@ -19,9 +19,11 @@
             <input type="text"
                    class="form-control w-15 ml-5 auth-navigation-control"
                    placeholder="Login"
+                   @oninput="@(ui => { Username = (string) ui.Value;})"
                    @bind="@Username"/>
             <input type="password"
                    placeholder="Hasło"
+                   @oninput="@(ui => { Password = (string) ui.Value;})"
                    class="form-control w-15 ml-2 auth-navigation-control"
                    @bind="@Password"/>
 

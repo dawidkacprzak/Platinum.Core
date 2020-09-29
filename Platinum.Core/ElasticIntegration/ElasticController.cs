@@ -8,6 +8,7 @@ using Newtonsoft.Json.Serialization;
 using NLog;
 using Platinum.Core.Model;
 using Platinum.Core.Model.Elastic;
+using PuppeteerSharp.Input;
 
 namespace Platinum.Core.ElasticIntegration
 {
@@ -138,7 +139,7 @@ namespace Platinum.Core.ElasticIntegration
                     .Select(x => x.Key.Name).ToList();
                 if (filteredIndicies.Count > 0)
                 {
-                    var k = client.Count<OfferDetails>(c=>c.Index(indexName));
+                    var k = client.Count<OfferDetails>(c => c.Index(indexName));
 
                     return k.Count;
                 }
@@ -203,26 +204,91 @@ namespace Platinum.Core.ElasticIntegration
             }
         }
 
-        public List<OfferDetails> GetPaginatedOfferDetails(int categoryId, int userId, int maxPerPage, int page)
+        public List<string> GetIndexMappings(int categoryId, int userId)
         {
-            QueryContainer producentQuery = new QueryContainer();
-            List<QueryContainer> titleQueries = new List<QueryContainer>();
-            
-            
             IRequestConfiguration conf = new RequestConfiguration();
             conf.Headers = new System.Collections.Specialized.NameValueCollection();
             conf.Headers.Add(new System.Collections.Specialized.NameValueCollection()
             {
-                {"authorization","opnsdgsd353sapgqejpg"},
-                {"http_authorization","opnsdgsd353sapgqejpg"}
+                {"authorization", "opnsdgsd353sapgqejpg"},
+                {"http_authorization", "opnsdgsd353sapgqejpg"}
             });
-            
+            List<string> ret = new List<string>();
+            var response = client.LowLevel.Indices.GetMapping<GetMappingResponse>($"{userId}_cat{categoryId}");
+            if (response.Indices.Values.Any())
+            {
+                for (int i = 0; i < response.Indices.Values.Count(); i++)
+                {
+                    var typeMapping = response.Indices.Values.ElementAt(i).Mappings;
+                    foreach (var v in typeMapping.Properties)
+                    {
+                        try
+                        {
+                            ObjectProperty propValue = ((ObjectProperty) v.Value);
+                            if (propValue.Properties.Count > 0)
+                            {
+                                string baseName = propValue.Name.Name.ToLower();
+                                if (!(baseName.Equals("attributes") || baseName.Equals("comparer") ||
+                                      baseName.Equals("description") || baseName.Equals("processed") ||
+                                      baseName.Equals("uriHash") || baseName.Equals("websiteId") ||
+                                      baseName.Equals("websiteCategoryId") || baseName.Equals("value") ||
+                                      baseName.Equals("keys") || baseName.Equals("key") || baseName.Equals("item") ||
+                                      baseName.Equals("items") ||
+                                      baseName.Equals("count") ||
+                                      baseName.Equals("values")))
+                                {
+                                    ret.Add(propValue.Name.Name);
+                                }
+
+                                foreach (IProperty property in propValue.Properties.Values)
+                                {
+                                    string propName = property.Name.Name.ToLower();
+                                    if (propName.Equals("attributes") || propName.Equals("comparer") ||
+                                        propName.Equals("description") || propName.Equals("processed") ||
+                                        propName.Equals("uriHash") || propName.Equals("websiteId") ||
+                                        propName.Equals("websiteCategoryId") || propName.Equals("value") ||
+                                        propName.Equals("keys") || propName.Equals("key") ||
+                                        propName.Equals("item") || propName.Equals("items") ||
+                                        propName.Equals("count") ||
+                                        propName.Equals("values"))
+                                    {
+                                        continue;
+                                    }
+
+                                    ret.Add(property.Name.Name);
+                                }
+                            }
+                        }
+                        catch (InvalidCastException)
+                        {
+                            IProperty propValue = ((IProperty) v.Value);
+
+                            ret.Add(propValue.Name.Name);
+                        }
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+
+        public List<OfferDetails> GetPaginatedOfferDetails(int categoryId, int userId, int maxPerPage, int page)
+        {
+            IRequestConfiguration conf = new RequestConfiguration();
+            conf.Headers = new System.Collections.Specialized.NameValueCollection();
+            conf.Headers.Add(new System.Collections.Specialized.NameValueCollection()
+            {
+                {"authorization", "opnsdgsd353sapgqejpg"},
+                {"http_authorization", "opnsdgsd353sapgqejpg"}
+            });
+
             SearchRequest request = new SearchRequest<OfferDetails>($"{userId}_cat{categoryId}")
             {
                 Size = maxPerPage,
-                From = page*maxPerPage
+                From = page * maxPerPage
             };
-            
+
             request.RequestConfiguration = conf;
             var k = client.Search<OfferDetails>(request);
             for (int x = 0; x < k.Documents.Count; x++)

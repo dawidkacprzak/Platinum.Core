@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Platinum.Core.ApiIntegration;
+using Platinum.Core.ElasticIntegration;
 using Platinum.Core.Types;
 
 namespace Platinum.Tests.Unit
@@ -20,6 +21,13 @@ namespace Platinum.Tests.Unit
             PlatinumBrowserClient client = new PlatinumBrowserClient(url);
             Assert.AreEqual(client.ApiUrl,url);
             Assert.IsInstanceOf<PlatinumBrowserClient>(client);
+        }
+
+
+        [Test]
+        public void x()
+        {
+            ElasticController.Instance.GetIndexMappings(16520, 2);
         }
     }
 }

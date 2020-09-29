@@ -1,136 +1,147 @@
 ﻿@page "/Oferty"
-@using Microsoft.AspNetCore.WebUtilities
 @inject NavigationManager NavManager
 @inject IJSRuntime JsRuntime;
-@using System.Security.Claims
-@using Microsoft.AspNetCore.Components.Authorization
 @using Platinum.ClientPanel.Controllers
-@using Platinum.Core.Finances
-@using System.Collections.Concurrent
-@using Platinum.Core.ElasticIntegration
+@using Platinum.ClientPanel.Model
 @using Platinum.Core.Model
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
 <AuthorizeView>
     <Authorized>
-        <h1>Oferty</h1>
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-4">
-                        <h4 class="m-md-2">Kategorie</h4>
-                        <ul class="list-group">
-                            @if (areCatsAndOffersLoading)
-                            {
-                                <div class="spinner-border" role="status">
-                                    <span class="sr-only">Loading...</span>
-                                </div>
-                            }
-                            else
-                            {
-                                for (int i = 0; i < userCategoryList.Count; i++)
-                                {
-                                    int index = i;
-                                    <li class="list-group-item list-group-item-action" @onclick="() => ChangeCategory(userCategoryList.ElementAt(index).WebsiteCategoryId)">
-                                        @userCategoryList.ElementAt(i).CategoryName
-                                    </li>
-                                }
-                            }
-                        </ul>
-                    </div>
-                    <div class="col-8">
-
-                        <div class="row justify-content-sm-between align-content-center align-items-center">
-                            <h4 class="m-md-2">Oferty</h4>
-                            @if (loadedOffers.Count > 0)
-                            {
-                                @if (maxOffersPage != -1 && maxOffersPage > 0)
-                                {
-                                    <div class="row m-0 justify-content-center align-items-center">
-
-                                        <button class="mr-2" @onclick="PrevOfferPage">&#60;</button>
-                                        <input @onchange="SetPageFromInput" class="w-15" type="text" value="@visibleCurrentPage"/>
-                                        <h5 class="m-0 p-0">&nbsp;/ @visibleMaxPage</h5>
-                                        <button @onclick="NextOfferPage" class="ml-2">&#62;</button>
-
-                                    </div>
-                                }
-                            }
-                            else
-                            {
-                                <span></span>
-                            }
-
-                        </div>
-
-                        <div class="table-responsive max-viewport-height-75">
-                            @if (areOffersLoading)
-                            {
-                                <div class="spinner-border" role="status">
-                                    <span class="sr-only">Loading...</span>
-                                </div>
-                            }
-                            else if (selectedCategory == 0)
-                            {
+        @if (showMainPage)
+        {
+            <div class="container-fluid">
+                <h1>Oferty</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <h4 class="m-md-2">Kategorie</h4>
                                 <ul class="list-group">
-                                    <li class="list-group-item list-group-item-action">
-                                        Wybierz kategorie z listy
-                                    </li>
-                                </ul>
-                            }
-                            else
-                            {
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                        <th>Tytuł</th>
-                                        <th>Link</th>
-                                        <th width="100">Cena</th>
-                                        </thead>
-                                        <tbody>
-                                        @for (int i = 0; i < loadedOffers.Count; i++)
+                                    @if (areCatsAndOffersLoading)
+                                    {
+                                        <div class="spinner-border" role="status">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < userCategoryList.Count; i++)
                                         {
-                                            <tr>
-                                                <td>@loadedOffers.ElementAt(i).Title</td>
-                                                <td>@loadedOffers.ElementAt(i).Uri</td>
-                                                <td>@loadedOffers.ElementAt(i).Price zł</td>
-                                            </tr>
+                                            int index = i;
+                                            <li class="list-group-item list-group-item-action" @onclick="() => ChangeCategory(userCategoryList.ElementAt(index).Id, userCategoryList.ElementAt(index).WebsiteCategoryId)">
+                                                @userCategoryList.ElementAt(i).CategoryName
+                                            </li>
                                         }
-                                        </tbody>
-                                    </table>
+                                    }
+                                </ul>
+                            </div>
+                            <div class="col-8">
+
+                                <div class="row justify-content-sm-between align-content-center align-items-center">
+                                    <h4 class="m-md-2">Oferty</h4>
                                 </div>
-                            }
+
+                                <div class="table-responsive max-viewport-height-75">
+                                    @if (areCatStatsLoading)
+                                    {
+                                        <div class="spinner-border" role="status">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                    }
+                                    else if (selectedCategory == 0)
+                                    {
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-action">
+                                                Wybierz kategorie z listy
+                                            </li>
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <div class="table-responsive">
+                                            <ul class="list-group">
+                                                <li class="list-group-item list-group-item-action">
+                                                    Kategoria: @selectedCategoryStats.webApiUserWebsiteCategory.CategoryName
+                                                </li>
+                                                <li class="list-group-item list-group-item-action">
+                                                    Plan: @selectedCategoryStats.PaidPlan.Name
+                                                </li>
+                                                <li class="list-group-item list-group-item-action">
+                                                    Pozostały limit ogółem: @selectedCategoryStats.OffersRemains
+                                                </li>
+                                                <li class="list-group-item list-group-item-action">
+                                                    Pozostały limit w tym miesiącu: @selectedCategoryStats.OffersRemainsThisMonth
+                                                </li>
+                                                <li class="list-group-item list-group-item-action">
+                                                    Zaimportowanych ofert: @selectedCategoryStats.IndexedDocumentThisMonth
+                                                </li>
+                                                <li class="list-group-item list-group-item-action">
+                                                    Zaimportowanych ofert w tym miesiącu: @selectedCategoryStats.IndexedDocumentCount
+                                                </li>
+                                                <li class="list-group-item list-group-item-action">
+                                                    Opłata za magazyn: @Math.Round(selectedCategoryStats.IncomeForStorageThisMonth, 2)
+                                                </li>
+                                                <li class="list-group-item list-group-item-action">
+                                                    Opłata za przetworzenie ofert: @Math.Round(selectedCategoryStats.IncomeForProceedOffersThisMonth, 2)
+
+                                                </li>
+                                                <li class="list-group-item list-group-item-action">
+                                                    Łączna opłata: @Math.Round(selectedCategoryStats.IncomeThisMonth, 2)
+                                                </li>
+                                                <li class="list-group-item list-group-item-action">
+                                                    <div class="row container-fluid">
+                                                        <button @onclick="ShowMappingView" class="btn btn-primary m-1">Zobacz dostępne mapowania</button>
+                                                        <button class="btn btn-primary m-1">Eksport danych</button>
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        }
+        else if (showPossibleMappings)
+        {
+            <div class="container-fluid">
+                <h1>Mapowania</h1>
+                <div class="card-body table-responsive max-viewport-height-75">
+                    <div class="col-12">
+                        <ul class="list-group">
+
+                            @for (int i = 0; i < selectedCategoryStats.FoundMappings.Count; i++)
+                            {
+                                int index = i;
+                                <li class="list-group-item list-group-item-action">
+                                    @selectedCategoryStats.FoundMappings.ElementAt(i)
+                                </li>
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
     </Authorized>
 </AuthorizeView>
 
 @code
 {
     bool areCatsAndOffersLoading = true;
-    bool areOffersLoading = true;
+    bool areCatStatsLoading = true;
     List<WebApiUserWebsiteCategory> userCategoryList = new List<WebApiUserWebsiteCategory>();
+    OffersSelectedCategoryStats selectedCategoryStats;
     List<OfferDetails> loadedOffers = new List<OfferDetails>();
     int userId = 0;
-    int listedCategoryId = -1;
     int selectedCategory = 0;
-    long maxOffersPage = -1;
-    long allOfferCount = -1;
-    int defaultPageSize = 100;
-    int currentPage = 0;
-
-    long visibleCurrentPage
-    {
-        get { return currentPage + 1; }
-    }
-
-    long visibleMaxPage
-    {
-        get { return maxOffersPage + 1; }
-    }
+    bool showPossibleMappings = false;
+    bool showMainPage = true;
+    bool showDataExport = false;
 
     protected override void OnInitialized()
     {
@@ -150,94 +161,27 @@
         {
             userCategoryList = WebApiUserWebsiteCategory.GetAllUserCategories(AuthController.GetAuthenticatedUserId(AuthenticationStateProvider)).ToList();
             areCatsAndOffersLoading = false;
-            areOffersLoading = false;
+            areCatStatsLoading = false;
         });
     }
 
-    public void ChangeCategory(int catId)
+    public Task ChangeCategory(int webApiUserCategoryId, int catId)
     {
-        areOffersLoading = true;
-        maxOffersPage = -1;
-        allOfferCount = -1;
-        listedCategoryId = -1;
-        currentPage = 0;
+        areCatStatsLoading = true;
         loadedOffers = new List<OfferDetails>();
-        InvokeAsync(() =>
+        return Task.Run(() =>
         {
-            allOfferCount = ElasticController.Instance.GetIndexDocumentCount(catId, userId);
-            loadedOffers = ElasticController.Instance.GetPaginatedOfferDetails(catId, userId, 100, 0);
-            maxOffersPage = allOfferCount / defaultPageSize;
-            if (maxOffersPage > 99)
-                maxOffersPage = 99;
-            listedCategoryId = catId;
             selectedCategory = catId;
-            areOffersLoading = false;
+            selectedCategoryStats = new OffersSelectedCategoryStats(catId, userId, webApiUserCategoryId);
+            areCatStatsLoading = false;
         });
     }
 
-    public void NextOfferPage()
+    public void ShowMappingView()
     {
-        if (listedCategoryId != -1 && currentPage < maxOffersPage)
-        {
-            InvokeAsync(() =>
-            {
-                allOfferCount = ElasticController.Instance.GetIndexDocumentCount(listedCategoryId, userId);
-                loadedOffers = ElasticController.Instance.GetPaginatedOfferDetails(listedCategoryId, userId, 100, currentPage + 1);
-                maxOffersPage = allOfferCount / defaultPageSize;
-                if (maxOffersPage > 99)
-                    maxOffersPage = 99;
-                listedCategoryId = listedCategoryId;
-                selectedCategory = listedCategoryId;
-                areOffersLoading = false;
-                currentPage++;
-            });
-        }
-    }
-
-    public void PrevOfferPage()
-    {
-        if (listedCategoryId != -1 && currentPage > 0)
-        {
-            InvokeAsync(() =>
-            {
-                allOfferCount = ElasticController.Instance.GetIndexDocumentCount(listedCategoryId, userId);
-                loadedOffers = ElasticController.Instance.GetPaginatedOfferDetails(listedCategoryId, userId, 100, currentPage - 1);
-                maxOffersPage = allOfferCount / defaultPageSize;
-                if (maxOffersPage > 99)
-                    maxOffersPage = 99;
-                listedCategoryId = listedCategoryId;
-                selectedCategory = listedCategoryId;
-                areOffersLoading = false;
-                currentPage--;
-            });
-        }
-    }
-
-    public void SetPageFromInput(ChangeEventArgs args)
-    {
-        if (args.Value != null && int.TryParse(args.Value.ToString(), out _))
-        {
-            long newPage = long.Parse(args.Value.ToString());
-            if (newPage > 0 && newPage <= visibleMaxPage)
-            {
-                if (listedCategoryId != -1 && currentPage >= 0)
-                {
-                    InvokeAsync(() =>
-                    {
-                        allOfferCount = ElasticController.Instance.GetIndexDocumentCount(listedCategoryId, userId);
-                        loadedOffers = ElasticController.Instance.GetPaginatedOfferDetails(listedCategoryId, userId, 100, (int) newPage - 1);
-                        maxOffersPage = allOfferCount / defaultPageSize;
-                        if (maxOffersPage > 99)
-                            maxOffersPage = 99;
-                        listedCategoryId = listedCategoryId;
-                        selectedCategory = listedCategoryId;
-                        areOffersLoading = false;
-                        currentPage = (int) (newPage - 1);
-                    });
-                    return;
-                }
-            }
-        }
+        showMainPage = false;
+        showPossibleMappings = true;
+        showDataExport = false;
     }
 
 }
