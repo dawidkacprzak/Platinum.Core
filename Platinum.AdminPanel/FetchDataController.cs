@@ -100,10 +100,10 @@ namespace Platinum.AdminPanel
                             CategoryName = reader.GetString(4),
                             PaidPlan = plan.Name,
                             OffersThisMonth = offersThisMonth,
-                            MonthPay = Math.Round(CalculatePriceController.GetPrice(offersThisMonth,reader.GetInt32(5)),2),
+                            MonthPay = Math.Round(CalculatePriceController.GetPrice(offersThisMonth,offersAllTime,reader.GetInt32(5)),2),
                             MaxOffersInPlan = plan.MaxOffersInDb,
                             ProcessedOffersElastic = ElasticController.Instance.GetIndexDocumentCount(reader.GetInt32(0), userId),
-                            AllTimePay = Math.Round(CalculatePriceController.GetPrice(offersAllTime,reader.GetInt32(5)),2),
+                            AllTimePay = Math.Round(CalculatePriceController.GetPrice(offersThisMonth,offersAllTime,reader.GetInt32(5)),2),
                             MaxOffersPerMonth = plan.MaxProceedOffersInMonth
                         });
                     }

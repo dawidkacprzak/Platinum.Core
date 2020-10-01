@@ -61,12 +61,12 @@ namespace Platinum.ClientAPI.Controllers
                 bool parse = int.TryParse(categoryId.ToString(), out _);
                 if (!parse)
                 {
-                    BadRequest("Category Id is invalid.");
+                    return BadRequest("Category Id is invalid.");
                 }
                 List<PublicControllerCategory> categories = new List<PublicControllerCategory>();
                 using (Dal db = new Dal())
                 {
-                    using (DbDataReader reader = db.ExecuteReader("select Id,name,'https://allegro.pl/'+routeUrl as Url from websiteCategories with (nolock) where Id = " + categoryId + ";"))
+                    using (DbDataReader reader = db.ExecuteReader($"select Id,name,'https://allegro.pl/'+routeUrl as Url from websiteCategories with (nolock) where Id = " + categoryId + ";"))
                     {
                         while (reader.Read())
                         {
@@ -82,7 +82,7 @@ namespace Platinum.ClientAPI.Controllers
                 }
                 if (categories.Count == 0)
                 {
-                    NotFound("Not found category with id " + categoryId);
+                    return NotFound("Not found category with id " + categoryId);
                 }
                 return new JsonResult(categories);
             }
@@ -102,12 +102,12 @@ namespace Platinum.ClientAPI.Controllers
                     return new JsonResult(ElasticController.Instance.BeginScroll(categoryId, userId, pageSize));
                 }catch(Exception ex)
                 {
-                    BadRequest(ex.Message);
+                    return BadRequest(ex.Message);
                 }
             }
             else
             {
-                Forbid("Your account is not set to passed user id");
+                return Forbid("Your account is not set to passed user id");
             }
             return Ok();
         }
@@ -123,7 +123,7 @@ namespace Platinum.ClientAPI.Controllers
                 }
                 catch (Exception ex)
                 {
-                    BadRequest(ex.Message);
+                    return BadRequest(ex.Message);
                 }
             }
             else
@@ -132,7 +132,41 @@ namespace Platinum.ClientAPI.Controllers
             }
             return Ok();
         }
+        
+        [HttpGet("GetAttributes/{userId}/{categoryId}")]
+        public IActionResult GetAttributes(int userId,int categoryId)
+        {
+            if (IsUserSame(Request.Headers,userId))
+            {
+                try
+                {
+                    var mappings = ElasticController.Instance.GetIndexMappings(categoryId, userId);
+                    List<MappingApiElement> mappingApiElements = new List<MappingApiElement>();
+                    foreach (var map in mappings)
+                    {
+                        mappingApiElements.Add(new MappingApiElement(map));
+                    }
+                    return new JsonResult(mappingApiElements);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+            }
+            else
+            {
+                return Forbid("Your account is not set to passed user id");
+            }
+        }
 
+        [HttpGet("BeginFilteredScroll/{attributes}")]
+        public IActionResult BeginFilteredScroll(string attrbiutes)
+        {
+            Dictionary<string,string> dict = new Dictionary<string, string>();
+           // dict.Add("price",20);
+            int b = 0x0;
+            return Ok();
+        }
 
         private bool IsUserSame(IHeaderDictionary headers, int userId)
         {
@@ -153,7 +187,7 @@ namespace Platinum.ClientAPI.Controllers
 
                             using (Dal db = new Dal())
                             {
-                                int userCount = (int)db.ExecuteScalar("SELECT COUNT(*) FROM WebApiUsers where login = '" + login + "'");
+                                int userCount = (int)db.ExecuteScalar("SELECT COUNT(*) FROM WebApiUsers where login = '" + login + "' and Id = " + userId);
                                 return userCount > 0;
                             }
                         }

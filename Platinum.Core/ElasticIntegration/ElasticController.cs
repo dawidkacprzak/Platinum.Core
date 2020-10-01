@@ -215,7 +215,12 @@ namespace Platinum.Core.ElasticIntegration
                 {"http_authorization", "opnsdgsd353sapgqejpg"}
             });
             List<SimpleMapping> ret = new List<SimpleMapping>();
-            var response = client.LowLevel.Indices.GetMapping<GetMappingResponse>($"{userId}_cat{categoryId}");
+            string indexName = $"{userId}_cat{categoryId}";
+            if (userId == 1)
+            {
+                indexName = "offer_details";
+            }
+            var response = client.LowLevel.Indices.GetMapping<GetMappingResponse>(indexName);
             if (response.Indices.Values.Any())
             {
                 for (int i = 0; i < response.Indices.Values.Count(); i++)
@@ -257,6 +262,10 @@ namespace Platinum.Core.ElasticIntegration
                                         continue;
                                     }
 
+                                    if (property.Name.Name.Contains("processed") || baseName == "processed")
+                                    {
+                                        int b = 0x0;
+                                    }
                                     ret.Add(new SimpleMapping(property.Name.Name, baseName, property.Type));
                                 }
                             }
@@ -264,8 +273,7 @@ namespace Platinum.Core.ElasticIntegration
                         catch (InvalidCastException)
                         {
                             IProperty propValue = ((IProperty) v.Value);
-
-                            ret.Add(new SimpleMapping(propValue.Name.Name, propValue.Type));
+                            ret.Add(new SimpleMapping(propValue.Name.Name,string.Empty,propValue.Type));
                         }
                     }
                 }
@@ -284,8 +292,12 @@ namespace Platinum.Core.ElasticIntegration
                 {"authorization", "opnsdgsd353sapgqejpg"},
                 {"http_authorization", "opnsdgsd353sapgqejpg"}
             });
-
-            SearchRequest request = new SearchRequest<OfferDetails>($"{userId}_cat{categoryId}")
+            string indexName = $"{userId}_cat{categoryId}";
+            if (userId == 1)
+            {
+                indexName = "offer_details";
+            }
+            SearchRequest request = new SearchRequest<OfferDetails>(indexName)
             {
                 Size = maxPerPage,
                 From = page * maxPerPage
@@ -380,6 +392,11 @@ namespace Platinum.Core.ElasticIntegration
             details.OfferDetails = response.Documents.ToList();
             details.ScrollId = response.ScrollId;
             return details;
+        }
+
+        public List<OfferDetails> GetFilteredOffers(int userId, int categoryId)
+        {
+            return null;
         }
 
 
