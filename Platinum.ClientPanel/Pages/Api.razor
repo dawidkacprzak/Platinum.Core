@@ -1,0 +1,70 @@
+﻿@page "/Api"
+@inject NavigationManager NavManager
+@inject IJSRuntime JsRuntime;
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@using Platinum.ClientPanel.Controllers
+
+<AuthorizeView>
+    <Authorized>
+        <div class="container-fluid">
+            <h1>Api</h1>
+            <button class="btn mt-2 btn-primary">Dokumentacja</button>
+            <div class="row">
+                <div class="card ml-3 mt-3  border-0 p-0">
+                    <div class="card-header">
+                        Podstawowe metody
+                    </div>
+                    <div class="card-body border-0 p-0">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Metoda HTTP</th>
+                                    <th scope="col">Nazwa</th>
+                                    <th scope="col">Adres</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">GET</th>
+                                    <td>GetCategories</td>
+                                    <td>URL</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">GET</th>
+                                    <td>GetCategory</td>
+                                    <td>Thornton</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">GET</th>
+                                    <td>BeginScroll</td>
+                                    <td>the Bird</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">GET</th>
+                                    <td>ContinueScroll</td>
+                                    <td>the Bird</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Authorized>
+</AuthorizeView>
+
+@code
+{
+    int userId;
+    protected override void OnInitialized()
+    {
+        if (!AuthController.IsUserAuthenticated(AuthenticationStateProvider))
+        {
+            NavManager.NavigateTo("/");
+        }
+        else
+        {
+            userId = AuthController.GetAuthenticatedUserId(AuthenticationStateProvider);
+        }
+    }
+}

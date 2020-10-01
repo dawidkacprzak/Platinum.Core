@@ -24,22 +24,24 @@
                         <table class="table">
                             <thead>
                             <th>Kategoria</th>
+                            <th>Identyfikator kategorii</th>
                             <th>Plan</th>
                             <th>Ofert w miesiącu</th>
                             <th>Wszystkich ofert</th>
                             <th>Należność</th>
                             </thead>
                             <tbody>
-                            @for (int i = 0; i < userServiceLists.Count; i++)
-                            {
-                                <tr>
-                                    <td>@userServiceLists.ElementAt(i).Category</td>
-                                    <td>@userServiceLists.ElementAt(i).PaidPlanName</td>
-                                    <td>@userServiceLists.ElementAt(i).ProcessedOffersMonth</td>
-                                    <td>@userServiceLists.ElementAt(i).ProcessedOffersAllTime</td>
-                                    <td>@Math.Round(userServiceLists.ElementAt(i).Income, 2)</td>
-                                </tr>
-                            }
+                                @for (int i = 0; i < userServiceLists.Count; i++)
+                                {
+                                    <tr>
+                                        <td>@userServiceLists.ElementAt(i).Category</td>
+                                        <td>@userServiceLists.ElementAt(i).CategoryId</td>
+                                        <td>@userServiceLists.ElementAt(i).PaidPlanName</td>
+                                        <td>@userServiceLists.ElementAt(i).ProcessedOffersMonth</td>
+                                        <td>@userServiceLists.ElementAt(i).ProcessedOffersAllTime</td>
+                                        <td>@Math.Round(userServiceLists.ElementAt(i).Income, 2)</td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                     </div>

@@ -38,7 +38,7 @@ namespace Platinum.Core.Finances
                         long thisMonthDocuments =
                             ElasticController.Instance.GetIndexDocumentCountThisMonth(ret[i].CategoryId, userId);
                         ret[i].Income = Finances.CalculatePriceController.GetPrice(
-                           thisMonthDocuments,ret[i].PaidPlanId);
+                           thisMonthDocuments, ElasticController.Instance.GetIndexDocumentCount(ret[i].CategoryId, userId),ret[i].PaidPlanId);
                         ret[i].ProcessedOffersMonth = thisMonthDocuments;
                         ret[i].ProcessedOffersAllTime =
                             ElasticController.Instance.GetIndexDocumentCount(ret[i].CategoryId, userId);

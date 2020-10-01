@@ -81,6 +81,14 @@ namespace Platinum.Tests.Integration
             }
         }
         
+        [Test]
+        public void X()
+        {
+            ScrollOfferDetails det = ElasticController.Instance.BeginScroll(20340, 2, 100);
+            ScrollOfferDetails det1 = ElasticController.Instance.ContinueScroll(det.ScrollId);
+            ScrollOfferDetails de2 = ElasticController.Instance.ContinueScroll(det.ScrollId);
+            ScrollOfferDetails de3 = ElasticController.Instance.ContinueScroll(det.ScrollId);
+        }
 
     }
 }

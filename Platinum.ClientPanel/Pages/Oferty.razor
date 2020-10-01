@@ -66,6 +66,9 @@
                                                     Kategoria: @selectedCategoryStats.webApiUserWebsiteCategory.CategoryName
                                                 </li>
                                                 <li class="list-group-item list-group-item-action">
+                                                    Identyfikator kategorii: @selectedCategoryStats.webApiUserWebsiteCategory.WebsiteCategoryId
+                                                </li>
+                                                <li class="list-group-item list-group-item-action">
                                                     Plan: @selectedCategoryStats.PaidPlan.Name
                                                 </li>
                                                 <li class="list-group-item list-group-item-action">
@@ -75,10 +78,10 @@
                                                     Pozostały limit w tym miesiącu: @selectedCategoryStats.OffersRemainsThisMonth
                                                 </li>
                                                 <li class="list-group-item list-group-item-action">
-                                                    Zaimportowanych ofert: @selectedCategoryStats.IndexedDocumentThisMonth
+                                                    Zaimportowanych ofert: @selectedCategoryStats.IndexedDocumentCount
                                                 </li>
                                                 <li class="list-group-item list-group-item-action">
-                                                    Zaimportowanych ofert w tym miesiącu: @selectedCategoryStats.IndexedDocumentCount
+                                                    Zaimportowanych ofert w tym miesiącu: @selectedCategoryStats.IndexedDocumentThisMonth
                                                 </li>
                                                 <li class="list-group-item list-group-item-action">
                                                     Opłata za magazyn: @Math.Round(selectedCategoryStats.IncomeForStorageThisMonth, 2)
@@ -121,7 +124,7 @@
                         </div>
                         <div class="flex-row d-flex mb-2 align-items-center align-content-center">
                             <input value="@filterSearchInputValue"
-                                   @onchange="@((ChangeEventArgs __e) => filterSearchInputValue = __e.Value.ToString())" placeholder="Słowa kluczowe oddzielone przecinkiem" type="text" class="form-control w-25 mr-3"/>
+                                   @onchange="@((ChangeEventArgs __e) => filterSearchInputValue = __e.Value.ToString())" placeholder="Słowa kluczowe oddzielone przecinkiem" type="text" class="form-control w-25 mr-3" />
                             <button @onclick="FilterOffers" class="btn btn-block fill btn-info w-auto mr-2">Filtruj</button>
                             <button @onclick="ExportToCSV" class="m-0 btn btn-block fill btn-info w-auto">Eksport do CSV</button>
                             @if (isCsvGenerating)
@@ -141,25 +144,44 @@
                         {
                             <table class="table table-hover">
                                 <thead>
-                                <tr>
-                                    <th>Tytuł oferty</th>
-                                    <th>Link</th>
-                                    <th>Data zaindeksowania</th>
-                                    <th>Cena</th>
-                                </tr>
+                                    <tr class="d-flex">
+                                        <th class="col-4">Tytuł oferty</th>
+                                        <th class="col-3">Link</th>
+                                        <th class="col-2">Data zaindeksowania</th>
+                                        <th class="col-3">Cena</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                @foreach (OfferDetails row in loadedOffers)
-                                {
-                                    <tr class="pointer-cursor">
-                                        <td>@row.Title</td>
-                                        <td>
-                                            <a class="nav-link p-0 m-0" @onclick="() => { OpenLinkInNewTab(row.Uri); }">[Click]</a>
-                                        </td>
-                                        <td>@row.CreatedDate</td>
-                                        <td>@row.Price&nbsp;zł</td>
-                                    </tr>
-                                }
+                                    @foreach (OfferDetails row in loadedOffers)
+                                    {
+                                        <tr class="d-flex pointer-cursor" @onclick="() => {
+                                                                                 bool newValue = !offerDescriptionHideRow.Where(x => x.Key == row.Id).First().Value;
+                                                                                 offerDescriptionHideRow.Remove(offerDescriptionHideRow.Where(x => x.Key == row.Id).First());
+                                                                                 offerDescriptionHideRow.Add(new KeyValuePair<int, bool>(row.Id, newValue));
+                                                                             }">
+                                            <td class="col-4">@row.Title</td>
+                                            <td class="col-3 text-primary font-weight-bold">
+                                                <a class="nav-link p-0 m-0 text-primary font-weight-bold" @onclick="() => { OpenLinkInNewTab(row.Uri); }">[Click]</a>
+                                            </td>
+                                            <td class="col-2">@row.CreatedDate</td>
+                                            <td class="col-3">@row.Price&nbsp;zł</td>
+                                        </tr>
+
+                                        if (!IsDescriptionHidden(row.Id))
+                                        {
+                                            for (int i = 0; i < row.Attributes.Count; i += 4)
+                                            {
+                                                <tr class="d-flex pointer-cursor">
+                                                    <td class="col-4 table-info">@GetCellOfferDescriptionValue(row, i)</td>
+                                                    <td class="col-3 table-info">@GetCellOfferDescriptionValue(row, i + 1)</td>
+                                                    <td class="col-2 table-info">@GetCellOfferDescriptionValue(row, i + 2)</td>
+                                                    <td class="col-3 table-info">@GetCellOfferDescriptionValue(row, i + 3)</td>
+
+                                                </tr>
+                                            }
+                                        }
+                                    }
+
                                 </tbody>
                             </table>
                         }
@@ -185,6 +207,7 @@
     bool showDataExport = false;
     bool areOffersLoading = false;
     bool isCsvGenerating = false;
+    List<KeyValuePair<int, bool>> offerDescriptionHideRow = new List<KeyValuePair<int, bool>>();
 
     protected override void OnInitialized()
     {
@@ -212,6 +235,7 @@
     {
         areCatStatsLoading = true;
         loadedOffers = new List<OfferDetails>();
+        LoadOfferDetailsVisibilityFromLoadedOffers();
         return Task.Run(() =>
         {
             selectedCategory = catId;
@@ -228,6 +252,7 @@
         return Task.Run(() =>
         {
             loadedOffers = ElasticController.Instance.GetByAnyFieldKeywords("", selectedCategory, userId);
+            LoadOfferDetailsVisibilityFromLoadedOffers();
             areOffersLoading = false;
         });
     }
@@ -249,6 +274,7 @@
         return Task.Run(() =>
         {
             loadedOffers = ElasticController.Instance.GetByAnyFieldKeywords(filterSearchInputValue, selectedCategory, userId);
+            LoadOfferDetailsVisibilityFromLoadedOffers();
             areOffersLoading = false;
         });
     }
@@ -279,5 +305,35 @@
     public void OpenLinkInNewTab(string url)
     {
         JsRuntime.InvokeVoidAsync("open", url, "_blank");
+    }
+
+
+    public bool IsDescriptionHidden(int rowId)
+    {
+        var offerDescriptionCount = offerDescriptionHideRow.Where(x => x.Key == rowId).Count();
+        if (offerDescriptionCount == 0)
+            return true;
+        else return offerDescriptionHideRow.Where(x => x.Key == rowId).First().Value;
+    }
+
+    public void LoadOfferDetailsVisibilityFromLoadedOffers()
+    {
+        offerDescriptionHideRow = new List<KeyValuePair<int, bool>>();
+        foreach (var row in loadedOffers)
+        {
+            offerDescriptionHideRow.Add(new KeyValuePair<int, bool>(row.Id, true));
+        }
+    }
+
+    public string GetCellOfferDescriptionValue(OfferDetails row, int attributeIndex)
+    {
+        if (row.Attributes.Count > attributeIndex)
+        {
+            return row.Attributes.ElementAt(attributeIndex).Key + " : " + row.Attributes.ElementAt(attributeIndex).Value;
+        }
+        else
+        {
+            return "";
+        }
     }
 }

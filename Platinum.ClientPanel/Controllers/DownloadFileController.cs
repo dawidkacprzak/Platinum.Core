@@ -28,7 +28,7 @@ namespace Platinum.ClientPanel.Controllers
             path = Path.Combine("wwwroot/ufiles", guid + ".csv");
 
             List<string> csvLines = new List<string>();
-            csvLines.Add("Tytuł;Data Zaindeksowania;Link;Cena zł");
+            csvLines.Add("Tytuł;Link;Data Zaindeksowania;Cena zł;Atrybuty");
             foreach (var o in offers)
             {
                 string line = string.Empty;
@@ -39,10 +39,17 @@ namespace Platinum.ClientPanel.Controllers
                 line += o.CreatedDate.ToString(CultureInfo.InvariantCulture).Replace(";", "");
                 line += ";";
                 line += o.Price.ToString().Replace(";", "");
+                foreach(var attr in o.Attributes)
+                {
+                    line += ";";
+                    line += attr.Key.Replace(";", ""); ;
+                    line += ";";
+                    line +=attr.Value.Replace(";", "");
+                }
                 csvLines.Add(line);
             }
 
-            System.IO.File.WriteAllLines(path, csvLines);
+            System.IO.File.WriteAllLines(path, csvLines,Encoding.UTF8);
             return Path.Combine("ufiles", guid + ".csv");
             ;
         }

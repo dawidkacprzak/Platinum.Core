@@ -358,5 +358,44 @@ namespace Platinum.Core.ElasticIntegration
             var json = client.RequestResponseSerializer.SerializeToString(request);
             return k.Documents.ToList();
         }
+
+        public ScrollOfferDetails BeginScroll(int categoryId,int userId, int pageSize)
+        {
+
+            string indexName = $"{userId}_cat{categoryId}";
+            if (userId == 1)
+            {
+                indexName = "offer_details";
+            }
+            var response = client.Search<OfferDetails>(s => s.Index(indexName)
+            .From(0)
+            .Take(pageSize)
+            .MatchAll()
+            .Scroll(new Time(300000)));
+            if (!response.IsValid)
+            {
+                throw new Exception(response.ServerError.Error.Reason);
+            }
+            ScrollOfferDetails details = new ScrollOfferDetails();
+            details.OfferDetails = response.Documents.ToList();
+            details.ScrollId = response.ScrollId;
+            return details;
+        }
+
+
+        public ScrollOfferDetails ContinueScroll(string scrollId)
+        {
+            ScrollOfferDetails details = new ScrollOfferDetails();
+
+            var response = client.Scroll<OfferDetails>(new Time(300000), scrollId);
+            if (!response.IsValid)
+            {
+                throw new Exception(response.ServerError.Error.Reason);
+            }
+            details.OfferDetails = response.Documents.ToList();
+            details.ScrollId = response.ScrollId;
+            return details;
+        }
+
     }
 }

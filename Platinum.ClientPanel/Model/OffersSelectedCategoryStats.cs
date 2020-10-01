@@ -49,7 +49,7 @@ namespace Platinum.ClientPanel.Model
                 CalculatePriceController.GetProceedPrice(IndexedDocumentThisMonth,
                     webApiUserWebsiteCategory.PaidPlanId);
             IncomeThisMonth =
-                CalculatePriceController.GetPrice(IndexedDocumentThisMonth, webApiUserWebsiteCategory.PaidPlanId);
+                CalculatePriceController.GetPrice(IndexedDocumentThisMonth, IndexedDocumentCount, webApiUserWebsiteCategory.PaidPlanId);
             FoundMappings = ElasticController.Instance.GetIndexMappings(categoryId, userId);
         }
     }
