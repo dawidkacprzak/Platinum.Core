@@ -31,7 +31,7 @@ namespace Platinum.Service.OfferDetailsFetcher
                 #if DEBUG
                 WebApiUserId = 2;
                 pararellTasks = 1;
-                CategoryId = 6406;
+                CategoryId = 16520;
                 //configure by hand
                 #endif
                 Console.WriteLine("Error, application MUST contain 2 arguments - user id and tasks count");

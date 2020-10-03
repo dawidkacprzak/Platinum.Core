@@ -34,12 +34,13 @@ namespace Platinum.Service.OfferDetailsFetcher
         public void Run(IDal dal)
         {
             sw.Start();
-            Console.WriteLine($"Application started and tak count {CountOfParallelTasks}");
+            Console.WriteLine($"Application started and task count {CountOfParallelTasks}");
             try
             {
                 WebClient c = new WebClient();
                 string exIp = c.DownloadString("https://ifconfig.me");
-                AddErrorLogsToDb("App (V5) started with ip: " + exIp + " and category id: " + Worker.CategoryId);
+                Console.WriteLine("App (V6) started with ip: " + exIp + " and category id: " + Worker.CategoryId + " and user "+Worker.WebApiUserId);
+                AddErrorLogsToDb("App (V6) started with ip: " + exIp + " and category id: " + Worker.CategoryId);
             }catch(Exception)
             {
 
@@ -55,7 +56,6 @@ namespace Platinum.Service.OfferDetailsFetcher
                 List<Task> tasks = new List<Task>();
                 foreach (var offer in lastNotProcessedOffers)
                 {
-                    _logger.Info("last not processed offers: " + lastNotProcessedOffers.Count);
                     concurrencySemaphore.Wait();
                     var t = Task.Factory.StartNew(() =>
                     {
@@ -155,6 +155,10 @@ namespace Platinum.Service.OfferDetailsFetcher
                     successInsert = ElasticController.Instance.InsertOfferDetails(details,Worker.WebApiUserId,offer.WebsiteCategoryId);
                     if(successInsert) 
                         SumOfProcessedOffers++;
+                    else
+                    {
+                        Console.WriteLine("Fail insert");
+                    }
                 }
                 catch (OfferDetailsFailException ex)
                 {

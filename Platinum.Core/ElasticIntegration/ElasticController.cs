@@ -8,6 +8,7 @@ using Newtonsoft.Json.Serialization;
 using NLog;
 using Platinum.Core.Model;
 using Platinum.Core.Model.Elastic;
+using Platinum.Core.Types;
 using PuppeteerSharp.Input;
 
 namespace Platinum.Core.ElasticIntegration
@@ -61,6 +62,7 @@ namespace Platinum.Core.ElasticIntegration
                 string index = userId + "_cat" + categoryId;
                 if (userId == 1)
                 {
+                    offerDetails.CreatedDate = DateTime.Now;
                     IndexResponse status = client.Index(offerDetails, i => i.Index("offer_details"));
                     return status.IsValid;
                 }
@@ -78,8 +80,10 @@ namespace Platinum.Core.ElasticIntegration
                             throw new Exception("Cannot create index: " + index);
                         }
                     }
-
+                    offerDetails.CreatedDate = DateTime.Now;
                     IndexResponse status = client.Index<OfferDetails>(offerDetails, i => i.Index(index));
+                    _logger.Info("Document elastic: "+status.Result);
+                    _logger.Info(offerDetails.Uri + " " + offerDetails.CreatedDate);
                     return status.IsValid;
                 }
             }
@@ -373,12 +377,12 @@ namespace Platinum.Core.ElasticIntegration
 
         public ScrollOfferDetails BeginScroll(int categoryId,int userId, int pageSize)
         {
-
             string indexName = $"{userId}_cat{categoryId}";
             if (userId == 1)
             {
                 indexName = "offer_details";
             }
+            
             var response = client.Search<OfferDetails>(s => s.Index(indexName)
             .From(0)
             .Take(pageSize)
@@ -394,9 +398,113 @@ namespace Platinum.Core.ElasticIntegration
             return details;
         }
 
-        public List<OfferDetails> GetFilteredOffers(int userId, int categoryId)
+        public ScrollOfferDetails GetFilteredOffers(int userId, int categoryId,int pageSize, List<ClientApiFilteredAttribute> attributes)
         {
-            return null;
+            List<ClientApiFilteredAttribute> equalAttributes =
+                attributes.Where(x => x.AttributeCompareType == EAttributeCompareType.Equal).ToList();
+            List<ClientApiFilteredAttribute> lessAttributes =
+                attributes.Where(x => x.AttributeCompareType == EAttributeCompareType.Less).ToList();
+            List<ClientApiFilteredAttribute> biggerAttributes =
+                attributes.Where(x => x.AttributeCompareType == EAttributeCompareType.Bigger).ToList();
+            List<ClientApiFilteredAttribute> containsAttributes =
+                attributes.Where(x => x.AttributeCompareType == EAttributeCompareType.Contain).ToList();            
+            BoolQuery bq = new BoolQuery();
+
+            QueryContainer equal = new QueryContainer();
+            QueryContainer less = new QueryContainer();
+            QueryContainer bigger = new QueryContainer();
+            QueryContainer contain = new QueryContainer();
+
+            foreach (var i in equalAttributes)
+            {
+                equal &= new MatchQuery()
+                {
+                    Field = i.AttributeName,
+                    Query = EscapeElasticString(i.AttributeValue)
+                };
+            }
+            foreach (var i in lessAttributes)
+            {
+                if(biggerAttributes.Any(x=>x.AttributeName.Equals(i.AttributeName)))
+                {
+                    var biggerElement = biggerAttributes.First(x => x.AttributeName.Equals(i.AttributeName));
+                    if (biggerElement.AttributeValue.Equals(i.AttributeValue))
+                    {
+                        less &= new MatchQuery()
+                        {
+                            Field = i.AttributeName,
+                            Query = i.AttributeValue
+                        };
+                    }
+                    else
+                    {
+                        less &= new NumericRangeQuery()
+                        {
+                            Field = i.AttributeName,
+                            LessThanOrEqualTo = double.Parse(i.AttributeValue),
+                            GreaterThanOrEqualTo = double.Parse(biggerElement.AttributeValue)
+                        };
+                    }
+
+                    biggerAttributes.Remove(biggerElement);
+                }
+                else
+                {
+                    less &= new NumericRangeQuery()
+                    {
+                        Field = i.AttributeName,
+                        LessThanOrEqualTo = double.Parse(i.AttributeValue)
+                    };
+                }
+
+            }
+            foreach (var i in biggerAttributes)
+            {
+                bigger &= new NumericRangeQuery()
+                {
+                    Field = i.AttributeName,
+                    GreaterThanOrEqualTo = double.Parse(i.AttributeValue)
+                };
+            }
+            
+            foreach (var i in containsAttributes)
+            {
+                contain &= new WildcardQuery()
+                {
+                    Field = i.AttributeName,
+                    Value = "*"+EscapeElasticString(i.AttributeValue)+"*"
+                };
+            }
+            bq = new BoolQuery()
+            {
+                Must = new[] {equal,less,bigger,contain}
+            };
+
+            string indexName = $"{userId}_cat{categoryId}";
+            if (userId == 1)
+            {
+                indexName = "offer_details";
+            }
+
+            SearchRequest request = new SearchRequest<OfferDetails>(indexName)
+            {
+                From = 0,
+                Size = pageSize,
+                Query = bq,
+                Scroll =  new Time(500000)
+            };
+
+            var response = client.Search<OfferDetails>(request);
+            var json = client.RequestResponseSerializer.SerializeToString(request);
+
+            if (!response.IsValid)
+            {
+                throw new Exception(response.ServerError.Error.Reason);
+            }
+            ScrollOfferDetails details = new ScrollOfferDetails();
+            details.OfferDetails = response.Documents.ToList();
+            details.ScrollId = response.ScrollId;
+            return details;
         }
 
 
@@ -412,6 +520,17 @@ namespace Platinum.Core.ElasticIntegration
             details.OfferDetails = response.Documents.ToList();
             details.ScrollId = response.ScrollId;
             return details;
+        }
+
+        private string EscapeElasticString(string s)
+        {
+            char[] special = { '+', '-', '=', '>', '<', '!', '(', ')', '{', '}', '[', ']', '^', '\"', '~', '*', '?', ':', '\\', '/', ' ' };
+            foreach (var c in special)
+            {
+                s = s.Replace(c.ToString(),"\\"+c.ToString());
+            }
+
+            return s;
         }
 
     }

@@ -17,33 +17,43 @@
                     <div class="card-body border-0 p-0">
                         <table class="table table-bordered">
                             <thead>
-                                <tr>
-                                    <th scope="col">Metoda HTTP</th>
-                                    <th scope="col">Nazwa</th>
-                                    <th scope="col">Adres</th>
-                                </tr>
+                            <tr>
+                                <th scope="col">Metoda HTTP</th>
+                                <th scope="col">Nazwa</th>
+                                <th scope="col">Adres</th>
+                            </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">GET</th>
-                                    <td>GetCategories</td>
-                                    <td>URL</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">GET</th>
-                                    <td>GetCategory</td>
-                                    <td>Thornton</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">GET</th>
-                                    <td>BeginScroll</td>
-                                    <td>the Bird</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">GET</th>
-                                    <td>ContinueScroll</td>
-                                    <td>the Bird</td>
-                                </tr>
+                            <tr>
+                                <th scope="row">GET</th>
+                                <td>GetCategories</td>
+                                <td>URL</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">GET</th>
+                                <td>GetCategory</td>
+                                <td>URL</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">GET</th>
+                                <td>GetAttributes</td>
+                                <td>the Bird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">GET</th>
+                                <td>BeginFilteredScroll</td>
+                                <td>Thornton</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">GET</th>
+                                <td>BeginScroll</td>
+                                <td>the Bird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">GET</th>
+                                <td>ContinueScroll</td>
+                                <td>the Bird</td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -56,6 +66,7 @@
 @code
 {
     int userId;
+
     protected override void OnInitialized()
     {
         if (!AuthController.IsUserAuthenticated(AuthenticationStateProvider))
