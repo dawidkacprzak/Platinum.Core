@@ -12,7 +12,7 @@ namespace Platinum.Core.Model
         public string Description { get; set; }
         public decimal Price { get; set; }
 
-        public OfferDetails(Offer offer) : base(offer.Id,offer.WebsiteId,offer.Uri,offer.UriHash,offer.CreatedDate,offer.WebsiteId, offer.Processed)
+        public OfferDetails(Offer offer) : base(offer.Id,offer.WebsiteId,offer.Uri,offer.UriHash,offer.CreatedDate,offer.WebsiteCategoryId, offer.Processed)
         {
 
         }
