@@ -10,7 +10,7 @@
       <PackageReference Include="Microsoft.Extensions.Hosting.Systemd" Version="5.0.0-rc.1.20451.7" />
       <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="5.0.0-rc.1.20451.7" />
       <PackageReference Include="NEST" Version="7.9.0" />
-      <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
       <PackageReference Include="NLog" Version="4.7.3" />
       <PackageReference Include="PuppeteerSharp" Version="2.0.4" />
       <PackageReference Include="RestSharp" Version="106.11.5-alpha.0.18" />
